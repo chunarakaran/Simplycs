@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- YOUR CUSTOM VIEWS HERE -->
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_marginTop="60dp">
+
+           <android.support.v7.widget.CardView
+
+               android:id="@+id/bankcardId"
+               android:background="@drawable/cardview_gradient"
+               android:layout_width="match_parent"
+               android:layout_height="150dp"
+               android:layout_margin="5dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@drawable/cardview_gradient"
+                   android:orientation="vertical">
+
+                   <customfonts.MyTextView_Roboto_Black
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Hello!"
+                       android:textColor="#fff"
+                       android:textSize="30dp"
+                       android:layout_gravity="center"/>
+
+                   <customfonts.MyTextView_Roboto_Black
+                       android:id="@+id/textViewName"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="#fff"
+                       android:textSize="25dp"
+                       android:text="Karan"/>
+
+
+               </LinearLayout>
+           </android.support.v7.widget.CardView>
+
+       </LinearLayout>
+
+
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

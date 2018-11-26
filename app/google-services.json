@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "993536252182",
+    "firebase_url": "https://simply-cs.firebaseio.com",
+    "project_id": "simply-cs",
+    "storage_bucket": "simply-cs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993536252182:android:d7aed0392b311c87",
+        "android_client_info": {
+          "package_name": "com.example.amita.simplycs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993536252182-otrrjdiu77ccgohau970i5e8srj25jr0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amita.simplycs",
+            "certificate_hash": "b28de106cd47c6550e2593929c66b1e36c899574"
+          }
+        },
+        {
+          "client_id": "993536252182-pplp7bdgdsbl7tetvg3ictf6kcej2l45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsV9HMBDb_qH7BUXSCvBk25yeADMMtUe4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993536252182-pplp7bdgdsbl7tetvg3ictf6kcej2l45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

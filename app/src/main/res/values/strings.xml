@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Simply</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="url">https://simply-cs.com/</string>
+    <string name="login_url">http://biotechautomfg.com/</string>
+
+
+    <string name="title_shop">Today</string>
+    <string name="title_gifts">Previous day</string>
+    <string name="title_cart">archive</string>
+
+    <string name="tag_line">Learn Simply</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Simply!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Watch Videos and Learn</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Test and Analyze</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+
+    <string name="Semail">
+<![CDATA[
+    <html>
+        <head></head>
+        <bodystyle text-align:justify="">
+            <body> Lorem ipsum dolor sit amet, consectetur  adipiscing elit.
+                Nunc pellentesque, urna nec hendrerit pellentesque, risus massa
+            </body>
+        </bodystyle>
+   </html>
+]]>
+</string>
+
+</resources>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/white">
+
+
+                <!-- Cover Image -->
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="center"
+                    android:src="@drawable/bg1"
+                     />
+
+
+
+
+                <!-- Round image -->
+
+                <com.alexzh.circleimageview.CircleImageView
+                    android:id="@+id/banar1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/p1"
+                    android:layout_marginTop="75dp"
+                    android:layout_gravity="center"
+                    app:view_borderWidth="2dp"
+                    app:view_borderColor="#cccccc" />
+
+
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginLeft="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/edit" />
+
+
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:background="@drawable/backgrownd"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/username1"
+                        android:textSize="15sp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/username"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Karan Chunara"
+                        android:textColorHint="#181737"
+                        android:textColor="#181737"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/emil"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"/>
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/email1"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="chunarakaran@gmail.com"
+                        android:textColor="#181737"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/password"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/pass1"
+                        android:textSize="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Change"
+                        android:textColor="#304ffe"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/phone"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile No"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"/>
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/mobno"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="9737811745"
+                        android:textColor="#181737"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/facebook"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/gender"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#1b193b"
+                        android:hint="Male"
+                        android:textColor="#181737"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/dob"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="DOB"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/DOB"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#1b193b"
+                        android:hint="1-Nov-1992"
+                        android:textColor="#000"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/education"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Education"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/Education"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#1b193b"
+                        android:hint="MCA"
+                        android:textColor="#181737"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/twitter"
+                        android:textSize="15dp"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textColor="@color/white"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView_Roboto_Black
+                        android:layout_weight="1"
+                        android:id="@+id/Ecity"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#1b193b"
+                        android:hint="Jamnagar"
+                        android:textColor="#181737"
+                        android:maxLength="12"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
