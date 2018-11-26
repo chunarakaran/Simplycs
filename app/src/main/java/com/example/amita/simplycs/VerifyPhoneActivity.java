@@ -78,6 +78,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 //verifying the code entered manually
                 verifyVerificationCode(code);
 
+
+
             }
         });
 
