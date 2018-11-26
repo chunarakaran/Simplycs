@@ -66,7 +66,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         Verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(),"Helo",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Helo",Toast.LENGTH_SHORT).show();
 
                 String code = EdittextCode.getText().toString().trim();
                 if (code.isEmpty() || code.length() < 6) {
