@@ -33,6 +33,8 @@ public class ForgotpwdActivity extends AppCompatActivity {
 
         SendOTP=(TextView)findViewById(R.id.sendotp);
 
+
+
         SendOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
