@@ -5,5 +5,32 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:icon="@drawable/add_bookmark"
+        app:showAsAction="always" >
+
+        <menu>
+
+            <item android:id="@+id/action_menu1"
+                android:icon="@drawable/customer_service"
+                android:title="Ask Us" />
+
+            <item android:id="@+id/action_menu2"
+                android:icon="@drawable/activity"
+                android:title="Last Activity" />
+
+            <item android:id="@+id/action_menu3"
+                android:icon="@drawable/forum"
+                android:title="Forum" />
+
+            <item android:id="@+id/action_menu4"
+                android:icon="@drawable/webinars"
+                android:title="Webinars" />
+
+            <item android:id="@+id/action_menu5"
+                android:icon="@drawable/exam"
+                android:title="Up-Comming Exam" />
+
+        </menu>
+    </item>
+
 </menu>

@@ -12,6 +12,7 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\cach
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\d24472e7bdb765b6f0b631491d121a79\AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.3.aar\12bfc9e7beae9dcbe99c68198fccf86c\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:17:1-38:12
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\8bb0443d8180a21a82fdc6609639b6ee\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4dd956216b9c0294e7e9d0696030ed69\AndroidManifest.xml:17:1-22:12
@@ -111,6 +112,8 @@ MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\amita\.gradle\ca
 MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.3.aar\12bfc9e7beae9dcbe99c68198fccf86c\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:22:5-36:19
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:22:5-36:19
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\8bb0443d8180a21a82fdc6609639b6ee\AndroidManifest.xml:12:5-20
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\8bb0443d8180a21a82fdc6609639b6ee\AndroidManifest.xml:12:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.1.aar\da3dec8ba9c382f84c1c6b090f76b2b8\AndroidManifest.xml:26:5-32:19
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.1.aar\da3dec8ba9c382f84c1c6b090f76b2b8\AndroidManifest.xml:26:5-32:19
 MERGED from [com.google.firebase:firebase-analytics:16.0.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.3.aar\85ca0bf1d088d29d697b335be5ba5d6f\AndroidManifest.xml:28:5-53:19
@@ -165,14 +168,14 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Us
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:15:9-40
-activity#com.example.amita.simplycs.WelcomeActivity
+activity#com.example.amita.simplycs.LoginActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:17:9-26:20
 	android:label
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:19:13-45
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:20:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:13-44
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
@@ -207,7 +210,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:33:9-38:5
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:34:13-43
-activity#com.example.amita.simplycs.LoginActivity
+activity#com.example.amita.simplycs.WelcomeActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:9-44:59
 	android:screenOrientation
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-49
@@ -218,7 +221,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:9-44:5
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:44:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:13-42
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:13-44
 activity#com.example.amita.simplycs.SignupActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:45:9-50:59
 	android:screenOrientation
@@ -277,6 +280,8 @@ MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\amita\.gradle\ca
 MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.3.aar\12bfc9e7beae9dcbe99c68198fccf86c\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:20:5-44
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\8bb0443d8180a21a82fdc6609639b6ee\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\8bb0443d8180a21a82fdc6609639b6ee\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:20:5-44
