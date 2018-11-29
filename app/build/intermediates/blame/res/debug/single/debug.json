@@ -52,10 +52,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_fab_add.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\drawable-xhdpi-v4\\fab_add.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\\res\\drawable\\notification_icon_background.xml"
     },
@@ -64,12 +60,12 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\p1.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_ripple_color.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\color\\mtrl_btn_ripple_color.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -117,7 +113,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_media.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -164,24 +160,24 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation.xml.flat",
-        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\menu\\navigation.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_dark.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_ripple_color.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\color\\mtrl_tabs_ripple_color.xml"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_big_media_narrow.xml"
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\menu\\navigation.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_welcome_slide1.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\welcome_slide1.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_ripple_color.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\color\\mtrl_tabs_ripple_color.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -198,6 +194,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_button.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\round_button.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -284,10 +284,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_in_from_right.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_slide_in_from_right.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_show_motion_spec.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\animator\\mtrl_fab_show_motion_spec.xml"
     },
@@ -352,10 +348,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_out_to_left.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_slide_out_to_left.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\font_open_sans_bold.ttf.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\font\\open_sans_bold.ttf"
     },
@@ -376,6 +368,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_turned_in_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
@@ -385,7 +381,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_media_action.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
@@ -424,6 +420,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ribbon.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
@@ -441,7 +441,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -489,7 +489,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_big_media.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cancel.png.flat",
@@ -562,6 +562,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_archive.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_archive.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ribbon.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -644,6 +648,14 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\layout\\design_navigation_item_header.xml"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ribbon.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ribbon.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_turned_in_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_dashboard_black_24dp.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_dashboard_black_24dp.png"
     },
@@ -716,12 +728,12 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_customer_service.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\customer_service.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_account_box_black_24dp.xml.flat",
@@ -738,6 +750,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_turned_in_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -808,6 +824,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
@@ -865,7 +885,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_media_custom.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_media_custom.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
@@ -908,16 +928,16 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\rect_grayoutline1.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_exit_to_app_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_exit_to_app_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_people_black_24dp.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_people_black_24dp.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_exit_to_app_black_24dp.png.flat",
-        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_exit_to_app_black_24dp.png"
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_dropdown_item_icons_2line.xml.flat",
@@ -950,6 +970,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_turned_in_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_default.xml.flat",
@@ -1000,10 +1024,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_scale_down.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_scale_down.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_webinars.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\webinars.png"
     },
@@ -1037,11 +1057,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_fab_add.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\drawable-xxhdpi-v4\\fab_add.png"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
@@ -1138,10 +1154,6 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_out_to_right.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_slide_out_to_right.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1248,6 +1260,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\edit.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_notifications_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
@@ -1298,6 +1314,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_turned_in_black_24dp.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_turned_in_black_24dp.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -1392,10 +1412,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_in_from_left.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_slide_in_from_left.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -1422,6 +1438,14 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_icon.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_turned_in_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_notifications_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu_item.xml.flat",
@@ -1497,7 +1521,11 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_template_lines_media.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_askus.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_askus.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
@@ -1636,12 +1664,12 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_forum.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\forum.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_check_material.xml.flat",
@@ -1724,8 +1752,12 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_notifications_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\layout\\notification_media_cancel_action.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_full_screen_dialog.xml.flat",
@@ -1768,10 +1800,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_scale_up.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\anim\\fab_scale_up.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
@@ -1802,6 +1830,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_activity.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\activity.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_notifications_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
@@ -1838,6 +1870,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ribbon.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_exit_to_app_black_24dp.png.flat",
@@ -1890,6 +1926,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ribbon.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_cab_background_top_material.xml.flat",
@@ -1960,10 +2000,6 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_fab_add.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\drawable-hdpi-v4\\fab_add.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
@@ -1990,10 +2026,6 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cardview_gradient.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\cardview_gradient.xml"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_fab_add.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\8bb0443d8180a21a82fdc6609639b6ee\\res\\drawable-mdpi-v4\\fab_add.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_account_box_black_24dp.png.flat",
@@ -2086,6 +2118,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ribbon.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_logo.png.flat",
@@ -2292,6 +2328,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\ic_close_white_48dp.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_turned_in_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_turned_in_black_24dp.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\\res\\drawable-v21\\notification_action_background.xml"
     },
@@ -2464,6 +2504,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_notifications_black_24dp.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_abc_control_background_material.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-v23\\abc_control_background_material.xml"
     },
@@ -2504,6 +2548,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ribbon.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ribbon.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
@@ -2514,6 +2562,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdf6d7b19938b8babca83063dcae5efb\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_notifications_black_24dp.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_notifications_black_24dp.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_expand_spec.xml.flat",

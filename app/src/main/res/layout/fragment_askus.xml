@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="7dp"
+            android:text="Please Select Subject"
+            android:textSize="15dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:id="@+id/input_companyname"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext">
+
+            <Spinner
+                android:id="@+id/leave_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/input_layout_remark"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_edittext" />
+
+                <TextView
+                    android:id="@+id/Tremark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="24dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="Remark"
+                    android:textSize="16sp"
+                    android:background="@android:color/white"
+                    android:visibility="invisible"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp"
+                    android:hint="Remark"
+                    android:textColorHint="@color/colorAccent"
+                    app:hintTextAppearance="@style/HintTextStyle">
+
+                    <EditText
+                        android:id="@+id/input_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:singleLine="true"
+                        android:maxLines="3"
+                        android:background="@android:color/transparent"/>
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sign_up"
+            android:fontFamily="@font/maven_pro_bold"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_button"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

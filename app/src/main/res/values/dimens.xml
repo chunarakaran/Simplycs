@@ -60,4 +60,7 @@
     <dimen name="card_expand_padding_left">10dp</dimen>
     <dimen name="card_expand_padding_right">10dp</dimen>
 
+    <dimen name="smallPadding">15dp</dimen>
+    <dimen name="largPadding">20dp</dimen>
+
 </resources>

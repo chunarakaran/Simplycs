@@ -42,25 +42,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6fcace9b7cd615cff2311934c068db85\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,5,8,11",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,223,386,554",
-                        "endLines": "4,7,10,13",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "218,381,549,716"
-                    },
-                    "to": {
-                        "startLines": "270,273,277,281",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "19732,19900,20189,20485",
-                        "endLines": "272,275,279,283",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "19895,20058,20352,20647"
-                    }
-                },
-                {
                     "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\c9094791797e8c2022f49040f617e3f8\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,10,18,26",
@@ -77,6 +58,25 @@
                         "endLines": "291,299,307,315",
                         "endColumns": "10,10,10,10",
                         "endOffsets": "21076,21502,21925,22360"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0-rc01.aar\\f411ea3fd783576411284981c847289a\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,5,8,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,223,386,554",
+                        "endLines": "4,7,10,13",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "218,381,549,716"
+                    },
+                    "to": {
+                        "startLines": "270,273,277,281",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "19732,19900,20189,20485",
+                        "endLines": "272,275,279,283",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "19895,20058,20352,20647"
                     }
                 },
                 {

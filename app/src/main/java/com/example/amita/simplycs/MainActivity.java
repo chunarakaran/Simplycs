@@ -18,10 +18,12 @@ import android.widget.Toast;
 
 import com.example.amita.simplycs.Adapter.SessionManager;
 import com.example.amita.simplycs.Fragment.AccountFragment;
+import com.example.amita.simplycs.Fragment.AskusFragment;
 import com.example.amita.simplycs.Fragment.DashboardFragment;
 import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
+import com.example.amita.simplycs.Fragment.TopicListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -114,36 +116,33 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        FragmentTransaction transection = getSupportFragmentManager().beginTransaction();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_menu1) {
+        switch (id)
+        {
+            case R.id.action_menu1:
+                fragment= new AskusFragment();
+                transection.replace(R.id.content_frame, fragment);
+                transection.addToBackStack(null).commit();
+                break;
+            case R.id.action_menu2:
 
-            Toast.makeText(getApplicationContext(),"Ask Us",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Articles",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_menu3:
 
-            return true;
-        }
-        if (id == R.id.action_menu2) {
+                Toast.makeText(getApplicationContext(),"Current Affairs",Toast.LENGTH_SHORT).show();
+                break;
 
-            Toast.makeText(getApplicationContext(),"Last Activity",Toast.LENGTH_SHORT).show();
+            case R.id.action_menu4:
 
-            return true;
-        }
-        if (id == R.id.action_menu3) {
+                Toast.makeText(getApplicationContext(),"Practice",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_menu5:
 
-            Toast.makeText(getApplicationContext(),"Discussion Forum",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Revision",Toast.LENGTH_SHORT).show();
+                break;
 
-            return true;
-        }
-        if (id == R.id.action_menu4) {
-
-            Toast.makeText(getApplicationContext(),"Webinars",Toast.LENGTH_SHORT).show();
-
-            return true;
-        }
-        if (id == R.id.action_menu5) {
-
-            Toast.makeText(getApplicationContext(),"Up-Comming Exam",Toast.LENGTH_SHORT).show();
-
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
