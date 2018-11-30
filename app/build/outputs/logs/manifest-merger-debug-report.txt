@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\455d386530e27a813843feb97bab10a2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\08ecd309b8b58955572ad42266661ce4\AndroidManifest.xml:2:1-11:12
@@ -56,22 +56,22 @@ MERGED from [com.android.support:print:28.0.0] C:\Users\amita\.gradle\caches\tra
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c232b1f3073e6634590a1ab16af363c9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\a789aa0129db2f5b7d70d4393d82d866\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\3d88918f2cf0c04745080b69a9ba5a07\AndroidManifest.xml:2:1-9:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:4:5-41
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-66:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:11-69
@@ -99,8 +99,12 @@ MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\amita\.gradle\cac
 MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\45519a4b5ff0c736a1a6930f697c2ccb\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:8:22-77
 application
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:9:5-64:19
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:5-65:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\08ecd309b8b58955572ad42266661ce4\AndroidManifest.xml:9:5-20
@@ -148,111 +152,111 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Us
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:13:9-41
 	tools:ignore
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:16:9-48
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:17:9-48
 	android:roundIcon
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:15:9-40
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:16:9-40
 activity#com.example.amita.simplycs.LoginActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:17:9-26:20
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:9-27:20
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:20:13-45
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:20:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:13-42
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:19:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:25:27-74
 activity#com.example.amita.simplycs.MainActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:27:9-32:59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:28:9-33:59
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:31:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:32:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:30:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:31:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:29:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:30:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:32:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:28:13-41
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:29:13-41
 activity#com.example.amita.simplycs.SplashActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:33:9-38:59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:34:9-39:59
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:37:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:38:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:36:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:37:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:35:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:36:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:34:13-43
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:35:13-43
 activity#com.example.amita.simplycs.WelcomeActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:9-44:59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:9-45:59
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:44:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:42:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:41:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:42:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:44:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:45:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:13-44
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:41:13-44
 activity#com.example.amita.simplycs.SignupActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:45:9-50:59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:46:9-51:59
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:49:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:50:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:48:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:49:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:47:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:48:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:50:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:51:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:46:13-43
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:47:13-43
 activity#com.example.amita.simplycs.ForgotpwdActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:51:9-56:59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:52:9-57:59
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:55:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:56:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:54:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:55:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:53:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:54:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:56:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:57:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:52:13-46
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:53:13-46
 activity#com.example.amita.simplycs.VerifyPhoneActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:57:9-63:35
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:58:9-64:35
 	tools:node
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:63:13-33
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:64:13-33
 	android:screenOrientation
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:61:13-49
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:62:13-49
 	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:60:13-45
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:61:13-45
 	android:configChanges
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:59:13-59
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:60:13-59
 	android:theme
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:62:13-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:63:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:58:13-48
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:59:13-48
 uses-sdk
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml

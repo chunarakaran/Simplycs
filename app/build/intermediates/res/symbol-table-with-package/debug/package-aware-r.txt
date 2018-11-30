@@ -742,6 +742,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color textColrHint
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -1167,6 +1168,7 @@ drawable ic_today
 drawable ic_turned_in_black_24dp
 drawable login_logo
 drawable logo
+drawable mediatransperent_ract
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1183,6 +1185,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable p1
+drawable p2
 drawable rect_grayoutline1
 drawable rect_yellow1
 drawable ribbon
@@ -1268,6 +1271,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id change_pic
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1294,8 +1298,8 @@ id direct
 id disableHome
 id dob
 id drawer_layout
-id edit
 id editTextCode
+id edit_profile
 id edit_query
 id education
 id email1
@@ -1331,7 +1335,10 @@ id image
 id imageView
 id info
 id input_ConfPass
+id input_city
 id input_companyname
+id input_dob
+id input_education
 id input_email
 id input_layout_remark
 id input_mobile
@@ -1398,6 +1405,8 @@ id progress_circular
 id progress_horizontal
 id progressbar
 id radio
+id radioRetail
+id radioWholesaler
 id recyclerview1
 id relativeLayout
 id right
@@ -1484,6 +1493,7 @@ id twitter
 id uniform
 id unlabeled
 id up
+id update_profile
 id useLogo
 id userEmail
 id username
@@ -1572,6 +1582,7 @@ layout fragment_account
 layout fragment_archive
 layout fragment_askus
 layout fragment_dashboard
+layout fragment_edit_profile
 layout fragment_previous
 layout fragment_profile
 layout fragment_setting

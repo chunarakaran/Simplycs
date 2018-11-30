@@ -17,7 +17,6 @@
             android:background="@color/white">
 
 
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
@@ -33,32 +32,43 @@
                     android:scaleType="center"
                     android:src="@drawable/bg1"
                      />
-
-
-
-
                 <!-- Round image -->
 
                 <com.alexzh.circleimageview.CircleImageView
-                    android:id="@+id/banar1"
+                    android:id="@+id/Profile_pic"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/p1"
+                    android:src="@drawable/p2"
                     android:layout_marginTop="75dp"
                     android:layout_gravity="center"
                     app:view_borderWidth="2dp"
                     app:view_borderColor="#cccccc" />
 
+                <TextView
+                    android:id="@+id/edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/mediatransperent_ract"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Edit Profile"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/edit"
+                    android:id="@+id/change_pic"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="160dp"
                     android:layout_marginLeft="200dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/edit" />
-
+                    android:src="@drawable/ic_menu_camera" />
 
 
 
@@ -89,7 +99,7 @@
                         android:textSize="15sp"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
-                        android:text="Username"
+                        android:text="Name"
                         android:textColor="@color/white"
                         android:maxLength="12"
                         android:background="#0000"
@@ -104,7 +114,7 @@
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Karan Chunara"
+                        android:hint="--"
                         android:textColorHint="#181737"
                         android:textColor="#181737"
                         android:background="#0000"
@@ -147,7 +157,7 @@
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="chunarakaran@gmail.com"
+                        android:text="--"
                         android:textColor="#181737"
                         android:background="#0000"
                         android:padding="16dp"
@@ -229,7 +239,7 @@
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="9737811745"
+                        android:text="--"
                         android:textColor="#181737"
                         android:background="#0000"
                         android:padding="16dp"
@@ -271,7 +281,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColorHint="#1b193b"
-                        android:hint="Male"
+                        android:hint="--"
                         android:textColor="#181737"
                         android:maxLength="12"
                         android:background="#0000"
@@ -314,7 +324,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColorHint="#1b193b"
-                        android:hint="1-Nov-1992"
+                        android:hint="--"
                         android:textColor="#000"
                         android:maxLength="12"
                         android:background="#0000"
@@ -357,7 +367,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColorHint="#1b193b"
-                        android:hint="MCA"
+                        android:hint="--"
                         android:textColor="#181737"
                         android:maxLength="12"
                         android:background="#0000"
@@ -402,7 +412,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColorHint="#1b193b"
-                        android:hint="Jamnagar"
+                        android:hint="--"
                         android:textColor="#181737"
                         android:maxLength="12"
                         android:background="#0000"
