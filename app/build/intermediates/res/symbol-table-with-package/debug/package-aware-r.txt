@@ -262,7 +262,9 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr freezesAnimation
 attr gapBetweenBars
+attr gifSource
 attr goIcon
 attr headerLayout
 attr height
@@ -294,6 +296,7 @@ attr indeterminateProgressStyle
 attr initialActivityCount
 attr insetForeground
 attr isLightTheme
+attr isOpaque
 attr itemBackground
 attr itemHorizontalPadding
 attr itemHorizontalTranslationEnabled
@@ -387,6 +390,7 @@ attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
+attr loopCount
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -1111,6 +1115,7 @@ drawable card_pressed_background
 drawable card_selector
 drawable cardview_gradient
 drawable cerclebackgroundpurple
+drawable check
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1130,6 +1135,8 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable curved_shape
+drawable curved_shape2
 drawable customer_service
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1140,6 +1147,7 @@ drawable design_snackbar_background
 drawable edit
 drawable exam
 drawable forum
+drawable gif1
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradiant
@@ -1271,6 +1279,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id change_pass
 id change_pic
 id checkbox
 id chronometer
@@ -1322,6 +1331,7 @@ id forgot
 id frame_container
 id gender
 id ghost_view
+id gifImageView
 id gone
 id group_divider
 id groups
@@ -1337,12 +1347,15 @@ id info
 id input_ConfPass
 id input_city
 id input_companyname
+id input_confpass
 id input_dob
 id input_education
 id input_email
 id input_layout_remark
 id input_mobile
 id input_name
+id input_newpass
+id input_oldpass
 id input_password
 id input_remark
 id invisible
@@ -1384,6 +1397,7 @@ id navigation_archive
 id navigation_header_container
 id navigation_prev
 id navigation_today
+id negativeBtn
 id never
 id none
 id normal
@@ -1401,6 +1415,7 @@ id password
 id percent
 id phone
 id pin
+id positiveBtn
 id progress_circular
 id progress_horizontal
 id progressbar
@@ -1409,6 +1424,7 @@ id radioRetail
 id radioWholesaler
 id recyclerview1
 id relativeLayout
+id relativelayout1
 id right
 id right_icon
 id right_side
@@ -1578,9 +1594,11 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fancygifdialog
 layout fragment_account
 layout fragment_archive
 layout fragment_askus
+layout fragment_changepass
 layout fragment_dashboard
 layout fragment_edit_profile
 layout fragment_previous
@@ -2286,6 +2304,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

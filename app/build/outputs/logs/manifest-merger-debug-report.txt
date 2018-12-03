@@ -5,6 +5,7 @@ INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\72a478233e07e73251d81783c895641e\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\455d386530e27a813843feb97bab10a2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\08ecd309b8b58955572ad42266661ce4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\b0e8d10f247cdd38ba4b51de241575a1\AndroidManifest.xml:17:1-38:12
@@ -28,10 +29,9 @@ MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\0f2f11aa8a86848f34be334dabfae404\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\ce6220f2f579afdbec0bf064bec4f9d7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\d24472e7bdb765b6f0b631491d121a79\AndroidManifest.xml:2:1-16:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4dd956216b9c0294e7e9d0696030ed69\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\88617fd6df2c20e4cc79f63c549347e6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\894c21ca9740130f648eb4ce8ba74d71\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\bbc4bd34dec11dfa7f4fe4a5abc18446\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\d34715102c3a2ea13fa60006a78d5e3e\AndroidManifest.xml:17:1-22:12
@@ -42,10 +42,10 @@ MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\amita\.gradl
 MERGED from [com.android.support:customview:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\916c824b6b6168106903f3687750f121\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\f41a20d396333ec40b50825cb707caa2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e8bd6db2262ea3adcb309df0f62d4311\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0-rc01.aar\f411ea3fd783576411284981c847289a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\f6b1e303611ff5329c56c88eecb4d5fd\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d9dfe07b554a3802e16bd81ec31b9e44\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\dd3e4bdee5c294d5e853d7b8a1df8cc1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\4178bfefd8d69950892256e2a21d3336\AndroidManifest.xml:17:1-22:12
@@ -55,6 +55,8 @@ MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\amita\.g
 MERGED from [com.android.support:print:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\3601faa023ea56fdbf2aa9c9ef972916\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c232b1f3073e6634590a1ab16af363c9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\a789aa0129db2f5b7d70d4393d82d866\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:17:1-22:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\456f92d13fbf7293897781386efce9d1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\3d88918f2cf0c04745080b69a9ba5a07\AndroidManifest.xml:2:1-9:12
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-67:12
@@ -263,6 +265,8 @@ INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\c9094791797e8c2022f49040f617e3f8\AndroidManifest.xml:20:5-44
+MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\72a478233e07e73251d81783c895641e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\72a478233e07e73251d81783c895641e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\455d386530e27a813843feb97bab10a2\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\455d386530e27a813843feb97bab10a2\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\08ecd309b8b58955572ad42266661ce4\AndroidManifest.xml:5:5-7:41
@@ -309,14 +313,12 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\cach
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\ce6220f2f579afdbec0bf064bec4f9d7\AndroidManifest.xml:20:5-44
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\d24472e7bdb765b6f0b631491d121a79\AndroidManifest.xml:7:5-9:41
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\d24472e7bdb765b6f0b631491d121a79\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4dd956216b9c0294e7e9d0696030ed69\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4dd956216b9c0294e7e9d0696030ed69\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\88617fd6df2c20e4cc79f63c549347e6\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\88617fd6df2c20e4cc79f63c549347e6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\1f6413f41237b85831e2c788d2168f3d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\894c21ca9740130f648eb4ce8ba74d71\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\894c21ca9740130f648eb4ce8ba74d71\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\bbc4bd34dec11dfa7f4fe4a5abc18446\AndroidManifest.xml:20:5-44
@@ -337,14 +339,14 @@ MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\amita\.grad
 MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\f41a20d396333ec40b50825cb707caa2\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e8bd6db2262ea3adcb309df0f62d4311\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e8bd6db2262ea3adcb309df0f62d4311\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\19c00803284480c93555e903af7a6ce8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0-rc01.aar\f411ea3fd783576411284981c847289a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0-rc01.aar\f411ea3fd783576411284981c847289a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\eae3b4d21c47b5f6c35e1f1c6ecb2ebc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\f6b1e303611ff5329c56c88eecb4d5fd\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\f6b1e303611ff5329c56c88eecb4d5fd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d9dfe07b554a3802e16bd81ec31b9e44\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d9dfe07b554a3802e16bd81ec31b9e44\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\dd3e4bdee5c294d5e853d7b8a1df8cc1\AndroidManifest.xml:20:5-44
@@ -363,6 +365,10 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\cach
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c232b1f3073e6634590a1ab16af363c9\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\a789aa0129db2f5b7d70d4393d82d866\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\a789aa0129db2f5b7d70d4393d82d866\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2eb6242fecbf7b0810977af6e28d4c7b\AndroidManifest.xml:20:5-44
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\456f92d13fbf7293897781386efce9d1\AndroidManifest.xml:7:5-9:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\456f92d13fbf7293897781386efce9d1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\3d88918f2cf0c04745080b69a9ba5a07\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\3d88918f2cf0c04745080b69a9ba5a07\AndroidManifest.xml:5:5-44
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml

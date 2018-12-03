@@ -132,8 +132,6 @@ public class SignupActivity extends AppCompatActivity {
         });
 
 
-
-
         backLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

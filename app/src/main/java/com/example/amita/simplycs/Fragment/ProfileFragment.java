@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.amita.simplycs.R;
 
@@ -26,7 +27,7 @@ public class ProfileFragment extends Fragment
     private static final int SELECT_PICTURE = 100;
     private static final String TAG = "MainActivity";
 
-    TextView EditButton;
+    TextView EditButton,ChangePassword;
     Fragment fragment;
     ImageView Profile_pic;
 
@@ -37,6 +38,7 @@ public class ProfileFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        ChangePassword=(TextView)rootview.findViewById(R.id.pass1);
         EditButton=(TextView) rootview.findViewById(R.id.edit_profile);
         Profile_pic=(ImageView)rootview.findViewById(R.id.Profile_pic);
 
@@ -54,6 +56,21 @@ public class ProfileFragment extends Fragment
                 fragment=new EditProfileFragment();
                 transection.replace(R.id.content_frame, fragment);
                 transection.addToBackStack(null).commit();
+            }
+        });
+
+        ChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transection=getFragmentManager().beginTransaction();
+                fragment=new ChangePassFragment();
+                transection.replace(R.id.content_frame, fragment);
+                transection.addToBackStack(null).commit();
+
+                Toast.makeText(getActivity(),"Change Password",Toast.LENGTH_SHORT).show();
+
+
             }
         });
 

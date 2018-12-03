@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.alexzh.circleimageview.CircleImageView
+            android:id="@+id/banar1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/p2"
+            android:layout_marginTop="75dp"
+            android:layout_gravity="center"
+            app:view_borderWidth="2dp"
+            app:view_borderColor="#cccccc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="12"
+            android:paddingLeft="35dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:paddingRight="35dp">
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Password"
+                android:textSize="22dp"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rect_grayoutline1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <EditText
+                    android:id="@+id/input_oldpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00000000"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textColrHint"
+                    android:hint="Current Password"
+                    android:textSize="15.4sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rect_grayoutline1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <EditText
+                    android:id="@+id/input_newpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00000000"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textColrHint"
+                    android:hint="New Password"
+                    android:textSize="15.4sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rect_grayoutline1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <EditText
+                    android:id="@+id/input_confpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00000000"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textColrHint"
+                    android:hint="Confirm Password"
+                    android:textSize="15.4sp" />
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/change_pass"
+                android:fontFamily="@font/maven_pro_bold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rect_yellow1"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Change Password"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>

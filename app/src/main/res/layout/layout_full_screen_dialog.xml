@@ -43,7 +43,7 @@
                    <customfonts.MyTextView_Roboto_Black
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Hello!"
+                       android:text="Welcome"
                        android:textColor="#fff"
                        android:textSize="30dp"
                        android:layout_gravity="center"/>
