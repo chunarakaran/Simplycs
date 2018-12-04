@@ -244,7 +244,9 @@
                         android:textColor="@color/black"
                         android:textColorHint="@color/textColrHint"
                         android:hint="Enter Date of Birth"
-                        android:textSize="15.4sp" />
+                        android:textSize="15.4sp"
+                        android:clickable="true"
+                        android:focusable="false"/>
                 </LinearLayout>
 
                 <TextView
