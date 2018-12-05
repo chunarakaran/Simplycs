@@ -149,21 +149,21 @@ public class TopicListFragment extends Fragment
         });
 
 
-        rootview.setFocusableInTouchMode(true);
-        rootview.requestFocus();
-        rootview.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                    // DO WHAT YOU WANT ON BACK PRESSED
-                    getFragmentManager().popBackStack();
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        });
+//        rootview.setFocusableInTouchMode(true);
+//        rootview.requestFocus();
+//        rootview.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+//                    // DO WHAT YOU WANT ON BACK PRESSED
+//                    getFragmentManager().popBackStack();
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//            }
+//        });
 
         return rootview;
     }

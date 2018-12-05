@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,23 @@ public class DashboardFragment extends Fragment
 
 
         loadFragment(new TodayFragment());
+
+
+//        rootview.setFocusableInTouchMode(true);
+//        rootview.requestFocus();
+//        rootview.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+//                    // DO WHAT YOU WANT ON BACK PRESSED
+//                    getFragmentManager().popBackStack();
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//            }
+//        });
 
 
         return rootview;
