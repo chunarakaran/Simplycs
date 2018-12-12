@@ -1153,6 +1153,7 @@ drawable googleg_standard_color_18
 drawable gradiant
 drawable gradient_yellow
 drawable ic_account_box_black_24dp
+drawable ic_action_duration
 drawable ic_calender
 drawable ic_close
 drawable ic_close_white_48dp
@@ -1515,6 +1516,9 @@ id userEmail
 id username
 id username1
 id userpassword
+id video_duration_label
+id video_thumbnail_image_view
+id video_title_label
 id view_offset_helper
 id view_pager
 id visible
@@ -1634,6 +1638,7 @@ layout welcome_slide1
 layout welcome_slide2
 layout welcome_slide3
 layout welcome_slide4
+layout youtube_video_custom_layout
 menu activity_main_drawer
 menu main
 menu navigation
@@ -1744,6 +1749,7 @@ string slide_4_title
 string start
 string status_bar_notification_info_overflow
 string tag_line
+string thumbnail_image_view_desc
 string title_activity_welcome
 string title_cart
 string title_gifts
