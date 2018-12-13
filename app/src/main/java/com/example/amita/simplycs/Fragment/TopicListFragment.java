@@ -1,12 +1,19 @@
 package com.example.amita.simplycs.Fragment;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -56,6 +63,7 @@ public class TopicListFragment extends Fragment
     ArrayList<String> ImageTitleNameArrayListForClick;
 
     View rootview;
+    @SuppressLint("LongLogTag")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
@@ -87,7 +95,27 @@ public class TopicListFragment extends Fragment
 
         String HTTP_JSON_URL = "https://api.androidhive.info/contacts/";
 
-        JSON_HTTP_CALL(HTTP_JSON_URL);
+        if(isNetworkAvailable()) {
+            JSON_HTTP_CALL(HTTP_JSON_URL);
+        }
+        else
+        {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage("Whoops! Its seems you don't have internet connection, please try again later!")
+                    .setTitle("No Internet Connection")
+                    .setCancelable(false)
+                    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                            getActivity().finish();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
+            Log.e("Testing Internet Connection", "Showed NoIntenetConnectionDialog");
+
+        }
+
+
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -224,6 +252,7 @@ public class TopicListFragment extends Fragment
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
+                //hideDialog();
             }
         });
 
@@ -231,6 +260,16 @@ public class TopicListFragment extends Fragment
         RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
         stringRequest.setRetryPolicy(policy);
         requestQueue.add(stringRequest);
+    }
+
+    public boolean isNetworkAvailable() {
+
+        ConnectivityManager cm = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+
+        boolean isConnected = netInfo != null && netInfo.isConnectedOrConnecting();
+
+        return isConnected;
     }
 
     private void showDialog() {

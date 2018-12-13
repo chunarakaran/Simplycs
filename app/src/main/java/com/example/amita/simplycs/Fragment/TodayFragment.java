@@ -2,16 +2,15 @@ package com.example.amita.simplycs.Fragment;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -20,9 +19,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.amita.simplycs.Adapter.RecyclerAdapter;
 import com.example.amita.simplycs.R;
+import com.example.amita.simplycs.VideoListActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -111,7 +110,9 @@ public class TodayFragment extends Fragment
                             break;
                         case 1:
 
-                            Toast.makeText(getActivity(),"Articles",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), VideoListActivity.class);
+                            startActivity(intent);
+                           // finish();
                           break;
                         case 2:
 
