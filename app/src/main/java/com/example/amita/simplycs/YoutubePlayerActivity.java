@@ -10,11 +10,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.example.amita.simplycs.utils.Constants;
 
-/**
- * Created by sonu on 10/11/17.
- * <p>
- * ### Here you need to extend the activity with YouTubeBaseActivity otherwise it will crash the app  ###
- */
+
 
 public class YoutubePlayerActivity extends YouTubeBaseActivity {
     private static final String TAG = YoutubePlayerActivity.class.getSimpleName();

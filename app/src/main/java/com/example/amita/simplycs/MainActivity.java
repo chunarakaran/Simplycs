@@ -1,11 +1,11 @@
 package com.example.amita.simplycs;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -23,7 +24,11 @@ import com.example.amita.simplycs.Fragment.DashboardFragment;
 import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
-import com.example.amita.simplycs.Fragment.TopicListFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static com.example.amita.simplycs.LoginActivity.PREFS_NAME;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,9 +56,31 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
 
-        FullScreenDialog dialog = new FullScreenDialog();
-        android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
-        dialog.show(ft, FullScreenDialog.TAG);
+        SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, 0);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        String currentDate = sdf.format(new Date());
+
+        if (sharedPref.getString("LAST_LAUNCH_DATE","nodate").contains(currentDate)){
+            // Date matches. User has already Launched the app once today. So do nothing.
+        }
+        else
+        {
+            // Display dialog text here......
+            // Do all other actions for first time launch in the day...
+
+            FullScreenDialog dialog = new FullScreenDialog();
+            android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+            dialog.show(ft, FullScreenDialog.TAG);
+
+            // Set the last Launched date to today.
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("LAST_LAUNCH_DATE", currentDate);
+            editor.commit();
+        }
+
+
+
+
 
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -82,6 +109,7 @@ public class MainActivity extends AppCompatActivity
                 super.onBackPressed();
         }
     }
+
 
     private int checkNavigationMenuItem() {
         Menu menu = navigationView.getMenu();
