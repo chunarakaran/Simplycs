@@ -1,13 +1,20 @@
 package com.example.amita.simplycs;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -25,10 +32,16 @@ public class SignupActivity extends AppCompatActivity {
     TextView Sign_up,backLogin;
 
     EditText EName,Email,EMobile,EPassword,EConfPass;
-    String SName,SEmail,SMobile,SPassword;
+    String SName,SEmail,SMobile,SPassword,Sandroid_id,SdeviceName,SdeviceOs,SimeiNumber1;
 
     private ProgressDialog progressDialog;
 
+    String android_id, deviceName, deviceOs, imeiNumber1;
+
+    private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
+    private TelephonyManager mTelephonyManager;
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,86 +61,38 @@ public class SignupActivity extends AppCompatActivity {
 
         Initialize();
 
+        android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
+        BluetoothAdapter myDevice = BluetoothAdapter.getDefaultAdapter();
+        deviceName = myDevice.getName();
+
+        deviceOs = Build.VERSION.RELEASE;
+
+        if (checkSelfPermission(android.Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{android.Manifest.permission.READ_PHONE_STATE},
+                    PERMISSIONS_REQUEST_READ_PHONE_STATE);
+        } else {
+            getDeviceImei();
+        }
 
 
         Sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"Logging...",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),imeiNumber1,Toast.LENGTH_SHORT).show();
                // new SendMail().execute("");
+
                 GetEditTextValue();
 
-                final String Vname,Vemail,Vmobile,Vpassword,VConfPass;
-
-                Vname=EName.getText().toString();
-                Vemail=Email.getText().toString();
-                Vmobile=EMobile.getText().toString();
-                Vpassword=EPassword.getText().toString();
-                VConfPass=EConfPass.getText().toString();
-
-                if (Vname.isEmpty())
-                {
-                    EName.requestFocus();
-                    EName.setError("Please Enter Name");
-                }
-                else if(!Vname.matches("^[a-zA-Z ]+$"))
-                {
-                    EName.requestFocus();
-                    EName.setError("Enter Valid Name");
-                }
-
-                else if (Vemail.length()==0){
-                    Email.requestFocus();
-                    Email.setError("Please Enter Email Address");
-                }
-                else if (!Vemail.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")||Vemail.contains(" ")){
-                    Email.requestFocus();
-                    Email.setError("Invalid Email Address");
-                }
-
-                else if (Vmobile.length()==0){
-                     EMobile.requestFocus();
-                     EMobile.setError("Please Enter Mobile No");
-                }
-                else if (!Vmobile.matches("^[0-9]{10}$")||Vmobile.contains(" ")){
-                     EMobile.requestFocus();
-                     EMobile.setError("Invalid Mobile No");
-                }
-
-                else if (Vpassword.length()==0){
-                    EPassword.requestFocus();
-                    EPassword.setError("Please Enter Password");
-                }
-
-                else if (Vpassword.length()<6){
-                    EPassword.requestFocus();
-                    EPassword.setError("Please Enter 6 OR More Character");
-                }
-
-                else if(VConfPass.length()==0){
-                    EConfPass.requestFocus();
-                    EConfPass.setError("Please Enter Password");
-                }
-
-                else if (Vpassword.equals(VConfPass)){
-                    Intent intent = new Intent(SignupActivity.this, VerifyPhoneActivity.class);
-                    intent.putExtra("name",SName);
-                    intent.putExtra("email",SEmail);
-                    intent.putExtra("mobile",SMobile);
-                    intent.putExtra("password",SPassword);
-                    startActivity(intent);
-                    finish();
-                }
-
-                else{
-                    EConfPass.requestFocus();
-                    EConfPass.setError("Password does not match");
-                 }
+                Intent intent = new Intent(SignupActivity.this, VerifyPhoneActivity.class);
+                intent.putExtra("mobile",SMobile);
+                startActivity(intent);
+                finish();
 
 
 
-
+               // Validation();
             }
         });
 
@@ -142,6 +107,24 @@ public class SignupActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        if (requestCode == PERMISSIONS_REQUEST_READ_PHONE_STATE
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            getDeviceImei();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @SuppressLint("MissingPermission")
+    private void getDeviceImei() {
+
+        mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        imeiNumber1 = mTelephonyManager.getDeviceId(2);
     }
 
     public void Initialize()
@@ -164,7 +147,91 @@ public class SignupActivity extends AppCompatActivity {
         SEmail=Email.getText().toString();
         SMobile=EMobile.getText().toString();
         SPassword=EPassword.getText().toString();
+        Sandroid_id=android_id;
+        SdeviceName=deviceName;
+        SdeviceOs=deviceOs;
+        SimeiNumber1=imeiNumber1;
     }
+
+
+    public void Validation()
+    {
+        GetEditTextValue();
+
+        final String Vname,Vemail,Vmobile,Vpassword,VConfPass;
+
+        Vname=EName.getText().toString();
+        Vemail=Email.getText().toString();
+        Vmobile=EMobile.getText().toString();
+        Vpassword=EPassword.getText().toString();
+        VConfPass=EConfPass.getText().toString();
+
+        if (Vname.isEmpty())
+        {
+            EName.requestFocus();
+            EName.setError("Please Enter Name");
+        }
+        else if(!Vname.matches("^[a-zA-Z ]+$"))
+        {
+            EName.requestFocus();
+            EName.setError("Enter Valid Name");
+        }
+
+        else if (Vemail.length()==0){
+            Email.requestFocus();
+            Email.setError("Please Enter Email Address");
+        }
+        else if (!Vemail.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")||Vemail.contains(" ")){
+            Email.requestFocus();
+            Email.setError("Invalid Email Address");
+        }
+
+        else if (Vmobile.length()==0){
+            EMobile.requestFocus();
+            EMobile.setError("Please Enter Mobile No");
+        }
+        else if (!Vmobile.matches("^[0-9]{10}$")||Vmobile.contains(" ")){
+            EMobile.requestFocus();
+            EMobile.setError("Invalid Mobile No");
+        }
+
+        else if (Vpassword.length()==0){
+            EPassword.requestFocus();
+            EPassword.setError("Please Enter Password");
+        }
+
+        else if (Vpassword.length()<6){
+            EPassword.requestFocus();
+            EPassword.setError("Please Enter 6 OR More Character");
+        }
+
+        else if(VConfPass.length()==0){
+            EConfPass.requestFocus();
+            EConfPass.setError("Please Enter Password");
+        }
+
+        else if (Vpassword.equals(VConfPass)){
+            Intent intent = new Intent(SignupActivity.this, VerifyPhoneActivity.class);
+            intent.putExtra("name",SName);
+            intent.putExtra("email",SEmail);
+            intent.putExtra("mobile",SMobile);
+            intent.putExtra("password",SPassword);
+            intent.putExtra("android_id",Sandroid_id);
+            intent.putExtra("deviceName",SdeviceName);
+            intent.putExtra("deviceOs",SdeviceOs);
+            intent.putExtra("imeiNumber1",SimeiNumber1);
+            startActivity(intent);
+            finish();
+        }
+
+        else{
+            EConfPass.requestFocus();
+            EConfPass.setError("Password does not match");
+        }
+
+
+    }
+
 
     private class SendMail extends AsyncTask<String, Integer, Void> {
 

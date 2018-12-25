@@ -35,7 +35,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     private String mVerificationId;
     private FirebaseAuth mAuth;
 
-    String Iname,Iemail,mobile,Ipassword;
+    String Iname,Iemail,mobile,Ipassword,Iandroid_id,IdeviceName,IdeviceOs,IimeiNumber1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +56,15 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mobile = intent.getStringExtra("mobile");
-        Iname = intent.getStringExtra("name");
-        Iemail = intent.getStringExtra("email");
-        Ipassword = intent.getStringExtra("password");
+//        Iname = intent.getStringExtra("name");
+//        Iemail = intent.getStringExtra("email");
+//        Ipassword = intent.getStringExtra("password");
+//
+//        Iandroid_id = intent.getStringExtra("android_id");
+//        IdeviceName = intent.getStringExtra("deviceName");
+//        IdeviceOs = intent.getStringExtra("deviceOs");
+//        IimeiNumber1 = intent.getStringExtra("imeiNumber1");
+
         sendVerificationCode(mobile);
 
        // EdittextCode.setText(mobile);

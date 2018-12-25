@@ -28,8 +28,6 @@ import com.example.amita.simplycs.Fragment.SettingFragment;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.example.amita.simplycs.LoginActivity.PREFS_NAME;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,12 +38,19 @@ public class MainActivity extends AppCompatActivity
     View hView;
     ImageView User_pic;
 
+    String User_id;
+    public static final String PREFS_NAME = "login";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        SharedPreferences sp = getApplicationContext().getSharedPreferences(PREFS_NAME, getApplicationContext().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
 
 
 
@@ -90,6 +95,13 @@ public class MainActivity extends AppCompatActivity
         hView =  navigationView.getHeaderView(0);
         User_pic=(ImageView)hView.findViewById(R.id.banar1);
         User_pic.setImageDrawable(getResources().getDrawable(R.drawable.p1));
+
+        // session manager
+        session = new SessionManager(getApplicationContext());
+
+        if (!session.isLoggedIn()) {
+            logoutUser();
+        }
 
     }
 
@@ -155,7 +167,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_menu2:
 
-                Toast.makeText(getApplicationContext(),"Articles",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),User_id,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_menu3:
 
@@ -205,9 +217,9 @@ public class MainActivity extends AppCompatActivity
                 fragment = new SettingFragment();
                 break;
 
-//            case R.id.nav_logout:
-//                logoutUser();
-//                break;
+            case R.id.nav_logout:
+                logoutUser();
+                break;
 
         }
 

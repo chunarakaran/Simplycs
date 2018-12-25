@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">993536252182-pplp7bdgdsbl7tetvg3ictf6kcej2l45.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://simply-cs.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">993536252182</string>
-    <string name="google_api_key" translatable="false">AIzaSyCsV9HMBDb_qH7BUXSCvBk25yeADMMtUe4</string>
-    <string name="google_app_id" translatable="false">1:993536252182:android:d7aed0392b311c87</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCsV9HMBDb_qH7BUXSCvBk25yeADMMtUe4</string>
-    <string name="google_storage_bucket" translatable="false">simply-cs.appspot.com</string>
-    <string name="project_id" translatable="false">simply-cs</string>
+    <string name="default_web_client_id" translatable="false">344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://simplycs-f1643.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">344131561831</string>
+    <string name="google_api_key" translatable="false">AIzaSyBR_ZjvB_0waYFnXP_U4aXv_r_7wefnBnM</string>
+    <string name="google_app_id" translatable="false">1:344131561831:android:d7aed0392b311c87</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBR_ZjvB_0waYFnXP_U4aXv_r_7wefnBnM</string>
+    <string name="google_storage_bucket" translatable="false">simplycs-f1643.appspot.com</string>
+    <string name="project_id" translatable="false">simplycs-f1643</string>
 </resources>

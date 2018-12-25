@@ -7,7 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="url">https://simply-cs.com/</string>
+    // API URL
+    <string name="url">http://dev.simply-cs.simply-cs.com/public/</string>
     <string name="login_url">http://biotechautomfg.com/</string>
 
 

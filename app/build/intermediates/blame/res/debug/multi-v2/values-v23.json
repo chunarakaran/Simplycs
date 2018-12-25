@@ -4,7 +4,7 @@
             "outputFile": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\ce6220f2f579afdbec0bf064bec4f9d7\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\97106523630f8356922566ecfeb7fe82\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\455d386530e27a813843feb97bab10a2\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

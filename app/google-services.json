@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "993536252182",
-    "firebase_url": "https://simply-cs.firebaseio.com",
-    "project_id": "simply-cs",
-    "storage_bucket": "simply-cs.appspot.com"
+    "project_number": "344131561831",
+    "firebase_url": "https://simplycs-f1643.firebaseio.com",
+    "project_id": "simplycs-f1643",
+    "storage_bucket": "simplycs-f1643.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:993536252182:android:d7aed0392b311c87",
+        "mobilesdk_app_id": "1:344131561831:android:d7aed0392b311c87",
         "android_client_info": {
           "package_name": "com.example.amita.simplycs"
         }
       },
       "oauth_client": [
         {
-          "client_id": "993536252182-otrrjdiu77ccgohau970i5e8srj25jr0.apps.googleusercontent.com",
+          "client_id": "344131561831-8918qrhotd0b9pb6sa91o0b2tn7arfmr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.amita.simplycs",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "993536252182-pplp7bdgdsbl7tetvg3ictf6kcej2l45.apps.googleusercontent.com",
+          "client_id": "344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCsV9HMBDb_qH7BUXSCvBk25yeADMMtUe4"
+          "current_key": "AIzaSyBR_ZjvB_0waYFnXP_U4aXv_r_7wefnBnM"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "993536252182-pplp7bdgdsbl7tetvg3ictf6kcej2l45.apps.googleusercontent.com",
+              "client_id": "344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -49,8 +49,6 @@ dependencies {
     implementation files('libs/mail.jar')
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
-    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
-
-
 }
