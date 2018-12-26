@@ -1175,6 +1175,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_people_black_24dp
+drawable ic_phone
 drawable ic_previousday
 drawable ic_today
 drawable ic_turned_in_black_24dp
@@ -1276,6 +1277,7 @@ id bottom
 id btnVerify
 id btn_next
 id btn_skip
+id buttonContinue
 id buttonPanel
 id cancel_action
 id card_view
@@ -1312,6 +1314,7 @@ id disableHome
 id dob
 id drawer_layout
 id editTextCode
+id editTextMobile
 id edit_profile
 id edit_query
 id education
@@ -1579,6 +1582,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_enter_phone
 layout activity_forgotpwd
 layout activity_login
 layout activity_main

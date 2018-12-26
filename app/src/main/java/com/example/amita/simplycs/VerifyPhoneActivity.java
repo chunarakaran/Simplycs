@@ -56,14 +56,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mobile = intent.getStringExtra("mobile");
-//        Iname = intent.getStringExtra("name");
-//        Iemail = intent.getStringExtra("email");
-//        Ipassword = intent.getStringExtra("password");
-//
-//        Iandroid_id = intent.getStringExtra("android_id");
-//        IdeviceName = intent.getStringExtra("deviceName");
-//        IdeviceOs = intent.getStringExtra("deviceOs");
-//        IimeiNumber1 = intent.getStringExtra("imeiNumber1");
+
 
         sendVerificationCode(mobile);
 
@@ -152,7 +145,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             //verification successful we will start the profile activity
-                            Intent intent = new Intent(VerifyPhoneActivity.this, LoginActivity.class);
+                            Intent intent = new Intent(VerifyPhoneActivity.this, SignupActivity.class);
+                            intent.putExtra("mobile", mobile);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 

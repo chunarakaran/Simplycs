@@ -1,45 +1,51 @@
 package com.example.amita.simplycs;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.amita.simplycs.Mail.Mail;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
     ImageView picture;
 
-    TextView Sign_up,backLogin;
+    TextView Sign_up;
 
-    EditText EName,Email,EMobile,EPassword,EConfPass;
-    String SName,SEmail,SMobile,SPassword,Sandroid_id,SdeviceName,SdeviceOs,SimeiNumber1;
+    EditText EName,Email,EPassword,EConfPass;
+    String SName,SEmail,SMobile,SPassword,SdeviceName,SdeviceOs;
 
+
+    String Imobile,deviceName, deviceOs;
+
+    String URL;
+
+    //volley
+    RequestQueue requestQueue;
     private ProgressDialog progressDialog;
 
-    String android_id, deviceName, deviceOs, imeiNumber1;
-
-    private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
-    private TelephonyManager mTelephonyManager;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -51,6 +57,10 @@ public class SignupActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        URL = getString(R.string.url);
+
         picture=(ImageView)findViewById(R.id.logo);
         int imageid = R.drawable.login_logo;
         BitmapFactory.Options opts = new BitmapFactory.Options();
@@ -61,80 +71,41 @@ public class SignupActivity extends AppCompatActivity {
 
         Initialize();
 
-        android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        Intent intent = getIntent();
+        Imobile = intent.getStringExtra("mobile");
+
 
         BluetoothAdapter myDevice = BluetoothAdapter.getDefaultAdapter();
         deviceName = myDevice.getName();
 
         deviceOs = Build.VERSION.RELEASE;
 
-        if (checkSelfPermission(android.Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_PHONE_STATE},
-                    PERMISSIONS_REQUEST_READ_PHONE_STATE);
-        } else {
-            getDeviceImei();
-        }
 
 
         Sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(getApplicationContext(),imeiNumber1,Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),Imobile,Toast.LENGTH_SHORT).show();
                // new SendMail().execute("");
 
-                GetEditTextValue();
-
-                Intent intent = new Intent(SignupActivity.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobile",SMobile);
-                startActivity(intent);
-                finish();
-
-
+//                GetEditTextValue();
 
                // Validation();
+
+                Register();
             }
         });
 
 
-        backLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
-        if (requestCode == PERMISSIONS_REQUEST_READ_PHONE_STATE
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            getDeviceImei();
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    @SuppressLint("MissingPermission")
-    private void getDeviceImei() {
-
-        mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        imeiNumber1 = mTelephonyManager.getDeviceId(2);
     }
 
     public void Initialize()
     {
         Sign_up=(TextView)findViewById(R.id.sign_up);
-        backLogin=(TextView)findViewById(R.id.backLogin);
+
 
         EName=(EditText)findViewById(R.id.input_name);
         Email=(EditText)findViewById(R.id.input_email);
-        EMobile=(EditText)findViewById(R.id.input_mobile);
         EPassword=(EditText)findViewById(R.id.input_password);
         EConfPass=(EditText)findViewById(R.id.input_ConfPass);
 
@@ -145,12 +116,12 @@ public class SignupActivity extends AppCompatActivity {
 
         SName=EName.getText().toString();
         SEmail=Email.getText().toString();
-        SMobile=EMobile.getText().toString();
         SPassword=EPassword.getText().toString();
-        Sandroid_id=android_id;
+        SMobile=Imobile;
+
         SdeviceName=deviceName;
         SdeviceOs=deviceOs;
-        SimeiNumber1=imeiNumber1;
+
     }
 
 
@@ -158,11 +129,10 @@ public class SignupActivity extends AppCompatActivity {
     {
         GetEditTextValue();
 
-        final String Vname,Vemail,Vmobile,Vpassword,VConfPass;
+        final String Vname,Vemail,Vpassword,VConfPass;
 
         Vname=EName.getText().toString();
         Vemail=Email.getText().toString();
-        Vmobile=EMobile.getText().toString();
         Vpassword=EPassword.getText().toString();
         VConfPass=EConfPass.getText().toString();
 
@@ -186,14 +156,6 @@ public class SignupActivity extends AppCompatActivity {
             Email.setError("Invalid Email Address");
         }
 
-        else if (Vmobile.length()==0){
-            EMobile.requestFocus();
-            EMobile.setError("Please Enter Mobile No");
-        }
-        else if (!Vmobile.matches("^[0-9]{10}$")||Vmobile.contains(" ")){
-            EMobile.requestFocus();
-            EMobile.setError("Invalid Mobile No");
-        }
 
         else if (Vpassword.length()==0){
             EPassword.requestFocus();
@@ -211,17 +173,7 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         else if (Vpassword.equals(VConfPass)){
-            Intent intent = new Intent(SignupActivity.this, VerifyPhoneActivity.class);
-            intent.putExtra("name",SName);
-            intent.putExtra("email",SEmail);
-            intent.putExtra("mobile",SMobile);
-            intent.putExtra("password",SPassword);
-            intent.putExtra("android_id",Sandroid_id);
-            intent.putExtra("deviceName",SdeviceName);
-            intent.putExtra("deviceOs",SdeviceOs);
-            intent.putExtra("imeiNumber1",SimeiNumber1);
-            startActivity(intent);
-            finish();
+
         }
 
         else{
@@ -233,53 +185,92 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 
-    private class SendMail extends AsyncTask<String, Integer, Void> {
+    public void Register()
+    {
+        progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
+        showDialog();
+
+        GetEditTextValue();
+
+        // Creating string request with post method.
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/SignUp",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+                        hideDialog();
 
 
+                        try {
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            //progressDialog = ProgressDialog.show(getApplicationContext(), "Please wait", "Sending mail", true, false);
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
 
-            progressDialog.setMessage("Sending mail");
-            showDialog();
-        }
+                            if(success.equalsIgnoreCase("true"))
+                            {
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+                            else {
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            //progressDialog.dismiss();
-            hideDialog();
-        }
+                                JSONObject error = jObj.getJSONObject("error");
+                                String msg = error.getString("Email");
 
-        protected Void doInBackground(String... params) {
-            Mail m = new Mail("chunarakaran@gmail.com", "Sheetal.");
+                                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                            }
 
-            int otp=001230;
 
-            String body;
-            body=getResources().getString(R.string.Semail);
-            Html.fromHtml("<h2>Title</h2><br><p>Description here</p>");
-            SEmail=Email.getText().toString();
-            String[] toArr = {SEmail};
-            m.setTo(toArr);
-            m.setFrom("chunarakaran@gmail.com");
-            m.setSubject("Simply-cs OTP Verification");
-            m.setBody("Dear Customer, "+otp+" is your one time password (OTP),please enter OTP to proceed\n Thank you\nTeam Simply");
+                        }
+                        catch (JSONException e)
+                        {
 
-            try {
-                if(m.send()) {
-                    Toast.makeText(SignupActivity.this, "Email was sent successfully.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(SignupActivity.this, "Email was not sent.", Toast.LENGTH_LONG).show();
-                }
-            } catch(Exception e) {
-                Log.e("MailApp", "Could not send email", e);
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+                        hideDialog();
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+
+                //Company
+                params.put("Email", SEmail);
+                params.put("Name", SName);
+                params.put("Mobileno", SMobile);
+                params.put("Password", SPassword);
+                params.put("OSVersion", SdeviceOs);
+                params.put("DeviceName", SdeviceName);
+
+                return params;
             }
-            return null;
-        }
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+
     }
+
+
 
 
     private void showDialog() {
