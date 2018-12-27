@@ -15,8 +15,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.SessionManager;
 import com.example.amita.simplycs.Fragment.AccountFragment;
 import com.example.amita.simplycs.Fragment.AskusFragment;
@@ -25,8 +33,13 @@ import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,8 +48,15 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     public SessionManager session;
 
+    String URL;
+
+    //volley
+    RequestQueue requestQueue;
+
+
     View hView;
     ImageView User_pic;
+    TextView User_name;
 
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -52,6 +72,10 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
 
+
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        URL = getString(R.string.url);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -92,8 +116,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         displaySelectedScreen(R.id.nav_dashboard);
 
+        GetProfile();
+
         hView =  navigationView.getHeaderView(0);
         User_pic=(ImageView)hView.findViewById(R.id.banar1);
+        User_name = (TextView)hView.findViewById(R.id.user_name);
+
         User_pic.setImageDrawable(getResources().getDrawable(R.drawable.p1));
 
         // session manager
@@ -218,7 +246,8 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_logout:
-                logoutUser();
+//                Toast.makeText(getApplicationContext(),HTTP_JSON_URL,Toast.LENGTH_SHORT).show();
+                Logout();
                 break;
 
         }
@@ -237,6 +266,151 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void Logout()
+    {
+
+        // Creating string request with post method.
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/Logout",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                logoutUser();
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+
+    }
+
+    public void GetProfile()
+    {
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                String name,Pic;
+                                JSONObject user = jObj.getJSONObject("data");
+                                name=user.getString("name");
+
+                                User_name.setText(name);
+
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
 
 
 }

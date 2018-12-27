@@ -28,6 +28,7 @@ MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\412c5153655d1b6385f27f9511e13aa3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\97106523630f8356922566ecfeb7fe82\AndroidManifest.xml:17:1-22:12
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\55dd37ff9c15cb2f14eb62c830e50599\AndroidManifest.xml:2:1-16:12
+MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\ColorDialog-1.0.0.aar\234b359688ed6851c49358b15a1d36d6\AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\cb267a73c3db6805d274163cb812566f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\25f587a1f4006e1242fd26ce0d723e90\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\87dbe68206664f7cb9911efd3de95c90\AndroidManifest.xml:17:1-22:12
@@ -172,14 +173,14 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Us
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:9-40
-activity#com.example.amita.simplycs.EnterPhoneActivity
+activity#com.example.amita.simplycs.LoginActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:20:9-29:20
 	android:label
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:22:13-45
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:23:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-47
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
@@ -264,7 +265,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:60:9-66:3
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:65:13-56
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:61:13-48
-activity#com.example.amita.simplycs.LoginActivity
+activity#com.example.amita.simplycs.EnterPhoneActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:68:9-74:36
 	tools:node
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:74:13-33
@@ -277,7 +278,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:68:9-74:3
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:73:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:69:13-42
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:69:13-47
 activity#com.example.amita.simplycs.VideoListActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:76:9-64
 	android:name
@@ -338,6 +339,8 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\cach
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\97106523630f8356922566ecfeb7fe82\AndroidManifest.xml:20:5-44
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\55dd37ff9c15cb2f14eb62c830e50599\AndroidManifest.xml:7:5-9:41
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\circleimageview-1.1.2.aar\55dd37ff9c15cb2f14eb62c830e50599\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\ColorDialog-1.0.0.aar\234b359688ed6851c49358b15a1d36d6\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\ColorDialog-1.0.0.aar\234b359688ed6851c49358b15a1d36d6\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\cb267a73c3db6805d274163cb812566f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\cb267a73c3db6805d274163cb812566f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\25f587a1f4006e1242fd26ce0d723e90\AndroidManifest.xml:20:5-44

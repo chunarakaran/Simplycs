@@ -28,6 +28,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.refactor.lib.colordialog.PromptDialog;
+
 public class SignupActivity extends AppCompatActivity {
 
     ImageView picture;
@@ -45,6 +47,8 @@ public class SignupActivity extends AppCompatActivity {
     //volley
     RequestQueue requestQueue;
     private ProgressDialog progressDialog;
+
+    PromptDialog promptDialog;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -80,24 +84,23 @@ public class SignupActivity extends AppCompatActivity {
 
         deviceOs = Build.VERSION.RELEASE;
 
-
+        promptDialog = new PromptDialog(this);
 
         Sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // Toast.makeText(getApplicationContext(),Imobile,Toast.LENGTH_SHORT).show();
-               // new SendMail().execute("");
-
-//                GetEditTextValue();
 
                // Validation();
 
                 Register();
+
             }
         });
 
 
     }
+
 
     public void Initialize()
     {
@@ -174,6 +177,7 @@ public class SignupActivity extends AppCompatActivity {
 
         else if (Vpassword.equals(VConfPass)){
 
+            Register();
         }
 
         else{
@@ -199,7 +203,6 @@ public class SignupActivity extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
                         hideDialog();
 
-
                         try {
 
                             JSONObject jObj = new JSONObject(ServerResponse);
@@ -207,7 +210,25 @@ public class SignupActivity extends AppCompatActivity {
 
                             if(success.equalsIgnoreCase("true"))
                             {
-                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                promptDialog.setCancelable(false);
+                                promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS);
+                                promptDialog.setAnimationEnable(true);
+                                promptDialog.setTitleText("Success");
+                                promptDialog.setContentText(jObj.getString("message"));
+                                promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+                                    @Override
+                                    public void onClick(PromptDialog dialog) {
+                                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                        dialog.dismiss();
+                                    }
+                                }).show();
+
+
+
                             }
                             else {
 

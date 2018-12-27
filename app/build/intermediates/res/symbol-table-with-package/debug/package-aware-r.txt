@@ -646,6 +646,15 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color color_dialog_content
+color color_dialog_content_prompt
+color color_dialog_gray
+color color_dialog_title
+color color_type_help
+color color_type_info
+color color_type_success
+color color_type_warning
+color color_type_wrong
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -1204,6 +1213,22 @@ drawable rect_yellow1
 drawable ribbon
 drawable round_button
 drawable rounded_edittext
+drawable sel_btn
+drawable sel_btn_help
+drawable sel_btn_info
+drawable sel_btn_success
+drawable sel_btn_warning
+drawable sel_btn_wrong
+drawable sel_def_gray
+drawable sel_def_gray_left
+drawable sel_def_gray_right
+drawable shape_corners_bottom
+drawable shape_corners_bottom_normal
+drawable shape_left_bottom
+drawable shape_left_bottom_normal
+drawable shape_right_bottom
+drawable shape_right_bottom_normal
+drawable shape_top
 drawable side_nav_bar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1274,6 +1299,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnNegative
+id btnPositive
 id btnVerify
 id btn_next
 id btn_skip
@@ -1311,6 +1338,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id divider
 id dob
 id drawer_layout
 id editTextCode
@@ -1369,6 +1397,7 @@ id invisible
 id italic
 id item_image
 id item_touch_helper_previous_elevation
+id ivContent
 id labeled
 id largeLabel
 id layoutDots
@@ -1382,8 +1411,14 @@ id linear
 id listMode
 id list_item
 id listview_background_shape
+id llBkg
+id llBtnGroup
+id llContent
+id llTop
+id loading
 id login
 id logo
+id logoIv
 id masked
 id media_actions
 id message
@@ -1505,6 +1540,7 @@ id titleDividerNoCustom
 id title_template
 id toolbar
 id top
+id topLayout
 id topPanel
 id topic_title
 id touch_outside
@@ -1513,6 +1549,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvContent
+id tvTitle
 id twitter
 id uniform
 id unlabeled
@@ -1520,6 +1558,7 @@ id up
 id update_profile
 id useLogo
 id userEmail
+id user_name
 id username
 id username1
 id userpassword
@@ -1620,7 +1659,9 @@ layout fragment_profile
 layout fragment_setting
 layout fragment_today
 layout fragment_topiclist
+layout layout_colordialog
 layout layout_full_screen_dialog
+layout layout_promptdialog
 layout list_view
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1653,9 +1694,14 @@ layout youtube_video_custom_layout
 menu activity_main_drawer
 menu main
 menu navigation
+mipmap ic_help
+mipmap ic_info
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_success
+mipmap ic_wrong
+mipmap icon_warning
 string Semail
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2276,6 +2322,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style color_dialog
 style myActionButtonStyle
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
