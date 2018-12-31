@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.1'
 
     implementation 'com.github.andyxialm:ColorDialog:1.0.0'
+
 }

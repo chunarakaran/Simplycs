@@ -1,5 +1,6 @@
 package com.example.amita.simplycs;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -48,11 +49,10 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     public SessionManager session;
 
-    String URL;
-
     //volley
     RequestQueue requestQueue;
-
+    String URL;
+    private ProgressDialog pDialog;
 
     View hView;
     ImageView User_pic;
@@ -74,8 +74,11 @@ public class MainActivity extends AppCompatActivity
 
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
-
         URL = getString(R.string.url);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,9 +109,6 @@ public class MainActivity extends AppCompatActivity
             editor.putString("LAST_LAUNCH_DATE", currentDate);
             editor.commit();
         }
-
-
-
 
 
 
@@ -339,6 +339,8 @@ public class MainActivity extends AppCompatActivity
 
     public void GetProfile()
     {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
         StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
                 new Response.Listener<String>() {
                     @Override
@@ -358,15 +360,18 @@ public class MainActivity extends AppCompatActivity
                                 name=user.getString("name");
 
                                 User_name.setText(name);
+                                hideDialog();
 
 
                             }
                             else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
                             }
                             else
                             {
                                 Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
                             }
 
 
@@ -377,6 +382,7 @@ public class MainActivity extends AppCompatActivity
                             // JSON error
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
                         }
 
 
@@ -391,6 +397,7 @@ public class MainActivity extends AppCompatActivity
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
                     }
                 }) {
 
@@ -410,6 +417,16 @@ public class MainActivity extends AppCompatActivity
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
 

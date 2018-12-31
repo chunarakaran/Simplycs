@@ -78,4 +78,5 @@
         <item name="android:paddingBottom">@dimen/smallPadding</item>
     </style>
 
+
 </resources>

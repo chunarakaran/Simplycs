@@ -1,4 +1,0 @@
-#Thu Dec 27 16:14:11 IST 2018
-base.0=D\:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex

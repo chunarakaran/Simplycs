@@ -42,7 +42,7 @@
                     android:layout_marginTop="75dp"
                     android:layout_gravity="center"
                     app:view_borderWidth="2dp"
-                    app:view_borderColor="#cccccc" />
+                    app:view_borderColor="#cccccc"/>
 
                 <TextView
                     android:id="@+id/edit_profile"
@@ -110,7 +110,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/username"
+                        android:id="@+id/user_name"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/emil"
+                        android:id="@+id/email"
                         android:textSize="15dp"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/email1"
+                        android:id="@+id/user_email"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -235,7 +235,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/mobno"
+                        android:id="@+id/user_mobile"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/facebook"
+                        android:id="@+id/gender"
                         android:textSize="15dp"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/gender"
+                        android:id="@+id/user_gender"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -319,7 +319,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/DOB"
+                        android:id="@+id/user_dob"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -362,7 +362,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/Education"
+                        android:id="@+id/user_education"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -392,7 +392,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/twitter"
+                        android:id="@+id/city"
                         android:textSize="15dp"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
@@ -407,7 +407,7 @@
 
                     <customfonts.MyTextView_Roboto_Black
                         android:layout_weight="1"
-                        android:id="@+id/Ecity"
+                        android:id="@+id/user_city"
                         android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

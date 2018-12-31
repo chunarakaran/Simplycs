@@ -66,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private ProgressDialog pDialog;
 
-
     @Override
     public void onBackPressed() {
 //        super.onBackPressed();
@@ -131,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
+
 
 
         // Session manager

@@ -1,6 +1,8 @@
 package com.example.amita.simplycs.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +19,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -28,9 +43,18 @@ public class ProfileFragment extends Fragment
     private static final int SELECT_PICTURE = 100;
     private static final String TAG = "MainActivity";
 
+    TextView User_name,User_email,User_mobile,User_gender,User_dob,User_education,User_city;
     TextView EditButton,ChangePassword;
     Fragment fragment;
     ImageView Profile_pic;
+
+    String User_id;
+    public static final String PREFS_NAME = "login";
+
+    //volley
+    RequestQueue requestQueue;
+    String URL;
+    private ProgressDialog pDialog;
 
     View rootview;
     @Override
@@ -39,9 +63,20 @@ public class ProfileFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        ChangePassword=(TextView)rootview.findViewById(R.id.pass1);
-        EditButton=(TextView) rootview.findViewById(R.id.edit_profile);
-        Profile_pic=(ImageView)rootview.findViewById(R.id.Profile_pic);
+        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
+
+        requestQueue = Volley.newRequestQueue(getActivity());
+        URL = getString(R.string.url);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setCancelable(false);
+
+        Initialize();
+
+        GetProfile();
 
         Profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +165,121 @@ public class ProfileFragment extends Fragment
         }
         cursor.close();
         return res;
+    }
+
+    public void Initialize()
+    {
+        ChangePassword=(TextView)rootview.findViewById(R.id.pass1);
+        EditButton=(TextView) rootview.findViewById(R.id.edit_profile);
+        Profile_pic=(ImageView)rootview.findViewById(R.id.Profile_pic);
+
+        User_name=(TextView) rootview.findViewById(R.id.user_name);
+        User_email=(TextView) rootview.findViewById(R.id.user_email);
+        User_mobile=(TextView) rootview.findViewById(R.id.user_mobile);
+        User_gender=(TextView) rootview.findViewById(R.id.user_gender);
+        User_dob=(TextView) rootview.findViewById(R.id.user_dob);
+        User_education=(TextView) rootview.findViewById(R.id.user_education);
+        User_city=(TextView) rootview.findViewById(R.id.user_city);
+
+    }
+
+    public void GetProfile()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                String Pic,name,email,mobile,gender,dob,education,city;
+                                JSONObject user = jObj.getJSONObject("data");
+                                name=user.getString("name");
+                                email=user.getString("email");
+                                mobile=user.getString("mobile");
+                                gender=user.getString("gender");
+
+                                User_name.setText(name);
+                                User_email.setText(email);
+                                User_mobile.setText(mobile);
+                                User_gender.setText(gender);
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
 
