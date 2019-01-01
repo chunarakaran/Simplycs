@@ -8,7 +8,6 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +23,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ForgotpwdActivity extends AppCompatActivity {
 
     ImageView picture;
@@ -32,14 +34,10 @@ public class ForgotpwdActivity extends AppCompatActivity {
 
     TextView SendOTP,BacktoLogin;
 
-    String Senail;
-
     RequestQueue requestQueue1;
     String Url;
 
     private ProgressDialog pDialog;
-
-    Fragment fragment=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +71,7 @@ public class ForgotpwdActivity extends AppCompatActivity {
 
                 requestQueue1 = Volley.newRequestQueue(getApplicationContext());
 
-                Url = (String) getText(R.string.login_url);
+                Url = (String) getText(R.string.url);
                 if(!Email.getText().toString().isEmpty()) {
                     if(isNetworkAvailable()) {
                         check_email();
@@ -117,28 +115,38 @@ public class ForgotpwdActivity extends AppCompatActivity {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
-        StringRequest jsonobject = new StringRequest(Request.Method.POST, Url+"api/forgot_pass" + "?email="+Email.getText().toString(), new Response.Listener<String>() {
+        StringRequest jsonobject = new StringRequest(Request.Method.POST, Url+"api/ForgotPassword" + "?Email="+Email.getText().toString(), new Response.Listener<String>() {
             @Override
 
             public void onResponse(String response) {
 
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    String success = jObj.getString("success");
 
-                if(response.equalsIgnoreCase("false_email"))
-                {
-                    Email.setError("Email-id does not exist");
-                    hideDialog();
+                    if (success.equalsIgnoreCase("true")) {
+
+                        Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(i);
+                        finish();
+                        hideDialog();
+                    }
+                    else if (success.equalsIgnoreCase("false")){
+                        Email.setError(jObj.getString("message"));
+                        hideDialog();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
-                else
-                {
-
-                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
-                    hideDialog();
-
-                    Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-
 
 
             }

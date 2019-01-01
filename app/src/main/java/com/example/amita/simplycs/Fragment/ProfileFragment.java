@@ -26,7 +26,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.amita.simplycs.Adapter.TransparentProgressDialog;
 import com.example.amita.simplycs.R;
 
 import org.json.JSONException;
@@ -56,7 +55,7 @@ public class ProfileFragment extends Fragment
     RequestQueue requestQueue;
     String URL;
     private ProgressDialog pDialog;
-    TransparentProgressDialog mProgressDialog;
+
 
     View rootview;
     @Override
@@ -76,8 +75,6 @@ public class ProfileFragment extends Fragment
         pDialog = new ProgressDialog(getActivity());
         pDialog.setCancelable(false);
 
-        mProgressDialog = new TransparentProgressDialog(getActivity());
-        mProgressDialog.setCancelable(false);
 
         Initialize();
 
@@ -190,7 +187,7 @@ public class ProfileFragment extends Fragment
 
     public void GetProfile()
     {
-        pDialog.setTitle("Please Wait...");
+        pDialog.setMessage("Please Wait...");
         showDialog();
 
         StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
