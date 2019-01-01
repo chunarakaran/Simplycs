@@ -3761,6 +3761,11 @@
         <item name="android:paddingRight">@dimen/smallPadding</item>
         <item name="android:paddingTop">@dimen/largPadding</item>
         <item name="android:paddingBottom">@dimen/smallPadding</item>
+    </style><style name="TransparentProgressDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
     </style></file><file path="D:\AndroidProject\Simplycs\app\src\main\res\values-v21\styles.xml" qualifiers="v21"><style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

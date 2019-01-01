@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.amita.simplycs.Adapter.TransparentProgressDialog;
 import com.example.amita.simplycs.R;
 
 public class AskusFragment extends Fragment
 {
 
-
+    TransparentProgressDialog mProgressDialog;
 
     TextView Submit;
     View rootview;
@@ -27,18 +28,16 @@ public class AskusFragment extends Fragment
         Submit=(TextView)rootview.findViewById(R.id.submit);
 
 
-
-
-
+        mProgressDialog = new TransparentProgressDialog(getActivity());
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setTitle("Loading...");
+        mProgressDialog.show();
 
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(getActivity(),"hello",Toast.LENGTH_SHORT).show();
-
-
             }
         });
 
