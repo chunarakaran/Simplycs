@@ -3,6 +3,8 @@ package com.example.amita.simplycs.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,26 +13,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.amita.simplycs.LoginActivity;
 import com.example.amita.simplycs.MainActivity;
 import com.example.amita.simplycs.R;
-import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
-import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.refactor.lib.colordialog.PromptDialog;
+
 public class ChangePassFragment extends Fragment
 {
 
+    ImageView picture;
     EditText EoldPass,EnewPass,EconfPass;
     TextView ChangePass;
 
@@ -40,7 +49,9 @@ public class ChangePassFragment extends Fragment
     RequestQueue requestQueue;
     ProgressDialog progressDialog;
 
-    String HttpUrl = "http://biotechautomfg.com/api/change_pass";
+    PromptDialog promptDialog;
+
+    String URL;
 
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -58,8 +69,19 @@ public class ChangePassFragment extends Fragment
 
         //getActivity().setTitle("Change Password");
 
+        picture=(ImageView)rootview.findViewById(R.id.logo);
+        int imageid = R.drawable.login_logo;
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inSampleSize = 4;
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
+        picture.setImageBitmap(bitmap);
+
         requestQueue = Volley.newRequestQueue(getActivity());
+        URL = getString(R.string.url);
+
         progressDialog = new ProgressDialog(getActivity());
+
+        promptDialog = new PromptDialog(getActivity());
 
         Initialize();
 
@@ -106,59 +128,75 @@ public class ChangePassFragment extends Fragment
 
     public void ChangePassword()
     {
-        progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
+        progressDialog.setMessage("Please Wait...");
         progressDialog.show();
 
         GetValueFromEditText();
 
         // Creating string request with post method.
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, HttpUrl,
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/ChangePassword",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
 
 
-                        if(ServerResponse.equalsIgnoreCase("false_oldpassword"))
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("false_password"))
+                            {
+//                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                EoldPass.requestFocus();
+                                EoldPass.setError(jObj.getString("message"));
+                                progressDialog.dismiss();
+
+
+                            }
+                            else if (success.equalsIgnoreCase("true")){
+
+                                promptDialog.setCancelable(false);
+                                promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS);
+                                promptDialog.setAnimationEnable(true);
+                                promptDialog.setTitleText("Success");
+                                promptDialog.setContentText(jObj.getString("message"));
+                                promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+                                    @Override
+                                    public void onClick(PromptDialog dialog) {
+
+                                        ((MainActivity) getActivity()).Logout();
+
+                                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                                        startActivity(intent);
+                                        getActivity().finish();
+                                        dialog.dismiss();
+                                    }
+                                }).show();
+
+
+//                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                            }
+
+
+                        }
+                        catch (JSONException e)
                         {
-                            EoldPass.setError("Old Password does not Match");
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                             progressDialog.dismiss();
                         }
-                        else
-                        {
-
-                            new FancyGifDialog.Builder(getActivity())
-                                    .setTitle("Success")
-                                    .setMessage("Password Changed Successfully")
-                                    .setNegativeBtnText("Cancel")
-                                    .setPositiveBtnBackground("#FF4081")
-                                    .setPositiveBtnText("Ok")
-                                    .setNegativeBtnBackground("#FFA9A7A8")
-                                    .setGifResource(R.drawable.check)   //Pass your Gif here
-                                    .isCancellable(false)
-                                    .OnPositiveClicked(new FancyGifDialogListener() {
-                                        @Override
-                                        public void OnClick() {
-//                                        Toast.makeText(getActivity(),"Ok",Toast.LENGTH_SHORT).show();
-
-                                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                                            startActivity(intent);
-                                            getActivity().finish();
-
-                                        }
-                                    })
-                                    .OnNegativeClicked(new FancyGifDialogListener() {
-                                        @Override
-                                        public void OnClick() {
-
-                                        }
-                                    })
-                                    .build();
 
 
-
-                            Toast.makeText(getActivity(), ServerResponse, Toast.LENGTH_LONG).show();
-                            progressDialog.dismiss();
-                        }
 
                     }
                 },
@@ -173,6 +211,15 @@ public class ChangePassFragment extends Fragment
                         Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
             @Override
             protected Map<String, String> getParams() {
 
@@ -180,11 +227,8 @@ public class ChangePassFragment extends Fragment
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-
-                //Company
-                params.put("user_id", SUser_id);
-                params.put("oldpassword", SoldPass);
-                params.put("password", SnewPass);
+                params.put("OldPassword", SoldPass);
+                params.put("Password", SnewPass);
 
 
                 return params;
@@ -226,6 +270,11 @@ public class ChangePassFragment extends Fragment
             EconfPass.setError("Please Enter confirm Password");
         }
 
+        else if (VNewpass.length()<6){
+            EnewPass.requestFocus();
+            EnewPass.setError("Please Enter Maximum 6 Character");
+        }
+
         else if (VNewpass.equals(VConPass))
         {
             ChangePassword();
@@ -236,6 +285,9 @@ public class ChangePassFragment extends Fragment
         }
 
     }
+
+
+
 
 
 

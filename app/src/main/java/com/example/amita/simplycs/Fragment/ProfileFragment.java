@@ -106,7 +106,7 @@ public class ProfileFragment extends Fragment
                 transection.replace(R.id.content_frame, fragment);
                 transection.addToBackStack(null).commit();
 
-                Toast.makeText(getActivity(),"Change Password",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),"Change Password",Toast.LENGTH_SHORT).show();
 
 
             }
