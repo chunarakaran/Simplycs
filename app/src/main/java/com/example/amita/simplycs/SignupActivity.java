@@ -233,7 +233,7 @@ public class SignupActivity extends AppCompatActivity {
                             else {
 
                                 JSONObject error = jObj.getJSONObject("error");
-                                String msg = error.getString("Email");
+                                String msg = String.valueOf(error.getJSONArray("Email"));
 
                                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                             }

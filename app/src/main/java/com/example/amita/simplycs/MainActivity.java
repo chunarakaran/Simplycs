@@ -1,9 +1,13 @@
 package com.example.amita.simplycs;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -42,6 +46,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.refactor.lib.colordialog.PromptDialog;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,6 +59,7 @@ public class MainActivity extends AppCompatActivity
     RequestQueue requestQueue;
     String URL;
     private ProgressDialog pDialog;
+    PromptDialog promptDialog;
 
     View hView;
     ImageView User_pic;
@@ -79,6 +86,8 @@ public class MainActivity extends AppCompatActivity
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
+
+        promptDialog = new PromptDialog(this);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,7 +125,27 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         displaySelectedScreen(R.id.nav_dashboard);
 
-        GetProfile();
+        if(isNetworkAvailable()){
+            GetProfile();
+        }
+        else {
+            promptDialog.setCancelable(false);
+            promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_WARNING);
+            promptDialog.setAnimationEnable(true);
+            promptDialog.setTitleText("Connection Failed");
+            promptDialog.setContentText("Please Check Your Internet Connection");
+            promptDialog.setPositiveListener("Setting", new PromptDialog.OnPositiveListener() {
+                @Override
+                public void onClick(PromptDialog dialog) {
+                    Intent intent=new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS );
+                    startActivity(intent);
+                    finish();
+                }
+            }).show();
+
+        }
+
+
 
         hView =  navigationView.getHeaderView(0);
         User_pic=(ImageView)hView.findViewById(R.id.banar1);
@@ -418,6 +447,17 @@ public class MainActivity extends AppCompatActivity
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
     }
+
+    public boolean isNetworkAvailable() {
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+
+        boolean isConnected = netInfo != null && netInfo.isConnectedOrConnecting();
+
+        return isConnected;
+    }
+
 
     private void showDialog() {
         if (!pDialog.isShowing())
