@@ -1,36 +1,35 @@
 package com.example.amita.simplycs.Fragment;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.amita.simplycs.Adapter.DataAdapter;
-import com.example.amita.simplycs.Adapter.RecyclerViewAdapter;
-import com.example.amita.simplycs.Database.DatabaseHelper;
+import com.example.amita.simplycs.Adapter.DataAdapter2;
+import com.example.amita.simplycs.Adapter.RecyclerViewAdapter2;
 import com.example.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -38,26 +37,39 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import cn.refactor.lib.colordialog.PromptDialog;
 
 public class TopicListFragment extends Fragment
 {
 
-    private DatabaseHelper db;
-    private ProgressDialog pDialog;
 
-    List<DataAdapter> ListOfdataAdapter;
+
+    List<DataAdapter2> ListOfdataAdapter;
 
     RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
 
-    String orderid;
-    final ArrayList<DataAdapter> Orderid = new ArrayList<>();
+    String Topic_id;
+    String subtopic_id;
+    final ArrayList<DataAdapter2> SubTopicid = new ArrayList<>();
     int RecyclerViewItemPosition ;
+
     LinearLayoutManager layoutManagerOfrecyclerView;
 
-    RecyclerView.Adapter recyclerViewadapter;
+    String User_id;
+    public static final String PREFS_NAME = "login";
 
-    ArrayList<String> ImageTitleNameArrayListForClick;
+    //volley
+    RequestQueue requestQueue;
+    String URL;
+    private ProgressDialog pDialog;
+
+    PromptDialog promptDialog;
+
 
     View rootview;
     @SuppressLint("LongLogTag")
@@ -67,17 +79,21 @@ public class TopicListFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_topiclist, container, false);
 
-//        getActivity().onBackPressed();
+        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
 
-        db = new DatabaseHelper(getActivity());
+        Bundle bundle=getArguments();
+        Topic_id=String.valueOf(bundle.getString("topic_id"));
 
-        String Url = getResources().getString(R.string.url);
+        requestQueue = Volley.newRequestQueue(getActivity());
+        URL = getString(R.string.url);
 
         // Progress dialog
         pDialog = new ProgressDialog(getActivity());
         pDialog.setCancelable(false);
 
-        ImageTitleNameArrayListForClick = new ArrayList<>();
+        promptDialog = new PromptDialog(getActivity());
 
         ListOfdataAdapter = new ArrayList<>();
 
@@ -90,25 +106,25 @@ public class TopicListFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-        String HTTP_JSON_URL = "https://api.androidhive.info/contacts/";
 
-        if(isNetworkAvailable()) {
-            JSON_HTTP_CALL(HTTP_JSON_URL);
+
+        if(isNetworkAvailable()){
+            GetSubTopicList();
         }
-        else
-        {
-            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage("Whoops! Its seems you don't have internet connection, please try again later!")
-                    .setTitle("No Internet Connection")
-                    .setCancelable(false)
-                    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                        public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
-                            getActivity().finish();
-                        }
-                    });
-            final AlertDialog alert = builder.create();
-            alert.show();
-            Log.e("Testing Internet Connection", "Showed NoIntenetConnectionDialog");
+        else {
+            promptDialog.setCancelable(false);
+            promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_WARNING);
+            promptDialog.setAnimationEnable(true);
+            promptDialog.setTitleText("Connection Failed");
+            promptDialog.setContentText("Please Check Your Internet Connection");
+            promptDialog.setPositiveListener("Setting", new PromptDialog.OnPositiveListener() {
+                @Override
+                public void onClick(PromptDialog dialog) {
+                    Intent intent=new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS );
+                    startActivity(intent);
+                    getActivity().finish();
+                }
+            }).show();
 
         }
 
@@ -139,20 +155,20 @@ public class TopicListFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    orderid=Orderid.get(RecyclerViewItemPosition).getId();
+                    subtopic_id=SubTopicid.get(RecyclerViewItemPosition).getId();
 
 //                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-//                    OrderDetailFragment mfragment=new OrderDetailFragment();
+//                    TopicListFragment mfragment=new TopicListFragment();
 //
 //                    Bundle bundle=new Bundle();
-//                    bundle.putString("orderid",orderid);
+//                    bundle.putString("topic_id",subtopic_id);
 //                    mfragment.setArguments(bundle);
 //
 //                    transection.replace(R.id.content_frame, mfragment);
 //                    transection.addToBackStack(null).commit();
 
 
-                    Toast.makeText(getActivity(), "You clicked " + orderid, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "You clicked " + subtopic_id, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -174,74 +190,145 @@ public class TopicListFragment extends Fragment
         });
 
 
-//        rootview.setFocusableInTouchMode(true);
-//        rootview.requestFocus();
-//        rootview.setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//
-//                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-//                    // DO WHAT YOU WANT ON BACK PRESSED
-//                    getFragmentManager().popBackStack();
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        });
+
+
+
+        rootview.setFocusableInTouchMode(true);
+        rootview.requestFocus();
+        rootview.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // DO WHAT YOU WANT ON BACK PRESSED
+                    getFragmentManager().popBackStack();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
 
         return rootview;
     }
 
 
-
-    private void JSON_HTTP_CALL(String url)
+    public void GetSubTopicList()
     {
-
-        pDialog.setMessage("Please Wait ...");
+        pDialog.setMessage("Please Wait...");
         showDialog();
 
-        RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try{
-                    JSONObject jsonObject=new JSONObject(response);
-                    JSONArray jsonArray=jsonObject.getJSONArray("contacts");
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetSubTopics",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
 
-                    for(int i=0;i<jsonArray.length();i++)
-                    {
-                        DataAdapter GetDataAdapter2 = new DataAdapter();
-                        JSONObject jsonObject1=jsonArray.getJSONObject(i);
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+
+                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                for(int i=0;i<jsonArray.length();i++)
+                                {
+                                    DataAdapter2 GetDataAdapter2=new DataAdapter2();
+                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                        GetDataAdapter2.setId(jsonObject1.getString("id"));
-                        GetDataAdapter2.setImageTitle(jsonObject1.getString("name"));
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setImageTitle(jsonObject1.getString("subtopic_name"));
+                                    GetDataAdapter2.setImageUrl(jsonObject1.getString("image"));
 
-                        Orderid.add(GetDataAdapter2);
 
-                        ListOfdataAdapter.add(GetDataAdapter2);
+
+                                    SubTopicid.add(GetDataAdapter2);
+
+                                    ListOfdataAdapter.add(GetDataAdapter2);
+
+                                }
+
+//                                Collections.reverse(ListOfdataAdapter);
+//                                Collections.reverse(Topicid);
+
+                                adapter = new RecyclerViewAdapter2(ListOfdataAdapter,getActivity());
+                                recyclerView.setAdapter(adapter);
+
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
                     }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
 
-                    recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter,getActivity());
-                    recyclerView.setAdapter(recyclerViewadapter);
+                        // Hiding the progress dialog after all task complete.
 
-                    hideDialog();
-                }catch (JSONException e){e.printStackTrace();}
-            }
-        }, new Response.ErrorListener() {
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                //hideDialog();
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
             }
-        });
 
-        int socketTimeout = 30000;
-        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        stringRequest.setRetryPolicy(policy);
-        requestQueue.add(stringRequest);
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("topic_id", Topic_id);
+
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
     }
+
+
 
     public boolean isNetworkAvailable() {
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
@@ -106,8 +107,7 @@ public class TodayFragment extends Fragment
 
 
         mLayoutManager = new GridLayoutManager(getActivity(),2);
-//        mLayoutManager.setReverseLayout(true);
-//        mLayoutManager.setStackFromEnd(true);
+
         recyclerView.setLayoutManager(mLayoutManager);
 
         GetTopicList();
@@ -141,18 +141,18 @@ public class TodayFragment extends Fragment
 
                     topic_id=Topicid.get(RecyclerViewItemPosition).getId();
 
-//                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-//                    LeaveDetailFragment mfragment=new LeaveDetailFragment();
-//
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("leaveid",leaveid);
-//                    mfragment.setArguments(bundle);
-//
-//                    transection.replace(R.id.content_frame, mfragment);
-//                    transection.addToBackStack(null).commit();
+                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+                    TopicListFragment mfragment=new TopicListFragment();
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("topic_id",topic_id);
+                    mfragment.setArguments(bundle);
+
+                    transection.replace(R.id.content_frame, mfragment);
+                    transection.addToBackStack(null).commit();
 
 
-                    Toast.makeText(getActivity(), "You clicked " + topic_id, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + topic_id, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -277,7 +277,7 @@ public class TodayFragment extends Fragment
 
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
                         hideDialog();
                     }
                 }) {
