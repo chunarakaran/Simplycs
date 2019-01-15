@@ -1256,6 +1256,7 @@ id Profile_pic
 id SHIFT
 id SYM
 id Tremark
+id VolleyImageView
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1393,7 +1394,6 @@ id input_password
 id input_remark
 id invisible
 id italic
-id item_image
 id item_touch_helper_previous_elevation
 id ivContent
 id l1

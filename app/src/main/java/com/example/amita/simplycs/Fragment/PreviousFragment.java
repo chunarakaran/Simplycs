@@ -6,21 +6,18 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.amita.simplycs.Adapter.RecyclerAdapter;
 import com.example.amita.simplycs.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 public class PreviousFragment extends Fragment
 {
@@ -31,8 +28,7 @@ public class PreviousFragment extends Fragment
 
 
     RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
-    RecyclerView.Adapter adapter;
+
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -74,8 +70,7 @@ public class PreviousFragment extends Fragment
         mLayoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        adapter = new RecyclerAdapter();
-        recyclerView.setAdapter(adapter);
+
 
 
 

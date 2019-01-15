@@ -10,12 +10,10 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,7 +31,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.DataAdapter;
 import com.example.amita.simplycs.Adapter.RecyclerViewAdapter;
 import com.example.amita.simplycs.Database.DatabaseHelper;
-import com.example.amita.simplycs.Database.SectionTable;
 import com.example.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -196,23 +193,7 @@ public class TopicListFragment extends Fragment
         return rootview;
     }
 
-//    private void createNote(String note) {
-//        // inserting note in db and getting
-//        // newly inserted note id
-//        long id = db.insertNote(note);
-//
-//        // get the newly inserted note from db
-//        SectionTable n = db.getNote(id);
-//
-//        if (n != null) {
-//            // adding new note to array list at 0 position
-//            notesList.add(0, n);
-//
-//            // refreshing the list
-//            mAdapter.notifyDataSetChanged();
-//
-//        }
-//    }
+
 
     private void JSON_HTTP_CALL(String url)
     {

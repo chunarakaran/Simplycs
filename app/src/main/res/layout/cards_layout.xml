@@ -26,12 +26,20 @@
                 android:background="@drawable/cardview_gradient"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
-                    android:id="@+id/item_image"
+
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/VolleyImageView"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_today"
-                    android:padding="10dp"/>
+                    android:src="@mipmap/ic_launcher"/>
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/item_image"-->
+                    <!--android:layout_width="64dp"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:src="@drawable/ic_today"-->
+                    <!--android:padding="10dp"/>-->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"

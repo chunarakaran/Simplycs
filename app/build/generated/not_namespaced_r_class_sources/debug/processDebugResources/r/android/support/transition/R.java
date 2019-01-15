@@ -78,20 +78,20 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int action_container = 0x7f0a0010;
-        public static final int action_divider = 0x7f0a0012;
-        public static final int action_image = 0x7f0a0013;
-        public static final int action_text = 0x7f0a001f;
-        public static final int actions = 0x7f0a0020;
-        public static final int async = 0x7f0a0029;
-        public static final int blocking = 0x7f0a0030;
-        public static final int chronometer = 0x7f0a0042;
-        public static final int forever = 0x7f0a006f;
-        public static final int ghost_view = 0x7f0a0073;
-        public static final int icon = 0x7f0a007a;
-        public static final int icon_group = 0x7f0a007b;
-        public static final int info = 0x7f0a0080;
-        public static final int italic = 0x7f0a0090;
+        public static final int action_container = 0x7f0a0011;
+        public static final int action_divider = 0x7f0a0013;
+        public static final int action_image = 0x7f0a0014;
+        public static final int action_text = 0x7f0a0020;
+        public static final int actions = 0x7f0a0021;
+        public static final int async = 0x7f0a002a;
+        public static final int blocking = 0x7f0a0031;
+        public static final int chronometer = 0x7f0a0043;
+        public static final int forever = 0x7f0a0070;
+        public static final int ghost_view = 0x7f0a0074;
+        public static final int icon = 0x7f0a007b;
+        public static final int icon_group = 0x7f0a007c;
+        public static final int info = 0x7f0a0081;
+        public static final int italic = 0x7f0a0091;
         public static final int line1 = 0x7f0a009c;
         public static final int line3 = 0x7f0a009d;
         public static final int normal = 0x7f0a00c0;
