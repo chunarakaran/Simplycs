@@ -1418,6 +1418,7 @@ id loading
 id login
 id logo
 id logoIv
+id main_layout
 id masked
 id media_actions
 id message
@@ -1446,6 +1447,7 @@ id notification_main_column
 id notification_main_column_container
 id outline
 id packed
+id pager
 id parallax
 id parent
 id parentPanel
@@ -1517,6 +1519,7 @@ id submenuarrow
 id submit
 id submit_area
 id swipe_container
+id tabLayout
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1655,12 +1658,15 @@ layout fancygifdialog
 layout fragment_account
 layout fragment_archive
 layout fragment_askus
+layout fragment_audiolist
 layout fragment_changepass
+layout fragment_content
 layout fragment_dashboard
 layout fragment_edit_profile
 layout fragment_previous
 layout fragment_profile
 layout fragment_setting
+layout fragment_theorylist
 layout fragment_today
 layout fragment_topiclist
 layout layout_colordialog
