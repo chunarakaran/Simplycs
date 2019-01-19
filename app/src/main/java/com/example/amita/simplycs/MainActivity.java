@@ -37,6 +37,7 @@ import com.example.amita.simplycs.Fragment.DashboardFragment;
 import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity
         User_pic=(ImageView)hView.findViewById(R.id.banar1);
         User_name = (TextView)hView.findViewById(R.id.user_name);
 
-        User_pic.setImageDrawable(getResources().getDrawable(R.drawable.p1));
+//        User_pic.setImageDrawable(getResources().getDrawable(R.drawable.p1));
 
         // session manager
         session = new SessionManager(getApplicationContext());
@@ -386,8 +387,11 @@ public class MainActivity extends AppCompatActivity
 
                                 String name,Pic;
                                 JSONObject user = jObj.getJSONObject("data");
+
+                                Pic=user.getString("profile_pic");
                                 name=user.getString("name");
 
+                                Picasso.with(getApplicationContext()).load(Pic).into(User_pic);
                                 User_name.setText(name);
                                 hideDialog();
 
