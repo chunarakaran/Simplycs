@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.amita.simplycs.Fragment.AskusFragment;
 import com.example.amita.simplycs.Fragment.AudioListFragment;
 import com.example.amita.simplycs.Fragment.TheoryListFragment;
+import com.example.amita.simplycs.Fragment.VideoListFragment;
 
 
 //Extending FragmentStatePagerAdapter
@@ -31,7 +31,7 @@ public class Pager extends FragmentStatePagerAdapter {
                 TheoryListFragment tab1 = new TheoryListFragment();
                 return tab1;
             case 1:
-                AskusFragment tab2 = new AskusFragment();
+                VideoListFragment tab2 = new VideoListFragment();
                 return tab2;
             case 2:
                 AudioListFragment tab3 = new AudioListFragment();

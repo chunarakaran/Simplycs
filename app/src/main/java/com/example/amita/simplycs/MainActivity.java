@@ -33,7 +33,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.SessionManager;
 import com.example.amita.simplycs.Fragment.AccountFragment;
 import com.example.amita.simplycs.Fragment.AskusFragment;
-import com.example.amita.simplycs.Fragment.ContentFragment;
 import com.example.amita.simplycs.Fragment.DashboardFragment;
 import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
@@ -226,9 +225,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_menu2:
 
-                fragment= new ContentFragment();
-                transection.replace(R.id.content_frame, fragment);
-                transection.addToBackStack(null).commit();
+                Intent intent = new Intent(MainActivity.this, VideoListActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.action_menu3:

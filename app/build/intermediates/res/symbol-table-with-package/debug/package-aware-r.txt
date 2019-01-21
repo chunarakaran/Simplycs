@@ -1669,6 +1669,7 @@ layout fragment_setting
 layout fragment_theorylist
 layout fragment_today
 layout fragment_topiclist
+layout fragment_videolist
 layout layout_colordialog
 layout layout_full_screen_dialog
 layout layout_promptdialog

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
@@ -157,18 +158,18 @@ public class TopicListFragment extends Fragment
 
                     subtopic_id=SubTopicid.get(RecyclerViewItemPosition).getId();
 
-//                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-//                    TopicListFragment mfragment=new TopicListFragment();
-//
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("topic_id",subtopic_id);
-//                    mfragment.setArguments(bundle);
-//
-//                    transection.replace(R.id.content_frame, mfragment);
-//                    transection.addToBackStack(null).commit();
+                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+                    ContentFragment mfragment=new ContentFragment();
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("subtopic_id",subtopic_id);
+                    mfragment.setArguments(bundle);
+
+                    transection.replace(R.id.content_frame, mfragment);
+                    transection.addToBackStack(null).commit();
 
 
-                    Toast.makeText(getActivity(), "You clicked " + subtopic_id, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + subtopic_id, Toast.LENGTH_SHORT).show();
 
 
                 }
