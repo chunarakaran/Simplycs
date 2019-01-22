@@ -162,6 +162,7 @@ public class TopicListFragment extends Fragment
                     ContentFragment mfragment=new ContentFragment();
 
                     Bundle bundle=new Bundle();
+                    bundle.putString("topic_id",Topic_id);
                     bundle.putString("subtopic_id",subtopic_id);
                     mfragment.setArguments(bundle);
 

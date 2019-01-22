@@ -1,6 +1,7 @@
 package com.example.amita.simplycs.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,12 +24,25 @@ public class VideoListFragment extends Fragment
 
     private RecyclerView recyclerView;
 
+    String Topic_id,SubTopic_id;
+
+    String User_id;
+    public static final String PREFS_NAME = "login";
+
     View rootview;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_videolist, container, false);
+
+        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
+
+        Bundle bundle=getArguments();
+        Topic_id=String.valueOf(bundle.getString("topic_id"));
+        SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
 
         setUpRecyclerView();
         populateRecyclerView();

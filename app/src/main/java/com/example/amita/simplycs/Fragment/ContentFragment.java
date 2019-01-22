@@ -17,12 +17,20 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+    String Topic_id,SubTopic_id;
+
     View rootview;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_content, container, false);
+
+        Bundle bundle1=getArguments();
+        Topic_id=String.valueOf(bundle1.getString("topic_id"));
+        SubTopic_id=String.valueOf(bundle1.getString("subtopic_id"));
+
 
         tabLayout = (TabLayout)rootview.findViewById(R.id.tabLayout);
 
@@ -34,13 +42,22 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
 
         viewPager = (ViewPager)rootview.findViewById(R.id.pager);
 
-        Pager adapter = new Pager(getFragmentManager(), tabLayout.getTabCount());
+        Bundle bundle=new Bundle();
+        bundle.putString("topic_id",Topic_id);
+        bundle.putString("subTopic_id",SubTopic_id);
+
+        Pager adapter = new Pager(getFragmentManager(), tabLayout.getTabCount(),bundle);
 
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         tabLayout.setOnTabSelectedListener(this);
+
+
+
+
+
 
 
 

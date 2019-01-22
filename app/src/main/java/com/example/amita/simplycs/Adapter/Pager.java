@@ -1,5 +1,6 @@
 package com.example.amita.simplycs.Adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -14,13 +15,18 @@ public class Pager extends FragmentStatePagerAdapter {
 
     //integer to count number of tabs
     int tabCount;
+    Bundle bundle;
+
+
 
     //Constructor to the class
-    public Pager(FragmentManager fm, int tabCount) {
+    public Pager(FragmentManager fm, int tabCount,Bundle bundle) {
         super(fm);
         //Initializing tab count
         this.tabCount= tabCount;
+        this.bundle=bundle;
     }
+
 
     //Overriding method getItem
     @Override
@@ -29,12 +35,15 @@ public class Pager extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 TheoryListFragment tab1 = new TheoryListFragment();
+                tab1.setArguments(bundle);
                 return tab1;
             case 1:
                 VideoListFragment tab2 = new VideoListFragment();
+                tab2.setArguments(bundle);
                 return tab2;
             case 2:
                 AudioListFragment tab3 = new AudioListFragment();
+                tab3.setArguments(bundle);
                 return tab3;
             default:
                 return null;
