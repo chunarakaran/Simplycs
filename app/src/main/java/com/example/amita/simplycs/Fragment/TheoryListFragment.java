@@ -2,6 +2,7 @@ package com.example.amita.simplycs.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -10,7 +11,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.DataAdapter3;
 import com.example.amita.simplycs.Adapter.RecyclerViewAdapter3;
 import com.example.amita.simplycs.R;
+import com.example.amita.simplycs.TheoryViewActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,9 +49,12 @@ public class TheoryListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Topic_id,SubTopic_id;
+    String Topic_id,SubTopic_id,content_id,content_Data;
 
     final ArrayList<DataAdapter3> Contentid = new ArrayList<>();
+
+    final ArrayList<DataAdapter3> ContentData = new ArrayList<>();
+
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -104,6 +111,65 @@ public class TheoryListFragment extends Fragment
         GetContentList();
 
 
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+
+            GestureDetector gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+                    return true;
+                }
+
+            });
+
+
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent)
+            {
+
+
+                rootview = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                if(rootview != null && gestureDetector.onTouchEvent(motionEvent)) {
+
+                    //Getting RecyclerView Clicked Item value.
+                    RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
+
+                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
+
+                    content_Data=ContentData.get(RecyclerViewItemPosition).getContentData();
+
+
+                    startActivity(new Intent(getActivity(), TheoryViewActivity.class)
+                            .putExtra("content_Data", content_Data));
+
+
+//                    Toast.makeText(getActivity(), "You clicked " + content_id, Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+
+
+
+
+
         return rootview;
     }
 
@@ -136,18 +202,19 @@ public class TheoryListFragment extends Fragment
 
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("content_name"));
+                                    GetDataAdapter2.setContentData(jsonObject1.getString("content_data"));
 
 
 
 
                                     Contentid.add(GetDataAdapter2);
 
+                                    ContentData.add(GetDataAdapter2);
+
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
 
-//                                Collections.reverse(ListOfdataAdapter);
-//                                Collections.reverse(Topicid);
 
                                 adapter = new RecyclerViewAdapter3(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);

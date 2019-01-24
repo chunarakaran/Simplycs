@@ -1257,6 +1257,7 @@ id SHIFT
 id SYM
 id Tremark
 id VolleyImageView
+id aboutTitle
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1576,6 +1577,7 @@ id video_title_label
 id view_offset_helper
 id view_pager
 id visible
+id webView
 id wide
 id withText
 id wrap
@@ -1635,6 +1637,7 @@ layout activity_login
 layout activity_main
 layout activity_signup
 layout activity_splash_screen
+layout activity_theory_view
 layout activity_verify_phone
 layout activity_video_list
 layout activity_welcome
@@ -1668,6 +1671,7 @@ layout fragment_previous
 layout fragment_profile
 layout fragment_setting
 layout fragment_theorylist
+layout fragment_theoryview
 layout fragment_today
 layout fragment_topiclist
 layout fragment_videolist

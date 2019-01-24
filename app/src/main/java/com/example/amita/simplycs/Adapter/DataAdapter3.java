@@ -4,6 +4,7 @@ public class DataAdapter3 {
 
     public String id;
     public String Title;
+    public String ContentData;
 
 
     public String getId() {
@@ -25,6 +26,16 @@ public class DataAdapter3 {
     public void setTitle(String Titlename) {
 
         this.Title = Titlename;
+    }
+
+    public String getContentData() {
+
+        return ContentData;
+    }
+
+    public void setContentData(String Content) {
+
+        this.ContentData = Content;
     }
 
 }
