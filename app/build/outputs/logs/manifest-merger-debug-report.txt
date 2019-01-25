@@ -178,14 +178,14 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Us
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:18:9-40
-activity#com.example.amita.simplycs.LoginActivity
+activity#com.example.amita.simplycs.WelcomeActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:20:9-29:20
 	android:label
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:22:13-45
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:23:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-42
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
@@ -220,7 +220,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:36:9-41:5
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:41:13-56
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:37:13-43
-activity#com.example.amita.simplycs.WelcomeActivity
+activity#com.example.amita.simplycs.LoginActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:42:9-47:59
 	android:screenOrientation
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:46:13-49
@@ -231,7 +231,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:42:9-47:5
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:47:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-44
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-42
 activity#com.example.amita.simplycs.SignupActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:48:9-53:59
 	android:screenOrientation

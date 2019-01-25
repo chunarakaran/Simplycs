@@ -35,7 +35,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.amita.simplycs.LoginActivity"
+            android:name="com.example.amita.simplycs.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -57,7 +57,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.WelcomeActivity"
+            android:name="com.example.amita.simplycs.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
