@@ -6,6 +6,7 @@
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="green">#007000</color>
     <color name="textColrHint">#969696</color>
     <color name="windowBackground">#FFFFFF</color>
 
@@ -50,5 +51,7 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+
+
 
 </resources>

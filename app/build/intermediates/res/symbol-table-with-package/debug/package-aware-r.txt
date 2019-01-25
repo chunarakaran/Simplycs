@@ -435,6 +435,18 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr riv_border_color
+attr riv_border_width
+attr riv_corner_radius
+attr riv_corner_radius_bottom_left
+attr riv_corner_radius_bottom_right
+attr riv_corner_radius_top_left
+attr riv_corner_radius_top_right
+attr riv_mutate_background
+attr riv_oval
+attr riv_tile_mode
+attr riv_tile_mode_x
+attr riv_tile_mode_y
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -1120,6 +1132,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable backgrownd
 drawable bg1
+drawable bitmap_1
 drawable cancel
 drawable card_activated_background
 drawable card_background
@@ -1168,13 +1181,19 @@ drawable gradiant
 drawable gradient_yellow
 drawable ic_account_box_black_24dp
 drawable ic_action_duration
+drawable ic_ads
+drawable ic_analytics
 drawable ic_calender
+drawable ic_clock1
 drawable ic_close
 drawable ic_close_white_48dp
+drawable ic_communication
+drawable ic_content
 drawable ic_dashboard_black_24dp
 drawable ic_exit_to_app_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_marketing1
 drawable ic_menu_camera
 drawable ic_menu_gallery
 drawable ic_menu_manage
@@ -1188,8 +1207,10 @@ drawable ic_notifications_black_24dp
 drawable ic_people_black_24dp
 drawable ic_phone
 drawable ic_previousday
+drawable ic_support1
 drawable ic_today
 drawable ic_turned_in_black_24dp
+drawable img12
 drawable login_logo
 drawable logo
 drawable mediatransperent_ract
@@ -1237,6 +1258,7 @@ drawable tooltip_frame_light
 drawable w2
 drawable waves
 drawable webinars
+drawable white_rect
 font maven_pro_bold
 font maven_pro_medium
 font maven_pro_regular
@@ -1250,6 +1272,7 @@ font sfnsdisplay
 font sofia_regular
 id ALT
 id CTRL
+id CourseName
 id FUNCTION
 id META
 id Profile_pic
@@ -1318,6 +1341,7 @@ id change_pic
 id checkbox
 id chronometer
 id city
+id clamp
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1333,6 +1357,7 @@ id cv_root_category
 id dark
 id decor_content_parent
 id default_activity_button
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1379,6 +1404,7 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id imageView1
 id info
 id input_ConfPass
 id input_city
@@ -1426,6 +1452,7 @@ id media_actions
 id message
 id middle
 id mini
+id mirror
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1470,6 +1497,7 @@ id recycler_view
 id recyclerview1
 id relativeLayout
 id relativelayout1
+id repeat
 id right
 id right_icon
 id right_side
@@ -1678,6 +1706,7 @@ layout layout_colordialog
 layout layout_full_screen_dialog
 layout layout_promptdialog
 layout list_view
+layout list_view_courses
 layout list_view_theory
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1783,6 +1812,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string define_roundedimageview
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
@@ -1793,6 +1823,15 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string library_roundedimageview_author
+string library_roundedimageview_authorWebsite
+string library_roundedimageview_isOpenSource
+string library_roundedimageview_libraryDescription
+string library_roundedimageview_libraryName
+string library_roundedimageview_libraryVersion
+string library_roundedimageview_libraryWebsite
+string library_roundedimageview_licenseId
+string library_roundedimageview_repositoryLink
 string login_url
 string mtrl_chip_close_icon_content_description
 string nav_header_desc
@@ -2405,6 +2444,7 @@ styleable PopupWindow android_popupBackground android_popupAnimationStyle overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
