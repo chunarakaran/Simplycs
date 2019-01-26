@@ -707,6 +707,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1272,7 +1273,6 @@ font sfnsdisplay
 font sofia_regular
 id ALT
 id CTRL
-id CourseName
 id FUNCTION
 id META
 id Profile_pic
@@ -1351,13 +1351,17 @@ id contentPanel
 id content_frame
 id content_title
 id coordinator
+id courseDesc
+id courseDiscount
+id courseHours
+id coursePrice
+id courseTitle
 id custom
 id customPanel
 id cv_root_category
 id dark
 id decor_content_parent
 id default_activity_button
-id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1602,6 +1606,7 @@ id userpassword
 id video_duration_label
 id video_thumbnail_image_view
 id video_title_label
+id view_courselist
 id view_offset_helper
 id view_pager
 id visible
@@ -1687,12 +1692,13 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fancygifdialog
-layout fragment_account
 layout fragment_archive
 layout fragment_askus
 layout fragment_audiolist
 layout fragment_changepass
 layout fragment_content
+layout fragment_coourselist
+layout fragment_course
 layout fragment_dashboard
 layout fragment_edit_profile
 layout fragment_previous
