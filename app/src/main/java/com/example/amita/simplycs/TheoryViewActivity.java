@@ -1,8 +1,9 @@
 package com.example.amita.simplycs;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebView;
 
 public class TheoryViewActivity extends AppCompatActivity {
@@ -11,12 +12,13 @@ public class TheoryViewActivity extends AppCompatActivity {
 
     WebView webView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory_view);
 
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         Content_Data = getIntent().getStringExtra("content_Data");
 
