@@ -1459,7 +1459,7 @@ int id mirror 0x7f0a00b9
 int id mtrl_child_content_container 0x7f0a00ba
 int id mtrl_internal_children_alpha_tag 0x7f0a00bb
 int id multiply 0x7f0a00bc
-int id nav_account 0x7f0a00bd
+int id nav_courses 0x7f0a00bd
 int id nav_dashboard 0x7f0a00be
 int id nav_logout 0x7f0a00bf
 int id nav_profile 0x7f0a00c0

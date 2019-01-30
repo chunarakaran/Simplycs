@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_dashboard_black_24dp"
             android:title="Dashboard" />
         <item
-            android:id="@+id/nav_account"
+            android:id="@+id/nav_courses"
             android:icon="@drawable/ic_account_box_black_24dp"
-            android:title="My Account" />
+            android:title="Courses" />
 
         <item
             android:id="@+id/nav_profile"

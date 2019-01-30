@@ -5334,7 +5334,7 @@ public final class R {
     public static final int mtrl_child_content_container=0x7f0a00ba;
     public static final int mtrl_internal_children_alpha_tag=0x7f0a00bb;
     public static final int multiply=0x7f0a00bc;
-    public static final int nav_account=0x7f0a00bd;
+    public static final int nav_courses=0x7f0a00bd;
     public static final int nav_dashboard=0x7f0a00be;
     public static final int nav_logout=0x7f0a00bf;
     public static final int nav_profile=0x7f0a00c0;

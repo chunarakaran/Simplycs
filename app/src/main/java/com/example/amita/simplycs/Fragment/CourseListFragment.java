@@ -11,8 +11,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -106,6 +109,65 @@ public class CourseListFragment extends Fragment
         GetCourseList();
 
 
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+
+            GestureDetector gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+                    return true;
+                }
+
+            });
+
+
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent)
+            {
+
+
+                rootview = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                if(rootview != null && gestureDetector.onTouchEvent(motionEvent)) {
+
+                    //Getting RecyclerView Clicked Item value.
+                    RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
+
+                    course_id=Course_id.get(RecyclerViewItemPosition).getId();
+
+//                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+//                    ContentFragment mfragment=new ContentFragment();
+//
+//                    Bundle bundle=new Bundle();
+//                    bundle.putString("course_id",course_id);
+//                    mfragment.setArguments(bundle);
+//
+//                    transection.replace(R.id.content_frame, mfragment);
+//                    transection.addToBackStack(null).commit();
+
+
+                    Toast.makeText(getActivity(), "You clicked " + course_id, Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+
 
 
 
@@ -136,7 +198,7 @@ public class CourseListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetPackageList",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetPackagelist",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -160,7 +222,7 @@ public class CourseListFragment extends Fragment
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setImageUrl(jsonObject1.getString("file_path"));
                                     GetDataAdapter2.setCourseTitle(jsonObject1.getString("package_name"));
-                                    GetDataAdapter2.setCourseDesc(jsonObject1.getString("pakage_details"));
+                                    GetDataAdapter2.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
                                     GetDataAdapter2.setCoursePrice(jsonObject1.getString("package_price"));
                                     GetDataAdapter2.setCourseDiscount(jsonObject1.getString("discount_percentage"));
 

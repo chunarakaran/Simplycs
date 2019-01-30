@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new DashboardFragment();
                 break;
 
-            case R.id.nav_account:
+            case R.id.nav_courses:
                 fragment = new CourseFragment();
                 break;
 
