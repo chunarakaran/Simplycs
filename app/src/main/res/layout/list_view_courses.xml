@@ -50,6 +50,8 @@
             android:id="@+id/courseDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scrollHorizontally="false"
+            android:singleLine="true"
             android:text="Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus ..."
             android:textSize="11sp"
             android:textColor="#a0a0a0"

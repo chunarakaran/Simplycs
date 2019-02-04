@@ -1134,6 +1134,7 @@ drawable avd_show_password
 drawable backgrownd
 drawable bg1
 drawable bitmap_1
+drawable blue_rect
 drawable cancel
 drawable card_activated_background
 drawable card_background
@@ -1165,6 +1166,10 @@ drawable curved_shape
 drawable curved_shape2
 drawable custom_progressbar
 drawable customer_service
+drawable dark_circle_green
+drawable dark_circle_grey
+drawable dark_circle_red
+drawable dark_circle_sky
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1184,6 +1189,7 @@ drawable ic_account_box_black_24dp
 drawable ic_action_duration
 drawable ic_ads
 drawable ic_analytics
+drawable ic_bookmark2
 drawable ic_calender
 drawable ic_clock1
 drawable ic_close
@@ -1699,6 +1705,7 @@ layout fragment_changepass
 layout fragment_content
 layout fragment_coourselist
 layout fragment_course
+layout fragment_course_detail
 layout fragment_dashboard
 layout fragment_edit_profile
 layout fragment_previous
