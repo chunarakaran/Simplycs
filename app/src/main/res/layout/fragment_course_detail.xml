@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/course_image"
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
                     android:src="@drawable/img12"
@@ -51,6 +52,7 @@
 
 
                     <customfonts.MyTextView_SF_Pro_Light
+                        android:id="@+id/course_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Digital Marketing 101"
@@ -150,6 +152,7 @@
 
 
             <customfonts.TextViewSFProDisplayRegular
+                android:id="@+id/course_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"

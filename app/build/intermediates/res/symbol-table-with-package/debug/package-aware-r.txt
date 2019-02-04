@@ -1362,6 +1362,9 @@ id courseDiscount
 id courseHours
 id coursePrice
 id courseTitle
+id course_des
+id course_image
+id course_name
 id custom
 id customPanel
 id cv_root_category
