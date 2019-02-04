@@ -1710,6 +1710,7 @@ layout fragment_course
 layout fragment_course_detail
 layout fragment_dashboard
 layout fragment_edit_profile
+layout fragment_pdflist
 layout fragment_previous
 layout fragment_profile
 layout fragment_setting

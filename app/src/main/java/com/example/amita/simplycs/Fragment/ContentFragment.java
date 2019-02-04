@@ -39,6 +39,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         tabLayout.addTab(tabLayout.newTab().setText("Theory"));
         tabLayout.addTab(tabLayout.newTab().setText("Video"));
         tabLayout.addTab(tabLayout.newTab().setText("Audio"));
+        tabLayout.addTab(tabLayout.newTab().setText("PDF"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         viewPager = (ViewPager)rootview.findViewById(R.id.pager);
