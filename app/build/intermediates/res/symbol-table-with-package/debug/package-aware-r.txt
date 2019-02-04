@@ -1417,7 +1417,6 @@ id icon_only
 id ifRoom
 id image
 id imageView
-id imageView1
 id info
 id input_ConfPass
 id input_city

@@ -45,136 +45,155 @@
             </LinearLayout>
 
 
-            <HorizontalScrollView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:scrollbars="none">
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:id="@+id/recyclerview1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scrollbars="horizontal"
+                    android:scrollbarStyle="outsideInset"
+                    android:fadeScrollbars="true" />
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:orientation="vertical">
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/imageView1"
-                            android:layout_width="250dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/img12"
-                            android:scaleType="centerCrop"
-                            app:riv_corner_radius="3dip"
-                            app:riv_oval="false" />
+            </LinearLayout>
 
 
-                        <customfonts.TextViewSFProDisplayRegular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Product UX Design"
-                            android:layout_marginTop="3dp"
-                            android:textColor="#585e66"
-                            android:textSize="15sp"/>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:orientation="horizontal">
-
-                            <customfonts.TextViewSFProDisplaySemibold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="$59.99"
-                                android:textSize="13sp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="10dp"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:src="@drawable/ic_clock1"/>
+            <!--<HorizontalScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:scrollbars="none">-->
 
 
-                            <customfonts.TextViewSFProDisplayMedium
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="7sp"
-                                android:layout_marginLeft="4dp"
-                                android:layout_gravity="center"
-                                android:text="29 Hours"/>
-                        </LinearLayout>
-                    </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:clipToPadding="false"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:paddingRight="10dp"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:orientation="vertical">-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-
-                            android:layout_width="250dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/img12"
-                            android:scaleType="centerCrop"
-                            app:riv_corner_radius="3dip"
-                            app:riv_oval="false" />
+                        <!--<com.makeramen.roundedimageview.RoundedImageView-->
+                            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                            <!--android:id="@+id/imageView1"-->
+                            <!--android:layout_width="250dp"-->
+                            <!--android:layout_height="150dp"-->
+                            <!--android:src="@drawable/img12"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--app:riv_corner_radius="3dip"-->
+                            <!--app:riv_oval="false" />-->
 
 
-                        <customfonts.TextViewSFProDisplayRegular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Product UX Design"
-                            android:layout_marginTop="3dp"
-                            android:textColor="#585e66"
-                            android:textSize="15sp"/>
+                        <!--<customfonts.TextViewSFProDisplayRegular-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Product UX Design"-->
+                            <!--android:layout_marginTop="3dp"-->
+                            <!--android:textColor="#585e66"-->
+                            <!--android:textSize="15sp"/>-->
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:orientation="horizontal">
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <customfonts.TextViewSFProDisplaySemibold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="$59.99"
-                                android:textSize="13sp"
-                                android:textColor="@color/black"/>
+                            <!--<customfonts.TextViewSFProDisplaySemibold-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="$59.99"-->
+                                <!--android:textSize="13sp"-->
+                                <!--android:textColor="@color/black"/>-->
 
-                            <ImageView
-                                android:layout_width="10dp"
-                                android:layout_height="10dp"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:src="@drawable/ic_clock1"/>
+                            <!--<ImageView-->
+                                <!--android:layout_width="10dp"-->
+                                <!--android:layout_height="10dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:src="@drawable/ic_clock1"/>-->
 
 
-                            <customfonts.TextViewSFProDisplayMedium
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="7sp"
-                                android:layout_marginLeft="4dp"
-                                android:layout_gravity="center"
-                                android:text="29 Hours"/>
-                        </LinearLayout>
-                    </LinearLayout>
+                            <!--<customfonts.TextViewSFProDisplayMedium-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textSize="7sp"-->
+                                <!--android:layout_marginLeft="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:text="29 Hours"/>-->
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
 
-                </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-            </HorizontalScrollView>
+                        <!--<com.makeramen.roundedimageview.RoundedImageView-->
+                            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+
+                            <!--android:layout_width="250dp"-->
+                            <!--android:layout_height="150dp"-->
+                            <!--android:src="@drawable/img12"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--app:riv_corner_radius="3dip"-->
+                            <!--app:riv_oval="false" />-->
+
+
+                        <!--<customfonts.TextViewSFProDisplayRegular-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Product UX Design"-->
+                            <!--android:layout_marginTop="3dp"-->
+                            <!--android:textColor="#585e66"-->
+                            <!--android:textSize="15sp"/>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:orientation="horizontal">-->
+
+                            <!--<customfonts.TextViewSFProDisplaySemibold-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="$59.99"-->
+                                <!--android:textSize="13sp"-->
+                                <!--android:textColor="@color/black"/>-->
+
+                            <!--<ImageView-->
+                                <!--android:layout_width="10dp"-->
+                                <!--android:layout_height="10dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:src="@drawable/ic_clock1"/>-->
+
+
+                            <!--<customfonts.TextViewSFProDisplayMedium-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textSize="7sp"-->
+                                <!--android:layout_marginLeft="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:text="29 Hours"/>-->
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                <!--</LinearLayout>-->
+
+            <!--</HorizontalScrollView>-->
 
 
 
