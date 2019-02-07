@@ -1213,6 +1213,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_people_black_24dp
 drawable ic_phone
+drawable ic_picture_as_pdf_black_24dp
 drawable ic_previousday
 drawable ic_support1
 drawable ic_today
@@ -1495,6 +1496,7 @@ id parentPanel
 id parent_matrix
 id pass1
 id password
+id pdf_title
 id percent
 id phone
 id pin
@@ -1676,6 +1678,7 @@ layout activity_enter_phone
 layout activity_forgotpwd
 layout activity_login
 layout activity_main
+layout activity_pdfview
 layout activity_signup
 layout activity_splash_screen
 layout activity_theory_view
@@ -1723,6 +1726,7 @@ layout layout_full_screen_dialog
 layout layout_promptdialog
 layout list_view
 layout list_view_courses
+layout list_view_pdf
 layout list_view_theory
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
