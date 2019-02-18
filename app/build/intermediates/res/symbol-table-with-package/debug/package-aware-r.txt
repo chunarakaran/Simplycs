@@ -1498,6 +1498,7 @@ id parentPanel
 id parent_matrix
 id pass1
 id password
+id pausePlayerBtn
 id pdf_title
 id percent
 id phone
@@ -1559,6 +1560,7 @@ id src_in
 id src_over
 id standard
 id start
+id startPlayerBtn
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
