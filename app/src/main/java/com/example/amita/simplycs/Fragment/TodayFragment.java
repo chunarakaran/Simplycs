@@ -20,9 +20,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -278,6 +283,20 @@ public class TodayFragment extends Fragment
 
                         // Showing error message if something goes wrong.
 //                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+
+
+                        if (volleyError instanceof TimeoutError || volleyError instanceof NoConnectionError) {
+//                            Toast.makeText(getActivity(), "Time Out",Toast.LENGTH_LONG).show();
+                        } else if (volleyError instanceof AuthFailureError) {
+                            //TODO
+                        } else if (volleyError instanceof ServerError) {
+                            //TODO
+                        } else if (volleyError instanceof NetworkError) {
+                            //TODO
+                        } else if (volleyError instanceof ParseError) {
+                            //TODO
+                        }
+
                         hideDialog();
                     }
                 }) {

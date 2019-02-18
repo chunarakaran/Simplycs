@@ -23,7 +23,7 @@
         android:paddingLeft="@dimen/material_global_margin_16"
         android:paddingStart="@dimen/material_global_margin_16"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/material_card_height_96"
+        android:layout_height="50dp"
         android:background="@drawable/card_selector">
 
         <ImageView
@@ -33,7 +33,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_audiotrack_black_24dp"/>
+            android:src="@drawable/ic_play_circle_outline_black_24dp"/>
 
 
 

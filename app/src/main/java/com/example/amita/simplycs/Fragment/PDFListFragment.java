@@ -200,7 +200,7 @@ public class PDFListFragment extends Fragment
                                     GetDataAdapter2.setPDFData(jsonObject1.getString("file_path"));
 
 
-
+//                                    if ()
 
                                     Contentid.add(GetDataAdapter2);
 
