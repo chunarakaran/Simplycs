@@ -74,7 +74,8 @@
         <activity android:name=".VideoListActivity" />
         <activity android:name=".YoutubePlayerActivity" />
         <activity android:name=".TheoryViewActivity" />
-        <activity android:name=".PDFViewActivity"></activity>
+        <activity android:name=".PDFViewActivity" />
+        <activity android:name=".AudioPlayActivity"></activity>
     </application>
 
 </manifest>

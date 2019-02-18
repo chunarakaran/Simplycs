@@ -1189,6 +1189,7 @@ drawable ic_account_box_black_24dp
 drawable ic_action_duration
 drawable ic_ads
 drawable ic_analytics
+drawable ic_audiotrack_black_24dp
 drawable ic_bookmark2
 drawable ic_calender
 drawable ic_clock1
@@ -1322,6 +1323,7 @@ id all
 id always
 id appbar
 id async
+id audio_title
 id auto
 id backLogin
 id banar1
@@ -1674,6 +1676,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_audio_play
 layout activity_enter_phone
 layout activity_forgotpwd
 layout activity_login
@@ -1725,6 +1728,7 @@ layout layout_colordialog
 layout layout_full_screen_dialog
 layout layout_promptdialog
 layout list_view
+layout list_view_audio
 layout list_view_courses
 layout list_view_pdf
 layout list_view_theory

@@ -90,6 +90,7 @@
         <activity android:name="com.example.amita.simplycs.YoutubePlayerActivity" />
         <activity android:name="com.example.amita.simplycs.TheoryViewActivity" />
         <activity android:name="com.example.amita.simplycs.PDFViewActivity" />
+        <activity android:name="com.example.amita.simplycs.AudioPlayActivity" />
 
         <service
             android:name="net.gotev.uploadservice.UploadService"
