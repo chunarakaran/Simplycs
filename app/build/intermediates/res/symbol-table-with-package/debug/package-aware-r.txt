@@ -1338,6 +1338,7 @@ id btnPositive
 id btnVerify
 id btn_next
 id btn_skip
+id button
 id buttonContinue
 id buttonPanel
 id cancel_action
@@ -1499,7 +1500,6 @@ id parentPanel
 id parent_matrix
 id pass1
 id password
-id pausePlayerBtn
 id pdf_title
 id percent
 id phone
@@ -1539,6 +1539,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekbar
 id select_dialog_listview
 id selected
 id sendotp
@@ -1561,7 +1562,6 @@ id src_in
 id src_over
 id standard
 id start
-id startPlayerBtn
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1733,6 +1733,7 @@ layout layout_promptdialog
 layout list_view
 layout list_view_audio
 layout list_view_courses
+layout list_view_exams
 layout list_view_pdf
 layout list_view_theory
 layout mtrl_layout_snackbar
