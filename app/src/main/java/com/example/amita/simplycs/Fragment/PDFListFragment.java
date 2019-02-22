@@ -194,19 +194,27 @@ public class PDFListFragment extends Fragment
                                     PDFListDataAdapter GetDataAdapter2=new PDFListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
+                                    String pdf_title=jsonObject1.getString("file_upload_title");
 
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("file_upload_title"));
                                     GetDataAdapter2.setPDFData(jsonObject1.getString("file_path"));
 
 
-//                                    if ()
+                                    if (pdf_title.equalsIgnoreCase("null")){
 
-                                    Contentid.add(GetDataAdapter2);
+                                    }
+                                    else
+                                    {
 
-                                    PDFData.add(GetDataAdapter2);
+                                        Contentid.add(GetDataAdapter2);
 
-                                    ListOfdataAdapter.add(GetDataAdapter2);
+                                        PDFData.add(GetDataAdapter2);
+
+                                        ListOfdataAdapter.add(GetDataAdapter2);
+                                    }
+
+
 
                                 }
 

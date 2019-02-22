@@ -192,19 +192,26 @@ public class AudioListFragment extends Fragment
                                     AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
+                                    String audio_title=jsonObject1.getString("audio_title");
+                                    String audio_url=jsonObject1.getString("audio_url");
 
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("audio_title"));
                                     GetDataAdapter2.setAudioURL(jsonObject1.getString("audio_url"));
 
+                                    if (audio_title.equalsIgnoreCase("null")){
 
+                                    }
+                                    else
+                                    {
 
+                                        Contentid.add(GetDataAdapter2);
 
-                                    Contentid.add(GetDataAdapter2);
+                                        Audio_URL.add(GetDataAdapter2);
 
-                                    Audio_URL.add(GetDataAdapter2);
+                                        ListOfdataAdapter.add(GetDataAdapter2);
+                                    }
 
-                                    ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
 
