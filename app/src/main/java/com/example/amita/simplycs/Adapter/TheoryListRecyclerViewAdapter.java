@@ -11,15 +11,15 @@ import com.example.amita.simplycs.R;
 
 import java.util.List;
 
-public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapter3.ViewHolder> {
+public class TheoryListRecyclerViewAdapter extends RecyclerView.Adapter<TheoryListRecyclerViewAdapter.ViewHolder> {
 
 
     Context context;
 
-    List<DataAdapter3> dataAdapters;
+    List<TheoryListDataAdapter> dataAdapters;
 
 
-    public RecyclerViewAdapter3(List<DataAdapter3> getDataAdapter, Context context){
+    public TheoryListRecyclerViewAdapter(List<TheoryListDataAdapter> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -39,7 +39,7 @@ public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        DataAdapter3 dataAdapterOBJ =  dataAdapters.get(position);
+        TheoryListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());

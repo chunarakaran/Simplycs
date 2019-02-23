@@ -25,8 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.amita.simplycs.Adapter.DataAdapter3;
-import com.example.amita.simplycs.Adapter.RecyclerViewAdapter3;
+import com.example.amita.simplycs.Adapter.TheoryListDataAdapter;
+import com.example.amita.simplycs.Adapter.TheoryListRecyclerViewAdapter;
 import com.example.amita.simplycs.R;
 import com.example.amita.simplycs.TheoryViewActivity;
 
@@ -44,16 +44,16 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class TheoryListFragment extends Fragment
 {
 
-    List<DataAdapter3> ListOfdataAdapter;
+    List<TheoryListDataAdapter> ListOfdataAdapter;
 
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
     String TodayDate,Topic_id,SubTopic_id,content_id,content_Data;
 
-    final ArrayList<DataAdapter3> Contentid = new ArrayList<>();
+    final ArrayList<TheoryListDataAdapter> Contentid = new ArrayList<>();
 
-    final ArrayList<DataAdapter3> ContentData = new ArrayList<>();
+    final ArrayList<TheoryListDataAdapter> ContentData = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -197,7 +197,7 @@ public class TheoryListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    DataAdapter3 GetDataAdapter2=new DataAdapter3();
+                                    TheoryListDataAdapter GetDataAdapter2=new TheoryListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -217,7 +217,7 @@ public class TheoryListFragment extends Fragment
                                 }
 
 
-                                adapter = new RecyclerViewAdapter3(ListOfdataAdapter,getActivity());
+                                adapter = new TheoryListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
 

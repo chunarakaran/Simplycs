@@ -1,6 +1,6 @@
 package com.example.amita.simplycs.Adapter;
 
-public class DataAdapter3 {
+public class TheoryListDataAdapter {
 
     public String id;
     public String Title;
