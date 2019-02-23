@@ -13,16 +13,16 @@ import com.example.amita.simplycs.R;
 
 import java.util.List;
 
-public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapter1.ViewHolder> {
+public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRecyclerViewAdapter.ViewHolder> {
 
 
     Context context;
 
-    List<DataAdapter1> dataAdapters;
+    List<CategoryDataAdapter> dataAdapters;
 
     ImageLoader imageLoader;
 
-    public RecyclerViewAdapter1(List<DataAdapter1> getDataAdapter, Context context){
+    public CategoryRecyclerViewAdapter(List<CategoryDataAdapter> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -42,7 +42,7 @@ public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        DataAdapter1 dataAdapterOBJ =  dataAdapters.get(position);
+        CategoryDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 

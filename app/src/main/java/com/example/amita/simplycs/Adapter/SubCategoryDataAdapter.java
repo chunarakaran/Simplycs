@@ -1,6 +1,6 @@
 package com.example.amita.simplycs.Adapter;
 
-public class DataAdapter2 {
+public class SubCategoryDataAdapter {
 
     public String id;
     public String ImageURL;

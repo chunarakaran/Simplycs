@@ -31,8 +31,8 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.amita.simplycs.Adapter.DataAdapter1;
-import com.example.amita.simplycs.Adapter.RecyclerViewAdapter1;
+import com.example.amita.simplycs.Adapter.CategoryDataAdapter;
+import com.example.amita.simplycs.Adapter.CategoryRecyclerViewAdapter;
 import com.example.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -55,13 +55,13 @@ public class TodayFragment extends Fragment
     String todayDate;
     TextView Test;
 
-    List<DataAdapter1> ListOfdataAdapter;
+    List<CategoryDataAdapter> ListOfdataAdapter;
 
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
     String topic_id;
-    final ArrayList<DataAdapter1> Topicid = new ArrayList<>();
+    final ArrayList<CategoryDataAdapter> Topicid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -224,7 +224,7 @@ public class TodayFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    DataAdapter1 GetDataAdapter2=new DataAdapter1();
+                                    CategoryDataAdapter GetDataAdapter2=new CategoryDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -243,7 +243,7 @@ public class TodayFragment extends Fragment
                                 Collections.reverse(ListOfdataAdapter);
                                 Collections.reverse(Topicid);
 
-                                adapter = new RecyclerViewAdapter1(ListOfdataAdapter,getActivity());
+                                adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
 
