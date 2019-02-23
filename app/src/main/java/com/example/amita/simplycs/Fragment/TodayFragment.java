@@ -102,10 +102,9 @@ public class TodayFragment extends Fragment
 
 
         Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         todayDate=df.format(c);
-        Test=(TextView)rootview.findViewById(R.id.test);
-        Test.setText(todayDate);
+
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
@@ -151,6 +150,7 @@ public class TodayFragment extends Fragment
 
                     Bundle bundle=new Bundle();
                     bundle.putString("topic_id",topic_id);
+                    bundle.putString("todayDate",todayDate);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);

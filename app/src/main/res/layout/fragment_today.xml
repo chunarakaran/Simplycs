@@ -10,12 +10,6 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <TextView
-            android:id="@+id/test"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-
 
         <LinearLayout
             android:orientation="vertical"
