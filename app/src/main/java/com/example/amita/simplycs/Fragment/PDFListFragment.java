@@ -49,7 +49,7 @@ public class PDFListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Topic_id,SubTopic_id,content_id,pdf_Data;
+    String CDate,Topic_id,SubTopic_id,content_id,pdf_Data;
 
     final ArrayList<PDFListDataAdapter> Contentid = new ArrayList<>();
 
@@ -83,6 +83,7 @@ public class PDFListFragment extends Fragment
         Bundle bundle=getArguments();
         Topic_id=String.valueOf(bundle.getString("topic_id"));
         SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
+        CDate=String.valueOf(bundle.getString("CDate"));
 
 
         requestQueue = Volley.newRequestQueue(getActivity());

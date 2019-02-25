@@ -56,7 +56,7 @@ public class TopicListFragment extends Fragment
 
     String Topic_id;
     String subtopic_id;
-    String TodayDate;
+    String CDate;
     final ArrayList<SubCategoryDataAdapter> SubTopicid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
@@ -87,7 +87,7 @@ public class TopicListFragment extends Fragment
 
         Bundle bundle=getArguments();
         Topic_id=String.valueOf(bundle.getString("topic_id"));
-        TodayDate=String.valueOf(bundle.getString("todayDate"));
+        CDate=String.valueOf(bundle.getString("Date"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -166,7 +166,7 @@ public class TopicListFragment extends Fragment
                     Bundle bundle=new Bundle();
                     bundle.putString("topic_id",Topic_id);
                     bundle.putString("subtopic_id",subtopic_id);
-                    bundle.putString("TodayDate",TodayDate);
+                    bundle.putString("CDate",CDate);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);

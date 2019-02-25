@@ -40,7 +40,7 @@ public class VideoListFragment extends Fragment
 
     private RecyclerView recyclerView;
 
-    String Topic_id,SubTopic_id;
+    String CDate,Topic_id,SubTopic_id;
 
     final ArrayList<PDFListDataAdapter> Contentid = new ArrayList<>();
 
@@ -67,7 +67,7 @@ public class VideoListFragment extends Fragment
         Bundle bundle=getArguments();
         Topic_id=String.valueOf(bundle.getString("topic_id"));
         SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
-
+        CDate=String.valueOf(bundle.getString("CDate"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);

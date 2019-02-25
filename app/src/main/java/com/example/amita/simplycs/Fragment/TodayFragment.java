@@ -150,7 +150,7 @@ public class TodayFragment extends Fragment
 
                     Bundle bundle=new Bundle();
                     bundle.putString("topic_id",topic_id);
-                    bundle.putString("todayDate",todayDate);
+                    bundle.putString("Date",todayDate);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);

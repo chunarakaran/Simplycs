@@ -19,7 +19,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    String Topic_id,SubTopic_id,TodayDate;
+    String Topic_id,SubTopic_id,CDate;
 
     View rootview;
     @Override
@@ -31,7 +31,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         Bundle bundle1=getArguments();
         Topic_id=String.valueOf(bundle1.getString("topic_id"));
         SubTopic_id=String.valueOf(bundle1.getString("subtopic_id"));
-        TodayDate=String.valueOf(bundle1.getString("TodayDate"));
+        CDate=String.valueOf(bundle1.getString("CDate"));
 
 
         tabLayout = (TabLayout)rootview.findViewById(R.id.tabLayout);
@@ -48,7 +48,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         Bundle bundle=new Bundle();
         bundle.putString("topic_id",Topic_id);
         bundle.putString("subTopic_id",SubTopic_id);
-        bundle.putString("TodayDate",TodayDate);
+        bundle.putString("CDate",CDate);
 
 
         Pager adapter = new Pager(getFragmentManager(), tabLayout.getTabCount(),bundle);

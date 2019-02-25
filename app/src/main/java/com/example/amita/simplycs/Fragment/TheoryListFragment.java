@@ -49,7 +49,7 @@ public class TheoryListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String TodayDate,Topic_id,SubTopic_id,content_id,content_Data;
+    String CDate,Topic_id,SubTopic_id,content_id,content_Data;
 
     final ArrayList<TheoryListDataAdapter> Contentid = new ArrayList<>();
 
@@ -86,7 +86,7 @@ public class TheoryListFragment extends Fragment
         Bundle bundle=getArguments();
         Topic_id=String.valueOf(bundle.getString("topic_id"));
         SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
-        TodayDate=String.valueOf(bundle.getString("TodayDate"));
+        CDate=String.valueOf(bundle.getString("CDate"));
 
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -278,7 +278,7 @@ public class TheoryListFragment extends Fragment
                 // Adding All values to Params.
                 params.put("TopicId", Topic_id);
                 params.put("SubTopicId", SubTopic_id);
-                params.put("Date", TodayDate);
+                params.put("Date", CDate);
 
                 return params;
             }

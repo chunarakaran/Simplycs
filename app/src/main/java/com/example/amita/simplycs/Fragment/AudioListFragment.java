@@ -49,7 +49,7 @@ public class AudioListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Topic_id,SubTopic_id,content_id,audio_url;
+    String CDate,Topic_id,SubTopic_id,content_id,audio_url;
 
     final ArrayList<AudioListDataAdapter> Contentid = new ArrayList<>();
 
@@ -83,6 +83,7 @@ public class AudioListFragment extends Fragment
         Bundle bundle=getArguments();
         Topic_id=String.valueOf(bundle.getString("topic_id"));
         SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
+        CDate=String.valueOf(bundle.getString("CDate"));
 
 
         requestQueue = Volley.newRequestQueue(getActivity());
