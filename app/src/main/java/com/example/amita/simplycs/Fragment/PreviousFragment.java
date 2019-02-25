@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -48,7 +47,7 @@ public class PreviousFragment extends Fragment
 
     String prevDate;
 
-    TextView Test;
+
 
 
     List<CategoryDataAdapter> ListOfdataAdapter;
@@ -111,8 +110,6 @@ public class PreviousFragment extends Fragment
         calendar.add(Calendar.DATE, -1);
         prevDate = df.format(calendar.getTime());
 
-        Test=(TextView)rootview.findViewById(R.id.test);
-        Test.setText(prevDate);
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
