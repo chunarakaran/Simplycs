@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
@@ -42,6 +45,8 @@ public class ArchiveFragment extends Fragment
 {
 
     View rootview;
+
+
 
     BottomNavigationView navigation;
     Menu menu;
@@ -106,7 +111,71 @@ public class ArchiveFragment extends Fragment
 
         recyclerView.setLayoutManager(mLayoutManager);
 
+
+
         GetTopicList();
+
+
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+
+            GestureDetector gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+                    return true;
+                }
+
+            });
+
+
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent)
+            {
+
+
+                rootview = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                if(rootview != null && gestureDetector.onTouchEvent(motionEvent)) {
+
+                    //Getting RecyclerView Clicked Item value.
+                    RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
+
+                    topic_id=Topicid.get(RecyclerViewItemPosition).getId();
+
+                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+                    TopicListFragment mfragment=new TopicListFragment();
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("topic_id",topic_id);
+                    bundle.putString("Date",aDate);
+                    mfragment.setArguments(bundle);
+
+                    transection.replace(R.id.content_frame, mfragment);
+                    transection.addToBackStack(null).commit();
+
+//                    Toast.makeText(getActivity(), "You clicked " + aDate, Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+
 
 
 
