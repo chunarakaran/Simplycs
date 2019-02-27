@@ -71,7 +71,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="replace" />
-        <activity android:name=".VideoListActivity" />
         <activity android:name=".YoutubePlayerActivity" />
         <activity android:name=".TheoryViewActivity" />
         <activity android:name=".PDFViewActivity" />

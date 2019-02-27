@@ -86,7 +86,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.amita.simplycs.VideoListActivity" />
         <activity android:name="com.example.amita.simplycs.YoutubePlayerActivity" />
         <activity android:name="com.example.amita.simplycs.TheoryViewActivity" />
         <activity android:name="com.example.amita.simplycs.PDFViewActivity" />

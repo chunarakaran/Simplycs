@@ -281,6 +281,7 @@ public class PDFListFragment extends Fragment
                 // Adding All values to Params.
                 params.put("TopicId", Topic_id);
                 params.put("SubTopicId", SubTopic_id);
+                params.put("Date", CDate);
 
                 return params;
             }

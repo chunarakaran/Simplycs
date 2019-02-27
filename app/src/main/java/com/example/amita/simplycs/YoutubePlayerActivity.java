@@ -4,26 +4,31 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.amita.simplycs.utils.Constants;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.example.amita.simplycs.utils.Constants;
 
 
 
 public class YoutubePlayerActivity extends YouTubeBaseActivity {
     private static final String TAG = YoutubePlayerActivity.class.getSimpleName();
-    private String videoID;
+    private String video_url;
     private YouTubePlayerView youTubePlayerView;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.youtube_player_activity);
         //get the video id
-        videoID = getIntent().getStringExtra("video_id");
+        video_url = getIntent().getStringExtra("video_url");
         youTubePlayerView = findViewById(R.id.youtube_player_view);
+
+//        Toast.makeText(getApplicationContext(), "You clicked " + video_url, Toast.LENGTH_SHORT).show();
+
         initializeYoutubePlayer();
     }
 
@@ -43,7 +48,7 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity {
                     youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
 
                     //load the video
-                    youTubePlayer.loadVideo(videoID);
+                    youTubePlayer.loadVideo(video_url);
 
                     //OR
 

@@ -1574,7 +1574,6 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tagline
-id test
 id text
 id text2
 id textSpacerNoButtons
@@ -1689,7 +1688,6 @@ layout activity_signup
 layout activity_splash_screen
 layout activity_theory_view
 layout activity_verify_phone
-layout activity_video_list
 layout activity_welcome
 layout app_bar_main
 layout cards_layout

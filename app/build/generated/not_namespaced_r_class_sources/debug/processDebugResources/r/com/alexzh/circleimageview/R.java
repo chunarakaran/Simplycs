@@ -480,14 +480,14 @@ public final class R {
         public static final int src_over = 0x7f0a0117;
         public static final int submit_area = 0x7f0a011e;
         public static final int tabMode = 0x7f0a0121;
-        public static final int textSpacerNoButtons = 0x7f0a0129;
-        public static final int title = 0x7f0a0133;
-        public static final int title_template = 0x7f0a0135;
-        public static final int topPanel = 0x7f0a0139;
-        public static final int up = 0x7f0a0145;
-        public static final int useLogo = 0x7f0a0147;
-        public static final int withText = 0x7f0a015b;
-        public static final int wrap_content = 0x7f0a015d;
+        public static final int textSpacerNoButtons = 0x7f0a0128;
+        public static final int title = 0x7f0a0132;
+        public static final int title_template = 0x7f0a0134;
+        public static final int topPanel = 0x7f0a0138;
+        public static final int up = 0x7f0a0144;
+        public static final int useLogo = 0x7f0a0146;
+        public static final int withText = 0x7f0a015a;
+        public static final int wrap_content = 0x7f0a015c;
     }
     public static final class integer {
         private integer() {}
@@ -521,10 +521,10 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0d0018;
         public static final int abc_search_view = 0x7f0d0019;
         public static final int abc_select_dialog_material = 0x7f0d001a;
-        public static final int select_dialog_item_material = 0x7f0d0067;
-        public static final int select_dialog_multichoice_material = 0x7f0d0068;
-        public static final int select_dialog_singlechoice_material = 0x7f0d0069;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0d006a;
+        public static final int select_dialog_item_material = 0x7f0d0066;
+        public static final int select_dialog_multichoice_material = 0x7f0d0067;
+        public static final int select_dialog_singlechoice_material = 0x7f0d0068;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0d0069;
     }
     public static final class string {
         private string() {}

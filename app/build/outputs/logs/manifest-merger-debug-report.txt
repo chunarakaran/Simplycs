@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\61e953eabdc30ec0a4af9062c6bd20b0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\45ed0cb4f48bb004b0489138c73c60de\AndroidManifest.xml:2:1-11:12
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\90f393a888b4ec49fe11036b074892b4\AndroidManifest.xml:2:1-23:12
@@ -60,22 +60,22 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\amita\.gradle\cac
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\c1d7a4bfd71706b4f8b52d94ed010857\AndroidManifest.xml:17:1-22:12
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\9833e70d6e84a8672bc9045dba70b78c\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\918b307afda61a24365d495801f63f0a\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
 	package
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:4:5-41
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-81:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-80:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:11-69
@@ -118,7 +118,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:5-68
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:22-65
 application
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-79:19
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-78:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\61e953eabdc30ec0a4af9062c6bd20b0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\61e953eabdc30ec0a4af9062c6bd20b0\AndroidManifest.xml:22:5-20
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\90f393a888b4ec49fe11036b074892b4\AndroidManifest.xml:15:5-21:19
@@ -285,26 +285,22 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:67:9-73:3
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:72:13-56
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:68:13-47
-activity#com.example.amita.simplycs.VideoListActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:74:9-55
-	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:74:19-52
 activity#com.example.amita.simplycs.YoutubePlayerActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:75:9-59
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:74:9-59
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:75:19-56
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:74:19-56
 activity#com.example.amita.simplycs.TheoryViewActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:76:9-56
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:75:9-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:76:19-53
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:75:19-53
 activity#com.example.amita.simplycs.PDFViewActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:77:9-53
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:76:9-53
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:77:19-50
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:76:19-50
 activity#com.example.amita.simplycs.AudioPlayActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:78:9-64
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:77:9-64
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:78:19-52
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:77:19-52
 uses-sdk
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml

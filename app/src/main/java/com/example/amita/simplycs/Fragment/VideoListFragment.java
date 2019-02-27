@@ -8,7 +8,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -20,12 +22,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.amita.simplycs.Adapter.PDFListDataAdapter;
-import com.example.amita.simplycs.Adapter.YoutubeVideoAdapter;
+import com.example.amita.simplycs.Adapter.VideoListDataAdapter;
+import com.example.amita.simplycs.Adapter.VideoListRecyclerViewAdapter;
 import com.example.amita.simplycs.R;
 import com.example.amita.simplycs.YoutubePlayerActivity;
-import com.example.amita.simplycs.model.YoutubeVideoModel;
-import com.example.amita.simplycs.utils.RecyclerViewOnClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,16 +33,25 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VideoListFragment extends Fragment
 {
 
-    private RecyclerView recyclerView;
+    List<VideoListDataAdapter> ListOfdataAdapter;
 
-    String CDate,Topic_id,SubTopic_id;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
 
-    final ArrayList<PDFListDataAdapter> Contentid = new ArrayList<>();
+    String CDate,Topic_id,SubTopic_id,content_id,video_url;
+
+    final ArrayList<VideoListDataAdapter> Contentid = new ArrayList<>();
+    final ArrayList<VideoListDataAdapter> Video_URL = new ArrayList<>();
+
+    int RecyclerViewItemPosition ;
+
+    LinearLayoutManager layoutManagerOfrecyclerView;
 
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -77,61 +86,86 @@ public class VideoListFragment extends Fragment
         pDialog.setCancelable(false);
 
 
-        setUpRecyclerView();
-        populateRecyclerView();
+
+
+        ListOfdataAdapter = new ArrayList<>();
+
+        recyclerView = (RecyclerView)rootview.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
+        layoutManagerOfrecyclerView.setReverseLayout(true);
+        layoutManagerOfrecyclerView.setStackFromEnd(true);
+
+        recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
+
+
+        GetVideoList();
+
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+
+            GestureDetector gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+                    return true;
+                }
+
+            });
+
+
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent)
+            {
+
+
+                rootview = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                if(rootview != null && gestureDetector.onTouchEvent(motionEvent)) {
+
+                    //Getting RecyclerView Clicked Item value.
+                    RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
+
+                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
+
+                    video_url=Video_URL.get(RecyclerViewItemPosition).getVideoURL();
+
+
+                    startActivity(new Intent(getActivity(),YoutubePlayerActivity.class)
+                            .putExtra("video_url", video_url));
+
+
+//                    Toast.makeText(getActivity(), "You clicked " + video_url, Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
 
 
         return rootview;
     }
 
-    /**
-     * setup the recyclerview here
-     */
-    private void setUpRecyclerView() {
-        recyclerView = rootview.findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(linearLayoutManager);
-    }
-
-    /**
-     * populate the recyclerview and implement the click event here
-     */
-    private void populateRecyclerView() {
-        final ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList = generateDummyVideoList();
-        YoutubeVideoAdapter adapter = new YoutubeVideoAdapter(getActivity(), youtubeVideoModelArrayList);
-        recyclerView.setAdapter(adapter);
-
-        //set click event
-        recyclerView.addOnItemTouchListener(new RecyclerViewOnClickListener(getActivity(), new RecyclerViewOnClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-
-                //start youtube player activity by passing selected video id via intent
-                startActivity(new Intent(getActivity(), YoutubePlayerActivity.class)
-                        .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId()));
-
-            }
-        }));
-    }
 
 
-    /**
-     * method to generate dummy array list of videos
-     *
-     * @return
-     */
-    private ArrayList<YoutubeVideoModel> generateDummyVideoList() {
-        ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList = new ArrayList<>();
-
-        //get the video id array, title array and duration array from strings.xml
-        String[] videoIDArray = getResources().getStringArray(R.array.video_id_array);
-        String[] videoTitleArray = getResources().getStringArray(R.array.video_title_array);
-        String[] videoDurationArray = getResources().getStringArray(R.array.video_duration_array);
-
-
-
-
+    public void GetVideoList()
+    {
         pDialog.setMessage("Please Wait...");
         showDialog();
 
@@ -149,38 +183,39 @@ public class VideoListFragment extends Fragment
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                ArrayList<String> videoIDArray = new ArrayList<String>();
-                                ArrayList<String> videoTitleArray = new ArrayList<String>();
-                                ArrayList<String> videoDurationArray = new ArrayList<String>();
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-
+                                    VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
                                     String video_title=jsonObject1.getString("video_title");
                                     String video_url=jsonObject1.getString("video_url");
-                                    String video_lenght=jsonObject1.getString("video_lenght");
 
-
-
-
-
-
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("video_title"));
+                                    GetDataAdapter2.setVideoURL(jsonObject1.getString("video_url"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_lenght"));
 
                                     if (video_title.equalsIgnoreCase("null")){
 
                                     }
                                     else
                                     {
-                                        videoIDArray.add(video_url);
-                                        videoTitleArray.add(video_title);
 
+                                        Contentid.add(GetDataAdapter2);
+
+                                        Video_URL.add(GetDataAdapter2);
+
+                                        ListOfdataAdapter.add(GetDataAdapter2);
                                     }
 
 
                                 }
 
+
+                                adapter = new VideoListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                recyclerView.setAdapter(adapter);
 
 
                                 hideDialog();
@@ -240,6 +275,7 @@ public class VideoListFragment extends Fragment
                 // Adding All values to Params.
                 params.put("TopicId", Topic_id);
                 params.put("SubTopicId", SubTopic_id);
+                params.put("Date", CDate);
 
                 return params;
             }
@@ -252,27 +288,7 @@ public class VideoListFragment extends Fragment
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
-
-
-
-
-
-
-
-        for (int i = 0; i < videoIDArray.length; i++) {
-
-            YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel();
-            youtubeVideoModel.setVideoId(videoIDArray[i]);
-            youtubeVideoModel.setTitle(videoTitleArray[i]);
-            youtubeVideoModel.setDuration(videoDurationArray[i]);
-
-            youtubeVideoModelArrayList.add(youtubeVideoModel);
-
-        }
-
-        return youtubeVideoModelArrayList;
     }
-
 
 
     private void showDialog() {

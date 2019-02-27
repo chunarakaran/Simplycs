@@ -225,8 +225,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_menu2:
 
-                Intent intent = new Intent(MainActivity.this, VideoListActivity.class);
-                startActivity(intent);
 
                 break;
             case R.id.action_menu3:
