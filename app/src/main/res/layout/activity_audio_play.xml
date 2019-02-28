@@ -12,28 +12,13 @@
 
 
 
-
-
-    <SeekBar
-        android:id="@+id/seekbar"
-        android:layout_margin="16dp"
+    <com.keenfin.audioview.AudioView
+        android:id="@+id/audioview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_media_play"
-        android:text="PLAY SOUND" />
+        app:minified="true"
+        app:primaryColor="@color/colorPrimary"
+        app:selectControls="false"
+        app:showTitle="false"/>
 
 </LinearLayout>

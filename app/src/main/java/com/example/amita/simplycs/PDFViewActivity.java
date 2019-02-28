@@ -12,6 +12,8 @@ public class PDFViewActivity extends AppCompatActivity {
 
     WebView webView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class PDFViewActivity extends AppCompatActivity {
         webView.setWebViewClient(new Callback());
 
         webView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + PDF_Data);
+
 
 
     }

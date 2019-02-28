@@ -178,6 +178,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name="com.keenfin.audioview.AudioService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
