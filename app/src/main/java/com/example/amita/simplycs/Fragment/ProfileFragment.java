@@ -46,9 +46,6 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment implements SingleUploadBroadcastReceiver.Delegate
 {
 
-
-
-
     private int PICK_IMAGE_REQUEST = 100;
 
     //storage permission code
