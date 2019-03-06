@@ -99,5 +99,19 @@
         <item>00:28</item>
     </string-array>
 
+    <string name="question">Question 1. How is the first president of Nigeria?</string>
+
+    <string name="answer_one">King Ade</string>
+
+    <string name="answer_two"> olu Obasanjo</string>
+
+    <string name="answer_three">Jona Goodluck</string>
+
+    <string name="answer_four"> Atiku Abubakar</string>
+
+    <string name="next_questions"> Next Question</string>
+
+    <string name="previous_questions"> Previous Question</string>
+
 
 </resources>

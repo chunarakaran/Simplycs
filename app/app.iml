@@ -157,6 +157,7 @@
     <orderEntry type="library" name="Gradle: __local_aars__:D.\AndroidProject\Simplycs\app\libs\YouTubeAndroidPlayerApi.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-auth-16.0.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\AndroidProject\Simplycs\app\libs\activation.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: in.shadowfax:proswipebutton-1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:slidingpanelayout-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.1" level="project" />

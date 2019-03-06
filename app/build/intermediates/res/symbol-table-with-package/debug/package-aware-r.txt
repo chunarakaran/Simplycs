@@ -16,6 +16,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_in
+anim fade_out
 anim slide_out_down
 anim slide_up_dialog
 anim translate
@@ -77,6 +79,7 @@ attr alpha
 attr alphabeticModifiers
 attr arrowHeadLength
 attr arrowShaftLength
+attr arrow_color
 attr autoCompleteTextViewStyle
 attr autoSizeMaxTextSize
 attr autoSizeMinTextSize
@@ -97,6 +100,7 @@ attr behavior_hideable
 attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_skipCollapsed
+attr bg_color
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -112,6 +116,8 @@ attr boxCornerRadiusTopEnd
 attr boxCornerRadiusTopStart
 attr boxStrokeColor
 attr boxStrokeWidth
+attr btn_radius
+attr btn_text
 attr buttonBarButtonStyle
 attr buttonBarNegativeButtonStyle
 attr buttonBarNeutralButtonStyle
@@ -550,6 +556,8 @@ attr textColorSearchUrl
 attr textEndPadding
 attr textInputStyle
 attr textStartPadding
+attr text_color
+attr text_size
 attr theme
 attr thickness
 attr thumbTextPadding
@@ -762,6 +770,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color proswipebtn_red
+color proswipebtn_translucent_white
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1195,6 +1205,8 @@ drawable ic_analytics
 drawable ic_audiotrack_black_24dp
 drawable ic_bookmark2
 drawable ic_calender
+drawable ic_cancel_full_24dp
+drawable ic_check_circle_36dp
 drawable ic_clock1
 drawable ic_close
 drawable ic_close_white_48dp
@@ -1225,6 +1237,7 @@ drawable ic_play_arrow_white_24dp
 drawable ic_play_circle_outline_black_24dp
 drawable ic_previousday
 drawable ic_support1
+drawable ic_swipe_right_caret
 drawable ic_today
 drawable ic_turned_in_black_24dp
 drawable img12
@@ -1248,6 +1261,10 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable p1
 drawable p2
+drawable quizbutton
+drawable radio_bg
+drawable radiobutton
+drawable radiobuttonselect
 drawable rect_grayoutline1
 drawable rect_yellow1
 drawable ribbon
@@ -1405,6 +1422,11 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id examDate
+id examDesc
+id examTitle
+id exam_end_Time
+id exam_start_Time
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1451,6 +1473,8 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id ivContent
+id iv_arrow1
+id iv_arrow2
 id l1
 id labeled
 id largeLabel
@@ -1462,6 +1486,7 @@ id lin_lay
 id line1
 id line3
 id linear
+id linearLayout_swipeBtn_hintContainer
 id listMode
 id list_item
 id listview_background_shape
@@ -1475,6 +1500,7 @@ id logo
 id logoIv
 id main_layout
 id masked
+id max_marks
 id media_actions
 id message
 id middle
@@ -1496,6 +1522,7 @@ id navigation_prev
 id navigation_today
 id negativeBtn
 id never
+id nextquiz
 id none
 id normal
 id notification_background
@@ -1516,16 +1543,24 @@ id phone
 id pin
 id play
 id positiveBtn
+id previousquiz
 id progress
 id progress_circular
 id progress_horizontal
 id progressbar
+id quiz_question
 id radio
+id radio0
+id radio1
+id radio2
+id radio3
+id radioGroup
 id radioRetail
 id radioWholesaler
 id recycler_view
 id recyclerview1
 id relativeLayout
+id relativeLayout_swipeBtn_contentContainer
 id relativelayout1
 id repeat
 id rewind
@@ -1574,6 +1609,7 @@ id src_in
 id src_over
 id standard
 id start
+id start_test
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1586,6 +1622,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tagline
+id test_layout
 id text
 id text2
 id textSpacerNoButtons
@@ -1615,6 +1652,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tvContent
 id tvTitle
+id tv_btnText
 id uniform
 id unlabeled
 id up
@@ -1697,6 +1735,7 @@ layout activity_forgotpwd
 layout activity_login
 layout activity_main
 layout activity_pdfview
+layout activity_quiz
 layout activity_signup
 layout activity_splash_screen
 layout activity_theory_view
@@ -1727,15 +1766,17 @@ layout fragment_askus
 layout fragment_audiolist
 layout fragment_changepass
 layout fragment_content
-layout fragment_coourselist
 layout fragment_course
 layout fragment_course_detail
+layout fragment_courselist
 layout fragment_dashboard
 layout fragment_edit_profile
+layout fragment_examlist
 layout fragment_pdflist
 layout fragment_previous
 layout fragment_profile
 layout fragment_setting
+layout fragment_startquiz
 layout fragment_theorylist
 layout fragment_today
 layout fragment_topiclist
@@ -1771,6 +1812,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_proswipebtn
 layout welcome_slide1
 layout welcome_slide2
 layout welcome_slide3
@@ -1829,6 +1871,10 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
+string answer_four
+string answer_one
+string answer_three
+string answer_two
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -1881,6 +1927,7 @@ string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
 string next
+string next_questions
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1888,7 +1935,9 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string play_again
 string play_again_desc
+string previous_questions
 string project_id
+string question
 string search_menu_title
 string skip
 string slide_1_desc
@@ -2484,6 +2533,7 @@ styleable MenuView android_windowAnimationStyle android_itemTextAppearance andro
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconTint itemTextAppearance itemTextColor menu
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable ProSwipeButton arrow_color bg_color btn_radius btn_text text_color text_size
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y

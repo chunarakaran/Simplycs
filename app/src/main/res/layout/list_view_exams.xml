@@ -37,7 +37,7 @@
             <!--app:riv_oval="false" />-->
 
         <customfonts.MyTextView_SF_Pro_Light
-            android:id="@+id/courseTitle"
+            android:id="@+id/examTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Digital Marketing 101"
@@ -47,7 +47,7 @@
 
 
         <customfonts.TextViewSFProDisplayRegular
-            android:id="@+id/courseDesc"
+            android:id="@+id/examDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollHorizontally="false"
@@ -66,21 +66,13 @@
             android:orientation="horizontal">
 
             <customfonts.TextViewSFProDisplayMedium
-                android:id="@+id/coursePrice"
+                android:id="@+id/examDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                android:text="\u20B9 59.99"/>
+                android:text="Date"/>
 
-            <customfonts.TextViewSFProDisplayMedium
-                android:id="@+id/courseDiscount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/green"
-                android:layout_marginLeft="10dp"
-                android:textSize="11sp"
-                android:text="10% off"/>
 
 
             <ImageView
@@ -92,12 +84,23 @@
                 android:layout_marginLeft="10dp"/>
 
             <customfonts.TextViewSFProDisplayMedium
-                android:id="@+id/courseHours"
+                android:id="@+id/exam_start_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                android:text="12 Hours"/>
+                android:text="12:00"/>
+
+
+            <customfonts.TextViewSFProDisplayMedium
+                android:id="@+id/exam_end_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:textSize="11sp"
+                android:text="To 3:00"/>
+
 
 
 

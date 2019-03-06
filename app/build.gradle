@@ -60,6 +60,8 @@ dependencies {
     implementation 'net.gotev:uploadservice:2.1'
 
     implementation 'com.4ert:audioview:0.4'
+
+    implementation 'in.shadowfax:proswipebutton:1.1'
     //Temparory
     implementation 'com.makeramen:roundedimageview:2.3.0'
 }
