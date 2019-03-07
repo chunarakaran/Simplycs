@@ -1425,7 +1425,11 @@ id enterAlwaysCollapsed
 id examDate
 id examDesc
 id examTitle
+id exam_date
+id exam_des
 id exam_end_Time
+id exam_image
+id exam_name
 id exam_start_Time
 id exitUntilCollapsed
 id expand_activities_button
@@ -1771,6 +1775,7 @@ layout fragment_course_detail
 layout fragment_courselist
 layout fragment_dashboard
 layout fragment_edit_profile
+layout fragment_exam_detail
 layout fragment_examlist
 layout fragment_pdflist
 layout fragment_previous

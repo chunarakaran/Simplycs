@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -136,18 +137,18 @@ public class ExamListFragment extends Fragment
 
                     exam_id=Exam_id.get(RecyclerViewItemPosition).getId();
 
-//                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-//                    CourseDetailFragment mfragment=new CourseDetailFragment();
-//
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("course_id",course_id);
-//                    mfragment.setArguments(bundle);
-//
-//                    transection.replace(R.id.content_frame, mfragment);
-//                    transection.addToBackStack(null).commit();
+                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+                    ExamDetailFragment mfragment=new ExamDetailFragment();
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("exam_id",exam_id);
+                    mfragment.setArguments(bundle);
+
+                    transection.replace(R.id.content_frame, mfragment);
+                    transection.addToBackStack(null).commit();
 
 
-                    Toast.makeText(getActivity(), "You clicked " + exam_id, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + exam_id, Toast.LENGTH_SHORT).show();
 
 
                 }

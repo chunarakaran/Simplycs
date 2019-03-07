@@ -58,9 +58,9 @@ public class ExamListRecyclerViewAdapter extends RecyclerView.Adapter<ExamListRe
 
         Viewholder.ExamTitle.setText(dataAdapterOBJ.getExamTitle());
         Viewholder.ExamDesc.setText(dataAdapterOBJ.getexamDesc());
-        Viewholder.ExamDate.setText(dataAdapterOBJ.getExamDate());
+        Viewholder.ExamDate.setText("Starts From:"+dataAdapterOBJ.getExamDate());
         Viewholder.Exam_start_Time.setText(dataAdapterOBJ.getExam_start_Time());
-        Viewholder.Exam_end_Time.setText(dataAdapterOBJ.getExam_end_Time());
+        Viewholder.Exam_end_Time.setText("To "+dataAdapterOBJ.getExam_end_Time());
 
     }
 
