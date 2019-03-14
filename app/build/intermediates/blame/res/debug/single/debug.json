@@ -1144,6 +1144,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_top.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\android-pdf-viewer-2.8.2.aar\\c1ae009dc33c4cab2a2d20be0a9e9472\\res\\drawable\\default_scroll_handle_top.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_picture_as_pdf_black_24dp.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_picture_as_pdf_black_24dp.png"
     },
@@ -1396,6 +1400,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_right.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\android-pdf-viewer-2.8.2.aar\\c1ae009dc33c4cab2a2d20be0a9e9472\\res\\drawable\\default_scroll_handle_right.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\e27cca6fb99f3f368d97f941997c69a7\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
     },
@@ -1452,12 +1460,12 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\backgrownd.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\61e953eabdc30ec0a4af9062c6bd20b0\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_out.xml.flat",
@@ -2764,12 +2772,12 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\activity_theory_view.xml"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\61e953eabdc30ec0a4af9062c6bd20b0\\res\\color\\mtrl_chip_text_color.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_radiobutton.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\radiobutton.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\61e953eabdc30ec0a4af9062c6bd20b0\\res\\color\\mtrl_chip_text_color.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_item_material.xml.flat",
@@ -2786,6 +2794,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_bottom.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\android-pdf-viewer-2.8.2.aar\\c1ae009dc33c4cab2a2d20be0a9e9472\\res\\drawable\\default_scroll_handle_bottom.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -3166,6 +3178,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v21_ic_clock1.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi-v21\\ic_clock1.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_left.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\android-pdf-viewer-2.8.2.aar\\c1ae009dc33c4cab2a2d20be0a9e9472\\res\\drawable\\default_scroll_handle_left.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_fast_rewind_black_24dp.png.flat",

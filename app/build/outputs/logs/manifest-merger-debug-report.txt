@@ -26,6 +26,8 @@ MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\amita\.
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a735ed5b656e00bf2e5386dc404cdd48\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\b53a26b20bb4181f0a383cb2f7b43af6\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\60bfc3ec9c85cb710aa3d6a456e82bff\AndroidManifest.xml:17:1-28:12
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\c1ae009dc33c4cab2a2d20be0a9e9472\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\ca337bf98f937987fee15819d0a99eec\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0-rc01.aar\ff2734dacd69a0b782077f641ddfd266\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\412c5153655d1b6385f27f9511e13aa3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\97106523630f8356922566ecfeb7fe82\AndroidManifest.xml:17:1-22:12
@@ -355,6 +357,10 @@ MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\User
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\b53a26b20bb4181f0a383cb2f7b43af6\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\60bfc3ec9c85cb710aa3d6a456e82bff\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\60bfc3ec9c85cb710aa3d6a456e82bff\AndroidManifest.xml:20:5-44
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\c1ae009dc33c4cab2a2d20be0a9e9472\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\c1ae009dc33c4cab2a2d20be0a9e9472\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\ca337bf98f937987fee15819d0a99eec\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\ca337bf98f937987fee15819d0a99eec\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0-rc01.aar\ff2734dacd69a0b782077f641ddfd266\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0-rc01.aar\ff2734dacd69a0b782077f641ddfd266\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\412c5153655d1b6385f27f9511e13aa3\AndroidManifest.xml:20:5-44
