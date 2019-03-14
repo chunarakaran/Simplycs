@@ -6,7 +6,7 @@
     android:weightSum="12">
 
     <TextView
-        android:id="@+id/aboutTitle"
+        android:id="@+id/ContentTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp"

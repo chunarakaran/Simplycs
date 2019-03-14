@@ -49,11 +49,13 @@ public class TheoryListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Topic_id,SubTopic_id,content_id,content_Data;
+    String CDate,Topic_id,SubTopic_id,content_id,content_name,content_Data;
 
     final ArrayList<TheoryListDataAdapter> Contentid = new ArrayList<>();
 
     final ArrayList<TheoryListDataAdapter> ContentData = new ArrayList<>();
+
+    final ArrayList<TheoryListDataAdapter> ContentName = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -139,11 +141,14 @@ public class TheoryListFragment extends Fragment
 
                     content_id=Contentid.get(RecyclerViewItemPosition).getId();
 
+                    content_name=ContentName.get(RecyclerViewItemPosition).getTitle();
+
                     content_Data=ContentData.get(RecyclerViewItemPosition).getContentData();
 
 
                     startActivity(new Intent(getActivity(), TheoryViewActivity.class)
-                            .putExtra("content_Data", content_Data));
+                            .putExtra("content_Data", content_Data)
+                            .putExtra("content_name",content_name));
 
 
 //                    Toast.makeText(getActivity(), "You clicked " + content_id, Toast.LENGTH_SHORT).show();
@@ -209,6 +214,7 @@ public class TheoryListFragment extends Fragment
 
 
                                     Contentid.add(GetDataAdapter2);
+                                    ContentName.add(GetDataAdapter2);
 
                                     ContentData.add(GetDataAdapter2);
 

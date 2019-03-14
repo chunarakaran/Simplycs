@@ -5223,14 +5223,14 @@ public final class R {
   public static final class id {
     public static final int ALT=0x7f0a0000;
     public static final int CTRL=0x7f0a0001;
-    public static final int FUNCTION=0x7f0a0002;
-    public static final int META=0x7f0a0003;
-    public static final int Profile_pic=0x7f0a0004;
-    public static final int SHIFT=0x7f0a0005;
-    public static final int SYM=0x7f0a0006;
-    public static final int Tremark=0x7f0a0007;
-    public static final int VolleyImageView=0x7f0a0008;
-    public static final int aboutTitle=0x7f0a0009;
+    public static final int ContentTitle=0x7f0a0002;
+    public static final int FUNCTION=0x7f0a0003;
+    public static final int META=0x7f0a0004;
+    public static final int Profile_pic=0x7f0a0005;
+    public static final int SHIFT=0x7f0a0006;
+    public static final int SYM=0x7f0a0007;
+    public static final int Tremark=0x7f0a0008;
+    public static final int VolleyImageView=0x7f0a0009;
     public static final int action0=0x7f0a000a;
     public static final int action_bar=0x7f0a000b;
     public static final int action_bar_activity_content=0x7f0a000c;

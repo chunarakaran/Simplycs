@@ -1307,6 +1307,7 @@ font sfnsdisplay
 font sofia_regular
 id ALT
 id CTRL
+id ContentTitle
 id FUNCTION
 id META
 id Profile_pic
@@ -1314,7 +1315,6 @@ id SHIFT
 id SYM
 id Tremark
 id VolleyImageView
-id aboutTitle
 id action0
 id action_bar
 id action_bar_activity_content
