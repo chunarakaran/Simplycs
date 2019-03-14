@@ -251,12 +251,12 @@ public class TodayFragment extends Fragment
 
                             }
                             else if (success.equalsIgnoreCase("false")){
-                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
                             else
                             {
-                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
 
@@ -278,7 +278,7 @@ public class TodayFragment extends Fragment
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
 
-                        // Hiding the progress dialog after all task complete.
+                        // Hiding the progress dialog after all task complete.0
 
 
                         // Showing error message if something goes wrong.

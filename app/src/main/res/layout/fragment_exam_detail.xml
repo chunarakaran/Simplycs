@@ -144,111 +144,18 @@
                 android:layout_marginTop="12dp"/>
 
 
-            <LinearLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:orientation="horizontal">
+                android:clipToPadding="false"
+                android:fadingEdge="none"
+                android:paddingBottom="@dimen/material_global_margin_8"
+                android:paddingTop="@dimen/material_global_margin_8"
+                android:scrollbars="none" />
 
-
-                <customfonts.TextViewSFProDisplaySemibold
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:text="1"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:background="@drawable/dark_circle_sky"/>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <customfonts.TextViewSFProDisplayMedium
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="UI Design for the Web"
-                        android:textSize="12.8dp"
-                        android:textColor="#585e66"/>
-
-
-                    <customfonts.TextViewSFProDisplayRegular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#a0a0a0"
-                        android:textSize="10dp"
-                        android:text="Get started with the basics"/>
-                </LinearLayout>
-
-
-                <customfonts.TextViewSFProDisplayRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12mins"
-                    android:textSize="10sp"
-                    android:textColor="#a0a0a0"
-                    android:layout_gravity="bottom"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal">
-
-
-                <customfonts.TextViewSFProDisplaySemibold
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:text="2"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:background="@drawable/dark_circle_green"/>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <customfonts.TextViewSFProDisplayMedium
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="UI Design for the Web"
-                        android:textSize="12.8dp"
-                        android:textColor="#585e66"/>
-
-
-                    <customfonts.TextViewSFProDisplayRegular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#a0a0a0"
-                        android:textSize="10dp"
-                        android:text="Get started with the basics"/>
-                </LinearLayout>
-
-
-                <customfonts.TextViewSFProDisplayRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12mins"
-                    android:textSize="10sp"
-                    android:textColor="#a0a0a0"
-                    android:layout_gravity="bottom"/>
-
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -257,7 +164,7 @@
     <customfonts.Button_SF_Pro_Display_Semibold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enroll Course Now"
+        android:text="View Course Now"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:layout_margin="12sp"

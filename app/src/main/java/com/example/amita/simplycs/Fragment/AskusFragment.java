@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.amita.simplycs.R;
 
@@ -31,7 +30,7 @@ public class AskusFragment extends Fragment
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"hello",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),"hello",Toast.LENGTH_SHORT).show();
             }
         });
 

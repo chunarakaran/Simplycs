@@ -1387,6 +1387,7 @@ id contentPanel
 id content_frame
 id content_title
 id coordinator
+id count
 id courseDesc
 id courseDiscount
 id courseHours
@@ -1793,6 +1794,7 @@ layout list_view
 layout list_view_audio
 layout list_view_courses
 layout list_view_exams
+layout list_view_include_exam_courses
 layout list_view_pdf
 layout list_view_theory
 layout mtrl_layout_snackbar
