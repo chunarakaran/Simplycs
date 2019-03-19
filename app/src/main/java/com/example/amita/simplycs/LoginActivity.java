@@ -273,15 +273,18 @@ public class LoginActivity extends AppCompatActivity {
                         // Create login session
                         session.setLogin(true);
 
+                        hideDialog();
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
                         finish();
                     }
 
                 } catch (JSONException e) {
+
+                    hideDialog();
                     // JSON error
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Server Error Please Try After Sometime", Toast.LENGTH_LONG).show();
                 }
 
 

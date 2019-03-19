@@ -3,14 +3,18 @@ package com.example.amita.simplycs.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -122,6 +126,9 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
             @Override
             public void onClick(View v) {
 
+                //Requesting storage permission
+                requestStoragePermission();
+
                 showFileChooser();
             }
         });
@@ -212,44 +219,29 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         cursor.moveToFirst();
         String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
 
-//        String path="";
-//
-//        try {
-//
-//            BitmapFactory.Options options = null;
-//            options = new BitmapFactory.Options();
-//            options.inSampleSize = 1;
-//            bitmap = BitmapFactory.decodeFile(cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA)), options);
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            // Must compress the Image to reduce image size to make upload easy
-//            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
-//
-//            byte[] byte_arr = stream.toByteArray();
-//            // Encode Image to String
-//            path = Base64.encodeToString(byte_arr, Base64.DEFAULT);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
         cursor.close();
 
         return path;
     }
 
 
-    public byte[] getFileDataFromDrawable(Bitmap bitmap) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
-        return byteArrayOutputStream.toByteArray();
+    public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 50, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
     }
 
     public void uploadMultipart() {
-        //getting name for the image
+
 
         //getting the actual path of the image
         String path = getPath(filePath);
 
 
+//        Bitmap bitmap = params[0];
+//        String uploadImage = getStringImage(bitmap);
 
 
         //Uploading code
@@ -271,6 +263,19 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         }
     }
 
+    //Requesting permission
+    private void requestStoragePermission() {
+        if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            //If the user has denied the permission previously your code will come to this block
+            //Here you can explain why you need this permission
+            //Explain here why you need this permission
+        }
+        //And finally ask for the permission
+        ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
 
 
     public void Initialize()
@@ -395,13 +400,14 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     @Override
     public void onProgress(int progress) {
         //your implementation
-        pDialog.setMessage("Please Wait...");
-        showDialog();
+
     }
 
     @Override
     public void onProgress(long uploadedBytes, long totalBytes) {
         //your implementation
+        pDialog.setMessage("Please Wait...");
+        showDialog();
     }
 
     @Override
