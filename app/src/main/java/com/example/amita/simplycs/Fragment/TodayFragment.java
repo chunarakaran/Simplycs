@@ -67,7 +67,7 @@ public class TodayFragment extends Fragment
     GridLayoutManager mLayoutManager;
 
 
-    String User_id;
+    String User_id,Course_id;
     public static final String PREFS_NAME = "login";
 
     //volley
@@ -87,6 +87,7 @@ public class TodayFragment extends Fragment
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+        Course_id = sp.getString("Courseid", "");
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -113,6 +114,8 @@ public class TodayFragment extends Fragment
         mLayoutManager = new GridLayoutManager(getActivity(),2);
 
         recyclerView.setLayoutManager(mLayoutManager);
+
+
 
         GetTopicList();
 

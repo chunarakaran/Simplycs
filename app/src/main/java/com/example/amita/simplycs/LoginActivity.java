@@ -264,10 +264,12 @@ public class LoginActivity extends AppCompatActivity {
 
                         JSONObject user = jObj.getJSONObject("data");
                         String Uid = user.getString("Auth");
+                        String Cid = user.getString("cource_id");
 
-                        Toast.makeText(getApplicationContext(), Uid, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG).show();
 
                         editor.putString("User", Uid);
+                        editor.putString("Courseid", Cid);
                         editor.commit();
 
                         // Create login session
