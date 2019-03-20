@@ -10,8 +10,11 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +24,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.amita.simplycs.Adapter.GetCourseDataAdapter;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,13 +42,19 @@ public class SignupActivity extends AppCompatActivity {
 
     TextView Sign_up;
 
+    Spinner CourseSpinner;
+    final ArrayList<GetCourseDataAdapter> Coursedatalist = new ArrayList<>();
+
+
     EditText EName,Email,EPassword,EConfPass;
-    String SName,SEmail,SMobile,SPassword,SdeviceName,SdeviceOs;
+    String SCourseid,SName,SEmail,SMobile,SPassword,SdeviceName,SdeviceOs;
 
 
     String Imobile,deviceName, deviceOs;
 
     String URL;
+
+    String Courseid;
 
     //volley
     RequestQueue requestQueue;
@@ -75,6 +87,25 @@ public class SignupActivity extends AppCompatActivity {
 
         Initialize();
 
+        GetCourseName();
+
+        CourseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View view, int position, long row_id)
+            {
+//                com_name=   statespinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+                Courseid = Coursedatalist.get(position).getId();
+//                Toast.makeText(getApplicationContext(),"Id   " +Courseid , Toast.LENGTH_LONG).show();
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                // DO Nothing here
+            }
+        });
+
+
+
         Intent intent = getIntent();
         Imobile = intent.getStringExtra("mobile");
 
@@ -91,9 +122,9 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                // Toast.makeText(getApplicationContext(),Imobile,Toast.LENGTH_SHORT).show();
 
-               // Validation();
+                Validation();
 
-                Register();
+//                Register();
 
             }
         });
@@ -107,6 +138,7 @@ public class SignupActivity extends AppCompatActivity {
         Sign_up=(TextView)findViewById(R.id.sign_up);
 
 
+        CourseSpinner=(Spinner)findViewById(R.id.course_spinner);
         EName=(EditText)findViewById(R.id.input_name);
         Email=(EditText)findViewById(R.id.input_email);
         EPassword=(EditText)findViewById(R.id.input_password);
@@ -117,6 +149,7 @@ public class SignupActivity extends AppCompatActivity {
     public void GetEditTextValue()
     {
 
+        SCourseid=Courseid;
         SName=EName.getText().toString();
         SEmail=Email.getText().toString();
         SPassword=EPassword.getText().toString();
@@ -271,6 +304,7 @@ public class SignupActivity extends AppCompatActivity {
                 // Adding All values to Params.
 
                 //Company
+                params.put("CourceId", SCourseid);
                 params.put("Email", SEmail);
                 params.put("Name", SName);
                 params.put("Mobileno", SMobile);
@@ -289,6 +323,100 @@ public class SignupActivity extends AppCompatActivity {
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
 
+    }
+
+    public void GetCourseName()
+    {
+        progressDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetAllCource",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        final ArrayList<String> list = new ArrayList<>();
+
+                        list.clear();
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("false"))
+                            {
+//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+
+                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                for(int i=0;i<jsonArray.length();i++)
+                                {
+                                    GetCourseDataAdapter GetDataAdapter2=new GetCourseDataAdapter();
+                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
+
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setCourseName(jsonObject1.getString("course_name"));
+
+
+
+                                    Coursedatalist.add(GetDataAdapter2);
+
+                                    list.add(jsonObject1.getString("course_name"));
+
+                                }
+
+
+                                CourseSpinner.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, list));
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("true")){
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
     }
 
 
