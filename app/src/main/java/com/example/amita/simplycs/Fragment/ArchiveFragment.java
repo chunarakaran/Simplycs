@@ -60,14 +60,14 @@ public class ArchiveFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String topic_id;
-    final ArrayList<CategoryDataAdapter> Topicid = new ArrayList<>();
+    String Category_id;
+    final ArrayList<CategoryDataAdapter> Categoryid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
 
 
-    String User_id;
+    String User_id,Course_id;
     public static final String PREFS_NAME = "login";
 
     //volley
@@ -85,6 +85,7 @@ public class ArchiveFragment extends Fragment
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+        Course_id = sp.getString("Courseid", "");
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -113,7 +114,7 @@ public class ArchiveFragment extends Fragment
 
 
 
-        GetTopicList();
+        GetCategoryList();
 
 
 
@@ -142,13 +143,13 @@ public class ArchiveFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    topic_id=Topicid.get(RecyclerViewItemPosition).getId();
+                    Category_id=Categoryid.get(RecyclerViewItemPosition).getId();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    TopicListFragment mfragment=new TopicListFragment();
+                    SubCategoryListFragment mfragment=new SubCategoryListFragment();
 
                     Bundle bundle=new Bundle();
-                    bundle.putString("topic_id",topic_id);
+                    bundle.putString("category_id",Category_id);
                     bundle.putString("Date",aDate);
                     mfragment.setArguments(bundle);
 
@@ -200,12 +201,12 @@ public class ArchiveFragment extends Fragment
     }
 
 
-    public void GetTopicList()
+    public void GetCategoryList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetTopics",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetCategory",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -232,14 +233,14 @@ public class ArchiveFragment extends Fragment
 
 
 
-                                    Topicid.add(GetDataAdapter2);
+                                    Categoryid.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
 
                                 Collections.reverse(ListOfdataAdapter);
-                                Collections.reverse(Topicid);
+                                Collections.reverse(Categoryid);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
@@ -290,6 +291,18 @@ public class ArchiveFragment extends Fragment
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Auth", User_id);
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("CourseId", Course_id);
+
                 return params;
             }
 

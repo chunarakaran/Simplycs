@@ -44,7 +44,7 @@ import java.util.Map;
 
 import cn.refactor.lib.colordialog.PromptDialog;
 
-public class TopicListFragment extends Fragment
+public class SubCategoryListFragment extends Fragment
 {
 
 
@@ -54,15 +54,15 @@ public class TopicListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Topic_id;
-    String subtopic_id;
+    String Category_id;
+    String SubCategory_id;
     String CDate;
-    final ArrayList<SubCategoryDataAdapter> SubTopicid = new ArrayList<>();
+    final ArrayList<SubCategoryDataAdapter> SubCategoryid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
 
-    String User_id;
+    String User_id,Course_id;
     public static final String PREFS_NAME = "login";
 
     //volley
@@ -84,9 +84,10 @@ public class TopicListFragment extends Fragment
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+        Course_id = sp.getString("Courseid", "");
 
         Bundle bundle=getArguments();
-        Topic_id=String.valueOf(bundle.getString("topic_id"));
+        Category_id=String.valueOf(bundle.getString("category_id"));
         CDate=String.valueOf(bundle.getString("Date"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -158,14 +159,14 @@ public class TopicListFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    subtopic_id=SubTopicid.get(RecyclerViewItemPosition).getId();
+                    SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     ContentFragment mfragment=new ContentFragment();
 
                     Bundle bundle=new Bundle();
-                    bundle.putString("topic_id",Topic_id);
-                    bundle.putString("subtopic_id",subtopic_id);
+                    bundle.putString("category_id",Category_id);
+                    bundle.putString("SubCategory_id",SubCategory_id);
                     bundle.putString("CDate",CDate);
                     mfragment.setArguments(bundle);
 
@@ -223,7 +224,7 @@ public class TopicListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetSubTopics",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetSubCategory",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -250,7 +251,7 @@ public class TopicListFragment extends Fragment
 
 
 
-                                    SubTopicid.add(GetDataAdapter2);
+                                    SubCategoryid.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
@@ -318,8 +319,8 @@ public class TopicListFragment extends Fragment
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-                params.put("topic_id", Topic_id);
-
+                params.put("CourseId", Course_id);
+                params.put("topic_id", Category_id);
                 return params;
             }
 

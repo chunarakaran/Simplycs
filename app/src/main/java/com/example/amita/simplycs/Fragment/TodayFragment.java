@@ -60,8 +60,8 @@ public class TodayFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String topic_id;
-    final ArrayList<CategoryDataAdapter> Topicid = new ArrayList<>();
+    String Category_id;
+    final ArrayList<CategoryDataAdapter> Categoryid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -117,7 +117,7 @@ public class TodayFragment extends Fragment
 
 
 
-        GetTopicList();
+        GetCategoryList();
 
 
         // Implementing Click Listener on RecyclerView.
@@ -146,13 +146,13 @@ public class TodayFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    topic_id=Topicid.get(RecyclerViewItemPosition).getId();
+                    Category_id=Categoryid.get(RecyclerViewItemPosition).getId();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    TopicListFragment mfragment=new TopicListFragment();
+                    SubCategoryListFragment mfragment=new SubCategoryListFragment();
 
                     Bundle bundle=new Bundle();
-                    bundle.putString("topic_id",topic_id);
+                    bundle.putString("category_id",Category_id);
                     bundle.putString("Date",todayDate);
                     mfragment.setArguments(bundle);
 
@@ -205,12 +205,12 @@ public class TodayFragment extends Fragment
     }
 
 
-    public void GetTopicList()
+    public void GetCategoryList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetTopics",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetCategory",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -237,14 +237,14 @@ public class TodayFragment extends Fragment
 
 
 
-                                    Topicid.add(GetDataAdapter2);
+                                    Categoryid.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
 
                                 Collections.reverse(ListOfdataAdapter);
-                                Collections.reverse(Topicid);
+                                Collections.reverse(Categoryid);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
@@ -311,6 +311,19 @@ public class TodayFragment extends Fragment
                 params.put("Auth", User_id);
                 return params;
             }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("CourseId", Course_id);
+
+                return params;
+            }
+
 
 
         };
