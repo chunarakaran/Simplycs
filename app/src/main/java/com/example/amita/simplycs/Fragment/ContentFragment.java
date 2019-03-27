@@ -19,7 +19,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    String Topic_id,SubTopic_id,CDate;
+    String Category_id,SubCategory_id,CDate;
 
     View rootview;
     @Override
@@ -29,8 +29,8 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         rootview = inflater.inflate(R.layout.fragment_content, container, false);
 
         Bundle bundle1=getArguments();
-        Topic_id=String.valueOf(bundle1.getString("topic_id"));
-        SubTopic_id=String.valueOf(bundle1.getString("subtopic_id"));
+        Category_id=String.valueOf(bundle1.getString("category_id"));
+        SubCategory_id=String.valueOf(bundle1.getString("SubCategory_id"));
         CDate=String.valueOf(bundle1.getString("CDate"));
 
 
@@ -46,8 +46,8 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         viewPager = (ViewPager)rootview.findViewById(R.id.pager);
 
         Bundle bundle=new Bundle();
-        bundle.putString("topic_id",Topic_id);
-        bundle.putString("subTopic_id",SubTopic_id);
+        bundle.putString("Category_id",Category_id);
+        bundle.putString("SubCategory_id",SubCategory_id);
         bundle.putString("CDate",CDate);
 
 

@@ -113,7 +113,7 @@ public class SubCategoryListFragment extends Fragment
 
 
         if(isNetworkAvailable()){
-            GetSubTopicList();
+            GetSubCategoryList();
         }
         else {
             promptDialog.setCancelable(false);
@@ -219,7 +219,7 @@ public class SubCategoryListFragment extends Fragment
     }
 
 
-    public void GetSubTopicList()
+    public void GetSubCategoryList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();

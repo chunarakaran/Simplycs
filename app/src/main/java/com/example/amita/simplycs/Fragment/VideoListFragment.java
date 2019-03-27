@@ -44,7 +44,7 @@ public class VideoListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Topic_id,SubTopic_id,content_id,video_url;
+    String CDate,Category_id,SubCategory_id,content_id,video_url;
 
     final ArrayList<VideoListDataAdapter> Contentid = new ArrayList<>();
     final ArrayList<VideoListDataAdapter> Video_URL = new ArrayList<>();
@@ -53,7 +53,7 @@ public class VideoListFragment extends Fragment
 
     LinearLayoutManager layoutManagerOfrecyclerView;
 
-    String User_id;
+    String User_id,Course_id;
     public static final String PREFS_NAME = "login";
 
     //volley
@@ -72,10 +72,11 @@ public class VideoListFragment extends Fragment
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+        Course_id = sp.getString("Courseid", "");
 
         Bundle bundle=getArguments();
-        Topic_id=String.valueOf(bundle.getString("topic_id"));
-        SubTopic_id=String.valueOf(bundle.getString("subTopic_id"));
+        Category_id=String.valueOf(bundle.getString("Category_id"));
+        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
         CDate=String.valueOf(bundle.getString("CDate"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -169,7 +170,7 @@ public class VideoListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetTopicContent",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetContent",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -273,8 +274,9 @@ public class VideoListFragment extends Fragment
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-                params.put("TopicId", Topic_id);
-                params.put("SubTopicId", SubTopic_id);
+                params.put("CourseId", Course_id);
+                params.put("TopicId", Category_id);
+                params.put("SubTopicId", SubCategory_id);
                 params.put("Date", CDate);
 
                 return params;
