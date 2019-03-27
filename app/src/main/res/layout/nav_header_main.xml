@@ -17,10 +17,9 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="3dp"
-
-
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:scaleType="fitCenter"
         app:view_backgroundColor="@color/windowBackground"
         app:view_shadowRadius="2dp"
         app:view_shadowDx="2dp"

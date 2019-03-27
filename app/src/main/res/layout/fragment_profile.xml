@@ -41,6 +41,7 @@
                     android:src="@drawable/p2"
                     android:layout_marginTop="75dp"
                     android:layout_gravity="center"
+                    android:scaleType="fitCenter"
                     app:view_borderWidth="2dp"
                     app:view_borderColor="#cccccc"/>
 

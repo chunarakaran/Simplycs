@@ -183,6 +183,15 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     //method to show file chooser
     private void showFileChooser() {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//        i.setType("image/*");
+//        i.putExtra("crop", "true");
+//        i.putExtra("outputX", 200);
+//        i.putExtra("outputY", 200);
+//        i.putExtra("aspectX", 1);
+//        i.putExtra("aspectY", 1);
+//        i.putExtra("scale", true);
+//        i.putExtra(MediaStore.EXTRA_OUTPUT, filePath);
+//        i.putExtra("outputFormat",Bitmap.CompressFormat.JPEG.toString());
         startActivityForResult(i, PICK_IMAGE_REQUEST);
     }
 
