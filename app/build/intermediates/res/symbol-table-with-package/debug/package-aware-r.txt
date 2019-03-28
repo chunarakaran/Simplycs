@@ -1369,6 +1369,7 @@ id blocking
 id bottom
 id btnNegative
 id btnPositive
+id btnResend
 id btnVerify
 id btn_next
 id btn_skip

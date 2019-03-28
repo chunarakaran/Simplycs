@@ -68,18 +68,37 @@
             android:hint="Enter verification code"
             android:inputType="phone"
             android:maxLength="10" />
-
-        <Button
-            android:id="@+id/btnVerify"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editTextCode"
+            android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Verify Code"
-            android:textAllCaps="false"
-            android:textColor="#cdd8f1" />
+            android:layout_below="@id/editTextCode"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/btnVerify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:text="Verify Code"
+                android:textAllCaps="false"
+                android:textColor="#cdd8f1" />
+
+            <Button
+                android:id="@+id/btnResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="10dp"
+                android:text="Re-Send"
+                android:textAllCaps="false"
+                android:textColor="#cdd8f1" />
+
+
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 

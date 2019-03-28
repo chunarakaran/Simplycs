@@ -30,7 +30,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     ImageView picture;
 
     private EditText EdittextCode;
-    Button Verify;
+    Button Verify,Resend;
 
     private String mVerificationId;
     private FirebaseAuth mAuth;
@@ -53,6 +53,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         EdittextCode=(EditText)findViewById(R.id.editTextCode);
         Verify=(Button)findViewById(R.id.btnVerify);
+        Resend=(Button)findViewById(R.id.btnResend);
 
         Intent intent = getIntent();
         mobile = intent.getStringExtra("mobile");
@@ -79,6 +80,13 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        Resend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendVerificationCode(mobile);
             }
         });
 
