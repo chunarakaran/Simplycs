@@ -284,8 +284,8 @@ public class TheoryListFragment extends Fragment
 
                 // Adding All values to Params.
                 params.put("CourseId", Course_id);
-                params.put("TopicId", Category_id);
-                params.put("SubTopicId", SubCategory_id);
+                params.put("CategoryId", Category_id);
+                params.put("SubCategoryId", SubCategory_id);
                 params.put("Date", CDate);
 
                 return params;

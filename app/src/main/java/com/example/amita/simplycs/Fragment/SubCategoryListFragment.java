@@ -320,7 +320,7 @@ public class SubCategoryListFragment extends Fragment
 
                 // Adding All values to Params.
                 params.put("CourseId", Course_id);
-                params.put("topic_id", Category_id);
+                params.put("CategoryId", Category_id);
                 return params;
             }
 
