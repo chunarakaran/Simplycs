@@ -3,10 +3,11 @@ package com.example.amita.simplycs;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     private String mVerificationId;
     private FirebaseAuth mAuth;
 
-    String Iname,Iemail,mobile,Ipassword,Iandroid_id,IdeviceName,IdeviceOs,IimeiNumber1;
+    String mobile;
+
+    int time=30;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +64,22 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
         sendVerificationCode(mobile);
 
-       // EdittextCode.setText(mobile);
+
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                Resend.setText("0:"+checkDigit(time));
+                time--;
+            }
+
+            public void onFinish() {
+                Resend.setText("Resend");
+            }
+
+        }.start();
+
+
+        // EdittextCode.setText(mobile);
 
         Verify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +109,10 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public String checkDigit(int number) {
+        return number <= 9 ? "0" + number : String.valueOf(number);
     }
 
 
