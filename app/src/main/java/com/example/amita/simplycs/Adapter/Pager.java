@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.amita.simplycs.Fragment.AudioListFragment;
 import com.example.amita.simplycs.Fragment.PDFListFragment;
-import com.example.amita.simplycs.Fragment.TheoryListFragment;
+import com.example.amita.simplycs.Fragment.TheoryViewFragment;
 import com.example.amita.simplycs.Fragment.VideoListFragment;
 
 
@@ -35,7 +35,7 @@ public class Pager extends FragmentStatePagerAdapter {
         //Returning the current tabs
         switch (position) {
             case 0:
-                TheoryListFragment tab1 = new TheoryListFragment();
+                TheoryViewFragment tab1 = new TheoryViewFragment();
                 tab1.setArguments(bundle);
                 return tab1;
             case 1:

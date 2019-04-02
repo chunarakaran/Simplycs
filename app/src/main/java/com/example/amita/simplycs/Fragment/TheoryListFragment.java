@@ -2,16 +2,17 @@ package com.example.amita.simplycs.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,7 +29,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.TheoryListDataAdapter;
 import com.example.amita.simplycs.Adapter.TheoryListRecyclerViewAdapter;
 import com.example.amita.simplycs.R;
-import com.example.amita.simplycs.TheoryViewActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -87,7 +87,7 @@ public class TheoryListFragment extends Fragment
 
 
         Bundle bundle=getArguments();
-        Category_id=String.valueOf(bundle.getString("Category_id"));
+        Category_id=String.valueOf(bundle.getString("category_id"));
         SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
         CDate=String.valueOf(bundle.getString("CDate"));
 
@@ -147,12 +147,27 @@ public class TheoryListFragment extends Fragment
                     content_Data=ContentData.get(RecyclerViewItemPosition).getContentData();
 
 
-                    startActivity(new Intent(getActivity(), TheoryViewActivity.class)
-                            .putExtra("content_Data", content_Data)
-                            .putExtra("content_name",content_name));
+                    FragmentTransaction transection=getFragmentManager().beginTransaction();
+                    ContentFragment mfragment=new ContentFragment();
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("category_id",Category_id);
+                    bundle.putString("SubCategory_id",SubCategory_id);
+                    bundle.putString("CDate",CDate);
+                    bundle.putString("content_Data",content_Data);
+                    bundle.putString("content_name",content_name);
+                    mfragment.setArguments(bundle);
+
+                    transection.replace(R.id.content_frame, mfragment);
+                    transection.addToBackStack(null).commit();
 
 
-//                    Toast.makeText(getActivity(), "You clicked " + content_id, Toast.LENGTH_SHORT).show();
+//                    startActivity(new Intent(getActivity(), TheoryViewActivity.class)
+//                            .putExtra("content_Data", content_Data)
+//                            .putExtra("content_name",content_name));
+
+
+//                    Toast.makeText(getActivity(), "You clicked " + Category_id, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -175,6 +190,21 @@ public class TheoryListFragment extends Fragment
 
 
 
+        rootview.setFocusableInTouchMode(true);
+        rootview.requestFocus();
+        rootview.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // DO WHAT YOU WANT ON BACK PRESSED
+                    getFragmentManager().popBackStack();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
 
 
         return rootview;

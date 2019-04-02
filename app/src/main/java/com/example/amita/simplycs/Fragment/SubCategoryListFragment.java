@@ -162,7 +162,7 @@ public class SubCategoryListFragment extends Fragment
                     SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    ContentFragment mfragment=new ContentFragment();
+                    TheoryListFragment mfragment=new TheoryListFragment();
 
                     Bundle bundle=new Bundle();
                     bundle.putString("category_id",Category_id);

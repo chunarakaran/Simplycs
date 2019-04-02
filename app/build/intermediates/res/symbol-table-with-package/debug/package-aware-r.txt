@@ -1794,6 +1794,7 @@ layout fragment_previous
 layout fragment_profile
 layout fragment_setting
 layout fragment_startquiz
+layout fragment_theory_view
 layout fragment_theorylist
 layout fragment_today
 layout fragment_topiclist
