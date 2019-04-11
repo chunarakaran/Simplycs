@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -57,6 +58,7 @@ public class ArchiveFragment extends Fragment
 
     List<CategoryDataAdapter> ListOfdataAdapter;
 
+    LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -107,6 +109,7 @@ public class ArchiveFragment extends Fragment
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
+        emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
 
         mLayoutManager = new GridLayoutManager(getActivity(),2);
 
@@ -245,6 +248,15 @@ public class ArchiveFragment extends Fragment
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
+                                if(adapter.getItemCount()==0)
+                                {
+                                    recyclerView.setVisibility(View.GONE);
+                                    emptyView.setVisibility(View.VISIBLE);
+                                }
+                                else{
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    emptyView.setVisibility(View.GONE);
+                                }
 
                                 hideDialog();
 

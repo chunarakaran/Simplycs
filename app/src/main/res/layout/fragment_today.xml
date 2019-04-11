@@ -26,23 +26,19 @@
             android:gravity="center"
             android:layout_centerInParent="true"
             android:orientation="vertical"
-            android:visibility="gone"
-            >
+            android:visibility="gone">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_sentiment_dissatisfied"
-                />
+                android:src="@drawable/ic_sentiment_dissatisfied"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Oops! No Data Available"
-                />
+                android:text="Oops! No Data Available"/>
 
 
         </LinearLayout>
-
-
-
 
 </RelativeLayout>

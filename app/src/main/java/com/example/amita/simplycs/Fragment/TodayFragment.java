@@ -114,8 +114,6 @@ public class TodayFragment extends Fragment
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
-//        emptyView = (TextView) rootview.findViewById(R.id.empty_view);
-
         emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
 
 
