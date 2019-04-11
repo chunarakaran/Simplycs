@@ -230,7 +230,7 @@ public class TheoryListFragment extends Fragment
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                JSONArray jsonArray=jObj.getJSONArray("new_content");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     TheoryListDataAdapter GetDataAdapter2=new TheoryListDataAdapter();

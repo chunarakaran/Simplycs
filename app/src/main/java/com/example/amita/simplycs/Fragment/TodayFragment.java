@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,7 +58,10 @@ public class TodayFragment extends Fragment
 
     List<CategoryDataAdapter> ListOfdataAdapter;
 
-    private TextView emptyView;
+//    private TextView emptyView;
+
+    LinearLayout emptyView;
+
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -110,7 +114,9 @@ public class TodayFragment extends Fragment
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
-        emptyView = (TextView) rootview.findViewById(R.id.empty_view);
+//        emptyView = (TextView) rootview.findViewById(R.id.empty_view);
+
+        emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
 
 
 
@@ -121,6 +127,8 @@ public class TodayFragment extends Fragment
 
 
         GetCategoryList();
+
+
 
 
         // Implementing Click Listener on RecyclerView.
@@ -252,6 +260,15 @@ public class TodayFragment extends Fragment
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
+                                if(adapter.getItemCount()==0)
+                                {
+                                    recyclerView.setVisibility(View.GONE);
+                                    emptyView.setVisibility(View.VISIBLE);
+                                }
+                                else{
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    emptyView.setVisibility(View.GONE);
+                                }
 
                                 hideDialog();
 
@@ -259,8 +276,7 @@ public class TodayFragment extends Fragment
                             else if (success.equalsIgnoreCase("false")){
 //                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
 
-                                recyclerView.setVisibility(View.GONE);
-                                emptyView.setVisibility(View.VISIBLE);
+
 
                                 hideDialog();
                             }

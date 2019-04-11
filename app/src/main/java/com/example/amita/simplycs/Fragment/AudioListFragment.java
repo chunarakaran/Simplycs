@@ -242,7 +242,7 @@ public class AudioListFragment extends Fragment
 
                             // JSON error
                             e.printStackTrace();
-                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                             hideDialog();
                         }
 
