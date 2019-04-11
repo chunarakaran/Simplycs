@@ -43,11 +43,12 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import cn.refactor.lib.colordialog.PromptDialog;
 
 
 public class TodayFragment extends Fragment
@@ -79,6 +80,7 @@ public class TodayFragment extends Fragment
     RequestQueue requestQueue;
     String URL;
     private ProgressDialog pDialog;
+    PromptDialog promptDialog;
 
 
     View rootview;
@@ -100,6 +102,8 @@ public class TodayFragment extends Fragment
         // Progress dialog
         pDialog = new ProgressDialog(getActivity());
         pDialog.setCancelable(false);
+
+        promptDialog = new PromptDialog(getActivity());
 
 
         BottomNavigationView navigation= (BottomNavigationView)getActivity().findViewById(R.id.navigation);
@@ -252,8 +256,8 @@ public class TodayFragment extends Fragment
 
                                 }
 
-                                Collections.reverse(ListOfdataAdapter);
-                                Collections.reverse(Categoryid);
+//                                Collections.reverse(ListOfdataAdapter);
+//                                Collections.reverse(Categoryid);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
@@ -311,6 +315,20 @@ public class TodayFragment extends Fragment
 
                         if (volleyError instanceof TimeoutError || volleyError instanceof NoConnectionError) {
 //                            Toast.makeText(getActivity(), "Time Out",Toast.LENGTH_LONG).show();
+
+                            promptDialog.setCancelable(false);
+                            promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_WARNING);
+                            promptDialog.setAnimationEnable(true);
+                            promptDialog.setTitleText("Connection Time Out");
+                            promptDialog.setContentText("Please Check Your Internet Connection");
+                            promptDialog.setPositiveListener("Retry", new PromptDialog.OnPositiveListener() {
+                                @Override
+                                public void onClick(PromptDialog dialog) {
+                                    GetCategoryList();
+                                    promptDialog.cancel();
+                                }
+                            }).show();
+
                         } else if (volleyError instanceof AuthFailureError) {
                             //TODO
                         } else if (volleyError instanceof ServerError) {
