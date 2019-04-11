@@ -57,6 +57,7 @@ public class TodayFragment extends Fragment
 
     List<CategoryDataAdapter> ListOfdataAdapter;
 
+    private TextView emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -109,6 +110,8 @@ public class TodayFragment extends Fragment
 
         ListOfdataAdapter = new ArrayList<>();
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview1);
+        emptyView = (TextView) rootview.findViewById(R.id.empty_view);
+
 
 
         mLayoutManager = new GridLayoutManager(getActivity(),2);
@@ -255,6 +258,10 @@ public class TodayFragment extends Fragment
                             }
                             else if (success.equalsIgnoreCase("false")){
 //                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                recyclerView.setVisibility(View.GONE);
+                                emptyView.setVisibility(View.VISIBLE);
+
                                 hideDialog();
                             }
                             else

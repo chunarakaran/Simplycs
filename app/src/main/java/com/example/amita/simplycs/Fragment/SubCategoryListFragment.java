@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -51,6 +52,7 @@ public class SubCategoryListFragment extends Fragment
 
     List<SubCategoryDataAdapter> ListOfdataAdapter;
 
+    private TextView emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -79,7 +81,7 @@ public class SubCategoryListFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        rootview = inflater.inflate(R.layout.fragment_topiclist, container, false);
+        rootview = inflater.inflate(R.layout.fragment_subcategorylist, container, false);
 
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
@@ -102,6 +104,7 @@ public class SubCategoryListFragment extends Fragment
         ListOfdataAdapter = new ArrayList<>();
 
         recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+        emptyView = (TextView) rootview.findViewById(R.id.empty_view);
         recyclerView.setHasFixedSize(true);
 
         layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
@@ -269,6 +272,10 @@ public class SubCategoryListFragment extends Fragment
                             }
                             else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                recyclerView.setVisibility(View.GONE);
+                                emptyView.setVisibility(View.VISIBLE);
+
                                 hideDialog();
                             }
                             else

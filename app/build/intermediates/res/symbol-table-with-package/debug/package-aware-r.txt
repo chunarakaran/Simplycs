@@ -1244,6 +1244,7 @@ drawable ic_picture_as_pdf_black_24dp
 drawable ic_play_arrow_white_24dp
 drawable ic_play_circle_outline_black_24dp
 drawable ic_previousday
+drawable ic_sentiment_dissatisfied
 drawable ic_support1
 drawable ic_swipe_right_caret
 drawable ic_today
@@ -1429,6 +1430,7 @@ id edit_profile
 id edit_query
 id education
 id email
+id empty_view
 id end
 id end_padder
 id enterAlways
@@ -1794,10 +1796,10 @@ layout fragment_previous
 layout fragment_profile
 layout fragment_setting
 layout fragment_startquiz
+layout fragment_subcategorylist
 layout fragment_theory_view
 layout fragment_theorylist
 layout fragment_today
-layout fragment_topiclist
 layout fragment_videolist
 layout layout_colordialog
 layout layout_full_screen_dialog

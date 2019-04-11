@@ -600,6 +600,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_turned_in_black_24dp.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_subcategorylist.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_subcategorylist.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
@@ -1572,6 +1576,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\font\\roboto_medium.ttf"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_sentiment_dissatisfied.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_pause_white_24dp.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\audioview-0.4.aar\\b53e7a8755b80f58e858992d7caf5ba9\\res\\drawable-mdpi-v4\\ic_pause_white_24dp.png"
     },
@@ -1700,8 +1708,16 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\quizbutton.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_sentiment_dissatisfied.png"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_pdfview.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\activity_pdfview.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_sentiment_dissatisfied.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_state_list_anim.xml.flat",
@@ -2108,6 +2124,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi-v21\\ic_content.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_sentiment_dissatisfied.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_sentiment_dissatisfied.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
@@ -2242,6 +2262,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\proswipebutton-1.1.aar\\958f80e121447309050ed9028def011f\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_sentiment_dissatisfied.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_exit_to_app_black_24dp.xml.flat",
@@ -2474,10 +2498,6 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\layout\\abc_search_view.xml"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_topiclist.xml.flat",
-        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_topiclist.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
@@ -2738,6 +2758,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_sentiment_dissatisfied.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_dark.xml.flat",
@@ -3278,6 +3302,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_account_box_black_24dp.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_account_box_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sentiment_dissatisfied.png.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_sentiment_dissatisfied.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_audiotrack_black_24dp.png.flat",
