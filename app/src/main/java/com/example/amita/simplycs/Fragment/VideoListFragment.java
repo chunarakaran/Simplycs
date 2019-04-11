@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -41,6 +42,7 @@ public class VideoListFragment extends Fragment
 
     List<VideoListDataAdapter> ListOfdataAdapter;
 
+    LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -91,7 +93,8 @@ public class VideoListFragment extends Fragment
 
         ListOfdataAdapter = new ArrayList<>();
 
-        recyclerView = (RecyclerView)rootview.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+        emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
         recyclerView.setHasFixedSize(true);
 
         layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
@@ -218,6 +221,15 @@ public class VideoListFragment extends Fragment
                                 adapter = new VideoListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
+                                if(adapter.getItemCount()==0)
+                                {
+                                    recyclerView.setVisibility(View.GONE);
+                                    emptyView.setVisibility(View.VISIBLE);
+                                }
+                                else{
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    emptyView.setVisibility(View.GONE);
+                                }
 
                                 hideDialog();
 

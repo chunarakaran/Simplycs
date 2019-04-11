@@ -1575,7 +1575,6 @@ id radio3
 id radioGroup
 id radioRetail
 id radioWholesaler
-id recycler_view
 id recyclerview1
 id relativeLayout
 id relativeLayout_swipeBtn_contentContainer

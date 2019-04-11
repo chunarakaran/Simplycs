@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -46,6 +47,7 @@ public class AudioListFragment extends Fragment
 
     List<AudioListDataAdapter> ListOfdataAdapter;
 
+    LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -99,6 +101,7 @@ public class AudioListFragment extends Fragment
         ListOfdataAdapter = new ArrayList<>();
 
         recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+        emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
         recyclerView.setHasFixedSize(true);
 
         layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
@@ -221,6 +224,15 @@ public class AudioListFragment extends Fragment
                                 adapter = new AudioListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
+                                if(adapter.getItemCount()==0)
+                                {
+                                    recyclerView.setVisibility(View.GONE);
+                                    emptyView.setVisibility(View.VISIBLE);
+                                }
+                                else{
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    emptyView.setVisibility(View.GONE);
+                                }
 
                                 hideDialog();
 
