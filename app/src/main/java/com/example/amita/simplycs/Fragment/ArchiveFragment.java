@@ -37,7 +37,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -242,8 +241,8 @@ public class ArchiveFragment extends Fragment
 
                                 }
 
-                                Collections.reverse(ListOfdataAdapter);
-                                Collections.reverse(Categoryid);
+//                                Collections.reverse(ListOfdataAdapter);
+//                                Collections.reverse(Categoryid);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);

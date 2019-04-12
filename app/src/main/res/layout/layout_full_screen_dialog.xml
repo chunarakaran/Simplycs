@@ -48,13 +48,13 @@
                        android:textSize="30dp"
                        android:layout_gravity="center"/>
 
-                   <customfonts.MyTextView_Roboto_Black
-                       android:id="@+id/textViewName"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:textColor="#fff"
-                       android:textSize="25dp"
-                       android:text="Karan"/>
+                   <!--<customfonts.MyTextView_Roboto_Black-->
+                       <!--android:id="@+id/textViewName"-->
+                       <!--android:layout_width="wrap_content"-->
+                       <!--android:layout_height="wrap_content"-->
+                       <!--android:textColor="#fff"-->
+                       <!--android:textSize="25dp"-->
+                       <!--android:text="Karan"/>-->
 
 
                </LinearLayout>

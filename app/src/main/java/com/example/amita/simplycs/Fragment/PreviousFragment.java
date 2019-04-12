@@ -37,7 +37,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -227,8 +226,8 @@ public class PreviousFragment extends Fragment
 
                                 }
 
-                                Collections.reverse(ListOfdataAdapter);
-                                Collections.reverse(Categoryid);
+//                                Collections.reverse(ListOfdataAdapter);
+//                                Collections.reverse(Categoryid);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
