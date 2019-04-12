@@ -256,6 +256,30 @@ public class TheoryListFragment extends Fragment
 
                                 }
 
+                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
+                                for(int i=0;i<jsonArray1.length();i++)
+                                {
+                                    TheoryListDataAdapter GetDataAdapter2=new TheoryListDataAdapter();
+                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
+
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("content_name"));
+                                    GetDataAdapter2.setContentData(jsonObject1.getString("content_data"));
+
+
+
+
+                                    Contentid.add(GetDataAdapter2);
+                                    ContentName.add(GetDataAdapter2);
+
+                                    ContentData.add(GetDataAdapter2);
+
+                                    ListOfdataAdapter.add(GetDataAdapter2);
+
+                                }
+
+
 
                                 adapter = new TheoryListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);

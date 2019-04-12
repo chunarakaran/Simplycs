@@ -41,9 +41,8 @@
                 android:id="@+id/content_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:text="Content Title"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

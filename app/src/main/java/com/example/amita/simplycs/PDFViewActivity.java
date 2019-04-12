@@ -70,13 +70,15 @@ public class PDFViewActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-            hideDialog();
+
             pdfView.fromStream(inputStream)
                     .enableSwipe(true) // allows to block changing pages using swipe
                     .swipeHorizontal(false)
                     .enableDoubletap(true)
                     .defaultPage(0)
                     .load();
+
+            hideDialog();
         }
     }
 
