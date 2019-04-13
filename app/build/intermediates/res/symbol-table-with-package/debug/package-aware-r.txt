@@ -1270,6 +1270,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable p1
 drawable p2
+drawable practice
 drawable quizbutton
 drawable radio_bg
 drawable radiobutton
@@ -1526,6 +1527,7 @@ id mirror
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id nav_Practice
 id nav_courses
 id nav_dashboard
 id nav_logout
@@ -1796,6 +1798,7 @@ layout fragment_profile
 layout fragment_setting
 layout fragment_startquiz
 layout fragment_subcategorylist
+layout fragment_test
 layout fragment_theory_view
 layout fragment_theorylist
 layout fragment_today

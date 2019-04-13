@@ -39,6 +39,7 @@ import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
 import com.example.amita.simplycs.Fragment.StartQuizFragment;
+import com.example.amita.simplycs.Fragment.TestFragment;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -239,7 +240,7 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.action_menu4:
 
-                Toast.makeText(getApplicationContext(),"Practice",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"practice",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_menu5:
 
@@ -273,6 +274,10 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.nav_courses:
                 fragment = new CourseFragment();
+                break;
+
+            case R.id.nav_Practice:
+                fragment = new TestFragment();
                 break;
 
             case R.id.nav_profile:

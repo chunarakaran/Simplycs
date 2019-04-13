@@ -3,15 +3,12 @@ package com.example.amita.simplycs.Fragment;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -35,11 +33,12 @@ import com.example.amita.simplycs.R;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.app.Activity.RESULT_OK;
 
 public class EditProfileFragment extends Fragment
 {
@@ -59,6 +58,10 @@ public class EditProfileFragment extends Fragment
 
     private ProgressDialog pDialog;
 
+    String URL;
+    String User_id;
+    public static final String PREFS_NAME = "login";
+
     //volley
     RequestQueue requestQueue;
     ProgressDialog progressDialog;
@@ -71,6 +74,11 @@ public class EditProfileFragment extends Fragment
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_edit_profile, container, false);
+
+        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
+        URL = getString(R.string.url);
 
 
         picture=(ImageView)rootview.findViewById(R.id.logo);
@@ -86,6 +94,8 @@ public class EditProfileFragment extends Fragment
         month=mcalendar.get(Calendar.MONTH);
 
         Initialization();
+
+        GetProfile();
 
 
         // Progress dialog
@@ -323,5 +333,108 @@ public class EditProfileFragment extends Fragment
     }
 
 
+    public void GetProfile()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                String Pic,name,email,mobile,gender,dob,education,city;
+                                JSONObject user = jObj.getJSONObject("data");
+
+                                Pic=user.getString("profile_pic");
+                                name=user.getString("name");
+                                email=user.getString("email");
+                                mobile=user.getString("mobile");
+                                gender=user.getString("gender");
+
+                                E_Name.setText(name);
+
+//                                Picasso.with(getActivity()).load(Pic).into(Profile_pic);
+//                                User_name.setText(name);
+//                                User_email.setText(email);
+//                                User_mobile.setText(mobile);
+//                                User_gender.setText(gender);
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
 
 }

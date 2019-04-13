@@ -66,8 +66,9 @@ public class TodayFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Category_id;
+    String Category_id,Category_name;
     final ArrayList<CategoryDataAdapter> Categoryid = new ArrayList<>();
+    final ArrayList<CategoryDataAdapter> Categoryname = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -160,6 +161,7 @@ public class TodayFragment extends Fragment
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
                     Category_id=Categoryid.get(RecyclerViewItemPosition).getId();
+                    Category_name=Categoryname.get(RecyclerViewItemPosition).getImageTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     SubCategoryListFragment mfragment=new SubCategoryListFragment();
@@ -167,13 +169,14 @@ public class TodayFragment extends Fragment
                     Bundle bundle=new Bundle();
                     bundle.putString("category_id",Category_id);
                     bundle.putString("Date",todayDate);
+                    bundle.putString("Category_name",Category_name);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
                     transection.addToBackStack(null).commit();
 
 
-//                    Toast.makeText(getActivity(), "You clicked " + topic_id, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + Category_name, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -251,6 +254,8 @@ public class TodayFragment extends Fragment
 
 
                                     Categoryid.add(GetDataAdapter2);
+
+                                    Categoryname.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 

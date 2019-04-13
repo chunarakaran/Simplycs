@@ -56,7 +56,7 @@ public class SubCategoryListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Category_id;
+    String Category_id,Category_name;
     String SubCategory_id;
     String CDate;
     final ArrayList<SubCategoryDataAdapter> SubCategoryid = new ArrayList<>();
@@ -91,6 +91,9 @@ public class SubCategoryListFragment extends Fragment
         Bundle bundle=getArguments();
         Category_id=String.valueOf(bundle.getString("category_id"));
         CDate=String.valueOf(bundle.getString("Date"));
+        Category_name=String.valueOf(bundle.getString("Category_name"));
+
+
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -165,20 +168,42 @@ public class SubCategoryListFragment extends Fragment
 
                     SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
 
-                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    TheoryListFragment mfragment=new TheoryListFragment();
+                    if(Category_name.equals("Practice"))
+                    {
+                        FragmentTransaction transection=getFragmentManager().beginTransaction();
+                        TestFragment mfragment=new TestFragment();
 
-                    Bundle bundle=new Bundle();
-                    bundle.putString("category_id",Category_id);
-                    bundle.putString("SubCategory_id",SubCategory_id);
-                    bundle.putString("CDate",CDate);
-                    mfragment.setArguments(bundle);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("category_id",Category_id);
+                        bundle.putString("SubCategory_id",SubCategory_id);
+                        bundle.putString("CDate",CDate);
+                        mfragment.setArguments(bundle);
 
-                    transection.replace(R.id.content_frame, mfragment);
-                    transection.addToBackStack(null).commit();
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
+
+                    }
+                    else
+                    {
+                        FragmentTransaction transection=getFragmentManager().beginTransaction();
+                        TheoryListFragment mfragment=new TheoryListFragment();
+
+                        Bundle bundle=new Bundle();
+                        bundle.putString("category_id",Category_id);
+                        bundle.putString("SubCategory_id",SubCategory_id);
+                        bundle.putString("CDate",CDate);
+                        mfragment.setArguments(bundle);
+
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
+
+                    }
+
+//                    Toast.makeText(getActivity(), "You clicked " + Category_name, Toast.LENGTH_SHORT).show();
 
 
-//                    Toast.makeText(getActivity(), "You clicked " + subtopic_id, Toast.LENGTH_SHORT).show();
+
+
 
 
                 }
