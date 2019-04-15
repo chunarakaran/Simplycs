@@ -1,4 +1,4 @@
-#Sat Apr 13 17:41:59 IST 2019
+#Mon Apr 15 10:47:32 IST 2019
 base.0=D\:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

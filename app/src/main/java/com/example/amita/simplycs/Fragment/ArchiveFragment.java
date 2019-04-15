@@ -61,8 +61,9 @@ public class ArchiveFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Category_id;
+    String Category_id,Category_name;
     final ArrayList<CategoryDataAdapter> Categoryid = new ArrayList<>();
+    final ArrayList<CategoryDataAdapter> Categoryname = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -146,6 +147,7 @@ public class ArchiveFragment extends Fragment
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
                     Category_id=Categoryid.get(RecyclerViewItemPosition).getId();
+                    Category_name=Categoryname.get(RecyclerViewItemPosition).getImageTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     SubCategoryListFragment mfragment=new SubCategoryListFragment();
@@ -153,6 +155,7 @@ public class ArchiveFragment extends Fragment
                     Bundle bundle=new Bundle();
                     bundle.putString("category_id",Category_id);
                     bundle.putString("Date",aDate);
+                    bundle.putString("Category_name",Category_name);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
@@ -236,6 +239,8 @@ public class ArchiveFragment extends Fragment
 
 
                                     Categoryid.add(GetDataAdapter2);
+
+                                    Categoryname.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
