@@ -39,7 +39,7 @@ import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
 import com.example.amita.simplycs.Fragment.StartQuizFragment;
-import com.example.amita.simplycs.Fragment.TestFragment;
+import com.example.amita.simplycs.Fragment.TestListFragment;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_Practice:
-                fragment = new TestFragment();
+                fragment = new TestListFragment();
                 break;
 
             case R.id.nav_profile:

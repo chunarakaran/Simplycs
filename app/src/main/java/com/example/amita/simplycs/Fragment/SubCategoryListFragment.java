@@ -168,10 +168,10 @@ public class SubCategoryListFragment extends Fragment
 
                     SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
 
-                    if(Category_name.equals("Practice"))
+                    if(Category_name.equals("Practice")||Category_name.equals("practice"))
                     {
                         FragmentTransaction transection=getFragmentManager().beginTransaction();
-                        TestFragment mfragment=new TestFragment();
+                        TestListFragment mfragment=new TestListFragment();
 
                         Bundle bundle=new Bundle();
                         bundle.putString("category_id",Category_id);

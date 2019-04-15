@@ -1642,6 +1642,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tagline
 id test_layout
+id test_title
 id text
 id text2
 id textSpacerNoButtons
@@ -1798,7 +1799,7 @@ layout fragment_profile
 layout fragment_setting
 layout fragment_startquiz
 layout fragment_subcategorylist
-layout fragment_test
+layout fragment_testlist
 layout fragment_theory_view
 layout fragment_theorylist
 layout fragment_today
@@ -1812,6 +1813,7 @@ layout list_view_courses
 layout list_view_exams
 layout list_view_include_exam_courses
 layout list_view_pdf
+layout list_view_test
 layout list_view_theory
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include

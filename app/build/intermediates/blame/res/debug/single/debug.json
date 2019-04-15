@@ -332,12 +332,12 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\audioview-0.4.aar\\b53e7a8755b80f58e858992d7caf5ba9\\res\\drawable-xxhdpi-v4\\thumb.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_thumb.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\audioview-0.4.aar\\b53e7a8755b80f58e858992d7caf5ba9\\res\\drawable-xhdpi-v4\\thumb.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_thumb.png.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\audioview-0.4.aar\\b53e7a8755b80f58e858992d7caf5ba9\\res\\drawable-xhdpi-v4\\thumb.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_dark_circle_grey.xml.flat",
@@ -560,6 +560,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi-v21\\ic_support1.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_testlist.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_testlist.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\mipmap_ic_wrong.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\ColorDialog-1.0.0.aar\\234b359688ed6851c49358b15a1d36d6\\res\\mipmap\\ic_wrong.png"
     },
@@ -752,12 +756,12 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\layout\\abc_popup_menu_header_item_layout.xml"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62b3376fa4b2592f963e8ef62279183e\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v21_ic_analytics.png.flat",
@@ -1362,10 +1366,6 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_test.xml.flat",
-        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_test.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_cascading_menu_item_layout.xml.flat",
@@ -2514,6 +2514,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_design_tint_password_toggle.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\61e953eabdc30ec0a4af9062c6bd20b0\\res\\color\\design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_view_test.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\list_view_test.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_legacy_text_color_selector.xml.flat",
