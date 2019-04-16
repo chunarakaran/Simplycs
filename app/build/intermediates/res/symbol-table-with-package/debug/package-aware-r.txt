@@ -1633,6 +1633,7 @@ id submenuarrow
 id submit
 id submit_area
 id swipe_container
+id switch1
 id tabLayout
 id tabMode
 id tag_transition_group
