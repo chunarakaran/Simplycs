@@ -30,8 +30,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.MainActivity;
 import com.example.amita.simplycs.R;
-import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
-import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,9 +38,12 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.refactor.lib.colordialog.PromptDialog;
+
 public class EditProfileFragment extends Fragment
 {
 
+    Fragment fragment;
     ImageView picture;
 
     TextView Update_profile;
@@ -50,13 +51,14 @@ public class EditProfileFragment extends Fragment
     String S_Name,S_Email,S_Mobile,S_Gender,S_DOB,S_Education,S_City;
 
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    private RadioButton radioButton,Rbmale,Rbfemale;
 
     private Calendar mcalendar;
     private int day,month,year;
     String aDate;
 
     private ProgressDialog pDialog;
+    PromptDialog promptDialog;
 
     String URL;
     String User_id;
@@ -64,7 +66,7 @@ public class EditProfileFragment extends Fragment
 
     //volley
     RequestQueue requestQueue;
-    ProgressDialog progressDialog;
+
 
     String HttpUrl = "https://simply-cs.com/api/edit_profile";
 
@@ -79,6 +81,14 @@ public class EditProfileFragment extends Fragment
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
         URL = getString(R.string.url);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setCancelable(false);
+
+        requestQueue = Volley.newRequestQueue(getActivity());
+
+        promptDialog = new PromptDialog(getActivity());
 
 
         picture=(ImageView)rootview.findViewById(R.id.logo);
@@ -97,16 +107,6 @@ public class EditProfileFragment extends Fragment
 
         GetProfile();
 
-
-        // Progress dialog
-        pDialog = new ProgressDialog(getActivity());
-        pDialog.setCancelable(false);
-
-        requestQueue = Volley.newRequestQueue(getActivity());
-        progressDialog = new ProgressDialog(getActivity());
-
-
-
         E_DOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,9 +120,7 @@ public class EditProfileFragment extends Fragment
             @Override
             public void onClick(View v) {
 
-                GetValueFromEditText();
-
-                Toast.makeText(getActivity(),S_Gender,Toast.LENGTH_SHORT).show();
+                Validation();
             }
         });
 
@@ -173,6 +171,9 @@ public class EditProfileFragment extends Fragment
         E_Education=(EditText)rootview.findViewById(R.id.input_education);
         E_City=(EditText)rootview.findViewById(R.id.input_city);
 
+        Rbmale=(RadioButton)rootview.findViewById(R.id.radioMale);
+        Rbfemale=(RadioButton)rootview.findViewById(R.id.radioFemale);
+
         Update_profile=(TextView)rootview.findViewById(R.id.update_profile);
 
     }
@@ -199,52 +200,61 @@ public class EditProfileFragment extends Fragment
 
     public void Update_Profile(){
 
-        progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
-        progressDialog.show();
+        pDialog.setMessage("Please Wait...");
+        showDialog();
 
-        GetValueFromEditText();
-
-        // Creating string request with post method.
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, HttpUrl,
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/EditProfile",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
 
-                        // Hiding the progress dialog after all task complete.
-                        progressDialog.dismiss();
+                        try {
 
-                        // Showing response message coming from server.
-//                        Toast.makeText(getActivity(), ServerResponse, Toast.LENGTH_LONG).show();
-                        new FancyGifDialog.Builder(getActivity())
-                                .setTitle("Success")
-                                .setMessage("Your Leave Request Send Successfully")
-                                .setNegativeBtnText("Cancel")
-                                .setPositiveBtnBackground("#FF4081")
-                                .setPositiveBtnText("Ok")
-                                .setNegativeBtnBackground("#FFA9A7A8")
-                                .setGifResource(R.drawable.check)   //Pass your Gif here
-                                .isCancellable(false)
-                                .OnPositiveClicked(new FancyGifDialogListener() {
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+
+                                promptDialog.setCancelable(false);
+                                promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS);
+                                promptDialog.setAnimationEnable(true);
+                                promptDialog.setTitleText("Success");
+                                promptDialog.setContentText(jObj.getString("message"));
+                                promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
                                     @Override
-                                    public void OnClick() {
-//                                        Toast.makeText(getActivity(),"Ok",Toast.LENGTH_SHORT).show();
-
+                                    public void onClick(PromptDialog dialog) {
                                         Intent intent = new Intent(getActivity(), MainActivity.class);
                                         startActivity(intent);
                                         getActivity().finish();
+                                        dialog.dismiss();
+                                    }
+                                }).show();
 
-                                    }
-                                })
-                                .OnNegativeClicked(new FancyGifDialogListener() {
-                                    @Override
-                                    public void OnClick() {
-//
-//                                        fromDate.setText("");
-//                                        toDate.setText("");
-//                                        remark.setText("");
-                                    }
-                                })
-                                .build();
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
 
                     }
                 },
@@ -253,29 +263,41 @@ public class EditProfileFragment extends Fragment
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Hiding the progress dialog after all task complete.
-                        progressDialog.dismiss();
+
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
                     }
                 }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
             @Override
             protected Map<String, String> getParams() {
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
 
+                GetValueFromEditText();
                 // Adding All values to Params.
-
-                //Company
-//                params.put("user_id", hUid);
-//                params.put("leave_type", hLeaveid);
-//                params.put("from_date", hfromDate);
-//                params.put("to_date", htoDate);
-//                params.put("remark", hRemark);
+                params.put("Name", S_Name);
+                params.put("Email", S_Email);
+                params.put("Mobile", S_Mobile);
+                params.put("Gender", S_Gender);
+                params.put("DateOfBirth", S_DOB);
+                params.put("Education", S_Education);
+                params.put("City", S_City);
 
                 return params;
             }
+
 
         };
 
@@ -284,7 +306,6 @@ public class EditProfileFragment extends Fragment
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
-
     }
 
     public void Validation(){
@@ -321,13 +342,14 @@ public class EditProfileFragment extends Fragment
             E_Mobile.requestFocus();
             E_Mobile.setError("Please Enter Mobile No");
         }
-        else if (!V_Mobile.matches("^[0-9]{10}$"))
+        else if (!V_Mobile.matches("^[0-9+]{13}$"))
         {
             E_Mobile.requestFocus();
             E_Mobile.setError("Please Enter Valid Mobile No");
         }
         else {
 
+            Update_Profile();
         }
 
     }
@@ -352,22 +374,26 @@ public class EditProfileFragment extends Fragment
                             {
 //                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
 
-                                String Pic,name,email,mobile,gender,dob,education,city;
+                                String name,email,mobile,gender,dob,education,city;
                                 JSONObject user = jObj.getJSONObject("data");
 
-                                Pic=user.getString("profile_pic");
+
                                 name=user.getString("name");
                                 email=user.getString("email");
                                 mobile=user.getString("mobile");
                                 gender=user.getString("gender");
 
                                 E_Name.setText(name);
+                                E_Email.setText(email);
+                                E_Mobile.setText(mobile);
 
-//                                Picasso.with(getActivity()).load(Pic).into(Profile_pic);
-//                                User_name.setText(name);
-//                                User_email.setText(email);
-//                                User_mobile.setText(mobile);
-//                                User_gender.setText(gender);
+                                if(gender.equals("male")||gender.equals("Male"))
+                                {
+                                    Rbmale.setChecked(true);
+                                }
+                                else {
+                                    Rbfemale.setChecked(true);
+                                }
 
                                 hideDialog();
 

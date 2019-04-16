@@ -31,15 +31,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.amita.simplycs.Adapter.SessionManager;
-import com.example.amita.simplycs.Fragment.CourseFragment;
 import com.example.amita.simplycs.Fragment.AskusFragment;
+import com.example.amita.simplycs.Fragment.CourseFragment;
 import com.example.amita.simplycs.Fragment.DashboardFragment;
 import com.example.amita.simplycs.Fragment.ExamListFragment;
 import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
 import com.example.amita.simplycs.Fragment.StartQuizFragment;
-import com.example.amita.simplycs.Fragment.TestListFragment;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -274,10 +273,6 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.nav_courses:
                 fragment = new CourseFragment();
-                break;
-
-            case R.id.nav_Practice:
-                fragment = new TestListFragment();
                 break;
 
             case R.id.nav_profile:

@@ -330,7 +330,7 @@ public class TodayFragment extends Fragment
                                 @Override
                                 public void onClick(PromptDialog dialog) {
                                     GetCategoryList();
-                                    promptDialog.cancel();
+                                    dialog.dismiss();
                                 }
                             }).show();
 

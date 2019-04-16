@@ -1526,7 +1526,6 @@ id mirror
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
-id nav_Practice
 id nav_courses
 id nav_dashboard
 id nav_logout
@@ -1573,9 +1572,9 @@ id radio0
 id radio1
 id radio2
 id radio3
+id radioFemale
 id radioGroup
-id radioRetail
-id radioWholesaler
+id radioMale
 id recyclerview1
 id relativeLayout
 id relativeLayout_swipeBtn_contentContainer
