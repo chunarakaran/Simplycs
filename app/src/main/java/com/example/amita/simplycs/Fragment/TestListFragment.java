@@ -48,10 +48,13 @@ public class TestListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Category_id,SubCategory_id,test_id;
+    String CDate,Category_id,SubCategory_id,test_id,test_name,test_duration,test_marks,test_rules;
 
     final ArrayList<TestListDataAdapter> Testid = new ArrayList<>();
     final ArrayList<TestListDataAdapter> Testname = new ArrayList<>();
+    final ArrayList<TestListDataAdapter> Testduration = new ArrayList<>();
+    final ArrayList<TestListDataAdapter> Testmarks = new ArrayList<>();
+    final ArrayList<TestListDataAdapter> Testrules = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -137,21 +140,26 @@ public class TestListFragment extends Fragment
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
                     test_id=Testid.get(RecyclerViewItemPosition).getId();
+                    test_name=Testname.get(RecyclerViewItemPosition).getTitle();
+                    test_duration=Testduration.get(RecyclerViewItemPosition).getDuration();
+                    test_marks=Testmarks.get(RecyclerViewItemPosition).getMarks();
+                    test_rules=Testrules.get(RecyclerViewItemPosition).getRules();
 
-//                    content_name=ContentName.get(RecyclerViewItemPosition).getTitle();
-//
-//                    content_Data=ContentData.get(RecyclerViewItemPosition).getContentData();
-
-//
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     StartQuizFragment mfragment=new StartQuizFragment();
 
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("category_id",Category_id);
-//                    bundle.putString("SubCategory_id",SubCategory_id);
-//                    bundle.putString("CDate",CDate);
-//
-//                    mfragment.setArguments(bundle);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("category_id",Category_id);
+                    bundle.putString("SubCategory_id",SubCategory_id);
+                    bundle.putString("CDate",CDate);
+
+                    bundle.putString("test_id",test_id);
+                    bundle.putString("test_name",test_name);
+                    bundle.putString("test_duration",test_duration);
+                    bundle.putString("test_marks",test_marks);
+                    bundle.putString("test_rules",test_rules);
+
+                    mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
                     transection.addToBackStack(null).commit();
@@ -228,12 +236,18 @@ public class TestListFragment extends Fragment
 
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
+                                    GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
+                                    GetDataAdapter2.setRules(jsonObject1.getString("rules"));
 
 
 
 
                                     Testid.add(GetDataAdapter2);
                                     Testname.add(GetDataAdapter2);
+                                    Testduration.add(GetDataAdapter2);
+                                    Testmarks.add(GetDataAdapter2);
+                                    Testrules.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 

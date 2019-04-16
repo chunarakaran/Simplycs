@@ -1518,7 +1518,6 @@ id logo
 id logoIv
 id main_layout
 id masked
-id max_marks
 id media_actions
 id message
 id middle
@@ -1641,6 +1640,9 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tagline
+id testDuration
+id testMarks
+id testName
 id test_layout
 id test_title
 id text

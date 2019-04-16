@@ -4,7 +4,9 @@ public class TestListDataAdapter {
 
     public String id;
     public String Title;
-    public String ContentData;
+    public String Duration;
+    public String Marks;
+    public String Rules;
 
 
     public String getId() {
@@ -28,6 +30,34 @@ public class TestListDataAdapter {
         this.Title = Titlename;
     }
 
+    public String getDuration(){
 
+        return Duration;
+    }
+
+    public void setDuration(String Testduration)
+    {
+        this.Duration=Testduration;
+    }
+
+    public String getMarks(){
+
+        return Marks;
+    }
+
+    public void setMarks(String Testmarks)
+    {
+        this.Marks=Testmarks;
+    }
+
+    public String getRules(){
+
+        return Rules;
+    }
+
+    public void setRules(String Testrules)
+    {
+        this.Rules=Testrules;
+    }
 
 }
