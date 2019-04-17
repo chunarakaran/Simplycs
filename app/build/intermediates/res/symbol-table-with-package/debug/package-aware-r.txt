@@ -1798,6 +1798,7 @@ layout fragment_examlist
 layout fragment_pdflist
 layout fragment_previous
 layout fragment_profile
+layout fragment_quiz
 layout fragment_setting
 layout fragment_startquiz
 layout fragment_subcategorylist

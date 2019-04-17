@@ -3,6 +3,7 @@ package com.example.amita.simplycs.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.amita.simplycs.R;
 
@@ -74,7 +74,24 @@ public class StartQuizFragment extends Fragment
         StartTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),test_name,Toast.LENGTH_SHORT).show();
+                FragmentTransaction transection=getFragmentManager().beginTransaction();
+                QuizFragment mfragment=new QuizFragment();
+
+//                Bundle bundle=new Bundle();
+//                bundle.putString("category_id",Category_id);
+//                bundle.putString("SubCategory_id",SubCategory_id);
+//                bundle.putString("CDate",CDate);
+//
+//                bundle.putString("test_id",test_id);
+//                bundle.putString("test_name",test_name);
+//                bundle.putString("test_duration",test_duration);
+//                bundle.putString("test_marks",test_marks);
+//                bundle.putString("test_rules",test_rules);
+//
+//                mfragment.setArguments(bundle);
+
+                transection.replace(R.id.content_frame, mfragment);
+                transection.addToBackStack(null).commit();
             }
         });
 
