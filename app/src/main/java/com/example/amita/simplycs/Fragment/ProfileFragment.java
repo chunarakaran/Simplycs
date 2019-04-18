@@ -330,12 +330,19 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
                                 email=user.getString("email");
                                 mobile=user.getString("mobile");
                                 gender=user.getString("gender");
+                                dob=user.getString("birth_date");
+                                education=user.getString("education");
+                                city=user.getString("city");
 
                                 Picasso.with(getActivity()).load(Pic).into(Profile_pic);
                                 User_name.setText(name);
                                 User_email.setText(email);
                                 User_mobile.setText(mobile);
                                 User_gender.setText(gender);
+                                User_dob.setText(dob);
+                                User_education.setText(education);
+                                User_city.setText(city);
+
 
                                 hideDialog();
 

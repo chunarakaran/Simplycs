@@ -382,6 +382,9 @@ public class EditProfileFragment extends Fragment
                                 email=user.getString("email");
                                 mobile=user.getString("mobile");
                                 gender=user.getString("gender");
+                                dob=user.getString("birth_date");
+                                education=user.getString("education");
+                                city=user.getString("city");
 
                                 E_Name.setText(name);
                                 E_Email.setText(email);
@@ -394,6 +397,10 @@ public class EditProfileFragment extends Fragment
                                 else {
                                     Rbfemale.setChecked(true);
                                 }
+                                E_DOB.setText(dob);
+                                E_Education.setText(education);
+                                E_City.setText(city);
+
 
                                 hideDialog();
 
