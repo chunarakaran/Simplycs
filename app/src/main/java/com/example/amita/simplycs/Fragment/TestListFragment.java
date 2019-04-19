@@ -326,7 +326,7 @@ public class TestListFragment extends Fragment
                 params.put("CourseId", Course_id);
                 params.put("CategoryId", Category_id);
                 params.put("SubCategoryId", SubCategory_id);
-//                params.put("Date", CDate);
+                params.put("Date", CDate);
 
                 return params;
             }
