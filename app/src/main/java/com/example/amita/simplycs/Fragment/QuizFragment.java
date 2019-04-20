@@ -36,21 +36,7 @@ public class QuizFragment extends Fragment
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rootview.setFocusableInTouchMode(true);
-                rootview.requestFocus();
-                rootview.setOnKeyListener(new View.OnKeyListener() {
-                    @Override
-                    public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                        if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                            // DO WHAT YOU WANT ON BACK PRESSED
-                            getFragmentManager().popBackStack();
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                });
+               getFragmentManager().popBackStack();
             }
         });
 
