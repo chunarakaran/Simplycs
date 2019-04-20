@@ -1210,6 +1210,7 @@ drawable ic_account_box_black_24dp
 drawable ic_action_duration
 drawable ic_ads
 drawable ic_analytics
+drawable ic_arrow_back
 drawable ic_audiotrack_black_24dp
 drawable ic_bookmark2
 drawable ic_calender
@@ -1539,6 +1540,7 @@ id navigation_prev
 id navigation_today
 id negativeBtn
 id never
+id nextques
 id nextquiz
 id none
 id normal
@@ -1562,6 +1564,7 @@ id pin
 id play
 id positiveBtn
 id previousquiz
+id prevques
 id progress
 id progress_circular
 id progress_horizontal
@@ -1612,6 +1615,7 @@ id showCustom
 id showHome
 id showTitle
 id sign_up
+id simpleChronometer
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1657,6 +1661,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id timer
 id title
 id titleDividerNoCustom
 id title_template
