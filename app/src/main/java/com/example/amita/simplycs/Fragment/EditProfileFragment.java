@@ -9,6 +9,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +79,18 @@ public class EditProfileFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_edit_profile, container, false);
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setTitle("Edit Profile");
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
@@ -92,7 +106,7 @@ public class EditProfileFragment extends Fragment
 
 
         picture=(ImageView)rootview.findViewById(R.id.logo);
-        int imageid = R.drawable.p2;
+        int imageid = R.drawable.login_logo;
         BitmapFactory.Options opts = new BitmapFactory.Options();
         opts.inSampleSize = 4;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
@@ -142,6 +156,17 @@ public class EditProfileFragment extends Fragment
         });
 
         return rootview;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 
     public void DateDialog(){
