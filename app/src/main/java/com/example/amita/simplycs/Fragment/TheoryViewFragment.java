@@ -17,7 +17,7 @@ public class TheoryViewFragment extends Fragment
 
     String Content_id,content_name,Content_Data;
 
-    TextView Contentname;
+
 
     WebView webView;
 
@@ -37,11 +37,11 @@ public class TheoryViewFragment extends Fragment
         Content_Data=String.valueOf(bundle.getString("content_Data"));
 
 
-        Contentname = (TextView)rootview.findViewById(R.id.ContentTitle);
+
         webView = (WebView)rootview.findViewById(R.id.webView);
         webView.loadData(Content_Data, "text/html", null);
 
-        Contentname.setText(content_name);
+
 
         webView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

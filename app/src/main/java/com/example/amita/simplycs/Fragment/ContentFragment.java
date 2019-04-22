@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,17 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_content, container, false);
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
         Bundle bundle1=getArguments();
         Category_id=String.valueOf(bundle1.getString("category_id"));
         SubCategory_id=String.valueOf(bundle1.getString("SubCategory_id"));
@@ -35,6 +48,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         content_name=String.valueOf(bundle1.getString("content_name"));
         content_Data=String.valueOf(bundle1.getString("content_Data"));
 
+        toolbar.setTitle(content_name);
 
         tabLayout = (TabLayout)rootview.findViewById(R.id.tabLayout);
 
@@ -88,6 +102,16 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         return rootview;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
