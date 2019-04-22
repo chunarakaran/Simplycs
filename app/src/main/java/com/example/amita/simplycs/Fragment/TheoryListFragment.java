@@ -53,7 +53,7 @@ public class TheoryListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Category_id,SubCategory_id,content_id,content_name,content_Data;
+    String CDate,Category_id,SubCategory_id,SubCategory_name,content_id,content_name,content_Data;
 
     final ArrayList<TheoryListDataAdapter> Contentid = new ArrayList<>();
 
@@ -86,7 +86,7 @@ public class TheoryListFragment extends Fragment
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setTitle("Content");
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +104,10 @@ public class TheoryListFragment extends Fragment
         Bundle bundle=getArguments();
         Category_id=String.valueOf(bundle.getString("category_id"));
         SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
+        SubCategory_name=String.valueOf(bundle.getString("SubCategory_name"));
         CDate=String.valueOf(bundle.getString("CDate"));
+
+        toolbar.setTitle(SubCategory_name);
 
 
         requestQueue = Volley.newRequestQueue(getActivity());

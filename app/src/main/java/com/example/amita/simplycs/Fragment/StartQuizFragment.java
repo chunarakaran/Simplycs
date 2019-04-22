@@ -23,7 +23,7 @@ public class StartQuizFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,test_id,test_name,test_duration,test_marks,test_rules;
 
-    TextView testName,testDuration,testMarks;
+    TextView testDuration,testMarks;
 
     WebView webView;
 
@@ -36,7 +36,7 @@ public class StartQuizFragment extends Fragment
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setTitle("Simply");
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +55,13 @@ public class StartQuizFragment extends Fragment
         test_marks=String.valueOf(bundle.getString("test_marks"));
         test_rules=String.valueOf(bundle.getString("test_rules"));
 
+        toolbar.setTitle(test_name);
 
 
 
 
-        testName=(TextView)rootview.findViewById(R.id.testName);
+
+
         testDuration=(TextView)rootview.findViewById(R.id.testDuration);
         testMarks=(TextView)rootview.findViewById(R.id.testMarks);
 
@@ -70,7 +72,7 @@ public class StartQuizFragment extends Fragment
 
 
 
-        testName.setText(test_name);
+
         testDuration.setText(test_duration);
         testMarks.setText(test_marks);
 

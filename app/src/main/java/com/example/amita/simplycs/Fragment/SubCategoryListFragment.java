@@ -59,9 +59,10 @@ public class SubCategoryListFragment extends Fragment
     RecyclerView.Adapter adapter;
 
     String Category_id,Category_name;
-    String SubCategory_id;
+    String SubCategory_id,SubCategory_name;
     String CDate;
     final ArrayList<SubCategoryDataAdapter> SubCategoryid = new ArrayList<>();
+    final ArrayList<SubCategoryDataAdapter> SubCategoryName = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -87,7 +88,7 @@ public class SubCategoryListFragment extends Fragment
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setTitle("Sub Category");
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +106,8 @@ public class SubCategoryListFragment extends Fragment
         Category_id=String.valueOf(bundle.getString("category_id"));
         CDate=String.valueOf(bundle.getString("Date"));
         Category_name=String.valueOf(bundle.getString("Category_name"));
+
+        toolbar.setTitle(Category_name);
 
 
 
@@ -180,6 +183,7 @@ public class SubCategoryListFragment extends Fragment
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
                     SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
+                    SubCategory_name=SubCategoryName.get(RecyclerViewItemPosition).getImageTitle();
 
                     if(Category_name.equals("Practice")||Category_name.equals("practice"))
                     {
@@ -190,6 +194,7 @@ public class SubCategoryListFragment extends Fragment
                         bundle.putString("category_id",Category_id);
                         bundle.putString("SubCategory_id",SubCategory_id);
                         bundle.putString("CDate",CDate);
+                        bundle.putString("SubCategory_name",SubCategory_name);
                         mfragment.setArguments(bundle);
 
                         transection.replace(R.id.content_frame, mfragment);
@@ -205,6 +210,7 @@ public class SubCategoryListFragment extends Fragment
                         bundle.putString("category_id",Category_id);
                         bundle.putString("SubCategory_id",SubCategory_id);
                         bundle.putString("CDate",CDate);
+                        bundle.putString("SubCategory_name",SubCategory_name);
                         mfragment.setArguments(bundle);
 
                         transection.replace(R.id.content_frame, mfragment);
@@ -304,6 +310,8 @@ public class SubCategoryListFragment extends Fragment
 
 
                                     SubCategoryid.add(GetDataAdapter2);
+
+                                    SubCategoryName.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 

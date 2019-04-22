@@ -50,7 +50,7 @@ public class TestListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Category_id,SubCategory_id,test_id,test_name,test_duration,test_marks,test_rules;
+    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules;
 
     final ArrayList<TestListDataAdapter> Testid = new ArrayList<>();
     final ArrayList<TestListDataAdapter> Testname = new ArrayList<>();
@@ -82,7 +82,7 @@ public class TestListFragment extends Fragment
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setTitle("Tests");
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +100,10 @@ public class TestListFragment extends Fragment
         Bundle bundle=getArguments();
         Category_id=String.valueOf(bundle.getString("category_id"));
         SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
+        SubCategory_name=String.valueOf(bundle.getString("SubCategory_name"));
         CDate=String.valueOf(bundle.getString("CDate"));
+
+        toolbar.setTitle(SubCategory_name);
 
 
         requestQueue = Volley.newRequestQueue(getActivity());
