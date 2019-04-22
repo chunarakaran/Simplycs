@@ -437,10 +437,10 @@ public final class R {
         public static final int decor_content_parent = 0x7f0a0061;
         public static final int default_activity_button = 0x7f0a0062;
         public static final int disableHome = 0x7f0a006a;
-        public static final int edit_query = 0x7f0a0071;
-        public static final int end = 0x7f0a0075;
-        public static final int expand_activities_button = 0x7f0a0083;
-        public static final int expanded_menu = 0x7f0a0084;
+        public static final int edit_query = 0x7f0a0070;
+        public static final int end = 0x7f0a0074;
+        public static final int expand_activities_button = 0x7f0a0082;
+        public static final int expanded_menu = 0x7f0a0083;
         public static final int home = 0x7f0a0094;
         public static final int homeAsUp = 0x7f0a0095;
         public static final int icon = 0x7f0a0096;

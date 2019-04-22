@@ -10,10 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -61,9 +64,10 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     //Uri to store the image uri
     private Uri filePath;
 
+    FloatingActionButton EditButton;
 
     TextView User_name,User_email,User_mobile,User_gender,User_dob,User_education,User_city;
-    TextView EditButton,ChangePassword;
+    TextView ChangePassword;
     Fragment fragment;
     ImageView Profile_pic;
 
@@ -84,15 +88,21 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     public void onResume() {
         super.onResume();
         uploadReceiver.register(getActivity());
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         uploadReceiver.unregister(getActivity());
+
     }
 
-
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
 
 
     View rootview;
@@ -101,6 +111,18 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setTitle("Profile");
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
 
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
@@ -177,6 +199,9 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
 
         return rootview;
     }
+
+
+
 
 
 
@@ -290,7 +315,7 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     public void Initialize()
     {
         ChangePassword=(TextView)rootview.findViewById(R.id.pass1);
-        EditButton=(TextView) rootview.findViewById(R.id.edit_profile);
+        EditButton=(FloatingActionButton) rootview.findViewById(R.id.fab);
         Profile_pic=(ImageView)rootview.findViewById(R.id.Profile_pic);
 
         User_name=(TextView) rootview.findViewById(R.id.user_name);

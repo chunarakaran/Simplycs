@@ -1234,6 +1234,7 @@ drawable ic_menu_manage
 drawable ic_menu_send
 drawable ic_menu_share
 drawable ic_menu_slideshow
+drawable ic_mode_edit_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1428,7 +1429,6 @@ id dob
 id drawer_layout
 id editTextCode
 id editTextMobile
-id edit_profile
 id edit_query
 id education
 id email
@@ -1449,6 +1449,7 @@ id exam_start_Time
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fill
 id fill_horizontal
 id fill_vertical
