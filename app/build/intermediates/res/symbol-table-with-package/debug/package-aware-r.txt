@@ -1252,9 +1252,11 @@ drawable ic_swipe_right_caret
 drawable ic_today
 drawable ic_turned_in_black_24dp
 drawable img12
+drawable learn
 drawable login_logo
 drawable logo
 drawable mediatransperent_ract
+drawable modus
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1270,8 +1272,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable original_logo
 drawable p1
 drawable p2
+drawable patience
 drawable practice
 drawable quizbutton
 drawable radio_bg
