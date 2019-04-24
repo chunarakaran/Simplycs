@@ -225,21 +225,17 @@ public class MainActivity extends AppCompatActivity
                 transection.replace(R.id.content_frame, fragment);
                 transection.addToBackStack(null).commit();
                 break;
-            case R.id.action_menu2:
-
-                fragment= new StartQuizFragment();
-                transection.replace(R.id.content_frame, fragment);
-                transection.addToBackStack(null).commit();
-
-                break;
-            case R.id.action_menu3:
-
-                Toast.makeText(getApplicationContext(),"Current Affairs",Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.action_menu2:
+//
+//                break;
+//            case R.id.action_menu3:
+//
+//                Toast.makeText(getApplicationContext(),"Current Affairs",Toast.LENGTH_SHORT).show();
+//                break;
 
             case R.id.action_menu4:
 
-                Toast.makeText(getApplicationContext(),"practice",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Webinars",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_menu5:
 
