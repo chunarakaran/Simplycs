@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Mar 14 17:55:06 IST 2019
+#Wed Apr 24 17:20:24 IST 2019
 56.path=fonts/Roboto-Medium.ttf
 5.base=D\:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 42.base=D\:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0

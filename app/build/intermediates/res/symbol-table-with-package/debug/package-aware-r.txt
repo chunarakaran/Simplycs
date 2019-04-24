@@ -1151,7 +1151,9 @@ drawable avd_show_password
 drawable backgrownd
 drawable bg1
 drawable bitmap_1
+drawable blockquote
 drawable blue_rect
+drawable bullets
 drawable cancel
 drawable card_activated_background
 drawable card_background
@@ -1252,6 +1254,8 @@ drawable ic_swipe_right_caret
 drawable ic_today
 drawable ic_turned_in_black_24dp
 drawable img12
+drawable insert_image
+drawable insert_link
 drawable learn
 drawable login_logo
 drawable logo
@@ -1272,6 +1276,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable numbers
 drawable original_logo
 drawable p1
 drawable p2
@@ -1329,7 +1334,6 @@ id META
 id Profile_pic
 id SHIFT
 id SYM
-id Tremark
 id VolleyImageView
 id action0
 id action_bar
@@ -1479,18 +1483,16 @@ id indeterminate
 id info
 id input_ConfPass
 id input_city
-id input_companyname
 id input_confpass
 id input_dob
 id input_education
 id input_email
-id input_layout_remark
 id input_mobile
 id input_name
 id input_newpass
 id input_oldpass
 id input_password
-id input_remark
+id input_subject
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1501,7 +1503,6 @@ id l1
 id labeled
 id largeLabel
 id layoutDots
-id leave_spinner
 id left
 id light
 id lin_lay
@@ -1590,7 +1591,6 @@ id rewind
 id right
 id right_icon
 id right_side
-id s1
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type

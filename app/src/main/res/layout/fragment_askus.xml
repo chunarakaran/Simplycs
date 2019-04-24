@@ -1,106 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:id="@+id/s1"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:id="@+id/l1"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="100dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        </android.support.v7.widget.Toolbar>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="55dp"
+            android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:fontFamily="@font/maven_pro_medium"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginBottom="7dp"
-            android:text="Please Select Subject"
-            android:textSize="15dp"
-            android:textColor="@color/colorPrimary"/>
-
-        <LinearLayout
-            android:id="@+id/input_companyname"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext">
+            android:text="Subject"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
-            <Spinner
-                android:id="@+id/leave_spinner"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rect_grayoutline1"
+                android:orientation="vertical"
+                android:padding="0dp">
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/input_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00000000"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textColrHint"
+                    android:hint="Enter Subject"
+                    android:textSize="15.4sp" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/input_layout_remark"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:fontFamily="@font/maven_pro_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Message"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:padding="0dp">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/rounded_edittext" />
 
-                <TextView
-                    android:id="@+id/Tremark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="24dp"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:text="Remark"
-                    android:textSize="16sp"
-                    android:background="@android:color/white"
-                    android:visibility="invisible"/>
+           </LinearLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="80dp"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginRight="28dp"
-                    android:hint="Remark"
-                    android:textColorHint="@color/colorAccent"
-                    app:hintTextAppearance="@style/HintTextStyle">
 
-                    <EditText
-                        android:id="@+id/input_remark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:singleLine="true"
-                        android:maxLines="3"
-                        android:background="@android:color/transparent"/>
-                </android.support.design.widget.TextInputLayout>
-            </RelativeLayout>
 
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8dp"
-            android:background="@android:color/holo_blue_dark"
-            android:text="Submit"
-            android:textColor="@color/white"/>
-    </LinearLayout>
 
-</ScrollView>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
