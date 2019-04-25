@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.chinalwb:are-0.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/are-0.1.5.aar/ca0a5458ccf21af793b222c832aa788d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/are-0.1.5.aar/ca0a5458ccf21af793b222c832aa788d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/are-0.1.5.aar/ca0a5458ccf21af793b222c832aa788d/jars/libs/tagsoup-1.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.chinalwb/are/0.1.5/5474a038e5810f6f6ae3b0318a66140562211ac8/are-0.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

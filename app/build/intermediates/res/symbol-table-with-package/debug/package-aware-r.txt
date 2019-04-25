@@ -33,6 +33,8 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array array_dot_active
 array array_dot_inactive
+array colorPickerColors
+array colors
 array video_duration_array
 array video_id_array
 array video_title_array
@@ -190,6 +192,12 @@ attr colorPrimaryDark
 attr colorScheme
 attr colorSecondary
 attr colorSwitchThumbNormal
+attr colorViewCheckedType
+attr colorViewHeight
+attr colorViewMarginLeft
+attr colorViewMarginRight
+attr colorViewWidth
+attr colors
 attr commitIcon
 attr constraintSet
 attr constraint_referenced_ids
@@ -238,6 +246,7 @@ attr enforceTextAppearance
 attr errorEnabled
 attr errorTextAppearance
 attr expandActivityOverflowButtonDrawable
+attr expandMode
 attr expanded
 attr expandedTitleGravity
 attr expandedTitleMargin
@@ -283,6 +292,7 @@ attr helperTextTextAppearance
 attr hideMotionSpec
 attr hideOnContentScroll
 attr hideOnScroll
+attr hideToolbar
 attr hintAnimationEnabled
 attr hintEnabled
 attr hintTextAppearance
@@ -407,6 +417,8 @@ attr maxButtonHeight
 attr maxImageSize
 attr measureWithLargestChild
 attr menu
+attr metaButtonBarButtonStyle
+attr metaButtonBarStyle
 attr minified
 attr multiChoiceItemLayout
 attr navigationContentDescription
@@ -583,6 +595,7 @@ attr titleMargins
 attr titleTextAppearance
 attr titleTextColor
 attr titleTextStyle
+attr toolbarAlignment
 attr toolbarId
 attr toolbarNavigationButtonStyle
 attr toolbarStyle
@@ -654,6 +667,7 @@ color bg_screen2
 color bg_screen3
 color bg_screen4
 color black
+color black_overlay
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1146,13 +1160,30 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable activity
 drawable add_bookmark
+drawable aligncenter
+drawable alignleft
+drawable alignright
+drawable arrow_right
+drawable at
+drawable at_1
+drawable at_10
+drawable at_2
+drawable at_3
+drawable at_4
+drawable at_5
+drawable at_6
+drawable at_7
+drawable at_8
+drawable at_9
 drawable avd_hide_password
 drawable avd_show_password
+drawable background
 drawable backgrownd
 drawable bg1
 drawable bitmap_1
 drawable blockquote
 drawable blue_rect
+drawable bold
 drawable bullets
 drawable cancel
 drawable card_activated_background
@@ -1160,8 +1191,14 @@ drawable card_background
 drawable card_pressed_background
 drawable card_selector
 drawable cardview_gradient
+drawable cartoon_man_in_love
+drawable cartoon_man_is_smoking
+drawable cartoon_man_is_urinating
+drawable cartoon_man_laughing
+drawable cartoon_man_with_flower_bouquet
 drawable cerclebackgroundpurple
 drawable check
+drawable check_mark
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1181,6 +1218,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable cursor
 drawable curved_shape
 drawable curved_shape2
 drawable custom_progressbar
@@ -1200,7 +1238,11 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edit
+drawable emoji
 drawable exam
+drawable fontface
+drawable fontsize
+drawable foregroundcolor
 drawable forum
 drawable gif1
 drawable giphy6
@@ -1208,6 +1250,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradiant
 drawable gradient_yellow
+drawable hr
 drawable ic_account_box_black_24dp
 drawable ic_action_duration
 drawable ic_ads
@@ -1227,6 +1270,8 @@ drawable ic_dashboard_black_24dp
 drawable ic_exit_to_app_black_24dp
 drawable ic_fast_forward_black_24dp
 drawable ic_fast_rewind_black_24dp
+drawable ic_insert_link_black_48dp
+drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_marketing1
@@ -1253,10 +1298,19 @@ drawable ic_support1
 drawable ic_swipe_right_caret
 drawable ic_today
 drawable ic_turned_in_black_24dp
+drawable image
+drawable image_place_holder
 drawable img12
+drawable indentleft
+drawable indentright
 drawable insert_image
 drawable insert_link
+drawable italic
+drawable keyboard
 drawable learn
+drawable link
+drawable listbullet
+drawable listnumber
 drawable login_logo
 drawable logo
 drawable mediatransperent_ract
@@ -1281,8 +1335,10 @@ drawable original_logo
 drawable p1
 drawable p2
 drawable patience
+drawable play
 drawable practice
 drawable quizbutton
+drawable quote
 drawable radio_bg
 drawable radiobutton
 drawable radiobuttonselect
@@ -1308,13 +1364,87 @@ drawable shape_right_bottom
 drawable shape_right_bottom_normal
 drawable shape_top
 drawable side_nav_bar
+drawable strikethrough
+drawable subscript
+drawable superscript
 drawable thumb
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable underline
+drawable unlink
+drawable video
 drawable w2
 drawable waves
 drawable webinars
 drawable white_rect
+drawable wx_48_48_48_1_1
+drawable wx_48_48_48_1_10
+drawable wx_48_48_48_1_11
+drawable wx_48_48_48_1_12
+drawable wx_48_48_48_1_13
+drawable wx_48_48_48_1_14
+drawable wx_48_48_48_1_15
+drawable wx_48_48_48_1_2
+drawable wx_48_48_48_1_3
+drawable wx_48_48_48_1_4
+drawable wx_48_48_48_1_5
+drawable wx_48_48_48_1_6
+drawable wx_48_48_48_1_7
+drawable wx_48_48_48_1_8
+drawable wx_48_48_48_1_9
+drawable wx_48_48_48_2_1
+drawable wx_48_48_48_2_10
+drawable wx_48_48_48_2_11
+drawable wx_48_48_48_2_12
+drawable wx_48_48_48_2_13
+drawable wx_48_48_48_2_14
+drawable wx_48_48_48_2_15
+drawable wx_48_48_48_2_2
+drawable wx_48_48_48_2_3
+drawable wx_48_48_48_2_4
+drawable wx_48_48_48_2_5
+drawable wx_48_48_48_2_6
+drawable wx_48_48_48_2_7
+drawable wx_48_48_48_2_8
+drawable wx_48_48_48_2_9
+drawable wx_56_56_56_1_1
+drawable wx_56_56_56_1_10
+drawable wx_56_56_56_1_11
+drawable wx_56_56_56_1_12
+drawable wx_56_56_56_1_13
+drawable wx_56_56_56_1_14
+drawable wx_56_56_56_1_15
+drawable wx_56_56_56_1_2
+drawable wx_56_56_56_1_3
+drawable wx_56_56_56_1_4
+drawable wx_56_56_56_1_5
+drawable wx_56_56_56_1_6
+drawable wx_56_56_56_1_7
+drawable wx_56_56_56_1_8
+drawable wx_56_56_56_1_9
+drawable wx_56_56_56_2_1
+drawable wx_56_56_56_2_10
+drawable wx_56_56_56_2_11
+drawable wx_56_56_56_2_12
+drawable wx_56_56_56_2_13
+drawable wx_56_56_56_2_14
+drawable wx_56_56_56_2_15
+drawable wx_56_56_56_2_2
+drawable wx_56_56_56_2_3
+drawable wx_56_56_56_2_4
+drawable wx_56_56_56_2_5
+drawable wx_56_56_56_2_6
+drawable wx_56_56_56_2_7
+drawable wx_56_56_56_2_8
+drawable wx_56_56_56_2_9
+drawable wx_d_1
+drawable wx_d_2
+drawable wx_d_3
+drawable wx_d_4
+drawable wx_d_5
+drawable wx_d_6
+drawable wx_d_7
+drawable wx_d_8
 font maven_pro_bold
 font maven_pro_medium
 font maven_pro_regular
@@ -1327,13 +1457,17 @@ font roboto_regular
 font sfnsdisplay
 font sofia_regular
 id ALT
+id BOTTOM
 id CTRL
 id ContentTitle
+id FULL
 id FUNCTION
 id META
+id MIN
 id Profile_pic
 id SHIFT
 id SYM
+id TOP
 id VolleyImageView
 id action0
 id action_bar
@@ -1366,6 +1500,24 @@ id alertTitle
 id all
 id always
 id appbar
+id arEditText
+id areToolbar
+id are_btn_attach_video
+id are_fontsize_preview
+id are_fontsize_seekbar
+id are_image_select_from_internet
+id are_image_select_from_internet_layout
+id are_image_select_from_local
+id are_image_select_insert
+id are_image_select_internet_image_url
+id are_image_select_radio_group
+id are_insert_link_edit
+id are_scrollview
+id are_toolbar
+id are_video_view
+id are_view_at_item_image
+id are_view_at_item_name
+id are_view_at_listview
 id async
 id audio_title
 id audioview
@@ -1377,6 +1529,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottombar
 id btnNegative
 id btnPositive
 id btnResend
@@ -1393,6 +1546,7 @@ id center_vertical
 id chains
 id change_pass
 id change_pic
+id checkMark
 id checkbox
 id chronometer
 id city
@@ -1422,6 +1576,8 @@ id cv_root_category
 id dark
 id decor_content_parent
 id default_activity_button
+id default_button_save
+id default_image_preview
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1432,12 +1588,14 @@ id direct
 id disableHome
 id divider
 id dob
+id dot
 id drawer_layout
 id editTextCode
 id editTextMobile
 id edit_query
 id education
 id email
+id emojiPanelId
 id empty_view
 id end
 id end_padder
@@ -1465,6 +1623,7 @@ id forever
 id forgot
 id forward
 id frame_container
+id fullscreen_content_controls
 id gender
 id ghost_view
 id gifImageView
@@ -1591,6 +1750,36 @@ id rewind
 id right
 id right_icon
 id right_side
+id rteAlignCenter
+id rteAlignLeft
+id rteAlignRight
+id rteAt
+id rteBackground
+id rteBold
+id rteColorPalette
+id rteEmoji
+id rteEmojiItemImageView
+id rteEmojiPanel
+id rteEmojiPanelGridView
+id rteFontColor
+id rteFontface
+id rteFontsize
+id rteHr
+id rteIndentLeft
+id rteIndentRight
+id rteInsertImage
+id rteInsertVideo
+id rteItalic
+id rteLink
+id rteListBullet
+id rteListNumber
+id rteQuote
+id rteStrikethrough
+id rteSubscript
+id rteSuperscript
+id rteUnderline
+id sample_image
+id sample_text
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1758,7 +1947,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_are__video_player
 layout activity_audio_play
+layout activity_default_image_preview
+layout activity_default_profile
 layout activity_enter_phone
 layout activity_forgotpwd
 layout activity_login
@@ -1771,6 +1963,14 @@ layout activity_theory_view
 layout activity_verify_phone
 layout activity_welcome
 layout app_bar_main
+layout are_activity_at_picker
+layout are_adapter_at_item_view
+layout are_emoji_item
+layout are_emoji_panel
+layout are_fontsize_picker
+layout are_image_select
+layout are_link_insert
+layout are_toolbar
 layout audioview
 layout audioview_min
 layout cards_layout
@@ -1912,7 +2112,12 @@ string answer_three
 string answer_two
 string app_name
 string appbar_scrolling_view_behavior
+string are_image_insert_hint
+string are_link_insert_hint
+string are_link_title
 string bottom_sheet_behavior
+string btn_attach_video
+string cancel
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1935,6 +2140,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
 string define_roundedimageview
+string dummy_content
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
@@ -1944,6 +2150,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
+string hello_world
 string hide_bottom_view_on_scroll_behavior
 string library_roundedimageview_author
 string library_roundedimageview_authorWebsite
@@ -1963,6 +2170,7 @@ string navigation_drawer_close
 string navigation_drawer_open
 string next
 string next_questions
+string ok
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1973,6 +2181,7 @@ string play_again_desc
 string previous_questions
 string project_id
 string question
+string save_to_local
 string search_menu_title
 string skip
 string slide_1_desc
@@ -1987,6 +2196,8 @@ string start
 string status_bar_notification_info_overflow
 string tag_line
 string thumbnail_image_view_desc
+string title_activity_are__video_player
+string title_activity_default_image_preview
 string title_activity_welcome
 string title_cart
 string title_gifts
@@ -2197,6 +2408,8 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style FullScreenDialogStyle
+style FullscreenActionBarStyle
+style FullscreenTheme
 style HintTextStyle
 style MyDialog
 style Platform_AppCompat
@@ -2527,6 +2740,7 @@ styleable BaseAudioView minified primaryColor selectControls showTitle
 styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout behavior_fitToContents behavior_hideable behavior_peekHeight behavior_skipCollapsed
+styleable ButtonBarContainerTheme metaButtonBarButtonStyle metaButtonBarStyle
 styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
@@ -2535,6 +2749,7 @@ styleable CircleImageView view_backgroundColor view_borderColor view_borderWidth
 styleable CircleImageViewStyle circleImageViewDefault
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
+styleable ColorPickerView colorViewCheckedType colorViewHeight colorViewMarginLeft colorViewMarginRight colorViewWidth colors
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode
 styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
@@ -2592,3 +2807,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable are expandMode hideToolbar toolbarAlignment
