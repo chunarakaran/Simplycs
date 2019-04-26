@@ -63,8 +63,7 @@ dependencies {
     implementation 'com.4ert:audioview:0.4'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
-    implementation 'com.github.bumptech.glide:glide:4.3.1'
-    implementation 'com.github.chinalwb:are:0.1.5'
+    implementation 'net.dankito.richtexteditor:richtexteditor-android:2.0.8'
 
     implementation 'in.shadowfax:proswipebutton:1.1'
     //Temparory

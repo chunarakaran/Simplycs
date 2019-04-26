@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.dankito.richtexteditor:richtexteditor-common:2.0.8@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.richtexteditor/richtexteditor-common/2.0.8/3714186f314575e31464b7b578c7e570010a9859/richtexteditor-common-2.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.richtexteditor/richtexteditor-common/2.0.8/daba4e691dd4f36b2332ae7e79f6724dc495d496/richtexteditor-common-2.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

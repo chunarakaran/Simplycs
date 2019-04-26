@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:layout_marginLeft="250dp"
+                android:layout_marginLeft="180dp"
                 android:text="Submit"
                 android:textColor="@color/white"/>
 
@@ -93,53 +93,30 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-
-            <RelativeLayout
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                >
 
-                <ScrollView
+                <net.dankito.richtexteditor.android.RichTextEditor
+                    android:id="@+id/editor"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@+id/bottombar"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    />
 
-                    <com.chinalwb.are.AREditText
-                        android:id="@+id/arEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="top|left"
-                        android:hint="Your Message here"
-                        android:textSize="50sp" />
-                </ScrollView>
-
-                <LinearLayout
-                    android:id="@+id/bottombar"
+                <net.dankito.richtexteditor.android.toolbar.GroupedCommandsEditorToolbar
+                    android:id="@+id/editorToolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
-                    android:orientation="horizontal"
-                    android:weightSum="1000">
+                    android:layout_height="36dp"
+                    android:background="@color/colorPrimary"
+                    />
 
-                    <com.chinalwb.are.styles.toolbar.ARE_ToolbarDefault
-                        android:id="@+id/areToolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="900"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center_vertical" />
-
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
+            </LinearLayout>
 
 
 
