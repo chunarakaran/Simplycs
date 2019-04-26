@@ -303,6 +303,9 @@ public class MainActivity extends AppCompatActivity
     public void Logout()
     {
 
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
         // Creating string request with post method.
         StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/Logout",
                 new Response.Listener<String>() {
@@ -317,14 +320,18 @@ public class MainActivity extends AppCompatActivity
                             if(success.equalsIgnoreCase("true"))
                             {
                                 Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
                                 logoutUser();
+
                             }
                             else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
                             }
                             else
                             {
                                 Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
                             }
 
 
@@ -335,6 +342,7 @@ public class MainActivity extends AppCompatActivity
                             // JSON error
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
                         }
 
 
@@ -349,6 +357,7 @@ public class MainActivity extends AppCompatActivity
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
                     }
                 }) {
 

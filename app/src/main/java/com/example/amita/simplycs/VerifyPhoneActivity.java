@@ -93,8 +93,17 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     return;
                 }
 
-                //verifying the code entered manually
-                verifyVerificationCode(code);
+                else if (mVerificationId.equalsIgnoreCase(mVerificationId)){
+
+                    Toast.makeText(VerifyPhoneActivity.this, "invalid", Toast.LENGTH_LONG).show();
+                }
+                else {
+
+                    //verifying the code entered manually
+                    verifyVerificationCode(code);
+                }
+
+
 
 
 
