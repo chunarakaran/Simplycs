@@ -250,7 +250,7 @@ public class TestListFragment extends Fragment
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
-                            if(success.equalsIgnoreCase("true"))
+                            if(success.equalsIgnoreCase("false"))
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
@@ -298,7 +298,7 @@ public class TestListFragment extends Fragment
                                 hideDialog();
 
                             }
-                            else if (success.equalsIgnoreCase("false")){
+                            else if (success.equalsIgnoreCase("true")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
