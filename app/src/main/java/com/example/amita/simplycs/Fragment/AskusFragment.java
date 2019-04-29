@@ -215,7 +215,7 @@ public class AskusFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/EditProfile",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/AskUs",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -299,8 +299,8 @@ public class AskusFragment extends Fragment
 
                 GetValueFromEditText();
                 // Adding All values to Params.
-                params.put("subject", Subject);
-                params.put("encodedHtml", encodedHtml);
+                params.put("Subject", Subject);
+                params.put("Message", encodedHtml);
 
 
                 return params;
