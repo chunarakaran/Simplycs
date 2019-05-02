@@ -30,11 +30,15 @@ import com.example.amita.simplycs.Adapter.QuizWrapper;
 import com.example.amita.simplycs.R;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.protocol.HTTP;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +47,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +57,7 @@ public class QuizFragment extends Fragment
 {
 
     Chronometer simpleChronometer;
-    TextView submit,duration;
+    TextView submit,duration,ques,total_ques;
     int time=0;
     View rootview;
 
@@ -60,6 +65,9 @@ public class QuizFragment extends Fragment
     private TextView quizQuestion,previousButton,nextButton;
 
     private RadioGroup radioGroup;
+
+    private RadioButton radioButton;
+
 
     private RadioButton optionOne;
 
@@ -73,10 +81,13 @@ public class QuizFragment extends Fragment
 
     private int quizCount;
 
+    int quesCount=1;
+
     private QuizWrapper firstQuestion;
 
     private List<QuizWrapper> parsedObject;
 
+    String Test_id,test_duration,test_marks;
     String URL;
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -103,10 +114,16 @@ public class QuizFragment extends Fragment
         User_id = sp.getString("User", "");
         URL = getString(R.string.url);
 
+        Bundle bundle=getArguments();
+        Test_id=String.valueOf(bundle.getString("test_id"));
+        test_duration=String.valueOf(bundle.getString("test_duration"));
+        test_marks=String.valueOf(bundle.getString("test_marks"));
+
         Initialize();
 
         simpleChronometer.start();
 
+        total_ques.setText("/"+test_marks);
 
         new CountDownTimer(81200000, 1000) {
 
@@ -140,23 +157,35 @@ public class QuizFragment extends Fragment
 
         asyncObject.execute("");
 
+
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 int radioSelected = radioGroup.getCheckedRadioButtonId();
 
-                int userSelection = getSelectedAnswer(radioSelected);
+
+                radioButton = (RadioButton)rootview.findViewById(radioSelected);
+
+
+                String userSelection = (String) radioButton.getText();
 
                 int correctAnswerForQuestion = firstQuestion.getCorrectAnswer();
 
-                if(userSelection == correctAnswerForQuestion){
+//                Toast.makeText(getActivity(),userSelection, Toast.LENGTH_LONG).show();
+
+                if(userSelection.equals(String.valueOf(correctAnswerForQuestion))){
 
                     // correct answer
 
                     Toast.makeText(getActivity(), "You got the answer correct", Toast.LENGTH_LONG).show();
 
                     currentQuizQuestion++;
+
+                    quesCount++;
+
+                    ques.setText(String.valueOf(quesCount));
 
                     if(currentQuizQuestion >= quizCount){
 
@@ -230,6 +259,10 @@ public class QuizFragment extends Fragment
 
                 optionFour.setText(possibleAnswers[3]);
 
+                quesCount--;
+
+                ques.setText(String.valueOf(quesCount));
+
 
             }
         });
@@ -260,6 +293,9 @@ public class QuizFragment extends Fragment
         submit=(TextView)rootview.findViewById(R.id.submit);
         duration=(TextView)rootview.findViewById(R.id.timer);
         simpleChronometer = (Chronometer)rootview.findViewById(R.id.simpleChronometer);
+
+        ques = (TextView)rootview.findViewById(R.id.ques);
+        total_ques = (TextView)rootview.findViewById(R.id.total_ques);
 
         quizQuestion = (TextView)rootview.findViewById(R.id.quiz_question);
 
@@ -306,9 +342,19 @@ public class QuizFragment extends Fragment
 
             HttpClient httpClient = new DefaultHttpClient(new BasicHttpParams());
 
-            HttpPost httpPost = new HttpPost("http://10.0.2.2/androidlogin/index.php");
+            HttpPost httpPost = new HttpPost(URL+"api/QuestionList");
 
-            httpPost.setHeader("auth",User_id);
+            httpPost.setHeader("Auth",User_id);
+//            httpPost.setParams("Testid",params);
+
+            List<NameValuePair> postParameters = new ArrayList<>();
+            postParameters.add(new BasicNameValuePair("TestId", Test_id));
+            try {
+                httpPost.setEntity(new UrlEncodedFormEntity(postParameters, HTTP.UTF_8));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
 
             String jsonResult = "";
 
@@ -432,7 +478,7 @@ public class QuizFragment extends Fragment
 
             System.out.println("Testing the water " + resultObject.toString());
 
-            jsonArray = resultObject.optJSONArray("quiz_questions");
+            jsonArray = resultObject.optJSONArray("test_questions");
 
         } catch (JSONException e) {
 
@@ -440,32 +486,35 @@ public class QuizFragment extends Fragment
 
         }
 
-        for(int i = 0; i < jsonArray.length(); i++){
+        if (jsonArray!=null) {
 
-            JSONObject jsonChildNode = null;
+            for (int i = 0; i < jsonArray.length(); i++) {
 
-            try {
+                JSONObject jsonChildNode = null;
 
-                jsonChildNode = jsonArray.getJSONObject(i);
+                try {
 
-                int id = jsonChildNode.getInt("id");
+                    jsonChildNode = jsonArray.getJSONObject(i);
 
-                String question = jsonChildNode.getString("question");
+                    int id = jsonChildNode.getInt("id");
 
-                String answerOptions = jsonChildNode.getString("possible_answers");
+                    String question = jsonChildNode.getString("question");
 
-                int correctAnswer = jsonChildNode.getInt("correct_answer");
+                    String answerOptions = jsonChildNode.getString("possible_answers");
 
-                newItemObject = new QuizWrapper(id, question, answerOptions, correctAnswer);
+                    int correctAnswer = jsonChildNode.getInt("correct_answer");
 
-                jsonObject.add(newItemObject);
+                    newItemObject = new QuizWrapper(id, question, answerOptions, correctAnswer);
 
-            } catch (JSONException e) {
+                    jsonObject.add(newItemObject);
 
-                e.printStackTrace();
+                } catch (JSONException e) {
+
+                    e.printStackTrace();
+
+                }
 
             }
-
         }
 
         return jsonObject;

@@ -1794,6 +1794,7 @@ id progress
 id progress_circular
 id progress_horizontal
 id progressbar
+id ques
 id quiz_question
 id radio
 id radio0
@@ -1900,6 +1901,7 @@ id top
 id topLayout
 id topPanel
 id topic_title
+id total_ques
 id total_time
 id touch_outside
 id transition_current_scene
