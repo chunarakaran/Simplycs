@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -19,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -50,6 +53,7 @@ public class ExamListFragment extends Fragment
 
     List<ExamListDataAdapter> ListOfdataAdapter;
 
+    LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -77,7 +81,20 @@ public class ExamListFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        rootview = inflater.inflate(R.layout.fragment_courselist, container, false);
+        rootview = inflater.inflate(R.layout.fragment_examlist, container, false);
+
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        toolbar.setTitle("Up-Coming Exams");
 
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
@@ -97,6 +114,7 @@ public class ExamListFragment extends Fragment
         ListOfdataAdapter = new ArrayList<>();
 
         recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+        emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
         recyclerView.setHasFixedSize(true);
 
         layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
@@ -193,6 +211,17 @@ public class ExamListFragment extends Fragment
         return rootview;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
+
 
     public void GetExamList()
     {
@@ -213,7 +242,7 @@ public class ExamListFragment extends Fragment
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("package");
+                                JSONArray jsonArray=jObj.getJSONArray("exam_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     ExamListDataAdapter GetDataAdapter2=new ExamListDataAdapter();
@@ -240,6 +269,16 @@ public class ExamListFragment extends Fragment
 
                                 adapter = new ExamListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
+
+                                if(adapter.getItemCount()==0)
+                                {
+                                    recyclerView.setVisibility(View.GONE);
+                                    emptyView.setVisibility(View.VISIBLE);
+                                }
+                                else{
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    emptyView.setVisibility(View.GONE);
+                                }
 
 
                                 hideDialog();
