@@ -58,8 +58,9 @@ public class ExamListFragment extends Fragment
     RecyclerView.Adapter adapter;
 
 
-    String exam_id;
+    String exam_id,exam_name;
     final ArrayList<ExamListDataAdapter> Exam_id = new ArrayList<>();
+    final ArrayList<ExamListDataAdapter> Exam_name = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -154,12 +155,14 @@ public class ExamListFragment extends Fragment
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
                     exam_id=Exam_id.get(RecyclerViewItemPosition).getId();
+                    exam_name=Exam_name.get(RecyclerViewItemPosition).getExamTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     ExamDetailFragment mfragment=new ExamDetailFragment();
 
                     Bundle bundle=new Bundle();
                     bundle.putString("exam_id",exam_id);
+                    bundle.putString("exam_name",exam_name);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
@@ -260,6 +263,7 @@ public class ExamListFragment extends Fragment
 
 
                                     Exam_id.add(GetDataAdapter2);
+                                    Exam_name.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 

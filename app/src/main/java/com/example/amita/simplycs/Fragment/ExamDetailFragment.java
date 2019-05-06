@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -37,7 +39,7 @@ public class ExamDetailFragment extends Fragment
 
     TextView Exam_Name,Exam_Des,Exam_date,Exam_start_Time,Exam_end_Time;
 
-    String Exam_id;
+    String Exam_id,Exam_name;
     String User_id;
     public static final String PREFS_NAME = "login";
 
@@ -53,6 +55,17 @@ public class ExamDetailFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_exam_detail, container, false);
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
@@ -66,6 +79,9 @@ public class ExamDetailFragment extends Fragment
 
         Bundle bundle=getArguments();
         Exam_id=String.valueOf(bundle.getString("exam_id"));
+        Exam_name=String.valueOf(bundle.getString("exam_name"));
+
+        toolbar.setTitle(Exam_name);
 
         Initialize();
 
@@ -92,6 +108,17 @@ public class ExamDetailFragment extends Fragment
         });
 
         return rootview;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 
     public void Initialize()
