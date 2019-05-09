@@ -1,6 +1,7 @@
 package com.example.amita.simplycs.Fragment;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -152,6 +153,7 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
                 requestStoragePermission();
 
                 showFileChooser();
+//                performCrop();
             }
         });
 
@@ -220,6 +222,35 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         startActivityForResult(i, PICK_IMAGE_REQUEST);
     }
 
+    private void performCrop() {
+        try {
+            Intent cropIntent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+
+            // indicate image type and Uri
+            cropIntent.setType("image/*");
+            // set crop properties here
+            cropIntent.putExtra("crop", true);
+            // indicate aspect of desired crop
+            cropIntent.putExtra("aspectX", 1);
+            cropIntent.putExtra("aspectY", 1);
+            // indicate output X and Y
+            cropIntent.putExtra("outputX", 200);
+            cropIntent.putExtra("outputY", 200);
+            // retrieve data on return
+            cropIntent.putExtra("return-data", true);
+            // start the activity - we handle returning in onActivityResult
+            startActivityForResult(cropIntent, PICK_IMAGE_REQUEST);
+        }
+        // respond to users whose devices do not support the crop action
+        catch (ActivityNotFoundException anfe) {
+            // display an error message
+            String errorMessage = "Whoops - your device doesn't support the crop action!";
+            Toast toast = Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
     //handling the image chooser activity result
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -227,6 +258,9 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
+
+//            performCrop(filePath);
+
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
 

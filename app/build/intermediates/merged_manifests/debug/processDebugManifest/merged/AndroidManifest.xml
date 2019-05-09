@@ -85,6 +85,7 @@
         <activity android:name="com.example.amita.simplycs.TheoryViewActivity" />
         <activity android:name="com.example.amita.simplycs.PDFViewActivity" />
         <activity android:name="com.example.amita.simplycs.AudioPlayActivity" />
+        <activity android:name="com.example.amita.simplycs.WebinarPlayerActivity" />
 
         <service
             android:name="net.gotev.uploadservice.UploadService"

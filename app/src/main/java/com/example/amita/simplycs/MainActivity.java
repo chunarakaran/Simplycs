@@ -39,6 +39,7 @@ import com.example.amita.simplycs.Fragment.FullScreenDialog;
 import com.example.amita.simplycs.Fragment.ProfileFragment;
 import com.example.amita.simplycs.Fragment.SettingFragment;
 import com.example.amita.simplycs.Fragment.StartQuizFragment;
+import com.example.amita.simplycs.Fragment.WebinarListFragment;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -235,7 +236,11 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.action_menu4:
 
-                Toast.makeText(getApplicationContext(),"Webinars",Toast.LENGTH_SHORT).show();
+                fragment= new WebinarListFragment();
+                transection.replace(R.id.content_frame, fragment);
+                transection.addToBackStack(null).commit();
+
+//                Toast.makeText(getApplicationContext(),"Webinars",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_menu5:
 

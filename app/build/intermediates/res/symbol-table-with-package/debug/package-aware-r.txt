@@ -2073,6 +2073,7 @@ layout fragment_theory_view
 layout fragment_theorylist
 layout fragment_today
 layout fragment_videolist
+layout fragment_webinarlist
 layout grouped_insert_commands_command_view
 layout grouped_text_styles_command_view
 layout layout_colordialog
@@ -2088,6 +2089,7 @@ layout list_view_notification
 layout list_view_pdf
 layout list_view_test
 layout list_view_theory
+layout list_view_webinar
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main
@@ -2113,6 +2115,7 @@ layout support_simple_spinner_dropdown_item
 layout view_fullscreen_options_bar
 layout view_proswipebtn
 layout view_swipe_button
+layout webinar_player_activity
 layout welcome_slide1
 layout welcome_slide2
 layout welcome_slide3

@@ -75,6 +75,7 @@
         <activity android:name=".TheoryViewActivity" />
         <activity android:name=".PDFViewActivity" />
         <activity android:name=".AudioPlayActivity"></activity>
+        <activity android:name=".WebinarPlayerActivity"/>
     </application>
 
 </manifest>
