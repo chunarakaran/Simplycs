@@ -173,7 +173,7 @@ public class WebinarListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/WebinarList",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/WebinarList",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -274,20 +274,17 @@ public class WebinarListFragment extends Fragment
                 return params;
             }
 
-//            @Override
-//            protected Map<String, String> getParams() {
-//
-//                // Creating Map String Params.
-//                Map<String, String> params = new HashMap<String, String>();
-//
-//                // Adding All values to Params.
-//                params.put("CourseId", Course_id);
-//                params.put("CategoryId", Category_id);
-//                params.put("SubCategoryId", SubCategory_id);
-//                params.put("Date", CDate);
-//
-//                return params;
-//            }
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("CourseId", Course_id);
+
+                return params;
+            }
 
 
         };

@@ -1264,6 +1264,7 @@ drawable arrow_right
 drawable avd_hide_password
 drawable avd_show_password
 drawable backgrownd
+drawable badge_background
 drawable bg1
 drawable bitmap_1
 drawable blockquote
@@ -1568,6 +1569,7 @@ id buttonContinue
 id buttonPanel
 id cancel_action
 id card_view
+id cart_badge
 id center
 id center_horizontal
 id center_vertical
@@ -2028,6 +2030,7 @@ layout cpv_preference_circle
 layout cpv_preference_circle_large
 layout cpv_preference_square
 layout cpv_preference_square_large
+layout custom_action_item_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
