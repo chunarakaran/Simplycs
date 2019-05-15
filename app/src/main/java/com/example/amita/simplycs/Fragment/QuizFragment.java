@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Chronometer;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -62,7 +63,9 @@ public class QuizFragment extends Fragment
     View rootview;
 
 
-    private TextView quizQuestion,previousButton,nextButton;
+    private TextView previousButton,nextButton;
+
+    private WebView quizQuestion;
 
     private RadioGroup radioGroup;
 
@@ -199,7 +202,9 @@ public class QuizFragment extends Fragment
 
                         firstQuestion = parsedObject.get(currentQuizQuestion);
 
-                        quizQuestion.setText(firstQuestion.getQuestion());
+
+
+                        quizQuestion.loadData(firstQuestion.getQuestion(), "text/html", null);
 
                         String[] possibleAnswers = firstQuestion.getAnswers().split(",");
 
@@ -243,11 +248,11 @@ public class QuizFragment extends Fragment
 
                 }
 
-                uncheckedRadioButton();
+//                uncheckedRadioButton();
 
                 firstQuestion = parsedObject.get(currentQuizQuestion);
 
-                quizQuestion.setText(firstQuestion.getQuestion());
+                quizQuestion.loadData(firstQuestion.getQuestion(), "text/html", null);
 
                 String[] possibleAnswers = firstQuestion.getAnswers().split(",");
 
@@ -297,7 +302,7 @@ public class QuizFragment extends Fragment
         ques = (TextView)rootview.findViewById(R.id.ques);
         total_ques = (TextView)rootview.findViewById(R.id.total_ques);
 
-        quizQuestion = (TextView)rootview.findViewById(R.id.quiz_question);
+        quizQuestion = (WebView) rootview.findViewById(R.id.quiz_question);
 
         radioGroup = (RadioGroup)rootview.findViewById(R.id.radioGroup);
 
@@ -418,7 +423,7 @@ public class QuizFragment extends Fragment
 
             firstQuestion = parsedObject.get(0);
 
-            quizQuestion.setText(firstQuestion.getQuestion());
+            quizQuestion.loadData(firstQuestion.getQuestion(), "text/html", null);
 
             String[] possibleAnswers = firstQuestion.getAnswers().split(",");
 
