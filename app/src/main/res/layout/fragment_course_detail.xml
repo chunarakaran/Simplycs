@@ -43,12 +43,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <customfonts.TextViewSFProDisplayRegular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="John Doe"
-                        android:textSize="10sp"
-                        android:textColor="#a0a0a0"/>
+                    <!--<customfonts.TextViewSFProDisplayRegular-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="John Doe"-->
+                        <!--android:textSize="10sp"-->
+                        <!--android:textColor="#a0a0a0"/>-->
 
 
                     <customfonts.MyTextView_SF_Pro_Light
@@ -284,7 +284,7 @@
     <customfonts.Button_SF_Pro_Display_Semibold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BUY NOW"
+        android:text="ENROLL NOW"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:layout_margin="12sp"

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -131,7 +132,7 @@ public class CourseDetailFragment extends Fragment
 
                                 Picasso.with(getActivity()).load(CourseImage).into(Course_Image);
                                 Course_Name.setText(CourseName);
-                                Course_Des.setText(CourseDes);
+                                Course_Des.setText(Html.fromHtml(CourseDes));
 
 
                                 hideDialog();
