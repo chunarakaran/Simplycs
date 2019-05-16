@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -167,6 +168,23 @@ public class AudioListFragment extends Fragment
             }
         });
 
+        rootview.setFocusableInTouchMode(true);
+        rootview.requestFocus();
+        rootview.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // DO WHAT YOU WANT ON BACK PRESSED
+                    getFragmentManager().popBackStack();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+
 
         return rootview;
     }
@@ -196,6 +214,35 @@ public class AudioListFragment extends Fragment
                                 {
                                     AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
+
+                                    String audio_title=jsonObject1.getString("audio_title");
+                                    String audio_url=jsonObject1.getString("audio_url");
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("audio_title"));
+                                    GetDataAdapter2.setAudioURL(jsonObject1.getString("audio_url"));
+
+                                    if (audio_title.equalsIgnoreCase("null")){
+
+                                    }
+                                    else
+                                    {
+
+                                        Contentid.add(GetDataAdapter2);
+
+                                        Audio_URL.add(GetDataAdapter2);
+
+                                        ListOfdataAdapter.add(GetDataAdapter2);
+                                    }
+
+
+                                }
+
+                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
+                                for(int i=0;i<jsonArray1.length();i++)
+                                {
+                                    AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
+                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
 
                                     String audio_title=jsonObject1.getString("audio_title");
                                     String audio_url=jsonObject1.getString("audio_url");
