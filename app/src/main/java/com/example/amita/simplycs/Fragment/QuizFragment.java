@@ -53,6 +53,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class QuizFragment extends Fragment
 {
@@ -128,31 +129,21 @@ public class QuizFragment extends Fragment
 
         total_ques.setText("/"+test_marks);
 
-        new CountDownTimer(81200000, 1000) {
 
+
+        int minutes = Integer.parseInt(test_duration);
+
+
+        new CountDownTimer(60*minutes*1000, 1000) {
             public void onTick(long millisUntilFinished) {
-                long secondsInMilli = 1000;
-                long minutesInMilli = secondsInMilli * 60;
-                long hoursInMilli = minutesInMilli * 60;
-
-                long elapsedHours = millisUntilFinished / hoursInMilli;
-                millisUntilFinished = millisUntilFinished % hoursInMilli;
-
-                long elapsedMinutes = millisUntilFinished / minutesInMilli;
-                millisUntilFinished = millisUntilFinished % minutesInMilli;
-
-                long elapsedSeconds = millisUntilFinished / secondsInMilli;
-                millisUntilFinished = millisUntilFinished % secondsInMilli;
-
-                String yy = String.format("%02d:%02d", elapsedMinutes, elapsedSeconds);
-                duration.setText(yy);
+                long millis = millisUntilFinished;
+                //Convert milliseconds into hour,minute and seconds
+                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+                duration.setText(hms);//set text
             }
-
             public void onFinish() {
-                duration.setText("Done!");
+                duration.setText("TIME'S UP!!"); //On finish change timer text
             }
-
-
         }.start();
 
 
@@ -169,20 +160,13 @@ public class QuizFragment extends Fragment
                 int radioSelected = radioGroup.getCheckedRadioButtonId();
 
 
-                radioButton = (RadioButton)rootview.findViewById(radioSelected);
+
+                if (radioSelected == -1)
+                {
+                    // no radio buttons are checked
 
 
-                String userSelection = (String) radioButton.getText();
-
-                int correctAnswerForQuestion = firstQuestion.getCorrectAnswer();
-
-//                Toast.makeText(getActivity(),userSelection, Toast.LENGTH_LONG).show();
-
-                if(userSelection.equals(String.valueOf(correctAnswerForQuestion))){
-
-                    // correct answer
-
-                    Toast.makeText(getActivity(), "You got the answer correct", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "You Skipped Question", Toast.LENGTH_LONG).show();
 
                     currentQuizQuestion++;
 
@@ -221,14 +205,108 @@ public class QuizFragment extends Fragment
                     }
 
                 }
+                else
+                {
+                    // one of the radio buttons is checked
 
-                else{
+                    radioButton = (RadioButton)rootview.findViewById(radioSelected);
 
-                    // failed question
+                    String userSelection = (String) radioButton.getText();
 
-                    Toast.makeText(getActivity(), "You chose the wrong answer", Toast.LENGTH_LONG).show();
+                    int correctAnswerForQuestion = firstQuestion.getCorrectAnswer();
 
-                    return;
+//                    Toast.makeText(getActivity(),userSelection, Toast.LENGTH_LONG).show();
+
+                    if(userSelection.equals(String.valueOf(correctAnswerForQuestion))){
+
+                        // correct answer
+
+                        Toast.makeText(getActivity(), "You got the answer correct", Toast.LENGTH_LONG).show();
+
+                        currentQuizQuestion++;
+
+                        quesCount++;
+
+                        ques.setText(String.valueOf(quesCount));
+
+                        if(currentQuizQuestion >= quizCount){
+
+                            Toast.makeText(getActivity(), "End of the Quiz Questions", Toast.LENGTH_LONG).show();
+
+                            return;
+
+                        }
+
+                        else{
+
+                            firstQuestion = parsedObject.get(currentQuizQuestion);
+
+
+
+                            quizQuestion.loadData(firstQuestion.getQuestion(), "text/html", null);
+
+                            String[] possibleAnswers = firstQuestion.getAnswers().split(",");
+
+                            uncheckedRadioButton();
+
+                            optionOne.setText(possibleAnswers[0]);
+
+                            optionTwo.setText(possibleAnswers[1]);
+
+                            optionThree.setText(possibleAnswers[2]);
+
+                            optionFour.setText(possibleAnswers[3]);
+
+                        }
+
+                    }
+                    else{
+
+                        // failed question
+
+                        Toast.makeText(getActivity(), "You chose the wrong answer", Toast.LENGTH_LONG).show();
+
+                        currentQuizQuestion++;
+
+                        quesCount++;
+
+                        ques.setText(String.valueOf(quesCount));
+
+                        if(currentQuizQuestion >= quizCount){
+
+                            Toast.makeText(getActivity(), "End of the Quiz Questions", Toast.LENGTH_LONG).show();
+
+                            return;
+
+                        }
+
+                        else{
+
+                            firstQuestion = parsedObject.get(currentQuizQuestion);
+
+
+
+                            quizQuestion.loadData(firstQuestion.getQuestion(), "text/html", null);
+
+                            String[] possibleAnswers = firstQuestion.getAnswers().split(",");
+
+                            uncheckedRadioButton();
+
+                            optionOne.setText(possibleAnswers[0]);
+
+                            optionTwo.setText(possibleAnswers[1]);
+
+                            optionThree.setText(possibleAnswers[2]);
+
+                            optionFour.setText(possibleAnswers[3]);
+
+                        }
+
+
+
+
+                    }
+
 
                 }
 
@@ -397,7 +475,7 @@ public class QuizFragment extends Fragment
 
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(getActivity(), "Downloading Quiz","Wait....", true);
+            progressDialog = ProgressDialog.show(getActivity(), "Downloading Test","Wait....", true);
 
         }
 
