@@ -42,7 +42,7 @@
                     android:orientation="vertical">
 
 
-                    <TextView
+                    <WebView
                         android:id="@+id/txt_quetion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -51,10 +51,8 @@
                         android:layout_marginTop="@dimen/spacing_large"
                         android:background="@color/grey_5"
                         android:gravity="center_vertical"
-                        android:hint="Name"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:padding="@dimen/spacing_middle"
-                        android:textColor="@color/grey_80" />
+                        android:textColor="@color/grey_80"
+                        tools:ignore="WebViewLayout" />
 
                     <RadioGroup
                         android:id="@+id/radiogrp"

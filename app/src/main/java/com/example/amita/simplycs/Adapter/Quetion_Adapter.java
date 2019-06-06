@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -43,7 +44,7 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public TextView txt_quetion;
+        public WebView txt_quetion;
         RadioGroup radiogrp;
         RadioButton radio1,radio2,radio3,radio4;
         public View lyt_parent;
@@ -51,7 +52,7 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public OriginalViewHolder(View v) {
             super(v);
-            txt_quetion = (TextView) v.findViewById(R.id.txt_quetion);
+            txt_quetion = (WebView) v.findViewById(R.id.txt_quetion);
             radiogrp = (RadioGroup) v.findViewById(R.id.radiogrp);
             radio1 = (RadioButton) v.findViewById(R.id.radio1);
             radio2 = (RadioButton) v.findViewById(R.id.radio2);
@@ -83,7 +84,8 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             final Quetion_Model_List p = items.get(position);
             int srno = position+1;
-            view.txt_quetion.setText(srno+".  "+p.getQuestion());
+//            view.txt_quetion.setText(srno+".  "+p.getQuestion());
+            view.txt_quetion.loadData(srno+" "+p.getQuestion(), "text/html", null);
             view.radio1.setText(p.getOp1());
             view.radio2.setText(p.getOp2());
             view.radio3.setText(p.getOp3());
@@ -101,6 +103,15 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 *//*lastItem*//*
             }
             */
+
+            view.radiogrp.check(p.getSelctedId());
+            view.radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    p.setSelctedId(checkedId);
+                }
+            });
 
             view.btn_Previous.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -204,6 +215,9 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return items.size();
     }
 
+    public int getItemViewType(int position) {
+        return position;
+    }
 
 
 

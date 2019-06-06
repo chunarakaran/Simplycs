@@ -4,6 +4,8 @@ public class Quetion_Model_List {
 
     private String quetion_id,question,type,op1,op2,op3,op4,answer,question_image,op1_image,op2_image,op3_image,op4_image;
 
+    int selctedId;
+
     public Quetion_Model_List(String quetion_id, String question, String op1, String op2, String op3, String op4,
                               String answer) {
         this.quetion_id = quetion_id;
@@ -20,6 +22,15 @@ public class Quetion_Model_List {
 //        this.op3_image= op3_image;
 //        this.op4_image = op4_image;
     }
+
+    public int getSelctedId(){
+        return selctedId;
+    }
+
+    public void setSelctedId(int selctedId){
+        this.selctedId=selctedId;
+    }
+
 
     public String getQuetion_id() {
         return quetion_id;

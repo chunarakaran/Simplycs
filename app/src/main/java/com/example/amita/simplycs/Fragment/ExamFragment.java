@@ -11,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -54,9 +56,9 @@ public class ExamFragment extends Fragment
     LinearLayout empty_view;
     String exam_id,exam_title,exam_duration;
 
-    Button btn_Previous,btn_Next;
+    Button btn_Previous,btn_Next,btn_submit;
 
-    String Test_id,test_duration,test_marks;
+    String Test_id,test_name,test_duration,test_marks;
     String URL;
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -68,6 +70,17 @@ public class ExamFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.activity_start_exam, container, false);
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
 
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
@@ -76,9 +89,11 @@ public class ExamFragment extends Fragment
 
         Bundle bundle=getArguments();
         Test_id=String.valueOf(bundle.getString("test_id"));
+        test_name=String.valueOf(bundle.getString("test_name"));
         test_duration=String.valueOf(bundle.getString("test_duration"));
         test_marks=String.valueOf(bundle.getString("test_marks"));
 
+        toolbar.setTitle(test_name);
 
         empty_view  = (LinearLayout)rootview.findViewById(R.id.empty_view);
         mRecyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerview);
@@ -87,6 +102,7 @@ public class ExamFragment extends Fragment
         mRecyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         snapHelper.attachToRecyclerView(mRecyclerView);
 
+        btn_submit = (Button)rootview.findViewById(R.id.btn_submit);
         btn_Previous = (Button)rootview.findViewById(R.id.btn_Previous);
         btn_Next = (Button)rootview.findViewById(R.id.btn_Next);
         // btn_Previous.setVisibility(View.GONE);
@@ -116,17 +132,24 @@ public class ExamFragment extends Fragment
             @Override
             public void onClick(View view) {
                 mRecyclerView.getLayoutManager().scrollToPosition(gridLayoutManager.findFirstVisibleItemPosition() - 1);
-                //  btn_Next.setVisibility(View.VISIBLE);
+//                  btn_Next.setVisibility(View.VISIBLE);
             }
         });
         btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mRecyclerView.getLayoutManager().scrollToPosition(gridLayoutManager.findLastVisibleItemPosition() + 1);
-                // btn_Previous.setVisibility(View.VISIBLE);
+//                 btn_Previous.setVisibility(View.VISIBLE);
             }
         });
 
+
+        btn_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         rootview.setFocusableInTouchMode(true);
@@ -160,7 +183,7 @@ public class ExamFragment extends Fragment
     }
 
     public void get_Questions(){
-        StringRequest stringRequest = new StringRequest( Request.Method.POST, URL+"api/QuestionList",
+        StringRequest stringRequest = new StringRequest( Request.Method.POST, URL+"api/TestQuestionList",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -212,10 +235,10 @@ public class ExamFragment extends Fragment
                 rowListItem.add(new Quetion_Model_List(json.getString("id"),
                         json.getString("question"),
 //                        json.getString("type"),
-                        json.getString("op1"),
-                        json.getString("op2"),
-                        json.getString("op3"),
-                        json.getString("op4"),
+                        json.getString("option1"),
+                        json.getString("option2"),
+                        json.getString("option3"),
+                        json.getString("option4"),
                         json.getString("correct_answer")
 //                        json.getString("question_image"),
 //                        json.getString("op1_image"),
