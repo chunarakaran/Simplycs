@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:344131561831:android:a7aef42fa06cd5d3",
+        "android_client_info": {
+          "package_name": "com.aaddya.amita.simplycs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344131561831-b04rg16u1766mf5mjc0vprvssa7ia16k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aaddya.amita.simplycs",
+            "certificate_hash": "b28de106cd47c6550e2593929c66b1e36c899574"
+          }
+        },
+        {
+          "client_id": "344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR_ZjvB_0waYFnXP_U4aXv_r_7wefnBnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:344131561831:android:d7aed0392b311c87",
         "android_client_info": {
           "package_name": "com.example.amita.simplycs"
@@ -33,20 +70,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "344131561831-0uar86acd54s1hu8e78nhm0jofcrcvjf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

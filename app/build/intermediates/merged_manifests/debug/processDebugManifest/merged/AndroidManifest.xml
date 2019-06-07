@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.amita.simplycs"
+    package="com.aaddya.amita.simplycs"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -30,7 +30,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.amita.simplycs.WelcomeActivity"
+            android:name="com.aaddya.amita.simplycs.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -40,52 +40,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.amita.simplycs.MainActivity"
+            android:name="com.aaddya.amita.simplycs.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.SplashActivity"
+            android:name="com.aaddya.amita.simplycs.WelcomeActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.LoginActivity"
+            android:name="com.aaddya.amita.simplycs.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.SignupActivity"
+            android:name="com.aaddya.amita.simplycs.SignupActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.ForgotpwdActivity"
+            android:name="com.aaddya.amita.simplycs.ForgotpwdActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.VerifyPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.VerifyPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.amita.simplycs.EnterPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.EnterPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.amita.simplycs.YoutubePlayerActivity" />
-        <activity android:name="com.example.amita.simplycs.TheoryViewActivity" />
-        <activity android:name="com.example.amita.simplycs.PDFViewActivity" />
-        <activity android:name="com.example.amita.simplycs.AudioPlayActivity" />
-        <activity android:name="com.example.amita.simplycs.WebinarPlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.YoutubePlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.TheoryViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.PDFViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.AudioPlayActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.WebinarPlayerActivity" />
 
         <service
             android:name="net.gotev.uploadservice.UploadService"
@@ -167,7 +167,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.amita.simplycs.firebaseinitprovider"
+            android:authorities="com.aaddya.amita.simplycs.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

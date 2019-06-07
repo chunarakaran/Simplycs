@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.amita.simplycs">
+    package="com.aaddya.amita.simplycs">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.aaddya.amita.simplycs.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -28,54 +28,54 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.aaddya.amita.simplycs.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.aaddya.amita.simplycs.WelcomeActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.aaddya.amita.simplycs.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SignupActivity"
+            android:name="com.aaddya.amita.simplycs.SignupActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ForgotpwdActivity"
+            android:name="com.aaddya.amita.simplycs.ForgotpwdActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".VerifyPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.VerifyPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="replace" />
         <activity
-            android:name=".EnterPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.EnterPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="replace" />
-        <activity android:name=".YoutubePlayerActivity" />
-        <activity android:name=".TheoryViewActivity" />
-        <activity android:name=".PDFViewActivity" />
-        <activity android:name=".AudioPlayActivity"></activity>
-        <activity android:name=".WebinarPlayerActivity"/>
+        <activity android:name="com.aaddya.amita.simplycs.YoutubePlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.TheoryViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.PDFViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.AudioPlayActivity"></activity>
+        <activity android:name="com.aaddya.amita.simplycs.WebinarPlayerActivity"/>
     </application>
 
 </manifest>
