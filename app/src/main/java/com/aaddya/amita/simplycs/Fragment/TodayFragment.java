@@ -43,6 +43,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -124,6 +125,8 @@ public class TodayFragment extends Fragment
 
 
         mLayoutManager = new GridLayoutManager(getActivity(),2);
+//        mLayoutManager.setReverseLayout(true);
+//        mLayoutManager.setStackFromEnd(true);
 
         recyclerView.setLayoutManager(mLayoutManager);
 
@@ -261,8 +264,9 @@ public class TodayFragment extends Fragment
 
                                 }
 
-//                                Collections.reverse(ListOfdataAdapter);
-//                                Collections.reverse(Categoryid);
+                                Collections.reverse(ListOfdataAdapter);
+                                Collections.reverse(Categoryid);
+                                Collections.reverse(Categoryname);
 
                                 adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);

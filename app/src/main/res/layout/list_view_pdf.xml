@@ -52,9 +52,7 @@
                 android:id="@+id/pdf_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:text="PDF Title"
-                android:textSize="20dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

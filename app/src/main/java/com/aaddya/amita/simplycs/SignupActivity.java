@@ -9,6 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,7 +49,7 @@ public class SignupActivity extends AppCompatActivity {
     final ArrayList<GetCourseDataAdapter> Coursedatalist = new ArrayList<>();
 
 
-    EditText EName,Email,EPassword,EConfPass;
+    EditText EName,Email,EPassword,EConfPass,Emobile;
     String SCourseid,SName,SEmail,SMobile,SPassword,SdeviceName,SdeviceOs;
 
 
@@ -87,6 +90,36 @@ public class SignupActivity extends AppCompatActivity {
 
         Initialize();
 
+        Emobile.setText("+91");
+        Selection.setSelection(Emobile.getText(), Emobile.getText().length());
+
+        Emobile.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(!s.toString().startsWith("+91")){
+                    Emobile.setText("+91");
+                    Selection.setSelection(Emobile.getText(), Emobile.getText().length());
+
+                }
+
+            }
+        });
+
+
         GetCourseName();
 
         CourseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -106,8 +139,8 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
-        Imobile = intent.getStringExtra("mobile");
+//        Intent intent = getIntent();
+//        Imobile = intent.getStringExtra("mobile");
 
 
         BluetoothAdapter myDevice = BluetoothAdapter.getDefaultAdapter();
@@ -140,9 +173,11 @@ public class SignupActivity extends AppCompatActivity {
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);
         EName=(EditText)findViewById(R.id.input_name);
+        Emobile=(EditText)findViewById(R.id.input_mobile);
         Email=(EditText)findViewById(R.id.input_email);
         EPassword=(EditText)findViewById(R.id.input_password);
         EConfPass=(EditText)findViewById(R.id.input_ConfPass);
+
 
     }
 
@@ -153,7 +188,7 @@ public class SignupActivity extends AppCompatActivity {
         SName=EName.getText().toString();
         SEmail=Email.getText().toString();
         SPassword=EPassword.getText().toString();
-        SMobile=Imobile;
+        SMobile=Emobile.getText().toString();
 
         SdeviceName=deviceName;
         SdeviceOs=deviceOs;
@@ -165,9 +200,10 @@ public class SignupActivity extends AppCompatActivity {
     {
         GetEditTextValue();
 
-        final String Vname,Vemail,Vpassword,VConfPass;
+        final String Vname,Vemail,Vpassword,VConfPass,Vmobile;
 
         Vname=EName.getText().toString();
+        Vmobile=Emobile.getText().toString();
         Vemail=Email.getText().toString();
         Vpassword=EPassword.getText().toString();
         VConfPass=EConfPass.getText().toString();
@@ -181,6 +217,11 @@ public class SignupActivity extends AppCompatActivity {
         {
             EName.requestFocus();
             EName.setError("Enter Valid Name");
+        }
+
+        else if (Vmobile.isEmpty() || Vmobile.length() < 10){
+            Emobile.setError("Enter a valid mobile");
+            Emobile.requestFocus();
         }
 
         else if (Vemail.length()==0){
@@ -278,7 +319,7 @@ public class SignupActivity extends AppCompatActivity {
 
                             // JSON error
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "The email has already been taken." , Toast.LENGTH_LONG).show();
                         }
 
 
