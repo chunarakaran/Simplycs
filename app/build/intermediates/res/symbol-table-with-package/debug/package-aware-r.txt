@@ -1456,6 +1456,7 @@ drawable ic_text_format_white_48dp
 drawable ic_today
 drawable ic_turned_in_black_24dp
 drawable ic_undo_white_48dp
+drawable iconpdf64
 drawable img12
 drawable insert_image
 drawable insert_link
@@ -1790,11 +1791,9 @@ id navFolderShortcutMovies
 id navFolderShortcutMusic
 id navFolderShortcutPictures
 id navFolderShortcutSdCard
-id nav_courses
 id nav_dashboard
 id nav_logout
 id nav_profile
-id nav_setting
 id nav_view
 id navigation
 id navigationView

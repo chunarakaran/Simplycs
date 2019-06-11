@@ -333,7 +333,7 @@ public class TodayFragment extends Fragment
                             promptDialog.setPositiveListener("Retry", new PromptDialog.OnPositiveListener() {
                                 @Override
                                 public void onClick(PromptDialog dialog) {
-                                    GetCategoryList();
+//                                    GetCategoryList();
                                     dialog.dismiss();
                                 }
                             }).show();

@@ -271,17 +271,17 @@ public class MainActivity extends AppCompatActivity
                 fragment = new DashboardFragment();
                 break;
 
-            case R.id.nav_courses:
-                fragment = new CourseFragment();
-                break;
+//            case R.id.nav_courses:
+//                fragment = new CourseFragment();
+//                break;
 
             case R.id.nav_profile:
                 fragment = new ProfileFragment();
                 break;
 
-            case R.id.nav_setting:
-                fragment = new SettingFragment();
-                break;
+//            case R.id.nav_setting:
+//                fragment = new SettingFragment();
+//                break;
 
             case R.id.nav_logout:
 //                Toast.makeText(getApplicationContext(),HTTP_JSON_URL,Toast.LENGTH_SHORT).show();

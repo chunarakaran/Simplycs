@@ -54,7 +54,7 @@
     <dimen name="card_thumbnail_width">60dp</dimen>
     <dimen name="card_thumbnail_height">60dp</dimen>
     <dimen name="card_background_default_radius">2dp</dimen>
-    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
 
     <dimen name="card_expand_padding">2dp</dimen>
     <dimen name="card_expand_padding_left">10dp</dimen>

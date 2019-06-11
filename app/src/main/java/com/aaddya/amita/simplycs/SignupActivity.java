@@ -333,7 +333,7 @@ public class SignupActivity extends AppCompatActivity {
                         hideDialog();
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "The email has already been taken.", Toast.LENGTH_LONG).show();
                     }
                 }) {
             @Override
