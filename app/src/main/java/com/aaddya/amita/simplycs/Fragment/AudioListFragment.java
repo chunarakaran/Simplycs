@@ -54,7 +54,7 @@ public class AudioListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,content_id,audio_url;
 
-    final ArrayList<AudioListDataAdapter> Contentid = new ArrayList<>();
+//    final ArrayList<AudioListDataAdapter> Contentid = new ArrayList<>();
 
     final ArrayList<AudioListDataAdapter> Audio_URL = new ArrayList<>();
 
@@ -85,9 +85,7 @@ public class AudioListFragment extends Fragment
         Course_id = sp.getString("Courseid", "");
 
         Bundle bundle=getArguments();
-        Category_id=String.valueOf(bundle.getString("Category_id"));
-        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
-        CDate=String.valueOf(bundle.getString("CDate"));
+        content_id=String.valueOf(bundle.getString("content_id"));
 
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -138,7 +136,7 @@ public class AudioListFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
+//                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
 
                     audio_url=Audio_URL.get(RecyclerViewItemPosition).getAudioURL();
 
@@ -195,7 +193,7 @@ public class AudioListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetContent",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetContentAudio",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -205,22 +203,22 @@ public class AudioListFragment extends Fragment
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
-                            if(success.equalsIgnoreCase("true"))
+                            if(success.equalsIgnoreCase("false"))
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("new_content");
+                                JSONArray jsonArray=jObj.getJSONArray("content_audio_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
                                     String audio_title=jsonObject1.getString("audio_title");
-                                    String audio_url=jsonObject1.getString("audio_url");
+                                    String audio_url=jsonObject1.getString("audio");
 
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("audio_title"));
-                                    GetDataAdapter2.setAudioURL(jsonObject1.getString("audio_url"));
+                                    GetDataAdapter2.setAudioURL(jsonObject1.getString("audio"));
 
                                     if (audio_title.equalsIgnoreCase("null")){
 
@@ -228,7 +226,7 @@ public class AudioListFragment extends Fragment
                                     else
                                     {
 
-                                        Contentid.add(GetDataAdapter2);
+//                                        Contentid.add(GetDataAdapter2);
 
                                         Audio_URL.add(GetDataAdapter2);
 
@@ -238,34 +236,34 @@ public class AudioListFragment extends Fragment
 
                                 }
 
-                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
-                                for(int i=0;i<jsonArray1.length();i++)
-                                {
-                                    AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
-                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
-
-                                    String audio_title=jsonObject1.getString("audio_title");
-                                    String audio_url=jsonObject1.getString("audio_url");
-
-                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-                                    GetDataAdapter2.setTitle(jsonObject1.getString("audio_title"));
-                                    GetDataAdapter2.setAudioURL(jsonObject1.getString("audio_url"));
-
-                                    if (audio_title.equalsIgnoreCase("null")){
-
-                                    }
-                                    else
-                                    {
-
-                                        Contentid.add(GetDataAdapter2);
-
-                                        Audio_URL.add(GetDataAdapter2);
-
-                                        ListOfdataAdapter.add(GetDataAdapter2);
-                                    }
-
-
-                                }
+//                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
+//                                for(int i=0;i<jsonArray1.length();i++)
+//                                {
+//                                    AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
+//                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
+//
+//                                    String audio_title=jsonObject1.getString("audio_title");
+//                                    String audio_url=jsonObject1.getString("audio_url");
+//
+//                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+//                                    GetDataAdapter2.setTitle(jsonObject1.getString("audio_title"));
+//                                    GetDataAdapter2.setAudioURL(jsonObject1.getString("audio_url"));
+//
+//                                    if (audio_title.equalsIgnoreCase("null")){
+//
+//                                    }
+//                                    else
+//                                    {
+//
+//                                        Contentid.add(GetDataAdapter2);
+//
+//                                        Audio_URL.add(GetDataAdapter2);
+//
+//                                        ListOfdataAdapter.add(GetDataAdapter2);
+//                                    }
+//
+//
+//                                }
 
 
                                 adapter = new AudioListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
@@ -284,7 +282,7 @@ public class AudioListFragment extends Fragment
                                 hideDialog();
 
                             }
-                            else if (success.equalsIgnoreCase("false")){
+                            else if (success.equalsIgnoreCase("true")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
@@ -336,10 +334,8 @@ public class AudioListFragment extends Fragment
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-                params.put("CourseId", Course_id);
-                params.put("CategoryId", Category_id);
-                params.put("SubCategoryId", SubCategory_id);
-                params.put("Date", CDate);
+
+                params.put("ContentId", content_id);
 
                 return params;
             }

@@ -173,6 +173,7 @@ public class TheoryListFragment extends Fragment
                     bundle.putString("category_id",Category_id);
                     bundle.putString("SubCategory_id",SubCategory_id);
                     bundle.putString("CDate",CDate);
+                    bundle.putString("content_id",content_id);
                     bundle.putString("content_Data",content_Data);
                     bundle.putString("content_name",content_name);
                     mfragment.setArguments(bundle);

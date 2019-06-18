@@ -1,6 +1,7 @@
 package com.aaddya.amita.simplycs;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,6 +15,8 @@ public class AudioPlayActivity extends AppCompatActivity  {
 
     AudioView audioView;
 
+    private ProgressDialog pDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,15 +24,30 @@ public class AudioPlayActivity extends AppCompatActivity  {
 
         audio_url = getIntent().getStringExtra("audio_url");
 
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
         audioView=(AudioView)findViewById(R.id.audioview);
+
+//        pDialog.setMessage("Please Wait...");
+//        showDialog();
 
         try {
             audioView.setDataSource(audio_url);
+            audioView.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+//        hideDialog();
     }
+
+//   protected void onStart(){
+//        super.onStart();
+//        audioView.start();
+//        hideDialog();
+//   }
 
     @SuppressLint("MissingSuperCall")
     @Override
@@ -44,5 +62,14 @@ public class AudioPlayActivity extends AppCompatActivity  {
         audioView.pause();
     }
 
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
 }
 

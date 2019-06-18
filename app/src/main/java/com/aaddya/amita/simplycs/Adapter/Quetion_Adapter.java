@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -23,6 +24,9 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<Quetion_Model_List> items = new ArrayList<>();
     private Context ctx;
     private Quetion_Adapter.OnItemClickListener mOnItemClickListener;
+
+    private static CheckBox lastChecked = null;
+    private static int lastCheckedPos = 0;
 
     ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
     SharedPreferences sharedPreferences;
@@ -111,6 +115,14 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     p.setSelctedId(checkedId);
                 }
             });
+
+
+
+
+
+
+
+
 
             view.btn_Previous.setOnClickListener(new View.OnClickListener() {
                 @Override

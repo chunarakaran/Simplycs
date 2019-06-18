@@ -49,7 +49,7 @@ public class VideoListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,content_id,video_url;
 
-    final ArrayList<VideoListDataAdapter> Contentid = new ArrayList<>();
+//    final ArrayList<VideoListDataAdapter> Contentid = new ArrayList<>();
     final ArrayList<VideoListDataAdapter> Video_URL = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
@@ -78,9 +78,7 @@ public class VideoListFragment extends Fragment
         Course_id = sp.getString("Courseid", "");
 
         Bundle bundle=getArguments();
-        Category_id=String.valueOf(bundle.getString("Category_id"));
-        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
-        CDate=String.valueOf(bundle.getString("CDate"));
+        content_id=String.valueOf(bundle.getString("content_id"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -133,7 +131,7 @@ public class VideoListFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
+//                    content_id=Contentid.get(RecyclerViewItemPosition).getId();
 
                     video_url=Video_URL.get(RecyclerViewItemPosition).getVideoURL();
 
@@ -191,7 +189,7 @@ public class VideoListFragment extends Fragment
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetContent",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetContentVideo",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -201,11 +199,11 @@ public class VideoListFragment extends Fragment
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
-                            if(success.equalsIgnoreCase("true"))
+                            if(success.equalsIgnoreCase("false"))
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("new_content");
+                                JSONArray jsonArray=jObj.getJSONArray("content_video_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
@@ -217,7 +215,7 @@ public class VideoListFragment extends Fragment
                                     GetDataAdapter2.setId(jsonObject1.getString("id"));
                                     GetDataAdapter2.setTitle(jsonObject1.getString("video_title"));
                                     GetDataAdapter2.setVideoURL(jsonObject1.getString("video_url"));
-                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_lenght"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_length"));
 
                                     if (video_title.equalsIgnoreCase("null")){
 
@@ -225,7 +223,7 @@ public class VideoListFragment extends Fragment
                                     else
                                     {
 
-                                        Contentid.add(GetDataAdapter2);
+//                                        Contentid.add(GetDataAdapter2);
 
                                         Video_URL.add(GetDataAdapter2);
 
@@ -235,35 +233,35 @@ public class VideoListFragment extends Fragment
 
                                 }
 
-                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
-                                for(int i=0;i<jsonArray1.length();i++)
-                                {
-                                    VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
-                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
-
-                                    String video_title=jsonObject1.getString("video_title");
-                                    String video_url=jsonObject1.getString("video_url");
-
-                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-                                    GetDataAdapter2.setTitle(jsonObject1.getString("video_title"));
-                                    GetDataAdapter2.setVideoURL(jsonObject1.getString("video_url"));
-                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_lenght"));
-
-                                    if (video_title.equalsIgnoreCase("null")){
-
-                                    }
-                                    else
-                                    {
-
-                                        Contentid.add(GetDataAdapter2);
-
-                                        Video_URL.add(GetDataAdapter2);
-
-                                        ListOfdataAdapter.add(GetDataAdapter2);
-                                    }
-
-
-                                }
+//                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
+//                                for(int i=0;i<jsonArray1.length();i++)
+//                                {
+//                                    VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
+//                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
+//
+//                                    String video_title=jsonObject1.getString("video_title");
+//                                    String video_url=jsonObject1.getString("video_url");
+//
+//                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+//                                    GetDataAdapter2.setTitle(jsonObject1.getString("video_title"));
+//                                    GetDataAdapter2.setVideoURL(jsonObject1.getString("video_url"));
+//                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_lenght"));
+//
+//                                    if (video_title.equalsIgnoreCase("null")){
+//
+//                                    }
+//                                    else
+//                                    {
+//
+//                                        Contentid.add(GetDataAdapter2);
+//
+//                                        Video_URL.add(GetDataAdapter2);
+//
+//                                        ListOfdataAdapter.add(GetDataAdapter2);
+//                                    }
+//
+//
+//                                }
 
 
                                 adapter = new VideoListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
@@ -282,7 +280,7 @@ public class VideoListFragment extends Fragment
                                 hideDialog();
 
                             }
-                            else if (success.equalsIgnoreCase("false")){
+                            else if (success.equalsIgnoreCase("true")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
@@ -334,10 +332,7 @@ public class VideoListFragment extends Fragment
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-                params.put("CourseId", Course_id);
-                params.put("CategoryId", Category_id);
-                params.put("SubCategoryId", SubCategory_id);
-                params.put("Date", CDate);
+                params.put("ContentId", content_id);
 
                 return params;
             }

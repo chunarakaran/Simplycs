@@ -51,6 +51,8 @@ public class TheoryViewFragment extends Fragment
         });
         webView.setLongClickable(false);
 
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
 
         rootview.setFocusableInTouchMode(true);
         rootview.requestFocus();

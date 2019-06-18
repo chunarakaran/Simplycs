@@ -21,7 +21,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    String Category_id,SubCategory_id,CDate,content_name,content_Data;
+    String Category_id,SubCategory_id,CDate,content_id,content_name,content_Data;
 
     View rootview;
     @Override
@@ -45,6 +45,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         Category_id=String.valueOf(bundle1.getString("category_id"));
         SubCategory_id=String.valueOf(bundle1.getString("SubCategory_id"));
         CDate=String.valueOf(bundle1.getString("CDate"));
+        content_id=String.valueOf(bundle1.getString("content_id"));
         content_name=String.valueOf(bundle1.getString("content_name"));
         content_Data=String.valueOf(bundle1.getString("content_Data"));
 
@@ -65,6 +66,7 @@ public class ContentFragment extends Fragment implements TabLayout.OnTabSelected
         bundle.putString("Category_id",Category_id);
         bundle.putString("SubCategory_id",SubCategory_id);
         bundle.putString("CDate",CDate);
+        bundle.putString("content_id",content_id);
         bundle.putString("content_name",content_name);
         bundle.putString("content_Data",content_Data);
 
