@@ -43,7 +43,7 @@ public class SignupActivity extends AppCompatActivity {
 
     ImageView picture;
 
-    TextView Sign_up;
+    TextView Sign_up,backLogin;
 
     Spinner CourseSpinner;
     final ArrayList<GetCourseDataAdapter> Coursedatalist = new ArrayList<>();
@@ -162,6 +162,16 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        backLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
     }
 
@@ -169,6 +179,7 @@ public class SignupActivity extends AppCompatActivity {
     public void Initialize()
     {
         Sign_up=(TextView)findViewById(R.id.sign_up);
+        backLogin=(TextView)findViewById(R.id.backLogin);
 
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);

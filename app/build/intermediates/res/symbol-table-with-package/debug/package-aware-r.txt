@@ -1578,6 +1578,8 @@ id btnVerify
 id btn_Next
 id btn_Previous
 id btn_next
+id btn_play_again
+id btn_share
 id btn_skip
 id btn_submit
 id buttonContinue
@@ -1685,6 +1687,7 @@ id gender
 id ghost_view
 id gifImageView
 id gone
+id greeting_text
 id gridView
 id group_divider
 id groups
@@ -1750,6 +1753,7 @@ id lytDownloadImage
 id lytFullscreenWebViewOptionsBar
 id lytImageUrlLabel
 id lyt_expand_input
+id lyt_graph
 id lyt_parent
 id main_layout
 id masked
@@ -1803,6 +1807,7 @@ id pdfView
 id pdf_title
 id percent
 id phone
+id piechart
 id pin
 id play
 id positiveBtn
@@ -1812,6 +1817,7 @@ id progress
 id progress_circular
 id progress_horizontal
 id progressbar
+id prompt_container
 id ques
 id quiz_question
 id radio
@@ -1835,9 +1841,12 @@ id rewind
 id right
 id right_icon
 id right_side
+id rvContentScore
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id score_container
+id score_prompt
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1860,12 +1869,14 @@ id selected
 id sendotp
 id shades_divider
 id shades_layout
+id share_text
 id shortcut
 id showCustom
 id showHome
 id showTitle
 id sign_up
 id simpleChronometer
+id skip_prompt
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1946,7 +1957,10 @@ id txtItemValue
 id txtTitleLabel
 id txtUrlLabel
 id txt_quetion
+id txt_score
+id txt_skip
 id txt_timer
+id txt_wrong
 id uniform
 id unlabeled
 id up
@@ -1965,6 +1979,8 @@ id userpassword
 id video_duration_label
 id video_thumbnail_image_view
 id video_title_label
+id view_0
+id view_1
 id view_courselist
 id view_offset_helper
 id view_pager
@@ -1974,6 +1990,7 @@ id wide
 id withText
 id wrap
 id wrap_content
+id wrong_prompt
 id youtube_player_view
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2031,7 +2048,6 @@ layout activity_main
 layout activity_pdfview
 layout activity_signup
 layout activity_splash_screen
-layout activity_start_exam
 layout activity_theory_view
 layout activity_verify_phone
 layout activity_welcome
@@ -2082,12 +2098,14 @@ layout fragment_courselist
 layout fragment_dashboard
 layout fragment_edit_profile
 layout fragment_exam_detail
+layout fragment_exam_result
 layout fragment_examlist
 layout fragment_pdflist
 layout fragment_previous
 layout fragment_profile
 layout fragment_quiz
 layout fragment_setting
+layout fragment_start_exam
 layout fragment_startquiz
 layout fragment_subcategorylist
 layout fragment_testlist

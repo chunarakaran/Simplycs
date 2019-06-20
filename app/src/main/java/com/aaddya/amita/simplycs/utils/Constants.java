@@ -7,5 +7,5 @@ package com.aaddya.amita.simplycs.utils;
 public class Constants {
 
     //youtube developer API Key
-    public static String DEVELOPER_KEY = "AIzaSyCCmfNwsDm933GyHZohLdsd9gLnmF9iFr8";
+    public static String DEVELOPER_KEY = "AIzaSyDfYsWK2TGGlpL59mrMhOdn6mDRNQ02q4M";
 }
