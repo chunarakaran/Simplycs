@@ -52,7 +52,7 @@ public class WebinarListDataAdapter {
 
 //    @Override
 //    public String toString() {
-//        return "VideoListDataAdapter{" +
+//        return "Video_Model_List{" +
 //                "VideoURL='" + VideoURL + '\'' +
 //                ", Title='" + Title + '\'' +
 //                ", duration='" + duration + '\'' +

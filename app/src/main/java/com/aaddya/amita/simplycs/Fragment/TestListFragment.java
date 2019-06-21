@@ -26,7 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.TestListDataAdapter;
+import com.aaddya.amita.simplycs.Model.Test_Model_List;
 import com.aaddya.amita.simplycs.Adapter.TestListRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -44,7 +44,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class TestListFragment extends Fragment
 {
 
-    List<TestListDataAdapter> ListOfdataAdapter;
+    List<Test_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -52,11 +52,11 @@ public class TestListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules;
 
-    final ArrayList<TestListDataAdapter> Testid = new ArrayList<>();
-    final ArrayList<TestListDataAdapter> Testname = new ArrayList<>();
-    final ArrayList<TestListDataAdapter> Testduration = new ArrayList<>();
-    final ArrayList<TestListDataAdapter> Testmarks = new ArrayList<>();
-    final ArrayList<TestListDataAdapter> Testrules = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testid = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testname = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testduration = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testmarks = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testrules = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -257,7 +257,7 @@ public class TestListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("test_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    TestListDataAdapter GetDataAdapter2=new TestListDataAdapter();
+                                    Test_Model_List GetDataAdapter2=new Test_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 

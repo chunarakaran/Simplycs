@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.aaddya.amita.simplycs.R;
@@ -18,11 +19,11 @@ public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCate
 
     Context context;
 
-    List<SubCategoryDataAdapter> dataAdapters;
+    List<SubCategory_Model_List> dataAdapters;
 
     ImageLoader imageLoader;
 
-    public SubCategoryRecyclerViewAdapter(List<SubCategoryDataAdapter> getDataAdapter, Context context){
+    public SubCategoryRecyclerViewAdapter(List<SubCategory_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -42,7 +43,7 @@ public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCate
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        SubCategoryDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 

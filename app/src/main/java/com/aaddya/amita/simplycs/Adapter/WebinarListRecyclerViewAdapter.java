@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aaddya.amita.simplycs.R;
-import com.aaddya.amita.simplycs.utils.Constants;
+import com.aaddya.amita.simplycs.Utils.Constants;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;

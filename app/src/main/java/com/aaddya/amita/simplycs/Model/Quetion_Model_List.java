@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
 public class Quetion_Model_List {
 

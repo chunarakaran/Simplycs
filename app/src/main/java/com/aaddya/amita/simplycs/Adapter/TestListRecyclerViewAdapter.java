@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Test_Model_List;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
@@ -16,10 +17,10 @@ public class TestListRecyclerViewAdapter extends RecyclerView.Adapter<TestListRe
 
     Context context;
 
-    List<TestListDataAdapter> dataAdapters;
+    List<Test_Model_List> dataAdapters;
 
 
-    public TestListRecyclerViewAdapter(List<TestListDataAdapter> getDataAdapter, Context context){
+    public TestListRecyclerViewAdapter(List<Test_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -39,7 +40,7 @@ public class TestListRecyclerViewAdapter extends RecyclerView.Adapter<TestListRe
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        TestListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Test_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());

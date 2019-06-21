@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Video_Model_List;
 import com.aaddya.amita.simplycs.R;
-import com.aaddya.amita.simplycs.utils.Constants;
+import com.aaddya.amita.simplycs.Utils.Constants;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
@@ -21,10 +22,10 @@ public class VideoListRecyclerViewAdapter extends RecyclerView.Adapter<VideoList
     private static final String TAG = VideoListRecyclerViewAdapter.class.getSimpleName();
     Context context;
 
-    List<VideoListDataAdapter> dataAdapters;
+    List<Video_Model_List> dataAdapters;
 
 
-    public VideoListRecyclerViewAdapter(List<VideoListDataAdapter> getDataAdapter, Context context){
+    public VideoListRecyclerViewAdapter(List<Video_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -44,7 +45,7 @@ public class VideoListRecyclerViewAdapter extends RecyclerView.Adapter<VideoList
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        VideoListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Video_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.video_title_label.setText(dataAdapterOBJ.getTitle());

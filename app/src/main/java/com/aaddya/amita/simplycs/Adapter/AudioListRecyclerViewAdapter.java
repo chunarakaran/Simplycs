@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Audio_Model_List;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
@@ -16,10 +17,10 @@ public class AudioListRecyclerViewAdapter extends RecyclerView.Adapter<AudioList
 
     Context context;
 
-    List<AudioListDataAdapter> dataAdapters;
+    List<Audio_Model_List> dataAdapters;
 
 
-    public AudioListRecyclerViewAdapter(List<AudioListDataAdapter> getDataAdapter, Context context){
+    public AudioListRecyclerViewAdapter(List<Audio_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -39,7 +40,7 @@ public class AudioListRecyclerViewAdapter extends RecyclerView.Adapter<AudioList
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        AudioListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Audio_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());

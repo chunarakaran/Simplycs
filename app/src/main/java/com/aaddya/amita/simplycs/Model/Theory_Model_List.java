@@ -1,10 +1,10 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class PDFListDataAdapter {
+public class Theory_Model_List {
 
     public String id;
     public String Title;
-    public String PDFData;
+    public String ContentData;
 
 
     public String getId() {
@@ -28,14 +28,14 @@ public class PDFListDataAdapter {
         this.Title = Titlename;
     }
 
-    public String getPDFData() {
+    public String getContentData() {
 
-        return PDFData;
+        return ContentData;
     }
 
-    public void setPDFData(String PDF) {
+    public void setContentData(String Content) {
 
-        this.PDFData = PDF;
+        this.ContentData = Content;
     }
 
 }

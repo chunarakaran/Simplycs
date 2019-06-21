@@ -29,7 +29,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.TheoryListDataAdapter;
+import com.aaddya.amita.simplycs.Model.Theory_Model_List;
 import com.aaddya.amita.simplycs.Adapter.TheoryListRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -47,7 +47,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class TheoryListFragment extends Fragment
 {
 
-    List<TheoryListDataAdapter> ListOfdataAdapter;
+    List<Theory_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -55,11 +55,11 @@ public class TheoryListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,SubCategory_name,content_id,content_name,content_Data;
 
-    final ArrayList<TheoryListDataAdapter> Contentid = new ArrayList<>();
+    final ArrayList<Theory_Model_List> Contentid = new ArrayList<>();
 
-    final ArrayList<TheoryListDataAdapter> ContentData = new ArrayList<>();
+    final ArrayList<Theory_Model_List> ContentData = new ArrayList<>();
 
-    final ArrayList<TheoryListDataAdapter> ContentName = new ArrayList<>();
+    final ArrayList<Theory_Model_List> ContentName = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -263,7 +263,7 @@ public class TheoryListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("new_content");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    TheoryListDataAdapter GetDataAdapter2=new TheoryListDataAdapter();
+                                    Theory_Model_List GetDataAdapter2=new Theory_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -286,7 +286,7 @@ public class TheoryListFragment extends Fragment
                                 JSONArray jsonArray1=jObj.getJSONArray("exist_content");
                                 for(int i=0;i<jsonArray1.length();i++)
                                 {
-                                    TheoryListDataAdapter GetDataAdapter2=new TheoryListDataAdapter();
+                                    Theory_Model_List GetDataAdapter2=new Theory_Model_List();
                                     JSONObject jsonObject1=jsonArray1.getJSONObject(i);
 
 

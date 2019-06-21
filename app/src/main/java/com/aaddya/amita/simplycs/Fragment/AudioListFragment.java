@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Model.Audio_Model_List;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,7 +28,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.AudioListDataAdapter;
 import com.aaddya.amita.simplycs.Adapter.AudioListRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.AudioPlayActivity;
 import com.aaddya.amita.simplycs.R;
@@ -46,7 +46,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class AudioListFragment extends Fragment
 {
 
-    List<AudioListDataAdapter> ListOfdataAdapter;
+    List<Audio_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -54,9 +54,9 @@ public class AudioListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,content_id,audio_url;
 
-//    final ArrayList<AudioListDataAdapter> Contentid = new ArrayList<>();
+//    final ArrayList<Audio_Model_List> Contentid = new ArrayList<>();
 
-    final ArrayList<AudioListDataAdapter> Audio_URL = new ArrayList<>();
+    final ArrayList<Audio_Model_List> Audio_URL = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -210,7 +210,7 @@ public class AudioListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("content_audio_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
+                                    Audio_Model_List GetDataAdapter2=new Audio_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
                                     String audio_title=jsonObject1.getString("audio_title");
@@ -239,7 +239,7 @@ public class AudioListFragment extends Fragment
 //                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
 //                                for(int i=0;i<jsonArray1.length();i++)
 //                                {
-//                                    AudioListDataAdapter GetDataAdapter2=new AudioListDataAdapter();
+//                                    Audio_Model_List GetDataAdapter2=new Audio_Model_List();
 //                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
 //
 //                                    String audio_title=jsonObject1.getString("audio_title");

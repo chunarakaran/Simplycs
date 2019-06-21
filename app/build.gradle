@@ -54,9 +54,7 @@ dependencies {
 
     implementation 'com.alexzh:circleimageview:1.1.2@aar'
 
-    implementation files('libs/activation.jar')
-    implementation files('libs/additionnal.jar')
-    implementation files('libs/mail.jar')
+
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
     implementation 'com.google.firebase:firebase-core:16.0.6'

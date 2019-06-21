@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs.utils;
+package com.aaddya.amita.simplycs.Utils;
 
 /**
  * Created by sonu on 10/11/17.

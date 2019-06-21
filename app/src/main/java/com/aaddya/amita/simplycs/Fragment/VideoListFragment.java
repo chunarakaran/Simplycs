@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Model.Video_Model_List;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,7 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.VideoListDataAdapter;
 import com.aaddya.amita.simplycs.Adapter.VideoListRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.YoutubePlayerActivity;
@@ -41,7 +41,7 @@ import java.util.Map;
 public class VideoListFragment extends Fragment
 {
 
-    List<VideoListDataAdapter> ListOfdataAdapter;
+    List<Video_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -49,8 +49,8 @@ public class VideoListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,content_id,video_url;
 
-//    final ArrayList<VideoListDataAdapter> Contentid = new ArrayList<>();
-    final ArrayList<VideoListDataAdapter> Video_URL = new ArrayList<>();
+//    final ArrayList<Video_Model_List> Contentid = new ArrayList<>();
+    final ArrayList<Video_Model_List> Video_URL = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -206,7 +206,7 @@ public class VideoListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("content_video_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
+                                    Video_Model_List GetDataAdapter2=new Video_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
                                     String video_title=jsonObject1.getString("video_title");
@@ -233,35 +233,6 @@ public class VideoListFragment extends Fragment
 
                                 }
 
-//                                JSONArray jsonArray1=jObj.getJSONArray("exist_content");
-//                                for(int i=0;i<jsonArray1.length();i++)
-//                                {
-//                                    VideoListDataAdapter GetDataAdapter2=new VideoListDataAdapter();
-//                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
-//
-//                                    String video_title=jsonObject1.getString("video_title");
-//                                    String video_url=jsonObject1.getString("video_url");
-//
-//                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-//                                    GetDataAdapter2.setTitle(jsonObject1.getString("video_title"));
-//                                    GetDataAdapter2.setVideoURL(jsonObject1.getString("video_url"));
-//                                    GetDataAdapter2.setDuration(jsonObject1.getString("video_lenght"));
-//
-//                                    if (video_title.equalsIgnoreCase("null")){
-//
-//                                    }
-//                                    else
-//                                    {
-//
-//                                        Contentid.add(GetDataAdapter2);
-//
-//                                        Video_URL.add(GetDataAdapter2);
-//
-//                                        ListOfdataAdapter.add(GetDataAdapter2);
-//                                    }
-//
-//
-//                                }
 
 
                                 adapter = new VideoListRecyclerViewAdapter(ListOfdataAdapter,getActivity());

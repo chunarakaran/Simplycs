@@ -32,7 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Adapter.Quetion_Adapter;
-import com.aaddya.amita.simplycs.Adapter.Quetion_Model_List;
+import com.aaddya.amita.simplycs.Model.Quetion_Model_List;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;

@@ -27,7 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.PDFListDataAdapter;
+import com.aaddya.amita.simplycs.Model.PDF_Model_List;
 import com.aaddya.amita.simplycs.Adapter.PDFListRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.PDFViewActivity;
 import com.aaddya.amita.simplycs.R;
@@ -46,7 +46,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class PDFListFragment extends Fragment
 {
 
-    List<PDFListDataAdapter> ListOfdataAdapter;
+    List<PDF_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -56,7 +56,7 @@ public class PDFListFragment extends Fragment
 
 //    final ArrayList<PDFListDataAdapter> Contentid = new ArrayList<>();
 
-    final ArrayList<PDFListDataAdapter> PDFData = new ArrayList<>();
+    final ArrayList<PDF_Model_List> PDFData = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -214,7 +214,7 @@ public class PDFListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("content_pdf_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    PDFListDataAdapter GetDataAdapter2=new PDFListDataAdapter();
+                                    PDF_Model_List GetDataAdapter2=new PDF_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
                                     String pdf_title=jsonObject1.getString("pdf_title");

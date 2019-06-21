@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class VideoListDataAdapter {
+public class Video_Model_List {
 
     public String id;
     public String Title;
@@ -52,7 +52,7 @@ public class VideoListDataAdapter {
 
 //    @Override
 //    public String toString() {
-//        return "VideoListDataAdapter{" +
+//        return "Video_Model_List{" +
 //                "VideoURL='" + VideoURL + '\'' +
 //                ", Title='" + Title + '\'' +
 //                ", duration='" + duration + '\'' +

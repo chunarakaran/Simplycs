@@ -27,7 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.CategoryDataAdapter;
+import com.aaddya.amita.simplycs.Model.Category_Model_List;
 import com.aaddya.amita.simplycs.Adapter.CategoryRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -56,15 +56,15 @@ public class ArchiveFragment extends Fragment
     private int day,month,year;
     String aDate;
 
-    List<CategoryDataAdapter> ListOfdataAdapter;
+    List<Category_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
     String Category_id,Category_name;
-    final ArrayList<CategoryDataAdapter> Categoryid = new ArrayList<>();
-    final ArrayList<CategoryDataAdapter> Categoryname = new ArrayList<>();
+    final ArrayList<Category_Model_List> Categoryid = new ArrayList<>();
+    final ArrayList<Category_Model_List> Categoryname = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     GridLayoutManager mLayoutManager;
@@ -229,7 +229,7 @@ public class ArchiveFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    CategoryDataAdapter GetDataAdapter2=new CategoryDataAdapter();
+                                    Category_Model_List GetDataAdapter2=new Category_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 

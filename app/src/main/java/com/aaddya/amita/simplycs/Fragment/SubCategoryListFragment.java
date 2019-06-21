@@ -32,7 +32,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.SubCategoryDataAdapter;
+import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
 import com.aaddya.amita.simplycs.Adapter.SubCategoryRecyclerViewAdapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -52,7 +52,7 @@ public class SubCategoryListFragment extends Fragment
 
 
 
-    List<SubCategoryDataAdapter> ListOfdataAdapter;
+    List<SubCategory_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -61,8 +61,8 @@ public class SubCategoryListFragment extends Fragment
     String Category_id,Category_name;
     String SubCategory_id,SubCategory_name;
     String CDate;
-    final ArrayList<SubCategoryDataAdapter> SubCategoryid = new ArrayList<>();
-    final ArrayList<SubCategoryDataAdapter> SubCategoryName = new ArrayList<>();
+    final ArrayList<SubCategory_Model_List> SubCategoryid = new ArrayList<>();
+    final ArrayList<SubCategory_Model_List> SubCategoryName = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -299,7 +299,7 @@ public class SubCategoryListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    SubCategoryDataAdapter GetDataAdapter2=new SubCategoryDataAdapter();
+                                    SubCategory_Model_List GetDataAdapter2=new SubCategory_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 

@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class TestListDataAdapter {
+public class Test_Model_List {
 
     public String id;
     public String Title;
