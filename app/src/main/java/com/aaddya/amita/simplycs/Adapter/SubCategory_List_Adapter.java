@@ -7,22 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseListRecyclerViewAdapter.ViewHolder> {
+public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_List_Adapter.ViewHolder> {
 
 
     Context context;
 
-    List<CourseListDataAdapter> dataAdapters;
+    List<SubCategory_Model_List> dataAdapters;
 
     ImageLoader imageLoader;
 
-    public CourseListRecyclerViewAdapter(List<CourseListDataAdapter> getDataAdapter, Context context){
+    public SubCategory_List_Adapter(List<SubCategory_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -32,7 +33,7 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_courses, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -42,7 +43,7 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        CourseListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 
@@ -56,11 +57,7 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
 
         Viewholder.VollyImageView.setImageUrl(dataAdapterOBJ.getImageUrl(), imageLoader);
 
-        Viewholder.CourseTitle.setText(dataAdapterOBJ.getCourseTitle());
-        Viewholder.CourseDesc.setText(dataAdapterOBJ.getCourseDesc());
-        Viewholder.CoursePrice.setText("\u20B9"+dataAdapterOBJ.getCoursePrice());
-        Viewholder.CourseDiscount.setText(dataAdapterOBJ.getCourseDiscount()+"% off");
-//        Viewholder.CourseHours.setText(dataAdapterOBJ.getCourseHours());
+        Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
 
     }
 
@@ -72,20 +69,16 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView CourseTitle,CourseDesc,CoursePrice,CourseDiscount,CourseHours;
+        public TextView ImageTitleTextView;
         public NetworkImageView VollyImageView ;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
-            VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView) ;
+            ImageTitleTextView = (TextView) itemView.findViewById(R.id.topic_title) ;
 
-            CourseTitle = (TextView) itemView.findViewById(R.id.courseTitle) ;
-            CourseDesc = (TextView) itemView.findViewById(R.id.courseDesc) ;
-            CoursePrice = (TextView) itemView.findViewById(R.id.coursePrice) ;
-            CourseDiscount = (TextView) itemView.findViewById(R.id.courseDiscount) ;
-//            CourseHours = (TextView) itemView.findViewById(R.id.courseHours) ;
+            VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView) ;
 
         }
     }

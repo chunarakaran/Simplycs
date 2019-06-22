@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class NotificationDataAdapter {
+public class Notification_Model_List {
 
     public String id;
     public String Title;

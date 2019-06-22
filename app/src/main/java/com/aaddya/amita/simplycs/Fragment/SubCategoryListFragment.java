@@ -33,7 +33,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
-import com.aaddya.amita.simplycs.Adapter.SubCategoryRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.SubCategory_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -320,7 +320,7 @@ public class SubCategoryListFragment extends Fragment
 //                                Collections.reverse(ListOfdataAdapter);
 //                                Collections.reverse(Topicid);
 
-                                adapter = new SubCategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new SubCategory_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

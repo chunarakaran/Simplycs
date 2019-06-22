@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Video_Model_List;
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.Utils.Constants;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -16,15 +17,15 @@ import com.google.android.youtube.player.YouTubeThumbnailView;
 
 import java.util.List;
 
-public class WebinarListRecyclerViewAdapter extends RecyclerView.Adapter<WebinarListRecyclerViewAdapter.ViewHolder> {
+public class Video_List_Adapter extends RecyclerView.Adapter<Video_List_Adapter.ViewHolder> {
 
-    private static final String TAG = WebinarListRecyclerViewAdapter.class.getSimpleName();
+    private static final String TAG = Video_List_Adapter.class.getSimpleName();
     Context context;
 
-    List<WebinarListDataAdapter> dataAdapters;
+    List<Video_Model_List> dataAdapters;
 
 
-    public WebinarListRecyclerViewAdapter(List<WebinarListDataAdapter> getDataAdapter, Context context){
+    public Video_List_Adapter(List<Video_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -34,7 +35,7 @@ public class WebinarListRecyclerViewAdapter extends RecyclerView.Adapter<Webinar
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_webinar, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.youtube_video_custom_layout, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -44,7 +45,7 @@ public class WebinarListRecyclerViewAdapter extends RecyclerView.Adapter<Webinar
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        WebinarListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Video_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.video_title_label.setText(dataAdapterOBJ.getTitle());

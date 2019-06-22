@@ -12,7 +12,7 @@ import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class AudioListRecyclerViewAdapter extends RecyclerView.Adapter<AudioListRecyclerViewAdapter.ViewHolder> {
+public class Audio_List_Adapter extends RecyclerView.Adapter<Audio_List_Adapter.ViewHolder> {
 
 
     Context context;
@@ -20,7 +20,7 @@ public class AudioListRecyclerViewAdapter extends RecyclerView.Adapter<AudioList
     List<Audio_Model_List> dataAdapters;
 
 
-    public AudioListRecyclerViewAdapter(List<Audio_Model_List> getDataAdapter, Context context){
+    public Audio_List_Adapter(List<Audio_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;

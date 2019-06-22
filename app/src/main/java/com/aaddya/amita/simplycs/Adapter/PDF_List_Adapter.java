@@ -12,7 +12,7 @@ import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class PDFListRecyclerViewAdapter extends RecyclerView.Adapter<PDFListRecyclerViewAdapter.ViewHolder> {
+public class PDF_List_Adapter extends RecyclerView.Adapter<PDF_List_Adapter.ViewHolder> {
 
 
     Context context;
@@ -20,7 +20,7 @@ public class PDFListRecyclerViewAdapter extends RecyclerView.Adapter<PDFListRecy
     List<PDF_Model_List> dataAdapters;
 
 
-    public PDFListRecyclerViewAdapter(List<PDF_Model_List> getDataAdapter, Context context){
+    public PDF_List_Adapter(List<PDF_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;

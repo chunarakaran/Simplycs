@@ -23,8 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.WebinarListDataAdapter;
-import com.aaddya.amita.simplycs.Adapter.WebinarListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Model.Webinar_Model_List;
+import com.aaddya.amita.simplycs.Adapter.Webinar_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.WebinarPlayerActivity;
 
@@ -40,7 +40,7 @@ import java.util.Map;
 public class WebinarListFragment extends Fragment
 {
 
-    List<WebinarListDataAdapter> ListOfdataAdapter;
+    List<Webinar_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -48,8 +48,8 @@ public class WebinarListFragment extends Fragment
 
     String CDate,Category_id,SubCategory_id,content_id,video_url;
 
-    final ArrayList<WebinarListDataAdapter> Contentid = new ArrayList<>();
-    final ArrayList<WebinarListDataAdapter> Video_URL = new ArrayList<>();
+    final ArrayList<Webinar_Model_List> Contentid = new ArrayList<>();
+    final ArrayList<Webinar_Model_List> Video_URL = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -187,7 +187,7 @@ public class WebinarListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("webinar_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    WebinarListDataAdapter GetDataAdapter2=new WebinarListDataAdapter();
+                                    Webinar_Model_List GetDataAdapter2=new Webinar_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -210,7 +210,7 @@ public class WebinarListFragment extends Fragment
                                 }
 
 
-                                adapter = new WebinarListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Webinar_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

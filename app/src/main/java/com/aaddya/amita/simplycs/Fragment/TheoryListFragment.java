@@ -30,7 +30,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.Theory_Model_List;
-import com.aaddya.amita.simplycs.Adapter.TheoryListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.Theory_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -308,7 +308,7 @@ public class TheoryListFragment extends Fragment
 
 
 
-                                adapter = new TheoryListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Theory_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

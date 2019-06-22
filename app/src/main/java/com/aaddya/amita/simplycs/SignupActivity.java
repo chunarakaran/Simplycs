@@ -27,7 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.GetCourseDataAdapter;
+import com.aaddya.amita.simplycs.Model.GetCourse_Model_List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
     TextView Sign_up,backLogin;
 
     Spinner CourseSpinner;
-    final ArrayList<GetCourseDataAdapter> Coursedatalist = new ArrayList<>();
+    final ArrayList<GetCourse_Model_List> Coursedatalist = new ArrayList<>();
 
 
     EditText EName,Email,EPassword,EConfPass,Emobile;
@@ -403,7 +403,7 @@ public class SignupActivity extends AppCompatActivity {
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    GetCourseDataAdapter GetDataAdapter2=new GetCourseDataAdapter();
+                                    GetCourse_Model_List GetDataAdapter2=new GetCourse_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 

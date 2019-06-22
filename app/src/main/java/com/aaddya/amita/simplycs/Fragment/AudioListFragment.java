@@ -28,7 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.AudioListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.Audio_List_Adapter;
 import com.aaddya.amita.simplycs.AudioPlayActivity;
 import com.aaddya.amita.simplycs.R;
 
@@ -266,7 +266,7 @@ public class AudioListFragment extends Fragment
 //                                }
 
 
-                                adapter = new AudioListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Audio_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

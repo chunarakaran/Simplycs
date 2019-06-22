@@ -7,22 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Exam_Model_List;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class ExamListRecyclerViewAdapter extends RecyclerView.Adapter<ExamListRecyclerViewAdapter.ViewHolder> {
+public class Exam_List_Adapter extends RecyclerView.Adapter<Exam_List_Adapter.ViewHolder> {
 
 
     Context context;
 
-    List<ExamListDataAdapter> dataAdapters;
+    List<Exam_Model_List> dataAdapters;
 
     ImageLoader imageLoader;
 
-    public ExamListRecyclerViewAdapter(List<ExamListDataAdapter> getDataAdapter, Context context){
+    public Exam_List_Adapter(List<Exam_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -42,7 +43,7 @@ public class ExamListRecyclerViewAdapter extends RecyclerView.Adapter<ExamListRe
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        ExamListDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Exam_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 

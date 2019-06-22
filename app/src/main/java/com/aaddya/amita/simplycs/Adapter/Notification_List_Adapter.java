@@ -7,20 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aaddya.amita.simplycs.Model.Theory_Model_List;
+import com.aaddya.amita.simplycs.Model.Notification_Model_List;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class TheoryListRecyclerViewAdapter extends RecyclerView.Adapter<TheoryListRecyclerViewAdapter.ViewHolder> {
+public class Notification_List_Adapter extends RecyclerView.Adapter<Notification_List_Adapter.ViewHolder> {
 
 
     Context context;
 
-    List<Theory_Model_List> dataAdapters;
+    List<Notification_Model_List> dataAdapters;
 
 
-    public TheoryListRecyclerViewAdapter(List<Theory_Model_List> getDataAdapter, Context context){
+    public Notification_List_Adapter(List<Notification_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -30,7 +30,7 @@ public class TheoryListRecyclerViewAdapter extends RecyclerView.Adapter<TheoryLi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_theory, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_notification, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -40,7 +40,7 @@ public class TheoryListRecyclerViewAdapter extends RecyclerView.Adapter<TheoryLi
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        Theory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
+        Notification_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());
@@ -62,7 +62,7 @@ public class TheoryListRecyclerViewAdapter extends RecyclerView.Adapter<TheoryLi
 
             super(itemView);
 
-            TitleTextView = (TextView) itemView.findViewById(R.id.content_title) ;
+            TitleTextView = (TextView) itemView.findViewById(R.id.notification) ;
 
         }
     }

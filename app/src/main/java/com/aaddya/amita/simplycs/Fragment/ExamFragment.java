@@ -31,7 +31,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.Quetion_Adapter;
+import com.aaddya.amita.simplycs.Adapter.Quetion_List_Adapter;
 import com.aaddya.amita.simplycs.Model.Quetion_Model_List;
 import com.aaddya.amita.simplycs.R;
 
@@ -49,7 +49,7 @@ public class ExamFragment extends Fragment
 {
 
     private RecyclerView mRecyclerView;
-    private Quetion_Adapter mAdapter;
+    private Quetion_List_Adapter mAdapter;
     List<Quetion_Model_List> rowListItem;
     private JSONArray result;
     public static final String JSON_ARRAY = "test_questions";
@@ -277,7 +277,7 @@ public class ExamFragment extends Fragment
 
         if (rowListItem.size() > 0){
 
-            mAdapter =new Quetion_Adapter(getActivity(),rowListItem);
+            mAdapter =new Quetion_List_Adapter(getActivity(),rowListItem);
             mRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
 

@@ -27,7 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.Test_Model_List;
-import com.aaddya.amita.simplycs.Adapter.TestListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.Test_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -282,7 +282,7 @@ public class TestListFragment extends Fragment
 
 
 
-                                adapter = new TestListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Test_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

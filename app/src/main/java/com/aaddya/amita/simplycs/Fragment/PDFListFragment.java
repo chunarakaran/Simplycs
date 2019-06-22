@@ -28,7 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.PDF_Model_List;
-import com.aaddya.amita.simplycs.Adapter.PDFListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.PDF_List_Adapter;
 import com.aaddya.amita.simplycs.PDFViewActivity;
 import com.aaddya.amita.simplycs.R;
 
@@ -272,7 +272,7 @@ public class PDFListFragment extends Fragment
 //                                }
 
 
-                                adapter = new PDFListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new PDF_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class WebinarListDataAdapter {
+public class Webinar_Model_List {
 
     public String id;
     public String Title;

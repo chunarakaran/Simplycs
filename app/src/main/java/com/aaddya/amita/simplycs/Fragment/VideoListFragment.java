@@ -25,7 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.VideoListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.Video_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.YoutubePlayerActivity;
 
@@ -235,7 +235,7 @@ public class VideoListFragment extends Fragment
 
 
 
-                                adapter = new VideoListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Video_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

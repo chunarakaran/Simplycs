@@ -12,7 +12,7 @@ import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class TestListRecyclerViewAdapter extends RecyclerView.Adapter<TestListRecyclerViewAdapter.ViewHolder> {
+public class Test_List_Adapter extends RecyclerView.Adapter<Test_List_Adapter.ViewHolder> {
 
 
     Context context;
@@ -20,7 +20,7 @@ public class TestListRecyclerViewAdapter extends RecyclerView.Adapter<TestListRe
     List<Test_Model_List> dataAdapters;
 
 
-    public TestListRecyclerViewAdapter(List<Test_Model_List> getDataAdapter, Context context){
+    public Test_List_Adapter(List<Test_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;

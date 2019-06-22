@@ -21,10 +21,10 @@ import org.apache.http.NameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class Quetion_List_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<Quetion_Model_List> items = new ArrayList<>();
     private Context ctx;
-    private Quetion_Adapter.OnItemClickListener mOnItemClickListener;
+    private Quetion_List_Adapter.OnItemClickListener mOnItemClickListener;
 
     private static CheckBox lastChecked = null;
     private static int lastCheckedPos = 0;
@@ -38,11 +38,11 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         void onItemClick(View view, Quetion_Model_List obj, int position);
     }
 
-    public void setOnItemClickListener(final Quetion_Adapter.OnItemClickListener mItemClickListener) {
+    public void setOnItemClickListener(final Quetion_List_Adapter.OnItemClickListener mItemClickListener) {
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    public Quetion_Adapter(Context context, List<Quetion_Model_List> items) {
+    public Quetion_List_Adapter(Context context, List<Quetion_Model_List> items) {
         this.items = items;
         ctx = context;
     }
@@ -76,15 +76,15 @@ public class Quetion_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_quetions, parent, false);
-        vh = new Quetion_Adapter.OriginalViewHolder(v);
+        vh = new Quetion_List_Adapter.OriginalViewHolder(v);
         return vh;
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        if (holder instanceof Quetion_Adapter.OriginalViewHolder) {
-            final Quetion_Adapter.OriginalViewHolder view = (Quetion_Adapter.OriginalViewHolder) holder;
+        if (holder instanceof Quetion_List_Adapter.OriginalViewHolder) {
+            final Quetion_List_Adapter.OriginalViewHolder view = (Quetion_List_Adapter.OriginalViewHolder) holder;
 
             final Quetion_Model_List p = items.get(position);
             int srno = position+1;

@@ -28,8 +28,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.CourseListDataAdapter;
-import com.aaddya.amita.simplycs.Adapter.CourseListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Model.Course_Model_List;
+import com.aaddya.amita.simplycs.Adapter.Course_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -48,14 +48,14 @@ public class CourseListFragment extends Fragment
 
 
 
-    List<CourseListDataAdapter> ListOfdataAdapter;
+    List<Course_Model_List> ListOfdataAdapter;
 
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
 
     String course_id;
-    final ArrayList<CourseListDataAdapter> Course_id = new ArrayList<>();
+    final ArrayList<Course_Model_List> Course_id = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -216,7 +216,7 @@ public class CourseListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("package");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    CourseListDataAdapter GetDataAdapter2=new CourseListDataAdapter();
+                                    Course_Model_List GetDataAdapter2=new Course_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -237,7 +237,7 @@ public class CourseListFragment extends Fragment
 
 
 
-                                adapter = new CourseListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Course_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
 

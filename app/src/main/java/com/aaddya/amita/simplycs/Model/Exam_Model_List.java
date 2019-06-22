@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class ExamListDataAdapter {
+public class Exam_Model_List {
 
     public String id;
     public String ImageURL;

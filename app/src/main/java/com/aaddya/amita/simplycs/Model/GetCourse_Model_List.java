@@ -1,6 +1,6 @@
-package com.aaddya.amita.simplycs.Adapter;
+package com.aaddya.amita.simplycs.Model;
 
-public class GetCourseDataAdapter {
+public class GetCourse_Model_List {
 
     public String id;
     public String courseName;

@@ -24,8 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.NotificationDataAdapter;
-import com.aaddya.amita.simplycs.Adapter.NotificationRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Model.Notification_Model_List;
+import com.aaddya.amita.simplycs.Adapter.Notification_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -43,7 +43,7 @@ public class FullScreenDialog extends DialogFragment  {
 
     public static String TAG = "FullScreenDialog";
 
-    List<NotificationDataAdapter> ListOfdataAdapter;
+    List<Notification_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -51,9 +51,9 @@ public class FullScreenDialog extends DialogFragment  {
 
     String CDate,Category_id,SubCategory_id,SubCategory_name,content_id,content_name,content_Data;
 
-    final ArrayList<NotificationDataAdapter> Contentid = new ArrayList<>();
+    final ArrayList<Notification_Model_List> Contentid = new ArrayList<>();
 
-    final ArrayList<NotificationDataAdapter> ContentData = new ArrayList<>();
+    final ArrayList<Notification_Model_List> ContentData = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -170,7 +170,7 @@ public class FullScreenDialog extends DialogFragment  {
                                 JSONArray jsonArray=jObj.getJSONArray("content");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    NotificationDataAdapter GetDataAdapter2=new NotificationDataAdapter();
+                                    Notification_Model_List GetDataAdapter2=new Notification_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -193,7 +193,7 @@ public class FullScreenDialog extends DialogFragment  {
                                 JSONArray jsonArray1=jObj.getJSONArray("exist_content");
                                 for(int i=0;i<jsonArray1.length();i++)
                                 {
-                                    NotificationDataAdapter GetDataAdapter2=new NotificationDataAdapter();
+                                    Notification_Model_List GetDataAdapter2=new Notification_Model_List();
                                     JSONObject jsonObject1=jsonArray1.getJSONObject(i);
 
 
@@ -216,7 +216,7 @@ public class FullScreenDialog extends DialogFragment  {
                                 JSONArray jsonArray2=jObj.getJSONArray("test");
                                 for(int i=0;i<jsonArray2.length();i++)
                                 {
-                                    NotificationDataAdapter GetDataAdapter2=new NotificationDataAdapter();
+                                    Notification_Model_List GetDataAdapter2=new Notification_Model_List();
                                     JSONObject jsonObject1=jsonArray2.getJSONObject(i);
 
 
@@ -235,7 +235,7 @@ public class FullScreenDialog extends DialogFragment  {
 
 
 
-                                adapter = new NotificationRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Notification_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

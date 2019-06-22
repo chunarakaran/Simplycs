@@ -122,7 +122,6 @@
     <orderEntry type="library" name="Gradle: com.github.barteksc:pdfium-android-1.7.1" level="project" />
     <orderEntry type="library" name="Gradle: net.dankito.richtexteditor:richtexteditor-android-2.0.8" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-core-16.0.6" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\AndroidProject\Simplycs\app\libs\additionnal.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:cardview-v7-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:drawerlayout-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.4ert:audioview-0.4" level="project" />
@@ -145,7 +144,6 @@
     <orderEntry type="library" name="Gradle: com.github.PhilJay:MPAndroidChart-v3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.barteksc:android-pdf-viewer-2.8.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector-17.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\AndroidProject\Simplycs\app\libs\activation.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: in.shadowfax:proswipebutton-1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.11.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:slidingpanelayout-28.0.0" level="project" />
@@ -185,7 +183,6 @@
     <orderEntry type="library" name="Gradle: com.android.support:multidex-1.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.picasso:picasso:2.5.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:swiperefreshlayout-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\AndroidProject\Simplycs\app\libs\mail.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base-16.0.1" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.14.0@jar" level="project" />

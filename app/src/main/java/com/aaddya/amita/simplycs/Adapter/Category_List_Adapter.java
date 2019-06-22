@@ -7,23 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
+import com.aaddya.amita.simplycs.Model.Category_Model_List;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCategoryRecyclerViewAdapter.ViewHolder> {
+public class Category_List_Adapter extends RecyclerView.Adapter<Category_List_Adapter.ViewHolder> {
 
 
     Context context;
 
-    List<SubCategory_Model_List> dataAdapters;
+    List<Category_Model_List> dataAdapters;
 
     ImageLoader imageLoader;
 
-    public SubCategoryRecyclerViewAdapter(List<SubCategory_Model_List> getDataAdapter, Context context){
+    public Category_List_Adapter(List<Category_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -33,7 +33,7 @@ public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCate
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cards_layout, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -43,7 +43,7 @@ public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCate
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
+        Category_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 
@@ -76,7 +76,7 @@ public class SubCategoryRecyclerViewAdapter extends RecyclerView.Adapter<SubCate
 
             super(itemView);
 
-            ImageTitleTextView = (TextView) itemView.findViewById(R.id.topic_title) ;
+            ImageTitleTextView = (TextView) itemView.findViewById(R.id.textViewName) ;
 
             VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView) ;
 

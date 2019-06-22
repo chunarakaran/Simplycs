@@ -28,7 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.Category_Model_List;
-import com.aaddya.amita.simplycs.Adapter.CategoryRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Adapter.Category_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -251,7 +251,7 @@ public class ArchiveFragment extends Fragment
                                 Collections.reverse(Categoryid);
                                 Collections.reverse(Categoryname);
 
-                                adapter = new CategoryRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Category_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

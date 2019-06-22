@@ -31,8 +31,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.ExamListDataAdapter;
-import com.aaddya.amita.simplycs.Adapter.ExamListRecyclerViewAdapter;
+import com.aaddya.amita.simplycs.Model.Exam_Model_List;
+import com.aaddya.amita.simplycs.Adapter.Exam_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -51,7 +51,7 @@ public class ExamListFragment extends Fragment
 
 
 
-    List<ExamListDataAdapter> ListOfdataAdapter;
+    List<Exam_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -59,8 +59,8 @@ public class ExamListFragment extends Fragment
 
 
     String exam_id,exam_name;
-    final ArrayList<ExamListDataAdapter> Exam_id = new ArrayList<>();
-    final ArrayList<ExamListDataAdapter> Exam_name = new ArrayList<>();
+    final ArrayList<Exam_Model_List> Exam_id = new ArrayList<>();
+    final ArrayList<Exam_Model_List> Exam_name = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -248,7 +248,7 @@ public class ExamListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("exam_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    ExamListDataAdapter GetDataAdapter2=new ExamListDataAdapter();
+                                    Exam_Model_List GetDataAdapter2=new Exam_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
@@ -271,7 +271,7 @@ public class ExamListFragment extends Fragment
 
 
 
-                                adapter = new ExamListRecyclerViewAdapter(ListOfdataAdapter,getActivity());
+                                adapter = new Exam_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
                                 if(adapter.getItemCount()==0)

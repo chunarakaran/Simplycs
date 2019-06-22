@@ -7,19 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.aaddya.amita.simplycs.Model.Theory_Model_List;
 import com.aaddya.amita.simplycs.R;
 
 import java.util.List;
 
-public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<NotificationRecyclerViewAdapter.ViewHolder> {
+public class Theory_List_Adapter extends RecyclerView.Adapter<Theory_List_Adapter.ViewHolder> {
 
 
     Context context;
 
-    List<NotificationDataAdapter> dataAdapters;
+    List<Theory_Model_List> dataAdapters;
 
 
-    public NotificationRecyclerViewAdapter(List<NotificationDataAdapter> getDataAdapter, Context context){
+    public Theory_List_Adapter(List<Theory_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -29,7 +30,7 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<Notifi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_notification, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_theory, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -39,7 +40,7 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<Notifi
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        NotificationDataAdapter dataAdapterOBJ =  dataAdapters.get(position);
+        Theory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
         Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());
@@ -61,7 +62,7 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<Notifi
 
             super(itemView);
 
-            TitleTextView = (TextView) itemView.findViewById(R.id.notification) ;
+            TitleTextView = (TextView) itemView.findViewById(R.id.content_title) ;
 
         }
     }
