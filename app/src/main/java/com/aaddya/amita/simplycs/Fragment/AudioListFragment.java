@@ -29,7 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Adapter.Audio_List_Adapter;
-import com.aaddya.amita.simplycs.AudioPlayActivity;
+import com.aaddya.amita.simplycs.Activity.AudioPlayerActivity;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
@@ -141,7 +141,7 @@ public class AudioListFragment extends Fragment
                     audio_url=Audio_URL.get(RecyclerViewItemPosition).getAudioURL();
 
 
-                    startActivity(new Intent(getActivity(), AudioPlayActivity.class)
+                    startActivity(new Intent(getActivity(), AudioPlayerActivity.class)
                             .putExtra("audio_url", audio_url));
 
 

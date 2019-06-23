@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aaddya.amita.simplycs.Adapter.PrefManager;
+import com.aaddya.amita.simplycs.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 

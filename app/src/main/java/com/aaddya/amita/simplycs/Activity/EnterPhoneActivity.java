@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.aaddya.amita.simplycs.R;
 
 public class EnterPhoneActivity extends AppCompatActivity {
 

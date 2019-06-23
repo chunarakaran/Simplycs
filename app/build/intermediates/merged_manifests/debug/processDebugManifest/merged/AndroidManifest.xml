@@ -33,7 +33,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.aaddya.amita.simplycs.SplashActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -43,52 +43,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.aaddya.amita.simplycs.MainActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.WelcomeActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.WelcomeActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.LoginActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.SignupActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.SignupActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.ForgotpwdActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.ForgotpwdActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.VerifyPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.VerifyPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.EnterPhoneActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.EnterPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.aaddya.amita.simplycs.YoutubePlayerActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.TheoryViewActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.PDFViewActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.AudioPlayActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.WebinarPlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.VideoPlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.TheoryViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.PDFViewActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity" />
 
         <service
             android:name="net.gotev.uploadservice.UploadService"

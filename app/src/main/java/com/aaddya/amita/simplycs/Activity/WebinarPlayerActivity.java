@@ -1,9 +1,10 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.Utils.Constants;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;

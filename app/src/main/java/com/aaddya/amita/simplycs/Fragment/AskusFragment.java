@@ -27,7 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.MainActivity;
+import com.aaddya.amita.simplycs.Activity.MainActivity;
 import com.aaddya.amita.simplycs.R;
 
 import net.dankito.richtexteditor.android.RichTextEditor;

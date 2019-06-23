@@ -26,7 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.Webinar_Model_List;
 import com.aaddya.amita.simplycs.Adapter.Webinar_List_Adapter;
 import com.aaddya.amita.simplycs.R;
-import com.aaddya.amita.simplycs.WebinarPlayerActivity;
+import com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

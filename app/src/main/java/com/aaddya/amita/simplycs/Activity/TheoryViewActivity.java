@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.TextView;
+
+import com.aaddya.amita.simplycs.R;
 
 public class TheoryViewActivity extends AppCompatActivity {
 

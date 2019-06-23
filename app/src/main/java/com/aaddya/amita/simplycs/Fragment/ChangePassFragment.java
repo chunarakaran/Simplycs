@@ -24,8 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.LoginActivity;
-import com.aaddya.amita.simplycs.MainActivity;
+import com.aaddya.amita.simplycs.Activity.LoginActivity;
+import com.aaddya.amita.simplycs.Activity.MainActivity;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONException;

@@ -29,7 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Model.PDF_Model_List;
 import com.aaddya.amita.simplycs.Adapter.PDF_List_Adapter;
-import com.aaddya.amita.simplycs.PDFViewActivity;
+import com.aaddya.amita.simplycs.Activity.PDFViewActivity;
 import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;

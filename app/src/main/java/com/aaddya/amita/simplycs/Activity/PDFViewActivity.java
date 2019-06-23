@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
+import com.aaddya.amita.simplycs.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.BufferedInputStream;

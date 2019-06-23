@@ -27,7 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Adapter.Video_List_Adapter;
 import com.aaddya.amita.simplycs.R;
-import com.aaddya.amita.simplycs.YoutubePlayerActivity;
+import com.aaddya.amita.simplycs.Activity.VideoPlayerActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -136,7 +136,7 @@ public class VideoListFragment extends Fragment
                     video_url=Video_URL.get(RecyclerViewItemPosition).getVideoURL();
 
 
-                    startActivity(new Intent(getActivity(),YoutubePlayerActivity.class)
+                    startActivity(new Intent(getActivity(),VideoPlayerActivity.class)
                             .putExtra("video_url", video_url));
 
 

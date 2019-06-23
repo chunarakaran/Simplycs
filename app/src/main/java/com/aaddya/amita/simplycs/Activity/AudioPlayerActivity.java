@@ -1,15 +1,16 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.aaddya.amita.simplycs.R;
 import com.keenfin.audioview.AudioView;
 
 import java.io.IOException;
 
-public class AudioPlayActivity extends AppCompatActivity  {
+public class AudioPlayerActivity extends AppCompatActivity  {
 
     String Content_id,audio_url;
 

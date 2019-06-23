@@ -1,4 +1,4 @@
-package com.aaddya.amita.simplycs;
+package com.aaddya.amita.simplycs.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.R;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,12 +33,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.Adapter.SessionManager;
 import com.aaddya.amita.simplycs.Fragment.AskusFragment;
-import com.aaddya.amita.simplycs.Fragment.CourseFragment;
 import com.aaddya.amita.simplycs.Fragment.DashboardFragment;
 import com.aaddya.amita.simplycs.Fragment.ExamListFragment;
 import com.aaddya.amita.simplycs.Fragment.FullScreenDialog;
 import com.aaddya.amita.simplycs.Fragment.ProfileFragment;
-import com.aaddya.amita.simplycs.Fragment.SettingFragment;
 import com.aaddya.amita.simplycs.Fragment.WebinarListFragment;
 import com.squareup.picasso.Picasso;
 
