@@ -23,7 +23,7 @@
         android:paddingLeft="@dimen/material_global_margin_16"
         android:paddingStart="@dimen/material_global_margin_16"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/material_card_height_96"
+        android:layout_height="70dp"
         android:background="@drawable/card_selector">
 
 

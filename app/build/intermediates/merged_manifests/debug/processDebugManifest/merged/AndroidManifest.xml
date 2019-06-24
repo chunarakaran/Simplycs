@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aaddya.amita.simplycs"
-    android:versionCode="6"
-    android:versionName="1.1.4" >
+    android:versionCode="7"
+    android:versionName="1.1.5" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -29,11 +29,10 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.SplashActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -49,7 +48,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.WelcomeActivity"
+            android:name="com.aaddya.amita.simplycs.Activity.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

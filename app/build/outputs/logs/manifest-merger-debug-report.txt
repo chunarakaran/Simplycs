@@ -208,14 +208,14 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\amita\.gra
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:21:9-40
 	android:usesCleartextTraffic
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:13:9-44
-activity#com.aaddya.amita.simplycs.Activity.SplashActivity
+activity#com.aaddya.amita.simplycs.Activity.WelcomeActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:23:9-32:20
 	android:label
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:25:13-45
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:26:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:13-77
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:24:13-78
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
@@ -238,7 +238,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:33:9-38:5
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:34:13-75
-activity#com.aaddya.amita.simplycs.Activity.WelcomeActivity
+activity#com.aaddya.amita.simplycs.Activity.SplashActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:9-44:59
 	android:screenOrientation
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:43:13-49
@@ -249,7 +249,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:39:9-44:5
 	android:theme
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:44:13-56
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:13-78
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:40:13-77
 activity#com.aaddya.amita.simplycs.Activity.LoginActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:45:9-50:59
 	android:screenOrientation
