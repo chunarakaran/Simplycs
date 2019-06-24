@@ -1331,6 +1331,7 @@ drawable dark_circle_green
 drawable dark_circle_grey
 drawable dark_circle_red
 drawable dark_circle_sky
+drawable default_placeholder
 drawable default_scroll_handle_bottom
 drawable default_scroll_handle_left
 drawable default_scroll_handle_right
@@ -1721,6 +1722,7 @@ id input_subject
 id insertCommandsToolbar
 id invisible
 id italic
+id item_image
 id item_touch_helper_previous_elevation
 id ivContent
 id iv_arrow1
