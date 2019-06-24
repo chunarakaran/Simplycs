@@ -35,7 +35,7 @@ public class Webinar_List_Adapter extends RecyclerView.Adapter<Webinar_List_Adap
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_webinar, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_webinar, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 

@@ -21,7 +21,7 @@ public class AudioPlayerActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audio_play);
+        setContentView(R.layout.activity_audio_player);
 
         audio_url = getIntent().getStringExtra("audio_url");
 

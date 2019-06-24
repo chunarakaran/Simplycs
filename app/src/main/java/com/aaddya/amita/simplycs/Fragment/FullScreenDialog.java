@@ -80,7 +80,7 @@ public class FullScreenDialog extends DialogFragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.layout_full_screen_dialog, container, false);
+        View view = inflater.inflate(R.layout.fragment_full_screen_dialog, container, false);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_close);
@@ -153,7 +153,7 @@ public class FullScreenDialog extends DialogFragment  {
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetNotification",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetNotification",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -293,6 +293,18 @@ public class FullScreenDialog extends DialogFragment  {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Auth", User_id);
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("CourseId", Course_id);
+
                 return params;
             }
 

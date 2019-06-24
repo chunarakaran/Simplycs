@@ -35,7 +35,7 @@ public class Video_List_Adapter extends RecyclerView.Adapter<Video_List_Adapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.youtube_video_custom_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_video, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 

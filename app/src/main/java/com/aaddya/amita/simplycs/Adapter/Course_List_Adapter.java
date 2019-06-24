@@ -33,7 +33,7 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_courses, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_courses, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 

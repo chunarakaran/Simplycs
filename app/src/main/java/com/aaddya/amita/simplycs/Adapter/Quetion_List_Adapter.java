@@ -75,7 +75,7 @@ public class Quetion_List_Adapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_quetions, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_quetions, parent, false);
         vh = new Quetion_List_Adapter.OriginalViewHolder(v);
         return vh;
     }

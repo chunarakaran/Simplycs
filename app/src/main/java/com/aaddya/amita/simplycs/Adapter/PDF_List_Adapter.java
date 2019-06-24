@@ -30,7 +30,7 @@ public class PDF_List_Adapter extends RecyclerView.Adapter<PDF_List_Adapter.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_pdf, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_pdf, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 

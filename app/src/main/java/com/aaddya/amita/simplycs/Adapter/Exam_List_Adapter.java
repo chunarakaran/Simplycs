@@ -33,7 +33,7 @@ public class Exam_List_Adapter extends RecyclerView.Adapter<Exam_List_Adapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_exams, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_exams, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 

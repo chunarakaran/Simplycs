@@ -22,7 +22,7 @@ public class WebinarPlayerActivity extends YouTubeBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.webinar_player_activity);
+        setContentView(R.layout.activity_webinar_player);
         //get the video id
         video_url = getIntent().getStringExtra("video_url");
         youTubePlayerView = findViewById(R.id.youtube_player_view);
