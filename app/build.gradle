@@ -7,8 +7,8 @@ android {
         applicationId "com.aaddya.amita.simplycs"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 7
-        versionName "1.1.5"
+        versionCode 8
+        versionName "1.1.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -70,6 +70,7 @@ dependencies {
     implementation 'net.dankito.richtexteditor:richtexteditor-android:2.0.8'
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.shts:TriangleLabelView:1.1.2'
 
     implementation 'in.shadowfax:proswipebutton:1.1'
     //Temparory

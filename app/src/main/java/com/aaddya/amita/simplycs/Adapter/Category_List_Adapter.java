@@ -47,10 +47,17 @@ public class Category_List_Adapter extends RecyclerView.Adapter<Category_List_Ad
 
         Category_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
-        Picasso.with(context)
-                .load(dataAdapterOBJ.getImageUrl())
-                .placeholder(R.drawable.default_placeholder)
-                .into(Viewholder.imageView);
+        if (dataAdapterOBJ.getImageUrl().isEmpty())
+        {
+            Viewholder.imageView.setImageResource(R.drawable.default_placeholder);
+        }
+        else {
+
+            Picasso.with(context)
+                    .load(dataAdapterOBJ.getImageUrl())
+                    .placeholder(R.drawable.default_placeholder)
+                    .into(Viewholder.imageView);
+        }
 
         Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
 

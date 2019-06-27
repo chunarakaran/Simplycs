@@ -313,6 +313,7 @@ public class SubCategoryListFragment extends Fragment
 
                                     SubCategoryName.add(GetDataAdapter2);
 
+
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
@@ -322,6 +323,8 @@ public class SubCategoryListFragment extends Fragment
 
                                 adapter = new SubCategory_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
+
+
 
                                 if(adapter.getItemCount()==0)
                                 {

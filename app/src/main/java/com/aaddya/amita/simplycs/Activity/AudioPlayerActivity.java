@@ -44,11 +44,6 @@ public class AudioPlayerActivity extends AppCompatActivity  {
 //        hideDialog();
     }
 
-//   protected void onStart(){
-//        super.onStart();
-//        audioView.start();
-//        hideDialog();
-//   }
 
     @SuppressLint("MissingSuperCall")
     @Override

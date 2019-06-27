@@ -7,6 +7,7 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="green">#007000</color>
+    <color name="red">#FF0000</color>
     <color name="textColrHint">#969696</color>
     <color name="windowBackground">#FFFFFF</color>
 

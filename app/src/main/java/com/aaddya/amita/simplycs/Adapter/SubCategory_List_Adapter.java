@@ -16,6 +16,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import jp.shts.android.library.TriangleLabelView;
+
 public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_List_Adapter.ViewHolder> {
 
 
@@ -47,12 +49,36 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
-        Picasso.with(context)
-                .load(dataAdapterOBJ.getImageUrl())
-                .placeholder(R.drawable.default_placeholder)
-                .into(Viewholder.imageView);
+        if(position==dataAdapters.size()-1){
+            // here goes some code
+            //  callback.sendMessage(Message);
+            Viewholder.triangleLabelView.setVisibility(View.VISIBLE);
+        }
+        else{
+            Viewholder.triangleLabelView.setVisibility(View.GONE);
+        }
+
+
+        if (dataAdapterOBJ.getImageUrl().isEmpty()) {
+            Viewholder.imageView.setImageResource(R.drawable.default_placeholder);
+        } else{
+            Picasso.with(context)
+                    .load(dataAdapterOBJ.getImageUrl())
+                    .placeholder(R.drawable.default_placeholder)
+                    .error(R.drawable.default_placeholder)
+                    .into(Viewholder.imageView);
+
+        }
+
 
         Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
+
+        Viewholder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Viewholder.triangleLabelView.setVisibility(View.GONE);
+            }
+        });
 
     }
 
@@ -66,6 +92,7 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         public TextView ImageTitleTextView;
         public ImageView imageView;
+        public TriangleLabelView triangleLabelView;
 
         public ViewHolder(View itemView) {
 
@@ -73,6 +100,7 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
             ImageTitleTextView = (TextView) itemView.findViewById(R.id.topic_title) ;
             imageView=(ImageView)itemView.findViewById(R.id.item_image);
+            triangleLabelView=(TriangleLabelView)itemView.findViewById(R.id.triangle_view);
 
         }
     }

@@ -5,6 +5,7 @@ public class SubCategory_Model_List {
     public String id;
     public String ImageURL;
     public String ImageTitle;
+    boolean isNew;
 
 
     public String getId() {

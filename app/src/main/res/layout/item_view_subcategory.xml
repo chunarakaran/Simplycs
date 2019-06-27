@@ -19,12 +19,15 @@
     card_view:cardUseCompatPadding="true">
 
 
+
+
     <RelativeLayout
         android:paddingLeft="@dimen/material_global_margin_16"
         android:paddingStart="@dimen/material_global_margin_16"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="@drawable/card_selector">
+
 
         <!--<com.android.volley.toolbox.NetworkImageView-->
             <!--android:id="@+id/VolleyImageView"-->
@@ -58,18 +61,42 @@
             android:layout_marginRight="@dimen/material_global_margin_8"
             android:layout_toRightOf="@id/item_image"
             android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+
 
             <TextView
                 android:id="@+id/topic_title"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Topic Title"
                 android:textStyle="bold" />
+
+            <jp.shts.android.library.TriangleLabelView
+                android:id="@+id/triangle_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                app:backgroundColor="@color/colorPrimary"
+                app:corner="rightTop"
+                app:labelBottomPadding="5dp"
+                app:labelCenterPadding="0dp"
+                app:labelTopPadding="10dp"
+                app:primaryText="New"
+                app:primaryTextColor="@color/red"
+                app:primaryTextSize="16sp"
+                app:secondaryText="999"
+                app:secondaryTextColor="@color/white"
+                app:secondaryTextSize="11sp" />
+
 
         </LinearLayout>
 
 
     </RelativeLayout>
+
+
 
 </android.support.v7.widget.CardView>
