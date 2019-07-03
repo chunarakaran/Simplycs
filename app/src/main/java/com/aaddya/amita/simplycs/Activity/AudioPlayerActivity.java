@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.aaddya.amita.simplycs.R;
 import com.keenfin.audioview.AudioView;
+import com.keenfin.audioview.AudioViewListener;
 
 import java.io.IOException;
 
@@ -16,7 +17,14 @@ public class AudioPlayerActivity extends AppCompatActivity  {
 
     AudioView audioView;
 
+    public AudioViewListener mAudioViewListener;
+
     private ProgressDialog pDialog;
+
+    public interface AudioViewListener {
+        void onPrepared();
+        void onCompletion();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +39,6 @@ public class AudioPlayerActivity extends AppCompatActivity  {
 
         audioView=(AudioView)findViewById(R.id.audioview);
 
-//        pDialog.setMessage("Please Wait...");
-//        showDialog();
 
         try {
             audioView.setDataSource(audio_url);
@@ -41,7 +47,19 @@ public class AudioPlayerActivity extends AppCompatActivity  {
             e.printStackTrace();
         }
 
-//        hideDialog();
+        audioView.setOnAudioViewListener(new com.keenfin.audioview.AudioViewListener() {
+            @Override
+            public void onPrepared() {
+//                pDialog.setMessage("Please Wait...");
+//                showDialog();
+            }
+
+            @Override
+            public void onCompletion() {
+//                hideDialog();
+            }
+        });
+
     }
 
 
@@ -57,6 +75,11 @@ public class AudioPlayerActivity extends AppCompatActivity  {
         super.onDestroy();
         audioView.pause();
     }
+
+    public void setOnAudioViewListener(AudioViewListener audioViewListener) {
+        mAudioViewListener = audioViewListener;
+    }
+
 
     private void showDialog() {
         if (!pDialog.isShowing())

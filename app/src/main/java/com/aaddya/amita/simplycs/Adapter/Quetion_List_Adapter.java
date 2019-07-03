@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 import com.aaddya.amita.simplycs.Model.Quetion_Model_List;
@@ -176,6 +177,9 @@ public class Quetion_List_Adapter extends RecyclerView.Adapter<RecyclerView.View
             view.btn_Next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    Toast.makeText(Quetion_List_Adapter.this.ctx, "Radio button clicked ",Toast.LENGTH_SHORT).show();
+
                   /*  try {
 
                         sharedPreferences=ctx.getSharedPreferences("Mydata",MODE_PRIVATE);

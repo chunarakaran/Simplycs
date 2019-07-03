@@ -2,25 +2,20 @@ package com.aaddya.amita.simplycs.Model;
 
 public class Quetion_Model_List {
 
-    private String quetion_id,question,type,op1,op2,op3,op4,answer,question_image,op1_image,op2_image,op3_image,op4_image;
+    private String quetion_id,question,scale,op1,op2,op3,op4,answer;
 
     int selctedId;
 
-    public Quetion_Model_List(String quetion_id, String question, String op1, String op2, String op3, String op4,
-                              String answer) {
+    public Quetion_Model_List(String id, String quetion_id, String question, String scale, String op1, String op2, String op3, String op4) {
         this.quetion_id = quetion_id;
         this.question = question;
-//        this.type = type;
+        this.scale=scale;
         this.op1 = op1;
         this.op2 = op2;
         this.op3= op3;
         this.op4 = op4;
         this.answer = answer;
-//        this.question_image = question_image;
-//        this.op1_image =  op1_image;
-//        this.op2_image =  op2_image;
-//        this.op3_image= op3_image;
-//        this.op4_image = op4_image;
+
     }
 
     public int getSelctedId(){
@@ -48,13 +43,13 @@ public class Quetion_Model_List {
         this.question = question;
     }
 
-//    public String getType() {
-//        return type;
-//    }
-//
-//    public void setType(String type) {
-//        this.type = type;
-//    }
+    public String getScale() {
+        return scale;
+    }
+
+    public void setScale(String scale) {
+        this.scale = scale;
+    }
 
     public String getOp1() {
         return op1;
@@ -96,43 +91,4 @@ public class Quetion_Model_List {
         this.answer = answer;
     }
 
-//    public String getQuestion_image() {
-//        return question_image;
-//    }
-//
-//    public void setQuestion_image(String question_image) {
-//        this.question_image = question_image;
-//    }
-//
-//    public String getOp1_image() {
-//        return op1_image;
-//    }
-//
-//    public void setOp1_image(String op1_image) {
-//        this.op1_image = op1_image;
-//    }
-//
-//    public String getOp2_image() {
-//        return op2_image;
-//    }
-//
-//    public void setOp2_image(String op2_image) {
-//        this.op2_image = op2_image;
-//    }
-//
-//    public String getOp3_image() {
-//        return op3_image;
-//    }
-//
-//    public void setOp3_image(String op3_image) {
-//        this.op3_image = op3_image;
-//    }
-//
-//    public String getOp4_image() {
-//        return op4_image;
-//    }
-//
-//    public void setOp4_image(String op4_image) {
-//        this.op4_image = op4_image;
-//    }
 }

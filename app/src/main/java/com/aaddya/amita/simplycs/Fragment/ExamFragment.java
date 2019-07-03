@@ -136,6 +136,7 @@ public class ExamFragment extends Fragment
             public void onClick(View view) {
                 mRecyclerView.getLayoutManager().scrollToPosition(gridLayoutManager.findFirstVisibleItemPosition() - 1);
 //                  btn_Next.setVisibility(View.VISIBLE);
+
             }
         });
         btn_Next.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +144,7 @@ public class ExamFragment extends Fragment
             public void onClick(View view) {
                 mRecyclerView.getLayoutManager().scrollToPosition(gridLayoutManager.findLastVisibleItemPosition() + 1);
 //                 btn_Previous.setVisibility(View.VISIBLE);
+                Toast.makeText(getActivity(), "Radio button clicked ",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -256,17 +258,13 @@ public class ExamFragment extends Fragment
                 JSONObject json = j.getJSONObject(i);
                 rowListItem.add(new Quetion_Model_List(json.getString("id"),
                         json.getString("question"),
-//                        json.getString("type"),
+                        json.getString("scale"),
                         json.getString("option1"),
                         json.getString("option2"),
                         json.getString("option3"),
                         json.getString("option4"),
                         json.getString("correct_answer")
-//                        json.getString("question_image"),
-//                        json.getString("op1_image"),
-//                        json.getString("op2_image"),
-//                        json.getString("op3_image")
-//                        json.getString("op4_image")
+
 
                 ) );
 

@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import com.aaddya.amita.simplycs.R;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -77,9 +78,14 @@ public class PDFViewActivity extends AppCompatActivity {
                     .swipeHorizontal(false)
                     .enableDoubletap(true)
                     .defaultPage(0)
-                    .load();
+                    .onLoad(new OnLoadCompleteListener() {
+                        @Override
+                        public void loadComplete(int nbPages) {
+                            hideDialog();
+                        }
+                    }).load();
 
-            hideDialog();
+
         }
     }
 
