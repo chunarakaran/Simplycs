@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
+import com.aaddya.amita.simplycs.Model.Theory_Model_List;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.aaddya.amita.simplycs.R;
@@ -49,10 +50,15 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
+//        Theory_Model_List theory_model_list=
+
+        int datasize=dataAdapters.size();
+
         if(position==dataAdapters.size()-1){
             // here goes some code
             //  callback.sendMessage(Message);
             Viewholder.triangleLabelView.setVisibility(View.VISIBLE);
+            Viewholder.triangleLabelView.setSecondaryText(Integer.toString(datasize));
         }
         else{
             Viewholder.triangleLabelView.setVisibility(View.GONE);

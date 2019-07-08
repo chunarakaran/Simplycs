@@ -6,15 +6,15 @@ public class Quetion_Model_List {
 
     int selctedId;
 
-    public Quetion_Model_List(String id, String quetion_id, String question, String scale, String op1, String op2, String op3, String op4) {
-        this.quetion_id = quetion_id;
+    public Quetion_Model_List(String id, String question,String scale, String option1, String option2, String option3, String option4, String correct_answer) {
+        this.quetion_id = id;
         this.question = question;
         this.scale=scale;
-        this.op1 = op1;
-        this.op2 = op2;
-        this.op3= op3;
-        this.op4 = op4;
-        this.answer = answer;
+        this.op1 = option1;
+        this.op2 = option2;
+        this.op3= option3;
+        this.op4 = option4;
+        this.answer = correct_answer;
 
     }
 

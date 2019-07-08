@@ -1616,6 +1616,7 @@ id change_pic
 id checkbox
 id chkbxDownloadImage
 id chronometer
+id chronometer1
 id circle
 id city
 id clamp

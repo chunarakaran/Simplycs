@@ -1,6 +1,7 @@
 package com.aaddya.amita.simplycs.Fragment;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -53,6 +54,8 @@ public class ExamFragment extends Fragment
     List<Quetion_Model_List> rowListItem;
     private JSONArray result;
     public static final String JSON_ARRAY = "test_questions";
+
+    final ArrayList<Quetion_Model_List> Scale_list = new ArrayList<>();
 
 
     TextView txt_timer;
@@ -152,7 +155,20 @@ public class ExamFragment extends Fragment
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                for(int i=0;i<rowListItem.size();i++)
+//                {
+//
+//                    View view = mRecyclerView.getChildAt(i);
+//                    TextView Ques_timer=(TextView)view.findViewById(R.id.chronometer1);
+//                    String time=Ques_timer.getText().toString();
+//
+//
+//
+//                }
+
                 Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+
             }
         });
 

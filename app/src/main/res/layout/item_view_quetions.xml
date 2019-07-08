@@ -35,11 +35,31 @@
                 android:gravity="center"
                 android:layout_marginTop="@dimen/spacing_xmedium"
                 android:orientation="horizontal">
+
+
                 <LinearLayout
                     android:id="@+id/lyt_expand_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/ques_timer"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="@dimen/spacing_large"-->
+                        <!--android:layout_marginTop="@dimen/spacing_large"-->
+                        <!--android:text="Timer"-->
+                        <!--android:textColor="@color/black"/>-->
+
+                    <Chronometer
+                        android:id="@+id/chronometer1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/spacing_large"
+                        android:layout_marginTop="@dimen/spacing_large"
+                        />
+
 
 
                     <WebView
