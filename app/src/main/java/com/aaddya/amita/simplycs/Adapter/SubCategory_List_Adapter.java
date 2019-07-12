@@ -54,15 +54,15 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         int datasize=dataAdapters.size();
 
-        if(position==dataAdapters.size()-1){
-            // here goes some code
-            //  callback.sendMessage(Message);
-            Viewholder.triangleLabelView.setVisibility(View.VISIBLE);
-            Viewholder.triangleLabelView.setSecondaryText(Integer.toString(datasize));
-        }
-        else{
-            Viewholder.triangleLabelView.setVisibility(View.GONE);
-        }
+//        if(position==dataAdapters.size()-1){
+//            // here goes some code
+//            //  callback.sendMessage(Message);
+//            Viewholder.triangleLabelView.setVisibility(View.VISIBLE);
+//            Viewholder.triangleLabelView.setSecondaryText(Integer.toString(datasize));
+//        }
+//        else{
+//            Viewholder.triangleLabelView.setVisibility(View.GONE);
+//        }
 
 
         if (dataAdapterOBJ.getImageUrl().isEmpty()) {

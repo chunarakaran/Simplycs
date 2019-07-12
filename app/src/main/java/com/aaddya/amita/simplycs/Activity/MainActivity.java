@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Fragment.SettingFragment;
 import com.aaddya.amita.simplycs.R;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -278,9 +279,9 @@ public class MainActivity extends AppCompatActivity
                 fragment = new ProfileFragment();
                 break;
 
-//            case R.id.nav_setting:
-//                fragment = new SettingFragment();
-//                break;
+            case R.id.nav_setting:
+                fragment = new SettingFragment();
+                break;
 
             case R.id.nav_logout:
 //                Toast.makeText(getApplicationContext(),HTTP_JSON_URL,Toast.LENGTH_SHORT).show();

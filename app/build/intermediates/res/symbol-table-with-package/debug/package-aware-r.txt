@@ -1647,6 +1647,7 @@ id cpv_color_panel_view
 id cpv_color_picker_view
 id cpv_hex
 id cpv_preference_preview_color_panel
+id current_course
 id custom
 id customPanel
 id cv_root_category
@@ -1800,6 +1801,7 @@ id navFolderShortcutSdCard
 id nav_dashboard
 id nav_logout
 id nav_profile
+id nav_setting
 id nav_view
 id navigation
 id navigationView
@@ -1925,7 +1927,6 @@ id submenuarrow
 id submit
 id submit_area
 id swipe_container
-id switch1
 id tabLayout
 id tabMode
 id tag_transition_group
@@ -1995,6 +1996,7 @@ id update_profile
 id useLogo
 id userEmail
 id user_city
+id user_course
 id user_dob
 id user_education
 id user_email
@@ -2156,6 +2158,7 @@ layout item_view_quetions
 layout item_view_subcategory
 layout item_view_test
 layout item_view_theory
+layout item_view_user_courses
 layout item_view_video
 layout item_view_webinar
 layout layout_colordialog
