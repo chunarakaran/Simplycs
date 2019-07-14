@@ -89,7 +89,7 @@ public class StartQuizFragment extends Fragment
             @Override
             public void onClick(View v) {
                 FragmentTransaction transection=getFragmentManager().beginTransaction();
-                ExamFragment mfragment=new ExamFragment();
+                QuestionFragment mfragment=new QuestionFragment();
 
 
                 Bundle bundle=new Bundle();

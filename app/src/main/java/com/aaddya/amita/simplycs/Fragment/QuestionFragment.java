@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class ExamFragment extends Fragment
+public class QuestionFragment extends Fragment
 {
 
     private RecyclerView mRecyclerView;
