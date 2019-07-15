@@ -116,7 +116,8 @@ public class Quetion_List_Adapter extends RecyclerView.Adapter<RecyclerView.View
                     }
                 }
             });
-          /*  if(position == items.size()-1){
+
+            /*if(position == items.size()-1){
                 *//*lastItem*//*
             }
             */

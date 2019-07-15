@@ -1,7 +1,6 @@
 package com.aaddya.amita.simplycs.Fragment;
 
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -74,7 +73,7 @@ public class QuestionFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        rootview = inflater.inflate(R.layout.fragment_start_exam, container, false);
+        rootview = inflater.inflate(R.layout.fragment_question, container, false);
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -155,17 +154,6 @@ public class QuestionFragment extends Fragment
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                for(int i=0;i<rowListItem.size();i++)
-//                {
-//
-//                    View view = mRecyclerView.getChildAt(i);
-//                    TextView Ques_timer=(TextView)view.findViewById(R.id.chronometer1);
-//                    String time=Ques_timer.getText().toString();
-//
-//
-//
-//                }
 
                 Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
 

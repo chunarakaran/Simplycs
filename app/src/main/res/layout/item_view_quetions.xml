@@ -43,14 +43,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/ques_timer"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="@dimen/spacing_large"-->
-                        <!--android:layout_marginTop="@dimen/spacing_large"-->
-                        <!--android:text="Timer"-->
-                        <!--android:textColor="@color/black"/>-->
 
                     <Chronometer
                         android:id="@+id/chronometer1"
@@ -154,53 +146,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
-          <!--  <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/spacing_xmedium"
-                >
-
-                <Button
-                    android:id="@+id/btn_Previous"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="Previous"
-                    android:paddingLeft="@dimen/spacing_medium"
-                    android:drawableTint="@color/colorPrimaryDark"
-                    android:drawableLeft="@drawable/ic_chevron_left"
-                    android:layout_marginLeft="@dimen/spacing_small"
-                    android:layout_marginRight="@dimen/spacing_small"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@color/mdtp_white"/>
-
-
-                <Button
-                    android:id="@+id/btn_Next"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="Next"
-                    android:paddingRight="@dimen/spacing_medium"
-                    android:drawableTint="@color/colorPrimaryDark"
-                    android:drawableRight="@drawable/ic_chevron_right"
-                    android:layout_marginLeft="@dimen/spacing_xxxlarge"
-                    android:layout_marginRight="@dimen/spacing_xxxlarge"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@color/mdtp_white"/>
-
-            </LinearLayout>-->
-
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_medium" />
 
         </LinearLayout>
 

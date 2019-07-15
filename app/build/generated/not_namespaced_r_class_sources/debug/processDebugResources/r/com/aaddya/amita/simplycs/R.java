@@ -6382,7 +6382,7 @@ public final class R {
     public static final int fragment_dashboard=0x7f0d0053;
     public static final int fragment_edit_profile=0x7f0d0054;
     public static final int fragment_exam_detail=0x7f0d0055;
-    public static final int fragment_exam_result=0x7f0d0056;
+    public static final int fragment_test_result =0x7f0d0056;
     public static final int fragment_examlist=0x7f0d0057;
     public static final int fragment_full_screen_dialog=0x7f0d0058;
     public static final int fragment_pdflist=0x7f0d0059;
@@ -6390,7 +6390,7 @@ public final class R {
     public static final int fragment_profile=0x7f0d005b;
     public static final int fragment_quiz=0x7f0d005c;
     public static final int fragment_setting=0x7f0d005d;
-    public static final int fragment_start_exam=0x7f0d005e;
+    public static final int fragment_question =0x7f0d005e;
     public static final int fragment_startquiz=0x7f0d005f;
     public static final int fragment_subcategorylist=0x7f0d0060;
     public static final int fragment_testlist=0x7f0d0061;
