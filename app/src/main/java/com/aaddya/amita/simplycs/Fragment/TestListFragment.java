@@ -280,6 +280,32 @@ public class TestListFragment extends Fragment
 
                                 }
 
+                                JSONArray jsonArray1=jObj.getJSONArray("exist_test_list");
+                                for(int i=0;i<jsonArray1.length();i++)
+                                {
+                                    Test_Model_List GetDataAdapter2=new Test_Model_List();
+                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
+
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
+                                    GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
+                                    GetDataAdapter2.setRules(jsonObject1.getString("rules"));
+
+
+
+
+                                    Testid.add(GetDataAdapter2);
+                                    Testname.add(GetDataAdapter2);
+                                    Testduration.add(GetDataAdapter2);
+                                    Testmarks.add(GetDataAdapter2);
+                                    Testrules.add(GetDataAdapter2);
+
+                                    ListOfdataAdapter.add(GetDataAdapter2);
+
+                                }
+
 
 
                                 adapter = new Test_List_Adapter(ListOfdataAdapter,getActivity());
