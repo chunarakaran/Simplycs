@@ -47,12 +47,12 @@ public class ForgotpwdActivity extends AppCompatActivity {
 
 
 
-        picture=(ImageView)findViewById(R.id.logo);
-        int imageid = R.drawable.login_logo;
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inSampleSize = 4;
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
-        picture.setImageBitmap(bitmap);
+//        picture=(ImageView)findViewById(R.id.logo);
+//        int imageid = R.drawable.login_logo;
+//        BitmapFactory.Options opts = new BitmapFactory.Options();
+//        opts.inSampleSize = 4;
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
+//        picture.setImageBitmap(bitmap);
 
 
         // Progress dialog
@@ -79,7 +79,7 @@ public class ForgotpwdActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(getApplicationContext(), "Please check your internet connecion or try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Please check your internet connection or try again.", Toast.LENGTH_SHORT).show();
 
                     }
                 }

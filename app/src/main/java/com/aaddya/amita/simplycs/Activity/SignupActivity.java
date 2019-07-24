@@ -81,12 +81,12 @@ public class SignupActivity extends AppCompatActivity {
 
         URL = getString(R.string.url);
 
-        picture=(ImageView)findViewById(R.id.logo);
-        int imageid = R.drawable.login_logo;
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inSampleSize = 4;
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
-        picture.setImageBitmap(bitmap);
+//        picture=(ImageView)findViewById(R.id.logo);
+//        int imageid = R.drawable.login_logo;
+//        BitmapFactory.Options opts = new BitmapFactory.Options();
+//        opts.inSampleSize = 4;
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
+//        picture.setImageBitmap(bitmap);
 
 
         Initialize();

@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.view.View;
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText user_id, user_password;
     RequestQueue requestQueue1;
     String Url;
-    String android_id, deviceName, deviceOs, imeiNumber1;
+    String android_id, deviceName, deviceOs, imeiNumber1="122412412414";
 
     private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
     private TelephonyManager mTelephonyManager;
@@ -113,12 +114,12 @@ public class LoginActivity extends AppCompatActivity {
         };
 
 
-        picture = (ImageView) findViewById(R.id.logo);
-        int imageid = R.drawable.login_logo;
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inSampleSize = 4;
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
-        picture.setImageBitmap(bitmap);
+//        picture = (ImageView) findViewById(R.id.logo);
+//        int imageid = R.drawable.login_logo;
+//        BitmapFactory.Options opts = new BitmapFactory.Options();
+//        opts.inSampleSize = 4;
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
+//        picture.setImageBitmap(bitmap);
 
 
         Login = (TextView) findViewById(R.id.login);
@@ -156,13 +157,21 @@ public class LoginActivity extends AppCompatActivity {
 
         deviceOs = Build.VERSION.RELEASE;
 
-        if (checkSelfPermission(android.Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_PHONE_STATE},
-                    PERMISSIONS_REQUEST_READ_PHONE_STATE);
-        } else {
-            getDeviceImei();
-        }
+//        if (Build.VERSION.SDK_INT >= 23) {
+//
+//            if (ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_PHONE_STATE)
+//                    != PackageManager.PERMISSION_GRANTED) {
+//                requestPermissions(new String[]{android.Manifest.permission.READ_PHONE_STATE},
+//                        PERMISSIONS_REQUEST_READ_PHONE_STATE);
+//            } else {
+//                getDeviceImei();
+//            }
+//        }
+//        else{
+//            getDeviceImei();
+//        }
+
+
 
 
 
@@ -221,19 +230,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
-        if (requestCode == PERMISSIONS_REQUEST_READ_PHONE_STATE
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            getDeviceImei();
-        }
-    }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    @SuppressLint("MissingPermission")
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//                                           int[] grantResults) {
+//        if (requestCode == PERMISSIONS_REQUEST_READ_PHONE_STATE
+//                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//            getDeviceImei();
+//        }
+//    }
+
+
+    @SuppressLint({"MissingPermission", "NewApi"})
     private void getDeviceImei() {
-
         mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         imeiNumber1 = mTelephonyManager.getDeviceId(2);
     }

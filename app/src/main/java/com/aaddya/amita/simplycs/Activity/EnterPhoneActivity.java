@@ -31,12 +31,12 @@ public class EnterPhoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_phone);
 
-        picture=(ImageView)findViewById(R.id.logo);
-        int imageid = R.drawable.login_logo;
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inSampleSize = 4;
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
-        picture.setImageBitmap(bitmap);
+//        picture=(ImageView)findViewById(R.id.logo);
+//        int imageid = R.drawable.login_logo;
+//        BitmapFactory.Options opts = new BitmapFactory.Options();
+//        opts.inSampleSize = 4;
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
+//        picture.setImageBitmap(bitmap);
 
         editTextMobile = findViewById(R.id.editTextMobile);
         buttonContinue=(Button)findViewById(R.id.buttonContinue);
