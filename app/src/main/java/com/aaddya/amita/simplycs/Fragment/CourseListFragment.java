@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -45,9 +47,6 @@ import cn.refactor.lib.colordialog.PromptDialog;
 
 public class CourseListFragment extends Fragment
 {
-
-
-
     List<Course_Model_List> ListOfdataAdapter;
 
     RecyclerView recyclerView;
@@ -79,6 +78,19 @@ public class CourseListFragment extends Fragment
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_courselist, container, false);
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        toolbar.setTitle("Courses");
+
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
@@ -105,10 +117,7 @@ public class CourseListFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-
-
         GetCourseList();
-
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -170,10 +179,6 @@ public class CourseListFragment extends Fragment
         });
 
 
-
-
-
-
         rootview.setFocusableInTouchMode(true);
         rootview.requestFocus();
         rootview.setOnKeyListener(new View.OnKeyListener() {
@@ -191,6 +196,17 @@ public class CourseListFragment extends Fragment
         });
 
         return rootview;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 
 
@@ -298,10 +314,6 @@ public class CourseListFragment extends Fragment
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
     }
-
-
-
-
 
     public boolean isNetworkAvailable() {
 

@@ -18,23 +18,14 @@
         android:layout_marginRight="12dp">
 
 
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/VolleyImageView"
+        <ImageView
+            android:id="@+id/item_image"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher"
-            android:scaleType="centerCrop"
-            />
+            android:layout_height="160dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitXY"/>
 
-        <!--<com.makeramen.roundedimageview.RoundedImageView-->
-            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-            <!--android:id="@+id/imageView1"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="150dp"-->
-            <!--android:src="@drawable/img12"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--app:riv_corner_radius="3dip"-->
-            <!--app:riv_oval="false" />-->
+
 
         <customfonts.MyTextView_SF_Pro_Light
             android:id="@+id/courseTitle"

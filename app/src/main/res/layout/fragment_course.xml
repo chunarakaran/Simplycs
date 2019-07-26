@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        </android.support.v7.widget.Toolbar>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
     android:background="#f8f8f8">
 
     <ScrollView
@@ -17,6 +42,115 @@
             android:layout_height="match_parent"
             android:paddingBottom="60dp"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <customfonts.TextViewSFProDisplaySemibold
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Current Course"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+
+                    android:id="@+id/bankcardId"
+                    android:background="@drawable/cardview_gradient"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/cardview_gradient"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/current_course"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="#fff"
+                            android:layout_marginTop="0dp"
+                            android:text="Course Name"/>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#979797"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <customfonts.TextViewSFProDisplaySemibold
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Switch Course"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:orientation="horizontal"
+                        android:id="@+id/recyclerview"
+                        android:background="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scrollbars="horizontal"
+                        android:scrollbarStyle="outsideInset"
+                        android:fadeScrollbars="true" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#979797"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
 
 
             <LinearLayout
@@ -62,138 +196,6 @@
 
             </LinearLayout>
 
-
-
-            <!--<HorizontalScrollView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="12dp"-->
-                <!--android:scrollbars="none">-->
-
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:clipToPadding="false"-->
-                    <!--android:paddingLeft="10dp"-->
-                    <!--android:paddingRight="10dp"-->
-                    <!--android:orientation="horizontal">-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginRight="10dp"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.makeramen.roundedimageview.RoundedImageView-->
-                            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                            <!--android:id="@+id/imageView1"-->
-                            <!--android:layout_width="250dp"-->
-                            <!--android:layout_height="150dp"-->
-                            <!--android:src="@drawable/img12"-->
-                            <!--android:scaleType="centerCrop"-->
-                            <!--app:riv_corner_radius="3dip"-->
-                            <!--app:riv_oval="false" />-->
-
-
-                        <!--<customfonts.TextViewSFProDisplayRegular-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:text="Product UX Design"-->
-                            <!--android:layout_marginTop="3dp"-->
-                            <!--android:textColor="#585e66"-->
-                            <!--android:textSize="15sp"/>-->
-
-                        <!--<LinearLayout-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:orientation="horizontal">-->
-
-                            <!--<customfonts.TextViewSFProDisplaySemibold-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:text="$59.99"-->
-                                <!--android:textSize="13sp"-->
-                                <!--android:textColor="@color/black"/>-->
-
-                            <!--<ImageView-->
-                                <!--android:layout_width="10dp"-->
-                                <!--android:layout_height="10dp"-->
-                                <!--android:layout_gravity="center"-->
-                                <!--android:layout_marginLeft="5dp"-->
-                                <!--android:src="@drawable/ic_clock1"/>-->
-
-
-                            <!--<customfonts.TextViewSFProDisplayMedium-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:textColor="@color/black"-->
-                                <!--android:textSize="7sp"-->
-                                <!--android:layout_marginLeft="4dp"-->
-                                <!--android:layout_gravity="center"-->
-                                <!--android:text="29 Hours"/>-->
-                        <!--</LinearLayout>-->
-                    <!--</LinearLayout>-->
-
-                    <!--<LinearLayout-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.makeramen.roundedimageview.RoundedImageView-->
-                            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-
-                            <!--android:layout_width="250dp"-->
-                            <!--android:layout_height="150dp"-->
-                            <!--android:src="@drawable/img12"-->
-                            <!--android:scaleType="centerCrop"-->
-                            <!--app:riv_corner_radius="3dip"-->
-                            <!--app:riv_oval="false" />-->
-
-
-                        <!--<customfonts.TextViewSFProDisplayRegular-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:text="Product UX Design"-->
-                            <!--android:layout_marginTop="3dp"-->
-                            <!--android:textColor="#585e66"-->
-                            <!--android:textSize="15sp"/>-->
-
-                        <!--<LinearLayout-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:orientation="horizontal">-->
-
-                            <!--<customfonts.TextViewSFProDisplaySemibold-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:text="$59.99"-->
-                                <!--android:textSize="13sp"-->
-                                <!--android:textColor="@color/black"/>-->
-
-                            <!--<ImageView-->
-                                <!--android:layout_width="10dp"-->
-                                <!--android:layout_height="10dp"-->
-                                <!--android:layout_gravity="center"-->
-                                <!--android:layout_marginLeft="5dp"-->
-                                <!--android:src="@drawable/ic_clock1"/>-->
-
-
-                            <!--<customfonts.TextViewSFProDisplayMedium-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:textColor="@color/black"-->
-                                <!--android:textSize="7sp"-->
-                                <!--android:layout_marginLeft="4dp"-->
-                                <!--android:layout_gravity="center"-->
-                                <!--android:text="29 Hours"/>-->
-                        <!--</LinearLayout>-->
-                    <!--</LinearLayout>-->
-
-                <!--</LinearLayout>-->
-
-            <!--</HorizontalScrollView>-->
 
 
 
@@ -389,209 +391,9 @@
 
             </HorizontalScrollView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:orientation="horizontal">
-
-                <customfonts.TextViewSFProDisplaySemibold
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Categories"
-                    android:textSize="17sp"/>
-
-                <customfonts.TextViewSFProDisplaySemibold
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="VIEW ALL"
-                    android:textColor="#dd3e3e"/>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal">
-
-
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="centerCrop"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_communication"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Communication"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_marketing1"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Marketing"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_content"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Content"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal">
-
-
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="centerCrop"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_ads"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Ads"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_analytics"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Analytics"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_support1"/>
-
-
-                        <customfonts.TextViewSFProDisplaySemibold
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:text="Support"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="3dp"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
         </LinearLayout>
 
     </ScrollView>
 
 </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

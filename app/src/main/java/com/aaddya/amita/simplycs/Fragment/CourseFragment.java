@@ -1,7 +1,9 @@
 package com.aaddya.amita.simplycs.Fragment;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,8 +11,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -20,6 +24,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Activity.MainActivity;
+import com.aaddya.amita.simplycs.Adapter.User_Course_List_Adapter;
+import com.aaddya.amita.simplycs.Model.UserCourse_Model_List;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,19 +53,24 @@ public class CourseFragment extends Fragment
 {
 
     TextView View_courselist;
+    TextView Course_Name;
 
+    List<UserCourse_Model_List> ListOfdataAdapter;
+    List<Course_Model_List> ListOfdataAdapter1;
 
-    List<Course_Model_List> ListOfdataAdapter;
+    RecyclerView recyclerView,recyclerView1;
+    RecyclerView.Adapter adapter,adapter1;
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
+    String Ucourse_id;
+    final ArrayList<UserCourse_Model_List> UCourse_id = new ArrayList<>();
+    int RecyclerViewItemPosition ;
 
 
     String course_id;
     final ArrayList<Course_Model_List> Course_id = new ArrayList<>();
-    int RecyclerViewItemPosition ;
+    int RecyclerViewItemPosition1 ;
 
-    LinearLayoutManager layoutManagerOfrecyclerView;
+    LinearLayoutManager layoutManagerOfrecyclerView,layoutManagerOfrecyclerView1;
 
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -78,6 +90,20 @@ public class CourseFragment extends Fragment
         rootview = inflater.inflate(R.layout.fragment_course, container, false);
 
 
+        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        toolbar.setTitle("Course");
+
+
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
@@ -93,8 +119,10 @@ public class CourseFragment extends Fragment
 
         promptDialog = new PromptDialog(getActivity());
 
+        Course_Name=(TextView)rootview.findViewById(R.id.current_course);
+
         ListOfdataAdapter = new ArrayList<>();
-        recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+        recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview);
 
         layoutManagerOfrecyclerView = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         layoutManagerOfrecyclerView.setReverseLayout(true);
@@ -102,9 +130,7 @@ public class CourseFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-
-        GetCourseList();
-
+        GetUserCourseList();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -131,7 +157,173 @@ public class CourseFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    course_id=Course_id.get(RecyclerViewItemPosition).getId();
+                    Ucourse_id=UCourse_id.get(RecyclerViewItemPosition).getId();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Are you sure you want to Switch Course?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+//                                    Toast.makeText(getActivity(), "You clicked " + course_id, Toast.LENGTH_SHORT).show();
+
+                                    pDialog.setMessage("Please Wait...");
+                                    showDialog();
+
+                                    StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/SwitchUserCourse",
+                                            new Response.Listener<String>() {
+                                                @Override
+                                                public void onResponse(String ServerResponse) {
+
+                                                    try {
+
+                                                        JSONObject jObj = new JSONObject(ServerResponse);
+                                                        String success = jObj.getString("success");
+
+                                                        if(success.equalsIgnoreCase("false"))
+                                                        {
+                                                            ((MainActivity)getActivity()).Logout();
+                                                            hideDialog();
+
+                                                        }
+                                                        else if (success.equalsIgnoreCase("true")){
+                                                            Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                                            hideDialog();
+                                                        }
+                                                        else
+                                                        {
+                                                            Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                                            hideDialog();
+                                                        }
+
+
+                                                    }
+                                                    catch (JSONException e)
+                                                    {
+
+                                                        // JSON error
+                                                        e.printStackTrace();
+                                                        Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                                        hideDialog();
+                                                    }
+
+
+                                                }
+                                            },
+                                            new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError volleyError) {
+
+                                                    // Hiding the progress dialog after all task complete.
+
+
+                                                    // Showing error message if something goes wrong.
+                                                    // Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                                                    hideDialog();
+                                                }
+                                            }) {
+
+                                        @Override
+                                        protected Map<String, String> getParams() {
+
+                                            // Creating Map String Params.
+                                            Map<String, String> params = new HashMap<String, String>();
+
+                                            // Adding All values to Params.
+                                            params.put("CourseId", Ucourse_id);
+
+                                            return params;
+                                        }
+
+                                        @Override
+                                        public Map<String, String> getHeaders() throws AuthFailureError {
+                                            Map<String, String> params = new HashMap<String, String>();
+                                            params.put("Auth", User_id);
+                                            return params;
+                                        }
+
+
+                                    };
+
+                                    // Creating RequestQueue.
+                                    RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+                                    // Adding the StringRequest object into requestQueue.
+                                    requestQueue.add(stringRequest1);
+
+
+
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
+
+
+
+
+                }
+
+
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+
+
+
+        ListOfdataAdapter1 = new ArrayList<>();
+        recyclerView1 = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
+
+        layoutManagerOfrecyclerView1 = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        layoutManagerOfrecyclerView1.setReverseLayout(true);
+        layoutManagerOfrecyclerView1.setStackFromEnd(true);
+
+        recyclerView1.setLayoutManager(layoutManagerOfrecyclerView1);
+
+        GetCourseList();
+
+
+        recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+
+            GestureDetector gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+                    return true;
+                }
+
+            });
+
+
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent)
+            {
+
+
+                rootview = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                if(rootview != null && gestureDetector.onTouchEvent(motionEvent)) {
+
+                    //Getting RecyclerView Clicked Item value.
+                    RecyclerViewItemPosition1 = Recyclerview.getChildAdapterPosition(rootview);
+
+                    course_id=Course_id.get(RecyclerViewItemPosition1).getId();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     CourseDetailFragment mfragment=new CourseDetailFragment();
@@ -183,6 +375,17 @@ public class CourseFragment extends Fragment
         return rootview;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
+
 
 
     public void GetCourseList()
@@ -222,14 +425,14 @@ public class CourseFragment extends Fragment
 
                                     Course_id.add(GetDataAdapter2);
 
-                                    ListOfdataAdapter.add(GetDataAdapter2);
+                                    ListOfdataAdapter1.add(GetDataAdapter2);
 
                                 }
 
 
 
-                                adapter = new Course_List_Adapter(ListOfdataAdapter,getActivity());
-                                recyclerView.setAdapter(adapter);
+                                adapter1 = new Course_List_Adapter(ListOfdataAdapter1,getActivity());
+                                recyclerView1.setAdapter(adapter1);
 
 
                                 hideDialog();
@@ -290,6 +493,113 @@ public class CourseFragment extends Fragment
         requestQueue.add(stringRequest1);
     }
 
+
+    public void GetUserCourseList()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetProfile",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+
+                                JSONObject user = jObj.getJSONObject("data");
+                                JSONArray jsonArray=jObj.getJSONArray("user_course");
+                                String Current_course=user.getString("cource_name");
+
+                                Course_Name.setText(Current_course);
+
+                                for(int i=0;i<jsonArray.length();i++)
+                                {
+                                    UserCourse_Model_List userCourse_model_list=new UserCourse_Model_List();
+                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
+
+
+                                    userCourse_model_list.setId(jsonObject1.getString("id"));
+                                    userCourse_model_list.setUser_courseName(jsonObject1.getString("course_name"));
+
+
+
+
+                                    UCourse_id.add(userCourse_model_list);
+
+                                    ListOfdataAdapter.add(userCourse_model_list);
+
+                                }
+
+
+
+                                adapter = new User_Course_List_Adapter(ListOfdataAdapter,getActivity());
+                                recyclerView.setAdapter(adapter);
+
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+//                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
 
 
 

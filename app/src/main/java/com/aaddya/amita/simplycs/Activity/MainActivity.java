@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Fragment.CourseFragment;
 import com.aaddya.amita.simplycs.Fragment.SettingFragment;
 import com.aaddya.amita.simplycs.R;
 import com.android.volley.AuthFailureError;
@@ -271,9 +272,9 @@ public class MainActivity extends AppCompatActivity
                 fragment = new DashboardFragment();
                 break;
 
-//            case R.id.nav_courses:
-//                fragment = new CourseFragment();
-//                break;
+            case R.id.nav_courses:
+                fragment = new CourseFragment();
+                break;
 
             case R.id.nav_profile:
                 fragment = new ProfileFragment();

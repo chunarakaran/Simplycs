@@ -48,7 +48,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText user_id, user_password;
     RequestQueue requestQueue1;
     String Url;
-    String android_id, deviceName, deviceOs, imeiNumber1="122412412414";
+    String android_id, deviceName, deviceOs;
+//    String imeiNumber1="122412412414";
 
     private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
     private TelephonyManager mTelephonyManager;
@@ -239,12 +240,12 @@ public class LoginActivity extends AppCompatActivity {
 //        }
 //    }
 
-
-    @SuppressLint({"MissingPermission", "NewApi"})
-    private void getDeviceImei() {
-        mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        imeiNumber1 = mTelephonyManager.getDeviceId(2);
-    }
+//
+//    @SuppressLint({"MissingPermission", "NewApi"})
+//    private void getDeviceImei() {
+//        mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//        imeiNumber1 = mTelephonyManager.getDeviceId(2);
+//    }
 
 
     private void check_login() {
@@ -252,7 +253,7 @@ public class LoginActivity extends AppCompatActivity {
         showDialog();
 
         StringRequest jsonobject = new StringRequest(Request.Method.POST, Url + "api/Login" + "?Email=" + user_id.getText().toString() + "&Password=" + user_password.getText().toString()
-                +"&DeviceToken="+android_id + "&OSVersion=" + deviceOs + "&IMEI=" + imeiNumber1 + "&DeviceName=" + deviceName, new Response.Listener<String>() {
+                +"&DeviceToken="+android_id + "&OSVersion=" + deviceOs +  "&DeviceName=" + deviceName, new Response.Listener<String>() {
             @Override
 
             public void onResponse(String response) {

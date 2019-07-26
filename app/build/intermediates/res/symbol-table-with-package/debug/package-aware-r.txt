@@ -1337,6 +1337,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable course
 drawable cpv_alpha
 drawable cpv_btn_background
 drawable cpv_btn_background_pressed
@@ -1796,6 +1797,7 @@ id navFolderShortcutMovies
 id navFolderShortcutMusic
 id navFolderShortcutPictures
 id navFolderShortcutSdCard
+id nav_courses
 id nav_dashboard
 id nav_logout
 id nav_profile

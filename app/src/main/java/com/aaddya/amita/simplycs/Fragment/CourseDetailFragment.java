@@ -34,7 +34,6 @@ public class CourseDetailFragment extends Fragment
 {
 
     ImageView Course_Image;
-
     TextView Course_Name,Course_Des;
 
     String Course_id;
@@ -130,7 +129,8 @@ public class CourseDetailFragment extends Fragment
                                 CourseDes=user.getString("pakage_details");
 
 
-                                Picasso.with(getActivity()).load(CourseImage).into(Course_Image);
+                                Picasso.with(getActivity()).load(CourseImage).placeholder(R.drawable.default_placeholder)
+                                        .error(R.drawable.default_placeholder).into(Course_Image);
                                 Course_Name.setText(CourseName);
                                 Course_Des.setText(Html.fromHtml(CourseDes));
 
