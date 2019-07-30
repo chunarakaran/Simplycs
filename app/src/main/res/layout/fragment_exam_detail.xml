@@ -54,7 +54,7 @@
                     android:id="@+id/exam_image"
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
-                    android:src="@drawable/img12"
+                    android:src="@drawable/default_placeholder"
                     android:scaleType="centerCrop"/>
 
             </FrameLayout>

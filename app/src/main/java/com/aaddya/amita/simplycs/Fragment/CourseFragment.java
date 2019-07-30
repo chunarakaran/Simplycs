@@ -66,8 +66,9 @@ public class CourseFragment extends Fragment
     int RecyclerViewItemPosition ;
 
 
-    String course_id;
+    String course_id,course_name;
     final ArrayList<Course_Model_List> Course_id = new ArrayList<>();
+    final ArrayList<Course_Model_List> Course_name = new ArrayList<>();
     int RecyclerViewItemPosition1 ;
 
     LinearLayoutManager layoutManagerOfrecyclerView,layoutManagerOfrecyclerView1;
@@ -324,12 +325,14 @@ public class CourseFragment extends Fragment
                     RecyclerViewItemPosition1 = Recyclerview.getChildAdapterPosition(rootview);
 
                     course_id=Course_id.get(RecyclerViewItemPosition1).getId();
+                    course_name=Course_name.get(RecyclerViewItemPosition1).getCourseTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
                     CourseDetailFragment mfragment=new CourseDetailFragment();
 
                     Bundle bundle=new Bundle();
                     bundle.putString("course_id",course_id);
+                    bundle.putString("course_name",course_name);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
@@ -410,22 +413,23 @@ public class CourseFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("package");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    Course_Model_List GetDataAdapter2=new Course_Model_List();
+                                    Course_Model_List course_model_list=new Course_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-                                    GetDataAdapter2.setImageUrl(jsonObject1.getString("file_path"));
-                                    GetDataAdapter2.setCourseTitle(jsonObject1.getString("package_name"));
-                                    GetDataAdapter2.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
-                                    GetDataAdapter2.setCoursePrice(jsonObject1.getString("package_price"));
-                                    GetDataAdapter2.setCourseDiscount(jsonObject1.getString("discount_percentage"));
+                                    course_model_list.setId(jsonObject1.getString("id"));
+                                    course_model_list.setImageUrl(jsonObject1.getString("file_path"));
+                                    course_model_list.setCourseTitle(jsonObject1.getString("package_name"));
+                                    course_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
+                                    course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
+                                    course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
 
 
 
-                                    Course_id.add(GetDataAdapter2);
+                                    Course_id.add(course_model_list);
+                                    Course_name.add(course_model_list);
 
-                                    ListOfdataAdapter1.add(GetDataAdapter2);
+                                    ListOfdataAdapter1.add(course_model_list);
 
                                 }
 

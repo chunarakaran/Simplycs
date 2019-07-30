@@ -399,6 +399,7 @@ public class MainActivity extends AppCompatActivity
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
+
                             if(success.equalsIgnoreCase("true"))
                             {
 //                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
@@ -416,7 +417,27 @@ public class MainActivity extends AppCompatActivity
 
                             }
                             else if (success.equalsIgnoreCase("false")){
-                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                String errorcode = jObj.getString("error_code");
+
+                                if (errorcode.equalsIgnoreCase("-1")){
+//                                    Toast.makeText(getApplicationContext(), "Re-Login", Toast.LENGTH_LONG).show();
+
+                                    promptDialog.setCancelable(false);
+                                    promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_INFO);
+                                    promptDialog.setAnimationEnable(true);
+                                    promptDialog.setTitleText("Please Re-Login");
+                                    promptDialog.setContentText("You Are Logged in another device Please Re-login");
+                                    promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+                                        @Override
+                                        public void onClick(PromptDialog dialog) {
+                                            logoutUser();
+                                        }
+                                    }).show();
+
+                                }
+
                                 hideDialog();
                             }
                             else

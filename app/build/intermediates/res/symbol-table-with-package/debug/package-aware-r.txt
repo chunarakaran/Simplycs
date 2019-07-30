@@ -1463,7 +1463,6 @@ drawable ic_text_format_white_48dp
 drawable ic_today
 drawable ic_undo_white_48dp
 drawable iconpdf64
-drawable img12
 drawable learn
 drawable list_item_background
 drawable login_logo
@@ -1487,9 +1486,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable p2
 drawable patience
-drawable radio_bg
-drawable radiobutton
-drawable radiobuttonselect
 drawable rect_grayoutline1
 drawable rect_yellow1
 drawable round_button
@@ -1535,6 +1531,7 @@ font sofia_regular
 id ALT
 id CTRL
 id ContentTitle
+id Course_enrrol
 id FUNCTION
 id META
 id Profile_pic
