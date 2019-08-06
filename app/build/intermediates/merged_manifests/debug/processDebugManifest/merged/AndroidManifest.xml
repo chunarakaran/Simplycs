@@ -21,7 +21,6 @@
     <application
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
-        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -89,6 +88,7 @@
         <activity android:name="com.aaddya.amita.simplycs.Activity.PDFViewActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.CheckoutActivity" />
 
         <service
             android:name="net.gotev.uploadservice.UploadService"
@@ -182,6 +182,13 @@
             android:name="com.keenfin.audioview.AudioService"
             android:enabled="true"
             android:exported="true" />
+
+        <activity
+            android:name="com.gocashfree.cashfreesdk.CFPaymentActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.gocashfree.cashfreesdk.CFUPIPaymentActivity" />
+        <activity android:name="com.gocashfree.cashfreesdk.AmazonPayActivity" />
+        <activity android:name="com.gocashfree.cashfreesdk.GooglePayActivity" />
     </application>
 
 </manifest>

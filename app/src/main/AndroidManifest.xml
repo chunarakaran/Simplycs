@@ -77,8 +77,9 @@
         <activity android:name="com.aaddya.amita.simplycs.Activity.VideoPlayerActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.TheoryViewActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.PDFViewActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity"></activity>
+        <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity"/>
         <activity android:name="com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity"/>
+        <activity android:name="com.aaddya.amita.simplycs.Activity.CheckoutActivity"/>
     </application>
 
 </manifest>

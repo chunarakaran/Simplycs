@@ -26,21 +26,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="55dp"
-    android:background="#f8f8f8">
 
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/swipe_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
 
 
 
+    </RelativeLayout>
 
-    </ScrollView>
-
-</RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

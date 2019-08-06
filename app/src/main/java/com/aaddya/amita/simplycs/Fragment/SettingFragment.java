@@ -1,63 +1,29 @@
 package com.aaddya.amita.simplycs.Fragment;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
+
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
-import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
 
-import com.aaddya.amita.simplycs.Activity.MainActivity;
-import com.aaddya.amita.simplycs.Adapter.Course_List_Adapter;
-import com.aaddya.amita.simplycs.Adapter.User_Course_List_Adapter;
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
-import com.aaddya.amita.simplycs.Model.UserCourse_Model_List;
 import com.aaddya.amita.simplycs.R;
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import cn.refactor.lib.colordialog.PromptDialog;
 
 public class SettingFragment extends Fragment
 {
 
-
     String User_id;
     public static final String PREFS_NAME = "login";
-
 
     View rootview;
     @Override
@@ -82,6 +48,7 @@ public class SettingFragment extends Fragment
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+
 
 
 
@@ -127,6 +94,5 @@ public class SettingFragment extends Fragment
 
         return isConnected;
     }
-
 
 }
