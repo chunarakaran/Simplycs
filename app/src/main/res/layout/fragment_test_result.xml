@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:orientation="vertical">
+    tools:context=".Activity.TestResultActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentInsetStartWithNavigation="0dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-    </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true">
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvPIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/material_global_margin_8"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:id="@+id/lyt_graph"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPIndex">
 
                 <View
                     android:id="@+id/view_0"
                     android:layout_width="match_parent"
                     android:layout_height="0.7dp"
-                    android:layout_below="@+id/piechart"
+                    android:layout_below="@+id/liColor"
                     android:background="@color/colorPrimary" />
 
                 <LinearLayout
@@ -65,7 +58,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="Score"/>
+                            android:text="Score" />
 
                         <TextView
                             android:id="@+id/txt_score"
@@ -73,6 +66,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/score_prompt"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="-1dp"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             tools:text="70 / 100" />
@@ -139,30 +133,150 @@
                     android:layout_below="@id/score_container"
                     android:background="@color/colorPrimary" />
 
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/piechart"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
 
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/space5" />
+
+                <LinearLayout
+                    android:id="@+id/liColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/barchart"
+                    android:layout_marginBottom="@dimen/space10"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/space10">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@color/green"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space5"
+                        android:layout_marginRight="@dimen/space5"
+                        android:text="Right"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@color/red"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space5"
+                        android:layout_marginRight="@dimen/space5"
+                        android:text="Wrong"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@color/yellow"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space5"
+                        android:text="Skipped"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/greeting_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_graph"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="Greeting message" />
+
+
+            <RelativeLayout
+                android:id="@+id/relPindex"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/greeting_text"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_border_blue"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Performance Index"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/imgpIndex"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_expand_more_gray" />
 
             </RelativeLayout>
 
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvContentScore"
+            <LinearLayout
+                android:id="@+id/liChartPindex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/lyt_graph"
-                android:layout_margin="15dp"
-                android:background="@color/white" />
+                android:layout_below="@id/relPindex"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/gray_chart"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/linechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/liChartPindex"
+                android:layout_marginLeft="10dp"
+                android:text="Test Preview"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPreview"
+                android:layout_marginTop="@dimen/space5"
+                tools:listitem="@layout/custom_test_result_list_row">
+
+            </android.support.v7.widget.RecyclerView>
+
 
         </RelativeLayout>
 
     </ScrollView>
-
-
 
 
 </LinearLayout>

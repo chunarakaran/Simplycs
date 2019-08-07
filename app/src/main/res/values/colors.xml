@@ -8,6 +8,7 @@
     <color name="black">#000000</color>
     <color name="green">#007000</color>
     <color name="red">#FF0000</color>
+    <color name="yellow">#ffff00</color>
     <color name="textColrHint">#969696</color>
     <color name="windowBackground">#FFFFFF</color>
 
@@ -58,6 +59,7 @@
     <color name="grey_5">#f2f2f2</color>
     <color name="grey_10">#e6e6e6</color>
     <color name="grey_80">#37474F</color>
+    <color name="gray_chart">#F5F5F5</color>
 
 
 </resources>

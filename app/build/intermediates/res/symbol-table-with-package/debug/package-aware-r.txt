@@ -95,6 +95,16 @@ attr backgroundStacked
 attr backgroundTint
 attr backgroundTintMode
 attr barLength
+attr bar_color
+attr bar_max_value
+attr bar_show_animation
+attr bar_show_auto_color
+attr bar_show_value
+attr bar_spaces
+attr bar_text_color
+attr bar_text_size
+attr bar_type
+attr bar_width
 attr barrierAllowsGoneWidgets
 attr barrierDirection
 attr behavior_autoHide
@@ -782,6 +792,7 @@ color file_chooser_dialog_navigation_menu_items_icon_tint_color
 color foreground_material_dark
 color foreground_material_light
 color gray
+color gray_chart
 color green
 color grey_10
 color grey_5
@@ -870,6 +881,7 @@ color transparent
 color unselected_item_text_color
 color white
 color windowBackground
+color yellow
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1345,6 +1357,7 @@ drawable cpv_ic_arrow_right_black_24dp
 drawable cpv_preset_checked
 drawable curved_shape
 drawable curved_shape2
+drawable custom_border_blue
 drawable customer_service
 drawable dark_circle_green
 drawable dark_circle_grey
@@ -1397,6 +1410,7 @@ drawable ic_check_circle_36dp
 drawable ic_chevron_left
 drawable ic_chevron_right
 drawable ic_chevron_right_black_48dp
+drawable ic_circle_gray
 drawable ic_clear_white_48dp
 drawable ic_clock1
 drawable ic_close
@@ -1404,6 +1418,8 @@ drawable ic_communication
 drawable ic_content
 drawable ic_dashboard_black_24dp
 drawable ic_exit_to_app_black_24dp
+drawable ic_expand_less_gray
+drawable ic_expand_more_gray
 drawable ic_fast_forward_black_24dp
 drawable ic_fast_rewind_black_24dp
 drawable ic_font_download_white_48dp
@@ -1455,6 +1471,7 @@ drawable ic_play_arrow_white_24dp
 drawable ic_play_circle_outline_black_24dp
 drawable ic_previousday
 drawable ic_redo_white_48dp
+drawable ic_right_green
 drawable ic_search_white_48dp
 drawable ic_sentiment_dissatisfied
 drawable ic_support1
@@ -1462,6 +1479,7 @@ drawable ic_swipe_right_caret
 drawable ic_text_format_white_48dp
 drawable ic_today
 drawable ic_undo_white_48dp
+drawable ic_wrong_red
 drawable iconpdf64
 drawable learn
 drawable list_item_background
@@ -1488,6 +1506,7 @@ drawable p2
 drawable patience
 drawable rect_grayoutline1
 drawable rect_yellow1
+drawable right_green
 drawable round_button
 drawable rounded_edittext
 drawable sel_btn
@@ -1517,6 +1536,7 @@ drawable watch
 drawable waves
 drawable webinars
 drawable white_rect
+drawable wrong_red
 font maven_pro_bold
 font maven_pro_medium
 font maven_pro_regular
@@ -1579,6 +1599,7 @@ id auto
 id backLogin
 id banar1
 id bankcardId
+id barchart
 id barrier
 id basicTextStylesToolbar
 id beginning
@@ -1709,21 +1730,28 @@ id gender
 id ghost_view
 id gifImageView
 id gone
+id greeting_text
 id gridView
 id group_divider
 id groups
 id home
 id homeAsUp
+id horizontal
 id icon
 id icon_group
 id icon_only
 id ifRoom
 id image
 id imageView
+id img1
+id img2
+id img3
+id img4
 id imgActionIcon
 id imgIcon
 id imgIsSelected
 id imgPreviewImage
+id imgpIndex
 id indeterminate
 id info
 id input_ConfPass
@@ -1754,12 +1782,17 @@ id layoutDots
 id left
 id leftBottom
 id leftTop
+id liChartPindex
+id liColor
+id liOption
 id light
 id lin_lay
 id line1
 id line3
 id linear
 id linearLayout_swipeBtn_hintContainer
+id linear_bar
+id linechart
 id listMode
 id list_item
 id listview_background_shape
@@ -1788,6 +1821,7 @@ id mirror
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id my_recycler_view
 id navFolderShortcutCameraPhotos
 id navFolderShortcutDocuments
 id navFolderShortcutDownloads
@@ -1831,7 +1865,6 @@ id pdfView
 id pdf_title
 id percent
 id phone
-id piechart
 id pin
 id play
 id positiveBtn
@@ -1841,6 +1874,7 @@ id progress_circular
 id progress_horizontal
 id progress_web_view
 id progressbar
+id question_frame
 id radio
 id radio1
 id radio2
@@ -1852,6 +1886,7 @@ id radiogrp
 id recyclerview
 id recyclerview1
 id regular
+id relPindex
 id relativeLayout
 id relativeLayout_swipeBtn_contentContainer
 id relativelayout1
@@ -1862,7 +1897,6 @@ id rightBottom
 id rightTop
 id right_icon
 id right_side
-id rvContentScore
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1965,7 +1999,15 @@ id transparency_text
 id transparency_title
 id triangle_view
 id tvContent
+id tvOption1
+id tvOption2
+id tvOption3
+id tvOption4
+id tvPIndex
+id tvPreview
+id tvTimer
 id tvTitle
+id tv_bar
 id tv_btnText
 id txtActionTitle
 id txtAlternateTextLabel
@@ -1996,6 +2038,7 @@ id user_mobile
 id user_name
 id username1
 id userpassword
+id vertical
 id video_duration_label
 id video_thumbnail_image_view
 id video_title_label
@@ -2080,6 +2123,8 @@ layout activity_welcome
 layout app_bar_main
 layout audioview
 layout audioview_min
+layout bar_horizontal
+layout bar_vertical
 layout content_main
 layout contextual_action_mode_item_action_layout
 layout cpv_color_item_circle
@@ -2090,6 +2135,7 @@ layout cpv_preference_circle
 layout cpv_preference_circle_large
 layout cpv_preference_square
 layout cpv_preference_square_large
+layout custom_test_result_list_row
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2131,6 +2177,7 @@ layout fragment_question
 layout fragment_setting
 layout fragment_startquiz
 layout fragment_subcategorylist
+layout fragment_test_questions
 layout fragment_test_result
 layout fragment_testlist
 layout fragment_theory_view
@@ -2176,6 +2223,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_list_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2942,6 +2990,7 @@ styleable AppCompatTextHelper android_textAppearance android_drawableTop android
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable AvatarView avatarSize avatarSrc labelSrc showLabel
+styleable BarChart bar_color bar_max_value bar_show_animation bar_show_auto_color bar_show_value bar_spaces bar_text_color bar_text_size bar_type bar_width
 styleable BaseAudioView minified primaryColor selectControls showTitle
 styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
