@@ -60,7 +60,7 @@ public class QuestionFragment extends Fragment {
 
     TextView txt_timer;
     LinearLayout empty_view;
-    String exam_id, exam_title, exam_duration;
+
 
     Button btn_Previous, btn_Next, btn_submit;
 
@@ -108,6 +108,7 @@ public class QuestionFragment extends Fragment {
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+
                                 dialog.cancel();
                             }
                         });
@@ -156,6 +157,7 @@ public class QuestionFragment extends Fragment {
 
             public void onFinish() {
                 txt_timer.setText("TIME'S UP!!"); //On finish change timer text
+                Submit();
             }
         }.start();
         rowListItem = new ArrayList<Quetion_Model_List>();

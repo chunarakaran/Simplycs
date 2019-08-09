@@ -48,6 +48,7 @@ import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -214,6 +215,9 @@ public class TestResultActivity extends AppCompatActivity {
                                     IndexList.add(p);
 
                                 }
+
+                                Collections.reverse(IndexList);
+
                                 setData();
 
                                 hideDialog();

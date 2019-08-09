@@ -19,10 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aaddya.amita.simplycs.Activity.AudioPlayerActivity;
 import com.aaddya.amita.simplycs.Activity.CheckoutActivity;
-import com.aaddya.amita.simplycs.Activity.LoginActivity;
-import com.aaddya.amita.simplycs.Activity.SignupActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,8 +28,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aaddya.amita.simplycs.R;
-import com.gocashfree.cashfreesdk.CFClientInterface;
-import com.gocashfree.cashfreesdk.CFPaymentService;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -40,9 +35,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import cn.refactor.lib.colordialog.PromptDialog;
-
 
 public class CourseDetailFragment extends Fragment
 {

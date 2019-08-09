@@ -39,7 +39,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
          * check the documentation for details on generating the token.
          * READ THIS TO GENERATE TOKEN: https://bit.ly/2RGV3Pp
          */
-        String token = "";
+        String token = "xR9JCN4MzUIJiOicGbhJCLiQ1VKJiOiAXe0Jye.sd9JiZ0E2N1YWOkFWY0QWNiojI0xWYz9lIskTOxcjN3cjN1EjOiAHelJCLiIlTJJiOik3YuVmcyV3QyVGZy9mIsICMwATNxIiOiQnb19WbBJXZkJ3biwiI1ADMwIXZkJ3TiojIklkclRmcvJye.8P6vmjbk-QsKdFjtnuDUfdLtUF0Eoy-3hJaYRtO7IjdDOR59MzK8JJXbIrUdFeONLd";
 
 
         /*
@@ -65,8 +65,8 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
          * credentials before publishing your app.
          */
         String appId = "68212f7159d06c5bf95ab2231286";
-        String orderId = "Order0001";
-        String orderAmount = "1";
+        String orderId = "Order0005";
+        String orderAmount = "15000";
         String orderNote = "Test Order";
         String customerName = "John Doe";
         String customerPhone = "9900012345";
