@@ -64,7 +64,7 @@ public class QuestionFragment extends Fragment {
 
     Button btn_Previous, btn_Next, btn_submit;
 
-    String Test_id, test_name, test_duration, test_marks;
+    String CDate,Category_id,SubCategory_id,Test_id, test_name, test_duration, test_marks;
     String URL;
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -85,9 +85,23 @@ public class QuestionFragment extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         rootview = inflater.inflate(R.layout.fragment_question, container, false);
 
+        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        User_id = sp.getString("User", "");
+        URL = getString(R.string.url);
+
+
+        Bundle bundle = getArguments();
+        Category_id=String.valueOf(bundle.getString("category_id"));
+        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
+        CDate=String.valueOf(bundle.getString("CDate"));
+        Test_id = String.valueOf(bundle.getString("test_id"));
+        test_name = String.valueOf(bundle.getString("test_name"));
+        test_duration = String.valueOf(bundle.getString("test_duration"));
+        test_marks = String.valueOf(bundle.getString("test_marks"));
+
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,17 +131,6 @@ public class QuestionFragment extends Fragment {
             }
         });
 
-
-        SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
-        SharedPreferences.Editor e = sp.edit();
-        User_id = sp.getString("User", "");
-        URL = getString(R.string.url);
-
-        Bundle bundle = getArguments();
-        Test_id = String.valueOf(bundle.getString("test_id"));
-        test_name = String.valueOf(bundle.getString("test_name"));
-        test_duration = String.valueOf(bundle.getString("test_duration"));
-        test_marks = String.valueOf(bundle.getString("test_marks"));
 
         toolbar.setTitle(test_name);
 
@@ -233,6 +236,21 @@ public class QuestionFragment extends Fragment {
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+
+//                                FragmentTransaction transection=getFragmentManager().beginTransaction();
+//                                TestListFragment mfragment=new TestListFragment();
+//
+//                                Bundle bundle=new Bundle();
+//                                bundle.putString("category_id",Category_id);
+//                                bundle.putString("SubCategory_id",SubCategory_id);
+//                                bundle.putString("CDate",CDate);
+////                                bundle.putString("SubCategory_name",SubCategory_name);
+//                                mfragment.setArguments(bundle);
+//
+//                                transection.replace(R.id.content_frame, mfragment);
+//                                transection.commit();
+//
+//                                getActivity().finish();
                                 dialog.cancel();
                             }
                         });

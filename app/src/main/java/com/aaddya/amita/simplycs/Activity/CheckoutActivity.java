@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
+import com.aaddya.amita.simplycs.Utils.Constants;
 import com.gocashfree.cashfreesdk.CFClientInterface;
 import com.gocashfree.cashfreesdk.CFPaymentService;
 
@@ -26,10 +28,21 @@ import static com.gocashfree.cashfreesdk.CFPaymentService.PARAM_ORDER_NOTE;
 
 public class CheckoutActivity extends AppCompatActivity implements CFClientInterface {
 
+    String User_id,cftoken,Order_id,Order_Amount;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+
+        User_id = getIntent().getStringExtra("User_id");
+        cftoken = getIntent().getStringExtra("cftoken");
+        Order_id = getIntent().getStringExtra("Order_id");
+        Order_Amount = getIntent().getStringExtra("Order_Amount");
+
+        Toast.makeText(getApplicationContext(),Order_Amount,Toast.LENGTH_SHORT).show();
 
     }
 
@@ -39,7 +52,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
          * check the documentation for details on generating the token.
          * READ THIS TO GENERATE TOKEN: https://bit.ly/2RGV3Pp
          */
-        String token = "xR9JCN4MzUIJiOicGbhJCLiQ1VKJiOiAXe0Jye.sd9JiZ0E2N1YWOkFWY0QWNiojI0xWYz9lIskTOxcjN3cjN1EjOiAHelJCLiIlTJJiOik3YuVmcyV3QyVGZy9mIsICMwATNxIiOiQnb19WbBJXZkJ3biwiI1ADMwIXZkJ3TiojIklkclRmcvJye.8P6vmjbk-QsKdFjtnuDUfdLtUF0Eoy-3hJaYRtO7IjdDOR59MzK8JJXbIrUdFeONLd";
+        String token = cftoken;
 
 
         /*
@@ -64,9 +77,9 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
          * Also, as explained below you will need to change your appId to prod
          * credentials before publishing your app.
          */
-        String appId = "68212f7159d06c5bf95ab2231286";
-        String orderId = "Order0005";
-        String orderAmount = "15000";
+        String appId = Constants.APP_ID;
+        String orderId = Order_id;
+        String orderAmount = Order_Amount;
         String orderNote = "Test Order";
         String customerName = "John Doe";
         String customerPhone = "9900012345";

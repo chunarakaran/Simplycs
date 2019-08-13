@@ -44,7 +44,7 @@ public class CourseDetailFragment extends Fragment
     Button Course_Enroll;
 
     String Course_id,course_name;
-    String cftoken;
+    String Order_id,cftoken,Order_Amount;
     String User_id;
     public static final String PREFS_NAME = "login";
 
@@ -100,11 +100,106 @@ public class CourseDetailFragment extends Fragment
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getActivity(),"Submit",Toast.LENGTH_SHORT).show();
-                GenerateToken();
 
-                startActivity(new Intent(getActivity(), CheckoutActivity.class)
-                        .putExtra("User_id", User_id)
-                        .putExtra("cftoken",cftoken));
+                Order_Amount=Course_Price.getText().toString();
+
+
+                pDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
+                showDialog();
+
+                // Creating string request with post method.
+                StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GenerateToken",
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String ServerResponse) {
+                                hideDialog();
+
+                                try {
+
+                                    JSONObject jObj = new JSONObject(ServerResponse);
+                                    String success = jObj.getString("success");
+                                    Order_id=jObj.getString("OrderId");
+
+                                    if(success.equalsIgnoreCase("true"))
+                                    {
+
+                                        JSONObject data = jObj.getJSONObject("data");
+                                        cftoken=data.getString("cftoken");
+
+                                        startActivity(new Intent(getActivity(), CheckoutActivity.class)
+                                                .putExtra("User_id", User_id)
+                                                .putExtra("Order_id",Order_id)
+                                                .putExtra("cftoken",cftoken)
+                                                .putExtra("Order_Amount",Order_Amount)
+                                        );
+
+
+
+                                    }
+                                    else {
+
+                                        JSONObject error = jObj.getJSONObject("error");
+                                        String msg = String.valueOf(error.getJSONArray("Email"));
+
+                                        Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+                                    }
+
+
+                                }
+                                catch (JSONException e)
+                                {
+
+                                    // JSON error
+                                    e.printStackTrace();
+                                    Toast.makeText(getActivity(), "server error" , Toast.LENGTH_LONG).show();
+                                }
+
+
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+
+                                // Hiding the progress dialog after all task complete.
+                                hideDialog();
+
+                                // Showing error message if something goes wrong.
+                                Toast.makeText(getActivity(), "error", Toast.LENGTH_LONG).show();
+                            }
+                        }) {
+
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("Auth", User_id);
+                        return params;
+                    }
+
+                    @Override
+                    protected Map<String, String> getParams() {
+
+                        // Creating Map String Params.
+                        Map<String, String> params = new HashMap<String, String>();
+
+                        // Adding All values to Params.
+
+                        //Company
+
+                        params.put("OrderAmount",Order_Amount);
+                        params.put("OrderCurrency", "INR");
+
+
+                        return params;
+                    }
+
+                };
+
+                // Creating RequestQueue.
+                RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+                // Adding the StringRequest object into requestQueue.
+                requestQueue.add(stringRequest1);
 
             }
         });
@@ -187,7 +282,7 @@ public class CourseDetailFragment extends Fragment
                                         .error(R.drawable.default_placeholder).into(Course_Image);
                                 Course_Name.setText(CourseName);
                                 Course_Des.setText(Html.fromHtml(CourseDes));
-                                Course_Price.setText("\u20B9 "+CoursePrice);
+                                Course_Price.setText(CoursePrice);
 
 
                                 hideDialog();
@@ -277,6 +372,7 @@ public class CourseDetailFragment extends Fragment
 
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
+                            Order_id=jObj.getString("OrderId");
 
                             if(success.equalsIgnoreCase("true"))
                             {
