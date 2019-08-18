@@ -11,46 +11,166 @@
     android:paddingTop="5dp"
     tools:context=".Activity.CheckoutActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Sample Checkout Page"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/username1"
+                android:textSize="15sp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="Course Name"
+                android:textColor="@color/black"
+                android:maxLength="12"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/course_name"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#181737"
+                android:textColor="#181737"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="right"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/email"
+                android:textSize="15dp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="Transaction Id"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/transaction_id"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#181737"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="right"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/phone"
+                android:textSize="15dp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/amount"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#181737"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="right"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+
+
+?
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="16dp"
-        android:text="Pay Rs 1 by clicking the button below " />
-    <Button
-        android:id="@+id/button_pg2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button_pg"
-        android:layout_marginTop="15dp"
-        android:onClick="upiPayment"
-        android:text="UPI Intent Payment" />
-    <Button
-        android:id="@+id/button_pg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="112dp"
-        android:onClick="doPayment"
-        android:text="Card/UPI/Netbanking Payment" />
+        android:background="@color/white"
+        android:layout_margin="12sp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <customfonts.Button_SF_Pro_Display_Semibold
+            android:id="@+id/button_pg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="doPayment"
+            android:text="PROCEED TO ENROLL"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:padding="12dp"
+            android:background="@drawable/blue_rect"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
 </RelativeLayout>

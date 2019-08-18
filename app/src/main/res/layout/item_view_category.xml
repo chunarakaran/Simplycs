@@ -38,7 +38,7 @@
                     android:id="@+id/item_image"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/ic_today"
+                    android:src="@drawable/default_placeholder"
                     android:scaleType="fitCenter"
                     android:padding="2dp"/>
                 <View

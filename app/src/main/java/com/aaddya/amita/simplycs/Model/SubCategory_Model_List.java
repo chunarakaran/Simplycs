@@ -5,6 +5,7 @@ public class SubCategory_Model_List {
     public String id;
     public String ImageURL;
     public String ImageTitle;
+    public String Paid;
     boolean isNew;
 
 
@@ -37,6 +38,15 @@ public class SubCategory_Model_List {
     public void setImageTitle(String Imagetitlename) {
 
         this.ImageTitle = Imagetitlename;
+    }
+
+    public String getPaidStatus(){
+
+        return Paid;
+    }
+
+    public void setPaidStatus(String paidStatus){
+        this.Paid=paidStatus;
     }
 
 }

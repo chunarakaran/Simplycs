@@ -50,8 +50,6 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         SubCategory_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
-//        Theory_Model_List theory_model_list=
-
         int datasize=dataAdapters.size();
 
 //        if(position==dataAdapters.size()-1){
@@ -79,12 +77,20 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
 
         Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
 
-        Viewholder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Viewholder.triangleLabelView.setVisibility(View.GONE);
-            }
-        });
+        if (dataAdapterOBJ.getPaidStatus().equalsIgnoreCase("yes")){
+
+            Viewholder.PremiumView.setVisibility(View.VISIBLE);
+        }
+        else{
+            Viewholder.PremiumView.setVisibility(View.GONE);
+        }
+
+//        Viewholder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Viewholder.triangleLabelView.setVisibility(View.GONE);
+//            }
+//        });
 
     }
 
@@ -97,7 +103,7 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
     class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView ImageTitleTextView;
-        public ImageView imageView;
+        public ImageView imageView,PremiumView;
         public TriangleLabelView triangleLabelView;
 
         public ViewHolder(View itemView) {
@@ -107,6 +113,7 @@ public class SubCategory_List_Adapter extends RecyclerView.Adapter<SubCategory_L
             ImageTitleTextView = (TextView) itemView.findViewById(R.id.topic_title) ;
             imageView=(ImageView)itemView.findViewById(R.id.item_image);
             triangleLabelView=(TriangleLabelView)itemView.findViewById(R.id.triangle_view);
+            PremiumView=(ImageView)itemView.findViewById(R.id.premium_view);
 
         }
     }

@@ -1,18 +1,30 @@
 package com.aaddya.amita.simplycs.Activity;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.Utils.Constants;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.gocashfree.cashfreesdk.CFClientInterface;
 import com.gocashfree.cashfreesdk.CFPaymentService;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +40,15 @@ import static com.gocashfree.cashfreesdk.CFPaymentService.PARAM_ORDER_NOTE;
 
 public class CheckoutActivity extends AppCompatActivity implements CFClientInterface {
 
-    String User_id,cftoken,Order_id,Order_Amount;
+    String User_id,cftoken,Order_id,Order_Amount,CustomerName,CustomerPhone,CustomerEmail,course_name,jChapter_id;
+
+    TextView CourseName,Amount,TransactionId;
+
+
+    //volley
+    RequestQueue requestQueue;
+    String URL;
+    private ProgressDialog pDialog;
 
 
     @Override
@@ -37,13 +57,40 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         setContentView(R.layout.activity_checkout);
 
 
+        requestQueue = Volley.newRequestQueue(this);
+        URL = getString(R.string.url);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
+
         User_id = getIntent().getStringExtra("User_id");
         cftoken = getIntent().getStringExtra("cftoken");
         Order_id = getIntent().getStringExtra("Order_id");
         Order_Amount = getIntent().getStringExtra("Order_Amount");
+        CustomerName = getIntent().getStringExtra("CustomerName");
+        CustomerPhone = getIntent().getStringExtra("CustomerPhone");
+        CustomerEmail = getIntent().getStringExtra("CustomerEmail");
+        course_name =getIntent().getStringExtra("course_name");
+        jChapter_id=getIntent().getStringExtra("jChapter_id");
 
-        Toast.makeText(getApplicationContext(),Order_Amount,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),jChapter_id,Toast.LENGTH_SHORT).show();
 
+        Initialization();
+
+
+    }
+
+    public void Initialization(){
+
+        CourseName=(TextView)findViewById(R.id.course_name);
+        TransactionId=(TextView)findViewById(R.id.transaction_id);
+        Amount=(TextView)findViewById(R.id.amount);
+
+        CourseName.setText(course_name);
+        TransactionId.setText(Order_id);
+        Amount.setText("\u20B9 "+Order_Amount);
     }
 
     private void triggerPayment(boolean isUpiIntent) throws JSONException, JSONException {
@@ -81,9 +128,9 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         String orderId = Order_id;
         String orderAmount = Order_Amount;
         String orderNote = "Test Order";
-        String customerName = "John Doe";
-        String customerPhone = "9900012345";
-        String customerEmail = "test@gmail.com";
+        String customerName = CustomerName;
+        String customerPhone = CustomerPhone;
+        String customerEmail = CustomerEmail;
 
         Map<String, String> params = new HashMap<>();
 
@@ -127,6 +174,9 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
     @Override
     public void onSuccess(Map<String, String> map) {
         Log.d("CFSDKSample", "Payment Success");
+
+
+
     }
 
     @Override
@@ -138,5 +188,111 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
     public void onNavigateBack() {
         Log.d("CFSDKSample", "Back Pressed");
     }
+
+
+    public void SuccessPayment()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetPackagedetails",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                JSONObject user = jObj.getJSONObject("package");
+
+
+
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("Auth", Order_id);
+
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
+
+
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
+
 }
 

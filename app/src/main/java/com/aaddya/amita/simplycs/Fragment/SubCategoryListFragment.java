@@ -299,22 +299,24 @@ public class SubCategoryListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    SubCategory_Model_List GetDataAdapter2=new SubCategory_Model_List();
+                                    SubCategory_Model_List subCategory_model_list=new SubCategory_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-                                    GetDataAdapter2.setImageTitle(jsonObject1.getString("subtopic_name"));
-                                    GetDataAdapter2.setImageUrl(jsonObject1.getString("image"));
+                                    subCategory_model_list.setId(jsonObject1.getString("id"));
+                                    subCategory_model_list.setImageTitle(jsonObject1.getString("subtopic_name"));
+                                    subCategory_model_list.setImageUrl(jsonObject1.getString("image"));
+                                    subCategory_model_list.setPaidStatus(jsonObject1.getString("is_paid"));
 
 
 
-                                    SubCategoryid.add(GetDataAdapter2);
 
-                                    SubCategoryName.add(GetDataAdapter2);
+                                    SubCategoryid.add(subCategory_model_list);
+
+                                    SubCategoryName.add(subCategory_model_list);
 
 
-                                    ListOfdataAdapter.add(GetDataAdapter2);
+                                    ListOfdataAdapter.add(subCategory_model_list);
 
                                 }
 
