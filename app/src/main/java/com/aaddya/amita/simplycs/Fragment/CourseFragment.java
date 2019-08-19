@@ -54,7 +54,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class CourseFragment extends Fragment
 {
 
-    TextView View_courselist;
+    TextView Add_More,View_courselist;
     TextView Course_Name;
 
     List<UserCourse_Model_List> ListOfdataAdapter;
@@ -383,6 +383,23 @@ public class CourseFragment extends Fragment
                 CourseListFragment mfragment=new CourseListFragment();
                 transection.replace(R.id.content_frame, mfragment);
                 transection.addToBackStack(null).commit();
+            }
+        });
+
+        Add_More=(TextView)rootview.findViewById(R.id.add_more);
+
+        Add_More.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Toast.makeText(getActivity(),"Hello",Toast.LENGTH_SHORT).show();
+
+                FragmentTransaction transection=getFragmentManager().beginTransaction();
+                AddCoursesFragment mfragment=new AddCoursesFragment();
+                transection.replace(R.id.content_frame, mfragment);
+                transection.addToBackStack(null).commit();
+
+
             }
         });
 

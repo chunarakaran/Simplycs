@@ -60,6 +60,7 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
     implementation 'com.github.shts:TriangleLabelView:1.1.2'
+    implementation 'com.github.mahimrocky:TagView:1.0.1'
 
     implementation 'in.shadowfax:proswipebutton:1.1'
 

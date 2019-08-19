@@ -74,6 +74,8 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignContent
+attr alignItems
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
@@ -186,6 +188,7 @@ attr closeIconStartPadding
 attr closeIconTint
 attr closeIconVisible
 attr closeItemLayout
+attr close_icon
 attr collapseContentDescription
 attr collapseIcon
 attr collapsedTitleGravity
@@ -251,6 +254,9 @@ attr dialogPreferredPadding
 attr dialogTheme
 attr displayOptions
 attr divider
+attr dividerDrawable
+attr dividerDrawableHorizontal
+attr dividerDrawableVertical
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
@@ -288,6 +294,8 @@ attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
 attr firstBaselineToTopHeight
+attr flexDirection
+attr flexWrap
 attr floatingActionButtonStyle
 attr font
 attr fontFamily
@@ -348,6 +356,7 @@ attr itemTextAppearance
 attr itemTextAppearanceActive
 attr itemTextAppearanceInactive
 attr itemTextColor
+attr justifyContent
 attr keylines
 attr labelBottomPadding
 attr labelCenterPadding
@@ -357,6 +366,7 @@ attr labelVisibilityMode
 attr lastBaselineToBottomHeight
 attr layout
 attr layoutManager
+attr layout_alignSelf
 attr layout_anchor
 attr layout_anchorGravity
 attr layout_behavior
@@ -406,6 +416,9 @@ attr layout_constraintWidth_percent
 attr layout_dodgeInsetEdges
 attr layout_editor_absoluteX
 attr layout_editor_absoluteY
+attr layout_flexBasisPercent
+attr layout_flexGrow
+attr layout_flexShrink
 attr layout_goneMarginBottom
 attr layout_goneMarginEnd
 attr layout_goneMarginLeft
@@ -414,10 +427,17 @@ attr layout_goneMarginStart
 attr layout_goneMarginTop
 attr layout_insetEdge
 attr layout_keyline
+attr layout_maxHeight
+attr layout_maxWidth
+attr layout_minHeight
+attr layout_minWidth
 attr layout_optimizationLevel
+attr layout_order
 attr layout_scrollFlags
 attr layout_scrollInterpolator
+attr layout_wrapBefore
 attr liftOnScroll
+attr limit_error_text
 attr lineHeight
 attr lineSpacing
 attr listChoiceBackgroundIndicator
@@ -439,6 +459,7 @@ attr materialCardViewStyle
 attr maxActionInlineWidth
 attr maxButtonHeight
 attr maxImageSize
+attr maxLine
 attr measureWithLargestChild
 attr menu
 attr minified
@@ -525,6 +546,9 @@ attr selectControls
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
 attr showAsAction
+attr showDivider
+attr showDividerHorizontal
+attr showDividerVertical
 attr showDividers
 attr showLabel
 attr showMotionSpec
@@ -588,6 +612,10 @@ attr tabStyle
 attr tabTextAppearance
 attr tabTextColor
 attr tabUnboundedRipple
+attr tag_background_color
+attr tag_limit
+attr tag_separator
+attr tag_text_color
 attr textAllCaps
 attr textAppearanceBody1
 attr textAppearanceBody2
@@ -872,6 +900,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tag_bg
 color textColrHint
 color text_body_text_color
 color text_view_cursor_color
@@ -1374,6 +1403,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawable_tag
 drawable exam
 drawable file_chooser_dialog_ic_file_default
 drawable file_chooser_dialog_ic_file_document
@@ -1405,6 +1435,7 @@ drawable ic_arrow_up
 drawable ic_audiotrack_black_24dp
 drawable ic_bookmark2
 drawable ic_calender
+drawable ic_cancel
 drawable ic_cancel_full_24dp
 drawable ic_check_circle_36dp
 drawable ic_chevron_left
@@ -1550,15 +1581,21 @@ font roboto_regular
 font sfnsdisplay
 font sofia_regular
 id ALT
+id AT_SEPARATOR
+id COMMA_SEPARATOR
 id CTRL
 id ContentTitle
 id Course_Title
 id Course_enrrol
 id FUNCTION
 id FromDate
+id HASH_SEPARATOR
 id META
+id MINUS_SEPARATOR
+id PLUS_SEPARATOR
 id Profile_pic
 id SHIFT
+id SPACE_SEPARATOR
 id SYM
 id VolleyImageView
 id action0
@@ -1606,6 +1643,7 @@ id banar1
 id bankcardId
 id barchart
 id barrier
+id baseline
 id basicTextStylesToolbar
 id beginning
 id blocking
@@ -1649,6 +1687,8 @@ id clamp
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id column
+id column_reverse
 id container
 id content
 id contentPanel
@@ -1725,6 +1765,8 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id flex_end
+id flex_start
 id folderShortcutsDrawerLayout
 id forever
 id forgot
@@ -1747,6 +1789,7 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id image_view_cross
 id img1
 id img2
 id img3
@@ -1855,6 +1898,7 @@ id notification
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id nowrap
 id optionsBarSearchView
 id outline
 id packed
@@ -1904,6 +1948,8 @@ id rightBottom
 id rightTop
 id right_icon
 id right_side
+id row
+id row_reverse
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1942,6 +1988,9 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id space_around
+id space_between
+id space_evenly
 id spacer
 id split_action_bar
 id spread
@@ -1962,9 +2011,11 @@ id submit_area
 id swipe_container
 id tabLayout
 id tabMode
+id tag_container
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tag_view_test
 id tagline
 id testDuration
 id testMarks
@@ -1980,6 +2031,7 @@ id textStart
 id textView
 id textViewName
 id text_input_password_toggle
+id text_view_tag
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2061,6 +2113,7 @@ id wide
 id withText
 id wrap
 id wrap_content
+id wrap_reverse
 id wrong_prompt
 id youtube_player_view
 integer abc_config_activityDefaultDur
@@ -2164,6 +2217,7 @@ layout file_chooser_dialog_dialog_file_chooser
 layout file_chooser_dialog_list_item_file
 layout file_chooser_dialog_navigation_header
 layout file_chooser_dialog_view_parent_directory
+layout fragment_add_courses
 layout fragment_archive
 layout fragment_askus
 layout fragment_audiolist
@@ -2195,6 +2249,7 @@ layout fragment_webinarlist
 layout grouped_insert_commands_command_view
 layout grouped_text_styles_command_view
 layout item_badge_count
+layout item_tag
 layout item_view_audio
 layout item_view_broughtcourse
 layout item_view_category
@@ -2236,6 +2291,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout tag_layout
 layout view_fullscreen_options_bar
 layout view_proswipebtn
 layout view_swipe_button
@@ -3024,6 +3080,8 @@ styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_a
 styleable CustomFontTextView customFont
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable FlexboxLayout alignContent alignItems dividerDrawable dividerDrawableHorizontal dividerDrawableVertical flexDirection flexWrap justifyContent maxLine showDivider showDividerHorizontal showDividerVertical
+styleable FlexboxLayout_Layout layout_alignSelf layout_flexBasisPercent layout_flexGrow layout_flexShrink layout_maxHeight layout_maxWidth layout_minHeight layout_minWidth layout_order layout_wrapBefore
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FlowLayout itemSpacing lineSpacing
@@ -3067,6 +3125,7 @@ styleable SwipeButton icon
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable TabItem android_icon android_layout android_text
 styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIconTintMode tabIndicator tabIndicatorAnimationDuration tabIndicatorColor tabIndicatorFullWidth tabIndicatorGravity tabIndicatorHeight tabInlineLabel tabMaxWidth tabMinWidth tabMode tabPadding tabPaddingBottom tabPaddingEnd tabPaddingStart tabPaddingTop tabRippleColor tabSelectedTextColor tabTextAppearance tabTextColor tabUnboundedRipple
+styleable TagView close_icon limit_error_text tag_background_color tag_limit tag_separator tag_text_color
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily fontFamily textAllCaps
 styleable TextInputLayout android_textColorHint android_hint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance helperText helperTextEnabled helperTextTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
 styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTextAppearance
