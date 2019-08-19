@@ -1552,8 +1552,10 @@ font sofia_regular
 id ALT
 id CTRL
 id ContentTitle
+id Course_Title
 id Course_enrrol
 id FUNCTION
+id FromDate
 id META
 id Profile_pic
 id SHIFT
@@ -1587,6 +1589,7 @@ id activity_cashfree_upi_payment
 id activity_chooser_view_content
 id activity_merchant
 id add
+id add_more
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1654,7 +1657,6 @@ id content_title
 id coordinator
 id courseDesc
 id courseDiscount
-id courseHours
 id coursePrice
 id courseTitle
 id course_des
@@ -1674,6 +1676,7 @@ id custom
 id customPanel
 id cv_root_category
 id dark
+id daysLeft
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1888,6 +1891,7 @@ id radioMale
 id radiogrp
 id recyclerview
 id recyclerview1
+id recyclerview2
 id regular
 id relPindex
 id relativeLayout
@@ -1948,6 +1952,7 @@ id src_in
 id src_over
 id standard
 id start
+id start_Date
 id start_test
 id status_bar_latest_event_content
 id stretch
@@ -2191,6 +2196,7 @@ layout grouped_insert_commands_command_view
 layout grouped_text_styles_command_view
 layout item_badge_count
 layout item_view_audio
+layout item_view_broughtcourse
 layout item_view_category
 layout item_view_chepter
 layout item_view_courses

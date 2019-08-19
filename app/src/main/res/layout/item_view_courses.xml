@@ -74,22 +74,37 @@
                 android:text="10% off"/>
 
 
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/ic_clock1"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="10dp"/>
-
             <customfonts.TextViewSFProDisplayMedium
-                android:id="@+id/courseHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                android:text="12 Hours"/>
+                android:text="Starts From: "/>
 
+            <customfonts.TextViewSFProDisplayMedium
+                android:id="@+id/start_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:text="Date"/>
+
+            <ImageView
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:src="@drawable/ic_calender"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"/>
+
+
+            <customfonts.TextViewSFProDisplayMedium
+                android:id="@+id/daysLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 days left"
+                android:textSize="10sp"
+                android:textColor="#a0a0a0"/>
 
 
         </LinearLayout>

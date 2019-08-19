@@ -8,7 +8,7 @@ public class Course_Model_List {
     public String CourseDesc;
     public String CoursePrice;
     public String CourseDiscount;
-    public String CourseHours;
+    public String CourseStartDate;
 
 
     public String getId() {
@@ -72,14 +72,14 @@ public class Course_Model_List {
         this.CourseDiscount = courseDiscount;
     }
 
-    public String getCourseHours() {
+    public String getCourseStartDate() {
 
-        return CourseHours;
+        return CourseStartDate;
     }
 
-    public void setCourseHours(String courseHours) {
+    public void setCourseStartDate(String courseStartDate) {
 
-        this.CourseHours = courseHours;
+        this.CourseStartDate = courseStartDate;
     }
 
 }

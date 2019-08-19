@@ -25,7 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.Activity.MainActivity;
+import com.aaddya.amita.simplycs.Adapter.BroughtCourse_List_Adapter;
 import com.aaddya.amita.simplycs.Adapter.User_Course_List_Adapter;
+import com.aaddya.amita.simplycs.Model.BroughtCourse_Model_List;
 import com.aaddya.amita.simplycs.Model.UserCourse_Model_List;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -57,9 +59,10 @@ public class CourseFragment extends Fragment
 
     List<UserCourse_Model_List> ListOfdataAdapter;
     List<Course_Model_List> ListOfdataAdapter1;
+    List<BroughtCourse_Model_List> ListOfdataAdapter2;
 
-    RecyclerView recyclerView,recyclerView1;
-    RecyclerView.Adapter adapter,adapter1;
+    RecyclerView recyclerView,recyclerView1,recyclerView2;
+    RecyclerView.Adapter adapter,adapter1,adapter2;
 
     String Ucourse_id;
     final ArrayList<UserCourse_Model_List> UCourse_id = new ArrayList<>();
@@ -71,7 +74,7 @@ public class CourseFragment extends Fragment
     final ArrayList<Course_Model_List> Course_name = new ArrayList<>();
     int RecyclerViewItemPosition1 ;
 
-    LinearLayoutManager layoutManagerOfrecyclerView,layoutManagerOfrecyclerView1;
+    LinearLayoutManager layoutManagerOfrecyclerView,layoutManagerOfrecyclerView1,layoutManagerOfrecyclerView2;
 
     String User_id;
     public static final String PREFS_NAME = "login";
@@ -93,7 +96,6 @@ public class CourseFragment extends Fragment
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -361,6 +363,15 @@ public class CourseFragment extends Fragment
         });
 
 
+        ListOfdataAdapter2 = new ArrayList<>();
+        recyclerView2 = (RecyclerView)rootview.findViewById(R.id.recyclerview2);
+
+        layoutManagerOfrecyclerView2 = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        layoutManagerOfrecyclerView2.setReverseLayout(true);
+        layoutManagerOfrecyclerView2.setStackFromEnd(true);
+        recyclerView2.setLayoutManager(layoutManagerOfrecyclerView2);
+
+        GetBroughtCourseList();
 
 
         View_courselist=(TextView)rootview.findViewById(R.id.view_courselist);
@@ -388,115 +399,6 @@ public class CourseFragment extends Fragment
         super.onStop();
         ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
-
-
-
-    public void GetCourseList()
-    {
-        pDialog.setMessage("Please Wait...");
-        showDialog();
-
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetPackagelist",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String ServerResponse) {
-
-                        try {
-
-                            JSONObject jObj = new JSONObject(ServerResponse);
-                            String success = jObj.getString("success");
-
-                            if(success.equalsIgnoreCase("true"))
-                            {
-//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
-
-                                JSONArray jsonArray=jObj.getJSONArray("package");
-                                for(int i=0;i<jsonArray.length();i++)
-                                {
-                                    Course_Model_List course_model_list=new Course_Model_List();
-                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
-
-
-                                    course_model_list.setId(jsonObject1.getString("id"));
-                                    course_model_list.setImageUrl(jsonObject1.getString("file_path"));
-                                    course_model_list.setCourseTitle(jsonObject1.getString("package_name"));
-                                    course_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
-                                    course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
-                                    course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
-
-
-
-                                    Course_id.add(course_model_list);
-                                    Course_name.add(course_model_list);
-
-                                    ListOfdataAdapter1.add(course_model_list);
-
-                                }
-
-
-
-                                adapter1 = new Course_List_Adapter(ListOfdataAdapter1,getActivity());
-                                recyclerView1.setAdapter(adapter1);
-
-
-                                hideDialog();
-
-                            }
-                            else if (success.equalsIgnoreCase("false")){
-                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
-                                hideDialog();
-                            }
-                            else
-                            {
-                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
-                                hideDialog();
-                            }
-
-
-                        }
-                        catch (JSONException e)
-                        {
-
-                            // JSON error
-                            e.printStackTrace();
-                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                            hideDialog();
-                        }
-
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                        // Hiding the progress dialog after all task complete.
-
-
-                        // Showing error message if something goes wrong.
-//                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
-                        hideDialog();
-                    }
-                }) {
-
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("Auth", User_id);
-                return params;
-            }
-
-
-        };
-
-        // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-
-        // Adding the StringRequest object into requestQueue.
-        requestQueue.add(stringRequest1);
-    }
-
 
     public void GetUserCourseList()
     {
@@ -605,7 +507,207 @@ public class CourseFragment extends Fragment
         requestQueue.add(stringRequest1);
     }
 
+    public void GetCourseList()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
 
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/GetPackagelist",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
+
+                                JSONArray jsonArray=jObj.getJSONArray("package");
+                                for(int i=0;i<jsonArray.length();i++)
+                                {
+                                    Course_Model_List course_model_list=new Course_Model_List();
+                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
+
+
+                                    course_model_list.setId(jsonObject1.getString("id"));
+                                    course_model_list.setImageUrl(jsonObject1.getString("file_path"));
+                                    course_model_list.setCourseTitle(jsonObject1.getString("package_name"));
+                                    course_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
+                                    course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
+                                    course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
+                                    course_model_list.setCourseStartDate(jsonObject1.getString("date"));
+
+
+
+                                    Course_id.add(course_model_list);
+                                    Course_name.add(course_model_list);
+
+                                    ListOfdataAdapter1.add(course_model_list);
+
+                                }
+
+
+
+                                adapter1 = new Course_List_Adapter(ListOfdataAdapter1,getActivity());
+                                recyclerView1.setAdapter(adapter1);
+
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+//                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
+
+    public void GetBroughtCourseList()
+    {
+        pDialog.setMessage("Please Wait...");
+        showDialog();
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, URL+"api/BroughtPackage",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        try {
+
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
+
+                            if(success.equalsIgnoreCase("true"))
+                            {
+                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                for(int i=0;i<jsonArray.length();i++)
+                                {
+                                    BroughtCourse_Model_List broughtCourse_model_list=new BroughtCourse_Model_List();
+                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
+
+
+                                    broughtCourse_model_list.setId(jsonObject1.getString("id"));
+                                    broughtCourse_model_list.setTitle(jsonObject1.getString("package_name"));
+                                    broughtCourse_model_list.setFromDate(jsonObject1.getString("date"));
+                                    broughtCourse_model_list.setToDate(String.valueOf(Html.fromHtml(jsonObject1.getString("to_date"))));
+
+
+                                    ListOfdataAdapter2.add(broughtCourse_model_list);
+
+                                }
+
+                                adapter2 = new BroughtCourse_List_Adapter(ListOfdataAdapter2,getActivity());
+                                recyclerView2.setAdapter(adapter2);
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else
+                            {
+                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+
+
+                        }
+                        catch (JSONException e)
+                        {
+
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            hideDialog();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Hiding the progress dialog after all task complete.
+
+
+                        // Showing error message if something goes wrong.
+//                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
+                        hideDialog();
+                    }
+                }) {
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Auth", User_id);
+                return params;
+            }
+
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+    }
 
     public boolean isNetworkAvailable() {
 

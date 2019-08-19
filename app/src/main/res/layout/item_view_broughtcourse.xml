@@ -1,0 +1,91 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginRight="10sp"
+    android:layout_marginLeft="10sp"
+    android:background="@drawable/white_rect">
+
+
+        <customfonts.TextViewSFProDisplayMedium
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue Learning.."
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="11sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#979797"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bitmap_1"
+                android:scaleType="centerCrop"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:id="@+id/Course_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Web Design 101"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="11sp"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <customfonts.TextViewSFProDisplayMedium
+                        android:id="@+id/FromDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#a0a0a0"
+                        android:text="Date"
+                        android:textSize="10sp"/>
+
+                    <ImageView
+                        android:layout_width="10sp"
+                        android:layout_height="10sp"
+                        android:src="@drawable/ic_calender"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center"/>
+
+
+                    <customfonts.TextViewSFProDisplayMedium
+                        android:id="@+id/daysLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 days left"
+                        android:textSize="10sp"
+                        android:textColor="#a0a0a0"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>
+
+

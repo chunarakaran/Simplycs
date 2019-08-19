@@ -40,7 +40,7 @@ import static com.gocashfree.cashfreesdk.CFPaymentService.PARAM_ORDER_NOTE;
 
 public class CheckoutActivity extends AppCompatActivity implements CFClientInterface {
 
-    String User_id,cftoken,Order_id,Order_Amount,CustomerName,CustomerPhone,CustomerEmail,course_name,jChapter_id;
+    String User_id,Package_id,cftoken,Order_id,Order_Amount,CustomerName,CustomerPhone,CustomerEmail,course_name,jChapter_id;
 
     TextView CourseName,Amount,TransactionId;
 
@@ -66,6 +66,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
 
         User_id = getIntent().getStringExtra("User_id");
+        Package_id = getIntent().getStringExtra("Package_id");
         cftoken = getIntent().getStringExtra("cftoken");
         Order_id = getIntent().getStringExtra("Order_id");
         Order_Amount = getIntent().getStringExtra("Order_Amount");
@@ -75,7 +76,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         course_name =getIntent().getStringExtra("course_name");
         jChapter_id=getIntent().getStringExtra("jChapter_id");
 
-        Toast.makeText(getApplicationContext(),jChapter_id,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),Package_id,Toast.LENGTH_SHORT).show();
 
         Initialization();
 
@@ -176,7 +177,6 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         Log.d("CFSDKSample", "Payment Success");
 
 
-
     }
 
     @Override
@@ -195,7 +195,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetPackagedetails",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/SuccessPayment",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -208,8 +208,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
                             if(success.equalsIgnoreCase("true"))
                             {
 //                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
-                                JSONObject user = jObj.getJSONObject("package");
-
+                                JSONObject data = jObj.getJSONObject("data");
 
 
 
@@ -280,6 +279,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
     }
+
 
 
 

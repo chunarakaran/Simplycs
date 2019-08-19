@@ -116,6 +116,15 @@
                         android:text="Switch Course"
                         android:textSize="17sp"/>
 
+                    <customfonts.TextViewSFProDisplaySemibold
+                        android:id="@+id/add_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="ADD MORE"
+                        android:textColor="#dd3e3e"/>
+
+
                 </LinearLayout>
 
 
@@ -146,11 +155,6 @@
 
 
             </LinearLayout>
-
-
-
-
-
 
 
             <LinearLayout
@@ -196,200 +200,32 @@
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#979797"/>
 
 
-
-            <HorizontalScrollView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:clipToPadding="false"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:orientation="horizontal">
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:id="@+id/recyclerview2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scrollbars="horizontal"
+                    android:scrollbarStyle="outsideInset"
+                    android:fadeScrollbars="true" />
+
+
+            </LinearLayout>
 
 
 
-
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginRight="10sp"
-                        android:background="@drawable/white_rect">
-
-
-                        <customfonts.TextViewSFProDisplayMedium
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Continue Learning.."
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textSize="11sp"/>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="#979797"/>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:src="@drawable/bitmap_1"
-                                android:scaleType="centerCrop"/>
-
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <customfonts.TextViewSFProDisplayRegular
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Web Design 101"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:textSize="11sp"
-                                    android:textColor="@color/black" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <customfonts.TextViewSFProDisplayMedium
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#a0a0a0"
-                                        android:text="90%"
-                                        android:textSize="10sp"/>
-
-                                    <ImageView
-                                        android:layout_width="10sp"
-                                        android:layout_height="10sp"
-                                        android:src="@drawable/ic_clock1"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_marginRight="5dp"
-                                        android:layout_gravity="center"/>
-
-
-                                    <customfonts.TextViewSFProDisplayMedium
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="2hrs left"
-                                        android:textSize="10sp"
-                                        android:textColor="#a0a0a0"/>
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-
-                        android:background="@drawable/white_rect">
-
-
-                        <customfonts.TextViewSFProDisplayMedium
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Continue Learning.."
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textSize="11sp"/>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="#979797"/>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:src="@drawable/bitmap_1"
-                                android:scaleType="centerCrop"/>
-
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <customfonts.TextViewSFProDisplayRegular
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Web Design 101"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:textSize="11sp"
-                                    android:textColor="@color/black" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <customfonts.TextViewSFProDisplayMedium
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#a0a0a0"
-                                        android:text="90%"
-                                        android:textSize="10sp"/>
-
-                                    <ImageView
-                                        android:layout_width="10sp"
-                                        android:layout_height="10sp"
-                                        android:src="@drawable/ic_clock1"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_marginRight="5dp"
-                                        android:layout_gravity="center"/>
-
-
-                                    <customfonts.TextViewSFProDisplayMedium
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="2hrs left"
-                                        android:textSize="10sp"
-                                        android:textColor="#a0a0a0"/>
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
 
         </LinearLayout>
 

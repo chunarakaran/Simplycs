@@ -55,6 +55,7 @@ public class CourseDetailFragment extends Fragment
 
 
     String chepter_id,chapter_name;
+    final ArrayList<Chepter_Model_List> Chapter_id = new ArrayList<>();
     final ArrayList<Chepter_Model_List> Ch_Course_id = new ArrayList<>();
     final ArrayList<Chepter_Model_List> Ch_Category_id = new ArrayList<>();
     final ArrayList<Chepter_Model_List> Subcategory_id = new ArrayList<>();
@@ -68,7 +69,7 @@ public class CourseDetailFragment extends Fragment
     Button Course_Enroll;
 
     String Course_id,course_name;
-    String Order_id,cftoken,Order_Amount,CustomerName,CustomerPhone,CustomerEmail;
+    String Package_id,Order_id,cftoken,Order_Amount,CustomerName,CustomerPhone,CustomerEmail;
     String User_id;
     public static final String PREFS_NAME = "login";
 
@@ -144,6 +145,7 @@ public class CourseDetailFragment extends Fragment
                     for (int i = 0; i < Subcategory_id.size(); i++) {
                         JSONObject jGroup = new JSONObject();// /sub Object
                         try {
+                            jGroup.put("id", Integer.parseInt(Chapter_id.get(i).getId()));
                             jGroup.put("course_id", Integer.parseInt(Ch_Course_id.get(i).getCh_Course_id()));
                             jGroup.put("topic_id", Integer.parseInt(Ch_Category_id.get(i).getCh_Category_id()));
                             jGroup.put("sub_topic_id", Integer.parseInt(Subcategory_id.get(i).getCh_Subcategory_id()));
@@ -185,6 +187,7 @@ public class CourseDetailFragment extends Fragment
 
                                         startActivity(new Intent(getActivity(), CheckoutActivity.class)
                                                 .putExtra("User_id", User_id)
+                                                .putExtra("Package_id",Package_id)
                                                 .putExtra("Order_id",Order_id)
                                                 .putExtra("cftoken",cftoken)
                                                 .putExtra("Order_Amount",Order_Amount)
@@ -327,11 +330,11 @@ public class CourseDetailFragment extends Fragment
                             {
 //                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
 
-                                String CourseImage,CourseName,CourseDes,CoursePrice;
+                                String courseId,CourseImage,CourseName,CourseDes,CoursePrice;
                                 JSONObject user = jObj.getJSONObject("package");
 
 
-
+                                courseId=user.getString("id");
                                 CourseImage=user.getString("file_path");
                                 CourseName=user.getString("package_name");
                                 CourseDes=user.getString("pakage_details");
@@ -345,6 +348,7 @@ public class CourseDetailFragment extends Fragment
                                 Course_Des.setText(Html.fromHtml(CourseDes));
                                 Course_Price.setText("\u20B9 "+CoursePrice);
 
+                                Package_id=courseId;
                                 Order_Amount=CoursePrice;
 
                                 JSONArray jsonArray=user.getJSONArray("multiple_content");
@@ -362,6 +366,7 @@ public class CourseDetailFragment extends Fragment
                                     chepter_model_list.setChapterName(jsonObject1.getString("subtopic_name"));
 
 
+                                    Chapter_id.add(chepter_model_list);
                                     Ch_Course_id.add(chepter_model_list);
                                     Ch_Category_id.add(chepter_model_list);
                                     Subcategory_id.add(chepter_model_list);
