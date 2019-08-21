@@ -2,7 +2,10 @@ package com.aaddya.amita.simplycs.Activity;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
@@ -10,6 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Fragment.AskusFragment;
+import com.aaddya.amita.simplycs.Fragment.CourseFragment;
 import com.aaddya.amita.simplycs.R;
 import com.aaddya.amita.simplycs.Utils.Constants;
 import com.android.volley.AuthFailureError;
@@ -28,6 +33,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.refactor.lib.colordialog.PromptDialog;
 
 import static com.gocashfree.cashfreesdk.CFPaymentService.PARAM_APP_ID;
 import static com.gocashfree.cashfreesdk.CFPaymentService.PARAM_CUSTOMER_EMAIL;
@@ -48,8 +55,11 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
     //volley
     RequestQueue requestQueue;
     String URL;
-    private ProgressDialog pDialog;
+    private ProgressDialog progressDialog;
 
+    PromptDialog promptDialog;
+
+    Fragment fragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +71,10 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         URL = getString(R.string.url);
 
         // Progress dialog
-        pDialog = new ProgressDialog(this);
-        pDialog.setCancelable(false);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
 
+        promptDialog = new PromptDialog(this);
 
         User_id = getIntent().getStringExtra("User_id");
         Package_id = getIntent().getStringExtra("Package_id");
@@ -76,7 +87,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
         course_name =getIntent().getStringExtra("course_name");
         jChapter_id=getIntent().getStringExtra("jChapter_id");
 
-        Toast.makeText(getApplicationContext(),Package_id,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),Package_id,Toast.LENGTH_SHORT).show();
 
         Initialization();
 
@@ -174,8 +185,11 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
     @Override
     public void onSuccess(Map<String, String> map) {
-        Log.d("CFSDKSample", "Payment Success");
+//        Log.d("CFSDKSample", "Payment Success");
 
+
+
+        SuccessPayment();
 
     }
 
@@ -192,8 +206,8 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
     public void SuccessPayment()
     {
-        pDialog.setMessage("Please Wait...");
-        showDialog();
+//        progressDialog.setMessage("Please Wait...");
+//        showDialog();
 
         StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/SuccessPayment",
                 new Response.Listener<String>() {
@@ -207,22 +221,40 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
                             if(success.equalsIgnoreCase("true"))
                             {
-//                                Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+
+                                String test;
                                 JSONObject data = jObj.getJSONObject("data");
 
+                                test=data.getString("OrderId");
+
+                                promptDialog.setCancelable(false);
+                                promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS);
+                                promptDialog.setAnimationEnable(true);
+                                promptDialog.setTitleText("Payment Success");
+                                promptDialog.setContentText(test);
+                                promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+                                    @Override
+                                    public void onClick(PromptDialog dialog) {
+
+                                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                        finish();
+
+                                        dialog.dismiss();
+                                    }
+                                }).show();
 
 
-                                hideDialog();
+//                                hideDialog();
 
                             }
                             else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getApplicationContext(), jObj.getString("message"), Toast.LENGTH_LONG).show();
-                                hideDialog();
+//                                hideDialog();
                             }
                             else
                             {
                                 Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
-                                hideDialog();
+//                                hideDialog();
                             }
 
 
@@ -233,7 +265,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
                             // JSON error
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                            hideDialog();
+//                            hideDialog();
                         }
 
 
@@ -247,7 +279,7 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
-                        hideDialog();
+//                        hideDialog();
                     }
                 }) {
 
@@ -265,7 +297,10 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
-                params.put("Auth", Order_id);
+                params.put("PackageId", Package_id);
+                params.put("Amount", Order_Amount);
+                params.put("OrderId", Order_id);
+                params.put("Signature", cftoken);
 
                 return params;
             }
@@ -284,13 +319,13 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
 
 
     private void showDialog() {
-        if (!pDialog.isShowing())
-            pDialog.show();
+        if (!progressDialog.isShowing())
+            progressDialog.show();
     }
 
     private void hideDialog() {
-        if (pDialog.isShowing())
-            pDialog.dismiss();
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
     }
 
 

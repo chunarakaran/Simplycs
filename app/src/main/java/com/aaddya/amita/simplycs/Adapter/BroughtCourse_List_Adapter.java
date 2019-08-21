@@ -46,6 +46,7 @@ public class BroughtCourse_List_Adapter extends RecyclerView.Adapter<BroughtCour
 
         Viewholder.CourseTitle.setText(dataAdapterOBJ.getTitle());
         Viewholder.FromDate.setText("End Date: " + dataAdapterOBJ.getToDate());
+        Viewholder.DaysLeft.setText(dataAdapterOBJ.getDaysLeft());
 
     }
 
@@ -59,6 +60,7 @@ public class BroughtCourse_List_Adapter extends RecyclerView.Adapter<BroughtCour
 
         public TextView CourseTitle;
         public TextView FromDate;
+        public TextView DaysLeft;
 
 
         public ViewHolder(View itemView) {
@@ -67,6 +69,7 @@ public class BroughtCourse_List_Adapter extends RecyclerView.Adapter<BroughtCour
 
             CourseTitle = (TextView) itemView.findViewById(R.id.Course_Title) ;
             FromDate = (TextView) itemView.findViewById(R.id.FromDate) ;
+            DaysLeft = (TextView) itemView.findViewById(R.id.daysLeft) ;
 
         }
     }

@@ -9,6 +9,7 @@ public class Course_Model_List {
     public String CoursePrice;
     public String CourseDiscount;
     public String CourseStartDate;
+    public String DaysLeft;
 
 
     public String getId() {
@@ -80,6 +81,16 @@ public class Course_Model_List {
     public void setCourseStartDate(String courseStartDate) {
 
         this.CourseStartDate = courseStartDate;
+    }
+
+    public String getDaysLeft() {
+
+        return DaysLeft;
+    }
+
+    public void setDaysLeft(String daysLeft) {
+
+        this.DaysLeft = daysLeft;
     }
 
 }

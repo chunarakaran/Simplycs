@@ -59,10 +59,11 @@ public class SubCategoryListFragment extends Fragment
     RecyclerView.Adapter adapter;
 
     String Category_id,Category_name;
-    String SubCategory_id,SubCategory_name;
+    String SubCategory_id,SubCategory_name,is_Paid;
     String CDate;
     final ArrayList<SubCategory_Model_List> SubCategoryid = new ArrayList<>();
     final ArrayList<SubCategory_Model_List> SubCategoryName = new ArrayList<>();
+    final ArrayList<SubCategory_Model_List> Paid = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -184,6 +185,7 @@ public class SubCategoryListFragment extends Fragment
 
                     SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
                     SubCategory_name=SubCategoryName.get(RecyclerViewItemPosition).getImageTitle();
+                    is_Paid=Paid.get(RecyclerViewItemPosition).getPaidStatus();
 
                     if(Category_name.equals("Practice")||Category_name.equals("practice"))
                     {
@@ -201,6 +203,11 @@ public class SubCategoryListFragment extends Fragment
                         transection.addToBackStack(null).commit();
 
                     }
+
+                    else if (is_Paid.equalsIgnoreCase("yes")){
+                        Toast.makeText(getActivity(), "This is Premium Category", Toast.LENGTH_SHORT).show();
+                    }
+
                     else
                     {
                         FragmentTransaction transection=getFragmentManager().beginTransaction();
@@ -219,10 +226,6 @@ public class SubCategoryListFragment extends Fragment
                     }
 
 //                    Toast.makeText(getActivity(), "You clicked " + Category_name, Toast.LENGTH_SHORT).show();
-
-
-
-
 
 
                 }
@@ -315,6 +318,7 @@ public class SubCategoryListFragment extends Fragment
 
                                     SubCategoryName.add(subCategory_model_list);
 
+                                    Paid.add(subCategory_model_list);
 
                                     ListOfdataAdapter.add(subCategory_model_list);
 

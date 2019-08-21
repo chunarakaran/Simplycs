@@ -1626,6 +1626,7 @@ id activity_cashfree_upi_payment
 id activity_chooser_view_content
 id activity_merchant
 id add
+id add_course
 id add_more
 id adjust_height
 id adjust_width
@@ -2164,6 +2165,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_course
 layout activity_audio_player
 layout activity_cashfree_payment
 layout activity_cfupipayment
@@ -2217,7 +2219,6 @@ layout file_chooser_dialog_dialog_file_chooser
 layout file_chooser_dialog_list_item_file
 layout file_chooser_dialog_navigation_header
 layout file_chooser_dialog_view_parent_directory
-layout fragment_add_courses
 layout fragment_archive
 layout fragment_askus
 layout fragment_audiolist

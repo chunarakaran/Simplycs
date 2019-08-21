@@ -63,6 +63,7 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
         Viewholder.CoursePrice.setText("\u20B9"+dataAdapterOBJ.getCoursePrice());
         Viewholder.CourseDiscount.setText(dataAdapterOBJ.getCourseDiscount()+"% off");
         Viewholder.CourseDate.setText(dataAdapterOBJ.getCourseStartDate());
+        Viewholder.DaysLeft.setText(dataAdapterOBJ.getDaysLeft());
 
     }
 
@@ -74,7 +75,7 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView CourseTitle,CourseDesc,CoursePrice,CourseDiscount,CourseDate;
+        public TextView CourseTitle,CourseDesc,CoursePrice,CourseDiscount,CourseDate,DaysLeft;
         public ImageView Item_Image;
 
         public ViewHolder(View itemView) {
@@ -87,6 +88,7 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
             CoursePrice = (TextView) itemView.findViewById(R.id.coursePrice) ;
             CourseDiscount = (TextView) itemView.findViewById(R.id.courseDiscount) ;
             CourseDate = (TextView) itemView.findViewById(R.id.start_Date) ;
+            DaysLeft = (TextView)itemView.findViewById(R.id.daysLeft);
 
         }
     }

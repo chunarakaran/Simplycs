@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\3147a83f8fd48724358fd263fc4e22f3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\f702e9d1c0489e437179f02a13ea2cb7\AndroidManifest.xml:2:1-11:12
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:2:1-23:12
@@ -42,6 +42,7 @@ MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\tra
 MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\ColorDialog-1.0.0.aar\431278306ff73c34233a8c20e942a6b3\AndroidManifest.xml:2:1-12:12
 MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\material-ripple-1.0.2.aar\57a09a267aadcbc0c5e4d7bda7c7ffb0\AndroidManifest.xml:2:1-14:12
 MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\audioview-0.4.aar\efcb2dbadb7fd82ce902edfbb5ef7a1f\AndroidManifest.xml:8:1-24:12
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:17:1-27:12
 MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cashfreeSDK.aar\5ce0cc432f880583843e9fb464d38b2a\AndroidManifest.xml:2:1-28:12
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\488b69a0978280637f39a5acabfcb606\AndroidManifest.xml:2:1-9:12
 MERGED from [:google-pay-client-api-1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\google-pay-client-api-1.0.0.aar\3a934d1c9acf8f92c9302eca98d6f96a\AndroidManifest.xml:2:1-9:12
@@ -77,23 +78,22 @@ MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\amita\.g
 MERGED from [com.android.support:print:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\8b214a77b60f66cb88e916db98dfdebf\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2a77441e7fe9ccf7520486cdd9839eec\AndroidManifest.xml:17:1-22:12
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\86c2449a218675fcaa9613f70e714479\AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:17:1-27:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
 	package
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-90:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:11-69
@@ -142,7 +142,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:5-68
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:22-65
 application
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-88:19
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-89:19
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:15:5-21:19
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:15:5-21:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:11:5-14:19
@@ -351,12 +351,16 @@ activity#com.aaddya.amita.simplycs.Activity.CheckoutActivity
 ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:82:9-87
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:82:19-85
-activity#com.aaddya.amita.simplycs.Activity.TestResultActivity
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:84:9-86:52
-	android:label
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:86:13-40
+activity#com.aaddya.amita.simplycs.Activity.AddcourseActivity
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:83:9-88
 	android:name
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:85:13-81
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:83:19-86
+activity#com.aaddya.amita.simplycs.Activity.TestResultActivity
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:85:9-87:52
+	android:label
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:87:13-40
+	android:name
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:86:13-81
 uses-sdk
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
@@ -437,6 +441,8 @@ MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\tra
 MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\material-ripple-1.0.2.aar\57a09a267aadcbc0c5e4d7bda7c7ffb0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\audioview-0.4.aar\efcb2dbadb7fd82ce902edfbb5ef7a1f\AndroidManifest.xml:13:5-15:41
 MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\audioview-0.4.aar\efcb2dbadb7fd82ce902edfbb5ef7a1f\AndroidManifest.xml:13:5-15:41
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:23:5-25:41
 MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cashfreeSDK.aar\5ce0cc432f880583843e9fb464d38b2a\AndroidManifest.xml:8:5-10:41
 MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cashfreeSDK.aar\5ce0cc432f880583843e9fb464d38b2a\AndroidManifest.xml:8:5-10:41
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\488b69a0978280637f39a5acabfcb606\AndroidManifest.xml:7:5-43
@@ -507,8 +513,6 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\cach
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2a77441e7fe9ccf7520486cdd9839eec\AndroidManifest.xml:20:5-44
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\86c2449a218675fcaa9613f70e714479\AndroidManifest.xml:7:5-9:41
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\86c2449a218675fcaa9613f70e714479\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:23:5-25:41
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\flexbox-1.0.0.aar\4501c1cab6a3a8d59a11da410c532f58\AndroidManifest.xml:23:5-25:41
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

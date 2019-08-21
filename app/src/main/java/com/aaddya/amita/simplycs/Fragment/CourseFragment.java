@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Activity.AddcourseActivity;
 import com.aaddya.amita.simplycs.Activity.MainActivity;
 import com.aaddya.amita.simplycs.Adapter.BroughtCourse_List_Adapter;
 import com.aaddya.amita.simplycs.Adapter.User_Course_List_Adapter;
@@ -394,10 +396,8 @@ public class CourseFragment extends Fragment
 
 //                Toast.makeText(getActivity(),"Hello",Toast.LENGTH_SHORT).show();
 
-                FragmentTransaction transection=getFragmentManager().beginTransaction();
-                AddCoursesFragment mfragment=new AddCoursesFragment();
-                transection.replace(R.id.content_frame, mfragment);
-                transection.addToBackStack(null).commit();
+              startActivity(new Intent(getActivity(),AddcourseActivity.class));
+              getActivity().finish();
 
 
             }
@@ -557,6 +557,7 @@ public class CourseFragment extends Fragment
                                     course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
                                     course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
                                     course_model_list.setCourseStartDate(jsonObject1.getString("date"));
+                                    course_model_list.setDaysLeft(jsonObject1.getString("left_days"));
 
 
 
@@ -659,6 +660,7 @@ public class CourseFragment extends Fragment
                                     broughtCourse_model_list.setTitle(jsonObject1.getString("package_name"));
                                     broughtCourse_model_list.setFromDate(jsonObject1.getString("date"));
                                     broughtCourse_model_list.setToDate(String.valueOf(Html.fromHtml(jsonObject1.getString("to_date"))));
+                                    broughtCourse_model_list.setDaysLeft(jsonObject1.getString("left_days"));
 
 
                                     ListOfdataAdapter2.add(broughtCourse_model_list);

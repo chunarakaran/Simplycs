@@ -89,6 +89,7 @@
         <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity" />
         <activity android:name="com.aaddya.amita.simplycs.Activity.CheckoutActivity" />
+        <activity android:name="com.aaddya.amita.simplycs.Activity.AddcourseActivity" />
         <activity
             android:name="com.aaddya.amita.simplycs.Activity.TestResultActivity"
             android:label="Test Result" />

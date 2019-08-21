@@ -246,6 +246,7 @@ public class CourseListFragment extends Fragment
                                     course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
                                     course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
                                     course_model_list.setCourseStartDate(jsonObject1.getString("date"));
+                                    course_model_list.setDaysLeft(jsonObject1.getString("left_days"));
 
 
 
