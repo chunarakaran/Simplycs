@@ -1022,6 +1022,9 @@ dimen cpv_dialog_preview_width
 dimen cpv_item_horizontal_padding
 dimen cpv_item_size
 dimen cpv_required_padding
+dimen customactivityoncrash_activity_horizontal_margin
+dimen customactivityoncrash_activity_vertical_margin
+dimen customactivityoncrash_error_activity_error_details_text_size
 dimen desc_padding
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
@@ -1387,6 +1390,7 @@ drawable cpv_preset_checked
 drawable curved_shape
 drawable curved_shape2
 drawable custom_border_blue
+drawable customactivityoncrash_error_image
 drawable customer_service
 drawable dark_circle_green
 drawable dark_circle_grey
@@ -1715,6 +1719,9 @@ id cpv_preference_preview_color_panel
 id current_course
 id custom
 id customPanel
+id customactivityoncrash_error_activity_image
+id customactivityoncrash_error_activity_more_info_button
+id customactivityoncrash_error_activity_restart_button
 id cv_root_category
 id dark
 id daysLeft
@@ -2198,6 +2205,7 @@ layout cpv_preference_circle_large
 layout cpv_preference_square
 layout cpv_preference_square_large
 layout custom_test_result_list_row
+layout customactivityoncrash_default_error_activity
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2394,6 +2402,15 @@ string cpv_presets
 string cpv_select
 string cpv_transparency
 string currency_code_upi
+string customactivityoncrash_error_activity_close_app
+string customactivityoncrash_error_activity_error_details
+string customactivityoncrash_error_activity_error_details_clipboard_label
+string customactivityoncrash_error_activity_error_details_close
+string customactivityoncrash_error_activity_error_details_copied
+string customactivityoncrash_error_activity_error_details_copy
+string customactivityoncrash_error_activity_error_details_title
+string customactivityoncrash_error_activity_error_occurred_explanation
+string customactivityoncrash_error_activity_restart_app
 string default_web_client_id
 string define_roundedimageview
 string dialog_edit_image_alternate_text_label

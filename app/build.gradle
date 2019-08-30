@@ -7,8 +7,8 @@ android {
         applicationId "com.aaddya.amita.simplycs"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 14
-        versionName "1.2.2"
+        versionCode 16
+        versionName "1.2.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation 'com.google.firebase:firebase-auth:16.1.0'
     implementation 'com.github.andyxialm:ColorDialog:1.0.0'
-    //    implementation 'com.github.bumptech.glide:glide:4.0.0-RC0'
+    
     implementation 'com.balysv:material-ripple:1.0.2'
     implementation 'net.gotev:uploadservice:2.1'
     implementation 'com.4ert:audioview:0.4'
@@ -62,13 +62,12 @@ dependencies {
     implementation 'com.github.shts:TriangleLabelView:1.1.2'
     implementation 'com.github.mahimrocky:TagView:1.0.1'
     implementation 'com.google.android:flexbox:1.0.0'
+    implementation 'cat.ereza:customactivityoncrash:2.2.0'
 
 
     implementation 'in.shadowfax:proswipebutton:1.1'
 
     implementation project(':cashfree')
-
-    //Temparory
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation project(':google-pay-client-api-1.0.0')
     implementation 'me.ithebk:barchart:0.9'

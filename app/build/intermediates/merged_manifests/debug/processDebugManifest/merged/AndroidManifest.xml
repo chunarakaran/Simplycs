@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aaddya.amita.simplycs"
-    android:versionCode="14"
-    android:versionName="1.2.2" >
+    android:versionCode="16"
+    android:versionName="1.2.4" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -99,6 +99,16 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
+            android:process=":error_activity" />
+
+        <provider
+            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
+            android:authorities="com.aaddya.amita.simplycs.customactivityoncrashinitprovider"
+            android:exported="false"
+            android:initOrder="101" />
 
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"

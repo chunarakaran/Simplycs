@@ -57,8 +57,6 @@ public class AddcourseActivity extends AppCompatActivity  {
     String User_id;
     public static final String PREFS_NAME = "login";
 
-    List<TagModel> Courseid;
-
 
     //volley
     RequestQueue requestQueue;
@@ -94,17 +92,19 @@ public class AddcourseActivity extends AppCompatActivity  {
 
         tagView.setTagBackgroundColor(Color.BLUE);
 
+
+
         GetCourseName();
 
         AddCourse.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-//
-                Courseid = tagView.getSelectedTags();
-//                String joined = String.join(" and ", (CharSequence) Courseid);
 
-                Toast.makeText(getApplicationContext(), "Add", Toast.LENGTH_LONG).show();
+
+                TagModel x= (TagModel) tagView.getSelectedTags().get(0);
+
+                Toast.makeText(getApplicationContext(),x.getTagText(), Toast.LENGTH_LONG).show();
 
 //                startActivity(new Intent(getApplicationContext(),MainActivity.class));
 //                finish();
@@ -127,9 +127,6 @@ public class AddcourseActivity extends AppCompatActivity  {
                     @Override
                     public void onResponse(String ServerResponse) {
 
-
-
-                        list.clear();
 
                         try {
 
@@ -157,13 +154,20 @@ public class AddcourseActivity extends AppCompatActivity  {
 
                                 }
 
-                                String[] values = new String[Coursedatalist.size()];
+                                String[] id = new String[Coursedatalist.size()];
                                 for (int i = 0; i < Coursedatalist.size(); i++) {
-                                    values[i] = Coursedatalist.get(i).getCourseName();
+                                    id[i] = Coursedatalist.get(i).getId();
+                                }
+
+                                String[] name = new String[Coursedatalist.size()];
+                                for (int i = 0; i < Coursedatalist.size(); i++) {
+                                    name[i] = Coursedatalist.get(i).getCourseName();
                                 }
 
 
-                                tagView.setTagList(values);
+                                tagView.setTagList(name);
+
+//                                tagView.setTagList(id);
 
                                 hideDialog();
 

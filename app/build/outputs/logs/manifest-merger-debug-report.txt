@@ -10,6 +10,7 @@ MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transfor
 MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\richtexteditor-android-2.0.8.aar\389cc4d0cd6065c589b7eba06c096b16\AndroidManifest.xml:2:1-14:12
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:2:1-16:12
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TagView-1.0.1.aar\9f61187bb206899211588cd944fa6eae\AndroidManifest.xml:2:1-11:12
+MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:2:1-23:12
 MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\proswipebutton-1.1.aar\edc89632646cddf33494eb4f487c5608\AndroidManifest.xml:2:1-17:12
 MERGED from [com.jaredrummler:colorpicker:1.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\colorpicker-1.0.1.aar\7aabf6c8b0884dec999004cfd4be39a6\AndroidManifest.xml:2:1-10:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\e8661e7b53c69ffd4e72b37b44181235\AndroidManifest.xml:17:1-24:12
@@ -147,6 +148,8 @@ MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transfor
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:15:5-21:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:11:5-14:19
+MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:11:5-21:19
+MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:11:5-21:19
 MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\proswipebutton-1.1.aar\edc89632646cddf33494eb4f487c5608\AndroidManifest.xml:11:5-15:19
 MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\proswipebutton-1.1.aar\edc89632646cddf33494eb4f487c5608\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\e8661e7b53c69ffd4e72b37b44181235\AndroidManifest.xml:22:5-20
@@ -377,6 +380,8 @@ MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\cac
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TagView-1.0.1.aar\9f61187bb206899211588cd944fa6eae\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TagView-1.0.1.aar\9f61187bb206899211588cd944fa6eae\AndroidManifest.xml:7:5-9:41
+MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:7:5-9:41
+MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:7:5-9:41
 MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\proswipebutton-1.1.aar\edc89632646cddf33494eb4f487c5608\AndroidManifest.xml:7:5-9:41
 MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\proswipebutton-1.1.aar\edc89632646cddf33494eb4f487c5608\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jaredrummler:colorpicker:1.0.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\colorpicker-1.0.1.aar\7aabf6c8b0884dec999004cfd4be39a6\AndroidManifest.xml:6:5-8:41
@@ -549,6 +554,22 @@ ADDED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transform
 		ADDED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:19:13-36
 	android:name
 		ADDED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:17:13-65
+activity#cat.ereza.customactivityoncrash.activity.DefaultErrorActivity
+ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:12:9-14:49
+	android:process
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:14:13-46
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:13:13-89
+provider#cat.ereza.customactivityoncrash.provider.CaocInitProvider
+ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:16:9-20:39
+	android:authorities
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:18:13-85
+	android:exported
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:19:13-37
+	android:initOrder
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:20:13-36
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customactivityoncrash-2.2.0.aar\4d03d75b9469d56751be97b2b198b8c9\AndroidManifest.xml:17:13-85
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\2cff61fbf488cc7eb309b8f15091f201\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
