@@ -4,11 +4,15 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.aaddya.amita.simplycs.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -23,6 +27,8 @@ public class PDFViewActivity extends AppCompatActivity {
     PDFView pdfView;
 
     private ProgressDialog pDialog;
+
+    private AdView mAdView;
 
 
     @Override
@@ -44,6 +50,43 @@ public class PDFViewActivity extends AppCompatActivity {
         showDialog();
 
         new RetrievePDFStream().execute(PDF_Data);
+
+
+        mAdView = (AdView)findViewById(R.id.adView);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                mAdView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAdClosed() {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+        });
+
+
+        mAdView.loadAd(adRequest);
 
     }
 

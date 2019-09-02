@@ -1,5 +1,6 @@
 package com.aaddya.amita.simplycs.Activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -72,6 +73,8 @@ public class MainActivity extends AppCompatActivity
     String User_id;
     public static final String PREFS_NAME = "login";
 
+    private Activity mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences sp = getApplicationContext().getSharedPreferences(PREFS_NAME, getApplicationContext().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
         User_id = sp.getString("User", "");
+
+        mContext = this;
 
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -282,6 +287,17 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.nav_setting:
                 fragment = new SettingFragment();
+                break;
+
+            case R.id.nav_share:
+
+                String shareBody = "https://play.google.com/store/apps/details?id=" + mContext.getPackageName();
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share using"));
+
                 break;
 
             case R.id.nav_logout:

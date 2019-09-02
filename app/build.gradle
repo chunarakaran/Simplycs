@@ -71,4 +71,5 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation project(':google-pay-client-api-1.0.0')
     implementation 'me.ithebk:barchart:0.9'
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
 }

@@ -977,7 +977,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_curved_shape.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\f702e9d1c0489e437179f02a13ea2cb7\\res\\drawable\\curved_shape.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\58106187a7f9e712dd97f9eb4e8b2f77\\res\\drawable\\curved_shape.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_format_align_right_white_48dp.png.flat",
@@ -1756,6 +1756,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\colorpicker-1.0.1.aar\\7aabf6c8b0884dec999004cfd4be39a6\\res\\drawable-mdpi-v4\\cpv_preset_checked.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_menu_share.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable-v24\\ic_menu_share.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d92cd69d6da92d83d85fa47c63d7a2fb\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
@@ -2457,7 +2461,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_curved_shape2.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\f702e9d1c0489e437179f02a13ea2cb7\\res\\drawable\\curved_shape2.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\58106187a7f9e712dd97f9eb4e8b2f77\\res\\drawable\\curved_shape2.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
@@ -2613,7 +2617,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gif1.gif.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\f702e9d1c0489e437179f02a13ea2cb7\\res\\drawable\\gif1.gif"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\58106187a7f9e712dd97f9eb4e8b2f77\\res\\drawable\\gif1.gif"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
@@ -4317,7 +4321,7 @@
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fancygifdialog.xml.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\f702e9d1c0489e437179f02a13ea2cb7\\res\\layout\\fancygifdialog.xml"
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\FancyGifDialog-Android-1.1.aar\\58106187a7f9e712dd97f9eb4e8b2f77\\res\\layout\\fancygifdialog.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_format_underlined_white_48dp.png.flat",

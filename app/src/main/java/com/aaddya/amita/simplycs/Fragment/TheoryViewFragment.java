@@ -11,11 +11,16 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 
 import com.aaddya.amita.simplycs.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class TheoryViewFragment extends Fragment
 {
 
     String Content_id,content_name,Content_Data;
+
+    private AdView mAdView;
 
 
 
@@ -53,6 +58,43 @@ public class TheoryViewFragment extends Fragment
 
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
+
+        mAdView = (AdView)rootview.findViewById(R.id.adView);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                mAdView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAdClosed() {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                mAdView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+        });
+
+
+        mAdView.loadAd(adRequest);
+
 
         rootview.setFocusableInTouchMode(true);
         rootview.requestFocus();
