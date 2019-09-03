@@ -1,24 +1,17 @@
 package com.aaddya.amita.simplycs.Activity;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.aaddya.amita.simplycs.Fragment.CourseDetailFragment;
-import com.aaddya.amita.simplycs.Fragment.CourseFragment;
 import com.aaddya.amita.simplycs.Model.GetCourse_Model_List;
 import com.aaddya.amita.simplycs.R;
 import com.android.volley.AuthFailureError;
@@ -28,7 +21,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.keenfin.audioview.AudioView;
 import com.skyhope.materialtagview.TagView;
 import com.skyhope.materialtagview.model.TagModel;
 
@@ -36,10 +28,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class AddcourseActivity extends AppCompatActivity  {
@@ -138,6 +128,11 @@ public class AddcourseActivity extends AppCompatActivity  {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
                                 JSONArray jsonArray=jObj.getJSONArray("data");
+
+//                                TagModel tagModel=new TagModel();
+
+
+
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     GetCourse_Model_List GetDataAdapter2=new GetCourse_Model_List();
@@ -151,6 +146,7 @@ public class AddcourseActivity extends AppCompatActivity  {
                                     Coursedatalist.add(GetDataAdapter2);
 
                                     list.add(jsonObject1.getString("course_name"));
+
 
                                 }
 
@@ -166,8 +162,9 @@ public class AddcourseActivity extends AppCompatActivity  {
 
 
                                 tagView.setTagList(name);
+//                                tagModel.setTagText(String.valueOf(id));
 
-//                                tagView.setTagList(id);
+
 
                                 hideDialog();
 
