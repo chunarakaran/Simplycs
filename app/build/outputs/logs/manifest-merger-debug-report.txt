@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\3147a83f8fd48724358fd263fc4e22f3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\FancyGifDialog-Android-1.1.aar\58106187a7f9e712dd97f9eb4e8b2f77\AndroidManifest.xml:2:1-11:12
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:2:1-23:12
@@ -85,22 +85,22 @@ MERGED from [com.android.support:print:28.0.0] C:\Users\amita\.gradle\caches\tra
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2a77441e7fe9ccf7520486cdd9839eec\AndroidManifest.xml:17:1-22:12
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.10.aar\86c2449a218675fcaa9613f70e714479\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-ads-base:16.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-16.0.0.aar\7f6ad13acf6bfab462120420c3db3cfb\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
+INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 	package
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-91:12
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 		INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:2:11-69
@@ -153,7 +153,7 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:5-68
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:10:22-65
 application
-ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-89:19
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:12:5-94:19
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:15:5-21:19
 MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\150d23ba5420e5804203728d60ef8982\AndroidManifest.xml:15:5-21:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\TriangleLabelView-1.1.2.aar\b5a0e8e75a652dfc0f186778f48d9324\AndroidManifest.xml:11:5-14:19
@@ -381,6 +381,12 @@ ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:85:9-87:5
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:87:13-40
 	android:name
 		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:86:13-81
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:90:9-92:69
+	android:value
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:92:13-67
+	android:name
+		ADDED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml:91:13-69
 uses-sdk
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProject\Simplycs\app\src\main\AndroidManifest.xml

@@ -40,18 +40,7 @@
     <string name="play_again">Play Again</string>
 
 
-    <string name="Semail">
-<![CDATA[
-    <html>
-        <head></head>
-        <bodystyle text-align:justify="">
-            <body> Lorem ipsum dolor sit amet, consectetur  adipiscing elit.
-                Nunc pellentesque, urna nec hendrerit pellentesque, risus massa
-            </body>
-        </bodystyle>
-   </html>
-]]>
-</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -99,24 +88,12 @@
         <item>00:28</item>
     </string-array>
 
-    <string name="question">How is the first president of Nigeria?</string>
 
-    <string name="answer_one">King Ade</string>
-
-    <string name="answer_two"> olu Obasanjo</string>
-
-    <string name="answer_three">Jona Goodluck</string>
-
-    <string name="answer_four"> Atiku Abubakar</string>
-
-    <string name="next_questions"> Next Question</string>
-
-    <string name="previous_questions"> Previous Question</string>
 
     <!-- AdMob ad unit IDs -->
-    <string name="admob_app_id">ca-app-pub-XXXXXXXX~XXXXXXXXXXX</string>
-    <string name="banner_home_footer">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_app_id">ca-app-pub-9093438437948252~7589300543</string>
+    <string name="banner_home_footer">ca-app-pub-9093438437948252/9422284630</string>
     <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="title_activity_no_action_bar">NoActionBarActivity</string>
+
 
 </resources>

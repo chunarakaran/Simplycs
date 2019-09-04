@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
 import com.google.android.gms.ads.AdListener;
@@ -18,7 +19,7 @@ import com.google.android.gms.ads.AdView;
 public class TheoryViewFragment extends Fragment
 {
 
-    String Content_id,content_name,Content_Data;
+    String Content_id,content_name,Content_Data,PremiumUser;
 
     private AdView mAdView;
 
@@ -40,6 +41,7 @@ public class TheoryViewFragment extends Fragment
         Bundle bundle=getArguments();
         content_name=String.valueOf(bundle.getString("content_name"));
         Content_Data=String.valueOf(bundle.getString("content_Data"));
+        PremiumUser=String.valueOf(bundle.getString("PremiumUser"));
 
 
 
@@ -61,9 +63,9 @@ public class TheoryViewFragment extends Fragment
 
         mAdView = (AdView)rootview.findViewById(R.id.adView);
 
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
+
+
+        AdRequest adRequest = new AdRequest.Builder().build();
 
         mAdView.setAdListener(new AdListener() {
             @Override
@@ -93,7 +95,20 @@ public class TheoryViewFragment extends Fragment
         });
 
 
-        mAdView.loadAd(adRequest);
+
+
+        if (PremiumUser.equals("yes"))
+        {
+
+            mAdView.setVisibility(rootview.GONE);
+//            Toast.makeText(getActivity(),"hello", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            mAdView.loadAd(adRequest);
+            mAdView.setVisibility(rootview.VISIBLE);
+        }
+
+
 
 
         rootview.setFocusableInTouchMode(true);

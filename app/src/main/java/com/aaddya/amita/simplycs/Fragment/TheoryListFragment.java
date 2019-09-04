@@ -68,6 +68,9 @@ public class TheoryListFragment extends Fragment
     String User_id,Course_id;
     public static final String PREFS_NAME = "login";
 
+
+    String PremiumUser;
+
     //volley
     RequestQueue requestQueue;
     String URL;
@@ -176,6 +179,7 @@ public class TheoryListFragment extends Fragment
                     bundle.putString("content_id",content_id);
                     bundle.putString("content_Data",content_Data);
                     bundle.putString("content_name",content_name);
+                    bundle.putString("PremiumUser",PremiumUser);
                     mfragment.setArguments(bundle);
 
                     transection.replace(R.id.content_frame, mfragment);
@@ -187,7 +191,7 @@ public class TheoryListFragment extends Fragment
 //                            .putExtra("content_name",content_name));
 
 
-//                    Toast.makeText(getActivity(), "You clicked " + Category_id, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + PremiumUser, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -255,6 +259,7 @@ public class TheoryListFragment extends Fragment
 
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
+                            PremiumUser=jObj.getString("premium_user");
 
                             if(success.equalsIgnoreCase("true"))
                             {

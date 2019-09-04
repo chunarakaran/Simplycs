@@ -52,7 +52,7 @@ public class PDFListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Category_id,SubCategory_id,content_id,pdf_Data;
+    String CDate,Category_id,SubCategory_id,content_id,pdf_Data,PremiumUser;
 
 //    final ArrayList<PDFListDataAdapter> Contentid = new ArrayList<>();
 
@@ -89,6 +89,7 @@ public class PDFListFragment extends Fragment
 //        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
 //        CDate=String.valueOf(bundle.getString("CDate"));
         content_id=String.valueOf(bundle.getString("content_id"));
+        PremiumUser=String.valueOf(bundle.getString("PremiumUser"));
 
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -145,7 +146,8 @@ public class PDFListFragment extends Fragment
 
 
                     startActivity(new Intent(getActivity(), PDFViewActivity.class)
-                            .putExtra("pdf_Data", pdf_Data));
+                            .putExtra("pdf_Data", pdf_Data)
+                            .putExtra("PremiumUser",PremiumUser));
 
 
 //                    Toast.makeText(getActivity(), "You clicked " + content_id, Toast.LENGTH_SHORT).show();

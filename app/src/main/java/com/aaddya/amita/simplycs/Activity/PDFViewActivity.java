@@ -22,7 +22,7 @@ import java.net.URL;
 
 public class PDFViewActivity extends AppCompatActivity {
 
-    String Content_id,PDF_Data;
+    String Content_id,PDF_Data,PremiumUser;
 
     PDFView pdfView;
 
@@ -39,6 +39,8 @@ public class PDFViewActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         PDF_Data = getIntent().getStringExtra("pdf_Data");
+        PremiumUser = getIntent().getStringExtra("PremiumUser");
+
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -86,7 +88,17 @@ public class PDFViewActivity extends AppCompatActivity {
         });
 
 
-        mAdView.loadAd(adRequest);
+        if (PremiumUser.equals("yes"))
+        {
+
+            mAdView.setVisibility(View.GONE);
+//            Toast.makeText(getActivity(),"hello", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            mAdView.loadAd(adRequest);
+            mAdView.setVisibility(View.VISIBLE);
+        }
+
 
     }
 

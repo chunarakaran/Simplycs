@@ -2356,7 +2356,6 @@ raw google_pay_inapp_api_config
 string CFUPI_buttonText_noUpiApp
 string CFUPI_text_noUpiApp
 string CFUPI_text_upiAppExists
-string Semail
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2399,10 +2398,6 @@ string abc_toolbar_collapse_description
 string action_settings
 string admob_app_id
 string alert_message_cancel_download
-string answer_four
-string answer_one
-string answer_three
-string answer_two
 string app_name
 string appbar_scrolling_view_behavior
 string banner_home_footer
@@ -2513,7 +2508,6 @@ string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
 string next
-string next_questions
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2524,9 +2518,7 @@ string payee_address_upi
 string payee_name_upi
 string play_again
 string play_again_desc
-string previous_questions
 string project_id
-string question
 string rationale_permission_to_read_external_storage_message
 string s1
 string s2
@@ -2559,7 +2551,6 @@ string text_format_header_6
 string text_format_paragraph
 string text_format_preformat
 string thumbnail_image_view_desc
-string title_activity_no_action_bar
 string title_activity_welcome
 string title_cart
 string title_gifts
