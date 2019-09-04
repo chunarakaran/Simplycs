@@ -248,6 +248,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_course.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\fragment_add_course.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d92cd69d6da92d83d85fa47c63d7a2fb\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -1160,6 +1164,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\font\\maven_pro_medium.ttf"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_landing_page_edit_text_design_unfocused.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\landing_page_edit_text_design_unfocused.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash_screen.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\layout\\activity_splash_screen.xml"
     },
@@ -1752,12 +1760,12 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\richtexteditor-android-2.0.8.aar\\389cc4d0cd6065c589b7eba06c096b16\\res\\drawable-hdpi-v4\\ic_format_indent_decrease_white_48dp.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_cpv_preset_checked.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\colorpicker-1.0.1.aar\\7aabf6c8b0884dec999004cfd4be39a6\\res\\drawable-mdpi-v4\\cpv_preset_checked.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_menu_share.xml.flat",
         "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable-v24\\ic_menu_share.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_cpv_preset_checked.png.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\colorpicker-1.0.1.aar\\7aabf6c8b0884dec999004cfd4be39a6\\res\\drawable-mdpi-v4\\cpv_preset_checked.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
@@ -2392,6 +2400,10 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_sentiment_dissatisfied.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_landing_page_edit_text_design_focused.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\landing_page_edit_text_design_focused.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_state_list_anim.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e8661e7b53c69ffd4e72b37b44181235\\res\\animator\\mtrl_btn_state_list_anim.xml"
     },
@@ -3000,12 +3012,12 @@
         "source": "D:\\AndroidProject\\Simplycs\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi-v21\\ic_marketing1.png"
     },
     {
-        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_file_chooser_dialog_ic_file_video.png.flat",
-        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\filechooserdialog-android-1.1.5.aar\\1d5e3f4510b772b7eb314eca0f0e45af\\res\\drawable-xxhdpi-v4\\file_chooser_dialog_ic_file_video.png"
-    },
-    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d92cd69d6da92d83d85fa47c63d7a2fb\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_file_chooser_dialog_ic_file_video.png.flat",
+        "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\filechooserdialog-android-1.1.5.aar\\1d5e3f4510b772b7eb314eca0f0e45af\\res\\drawable-xxhdpi-v4\\file_chooser_dialog_ic_file_video.png"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_format_align_left_white_48dp.png.flat",
@@ -3832,6 +3844,10 @@
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\richtexteditor-android-2.0.8.aar\\389cc4d0cd6065c589b7eba06c096b16\\res\\drawable-hdpi-v4\\ic_format_align_justify_white_48dp.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edittext_theme_landing_page.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\edittext_theme_landing_page.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\7b0455783377ce7cdacf20c50ea9a44c\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
@@ -4422,6 +4438,10 @@
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_list_item_background.xml.flat",
         "source": "C:\\Users\\amita\\.gradle\\caches\\transforms-1\\files-1.1\\android-utils-1.0.6.aar\\f64812536719712fc856d0f2627baf9c\\res\\drawable\\list_item_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_corner_drawable.xml.flat",
+        "source": "D:\\AndroidProject\\Simplycs\\app\\src\\main\\res\\drawable\\round_corner_drawable.xml"
     },
     {
         "merged": "D:\\AndroidProject\\Simplycs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_format_bold_white_48dp.png.flat",

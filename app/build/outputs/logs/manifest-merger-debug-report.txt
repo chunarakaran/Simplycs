@@ -51,6 +51,7 @@ MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cas
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\488b69a0978280637f39a5acabfcb606\AndroidManifest.xml:2:1-9:12
 MERGED from [:google-pay-client-api-1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\google-pay-client-api-1.0.0.aar\3a934d1c9acf8f92c9302eca98d6f96a\AndroidManifest.xml:2:1-9:12
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\barchart-0.9.aar\8beca8f98ca8b5ad76ce638a903e64f9\AndroidManifest.xml:2:1-17:12
+MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\AndroidChipLayout-1.0.6.aar\9697d12700061083669dcb5971aaf92a\AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\a4ea4af46988232b455cde236746d096\AndroidManifest.xml:17:1-28:12
 MERGED from [net.dankito.filechooserdialog:filechooserdialog-android:1.1.5] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\filechooserdialog-android-1.1.5.aar\1d5e3f4510b772b7eb314eca0f0e45af\AndroidManifest.xml:2:1-13:12
 MERGED from [net.dankito.utils:android-utils:1.0.6] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\android-utils-1.0.6.aar\f64812536719712fc856d0f2627baf9c\AndroidManifest.xml:2:1-10:12
@@ -213,6 +214,7 @@ MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cas
 MERGED from [:cashfree] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\cashfreeSDK.aar\5ce0cc432f880583843e9fb464d38b2a\AndroidManifest.xml:15:5-26:19
 REJECTED from [:google-pay-client-api-1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\google-pay-client-api-1.0.0.aar\3a934d1c9acf8f92c9302eca98d6f96a\AndroidManifest.xml:7:5-20
 REJECTED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\barchart-0.9.aar\8beca8f98ca8b5ad76ce638a903e64f9\AndroidManifest.xml:11:5-15:19
+REJECTED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\AndroidChipLayout-1.0.6.aar\9697d12700061083669dcb5971aaf92a\AndroidManifest.xml:11:5-15:19
 REJECTED from [com.android.support:customtabs:26.1.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\a4ea4af46988232b455cde236746d096\AndroidManifest.xml:22:5-26:19
 REJECTED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\b7ecf7319b7cefed448257437010efa9\AndroidManifest.xml:22:5-94
 REJECTED from [com.android.support:versionedparcelable:28.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\c31668739d07829377a263d31e28b9f4\AndroidManifest.xml:22:5-23:19
@@ -477,6 +479,8 @@ MERGED from [:google-pay-client-api-1.0.0] C:\Users\amita\.gradle\caches\transfo
 MERGED from [:google-pay-client-api-1.0.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\google-pay-client-api-1.0.0.aar\3a934d1c9acf8f92c9302eca98d6f96a\AndroidManifest.xml:5:5-44
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\barchart-0.9.aar\8beca8f98ca8b5ad76ce638a903e64f9\AndroidManifest.xml:7:5-9:41
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\barchart-0.9.aar\8beca8f98ca8b5ad76ce638a903e64f9\AndroidManifest.xml:7:5-9:41
+MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\AndroidChipLayout-1.0.6.aar\9697d12700061083669dcb5971aaf92a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\AndroidChipLayout-1.0.6.aar\9697d12700061083669dcb5971aaf92a\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\a4ea4af46988232b455cde236746d096\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\a4ea4af46988232b455cde236746d096\AndroidManifest.xml:20:5-44
 MERGED from [net.dankito.filechooserdialog:filechooserdialog-android:1.1.5] C:\Users\amita\.gradle\caches\transforms-1\files-1.1\filechooserdialog-android-1.1.5.aar\1d5e3f4510b772b7eb314eca0f0e45af\AndroidManifest.xml:7:5-9:41

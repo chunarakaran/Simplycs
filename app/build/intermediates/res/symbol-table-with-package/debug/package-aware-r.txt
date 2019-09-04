@@ -164,7 +164,9 @@ attr checkedIconEnabled
 attr checkedIconVisible
 attr checkedTextViewStyle
 attr chipBackgroundColor
+attr chipColor_
 attr chipCornerRadius
+attr chipDrawable_
 attr chipEndPadding
 attr chipGroupStyle
 attr chipIcon
@@ -172,7 +174,13 @@ attr chipIconEnabled
 attr chipIconSize
 attr chipIconTint
 attr chipIconVisible
+attr chipLayoutDrawable_
 attr chipMinHeight
+attr chipPaddingBottom_
+attr chipPaddingLeft_
+attr chipPaddingRight_
+attr chipPaddingTop_
+attr chipPadding_
 attr chipSpacing
 attr chipSpacingHorizontal
 attr chipSpacingVertical
@@ -181,6 +189,11 @@ attr chipStartPadding
 attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
+attr chipTextPaddingBottom_
+attr chipTextPaddingLeft_
+attr chipTextPaddingRight_
+attr chipTextPaddingTop_
+attr chipTextPadding_
 attr circleCrop
 attr circleImageViewDefault
 attr closeIcon
@@ -252,6 +265,7 @@ attr cpv_sliderColor
 attr customFont
 attr customNavigationLayout
 attr defaultQueryHint
+attr deleteIcon_
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
@@ -325,8 +339,10 @@ attr hideMotionSpec
 attr hideOnContentScroll
 attr hideOnScroll
 attr hintAnimationEnabled
+attr hintColor_
 attr hintEnabled
 attr hintTextAppearance
+attr hint_
 attr homeAsUpIndicator
 attr homeLayout
 attr hoveredFocusedTranslationZ
@@ -363,6 +379,7 @@ attr justifyContent
 attr keylines
 attr labelBottomPadding
 attr labelCenterPadding
+attr labelPosition_
 attr labelSrc
 attr labelTopPadding
 attr labelVisibilityMode
@@ -549,6 +566,7 @@ attr selectControls
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
 attr showAsAction
+attr showDeleteButton_
 attr showDivider
 attr showDividerHorizontal
 attr showDividerVertical
@@ -556,6 +574,7 @@ attr showDividers
 attr showLabel
 attr showMotionSpec
 attr showText
+attr showText_
 attr showTitle
 attr singleChoiceItemLayout
 attr singleLine
@@ -643,8 +662,10 @@ attr textAppearanceSubtitle1
 attr textAppearanceSubtitle2
 attr textColorAlertDialogListItem
 attr textColorSearchUrl
+attr textColor_
 attr textEndPadding
 attr textInputStyle
+attr textSize_
 attr textStartPadding
 attr text_color
 attr text_size
@@ -1411,6 +1432,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable drawable_tag
+drawable edittext_theme_landing_page
 drawable exam
 drawable file_chooser_dialog_ic_file_default
 drawable file_chooser_dialog_ic_file_document
@@ -1519,6 +1541,8 @@ drawable ic_today
 drawable ic_undo_white_48dp
 drawable ic_wrong_red
 drawable iconpdf64
+drawable landing_page_edit_text_design_focused
+drawable landing_page_edit_text_design_unfocused
 drawable learn
 drawable list_item_background
 drawable login_logo
@@ -1547,6 +1571,7 @@ drawable rect_grayoutline1
 drawable rect_yellow1
 drawable right_green
 drawable round_button
+drawable round_corner_drawable
 drawable rounded_edittext
 drawable sel_btn
 drawable sel_btn_help
@@ -2232,6 +2257,7 @@ layout file_chooser_dialog_dialog_file_chooser
 layout file_chooser_dialog_list_item_file
 layout file_chooser_dialog_navigation_header
 layout file_chooser_dialog_view_parent_directory
+layout fragment_add_course
 layout fragment_archive
 layout fragment_askus
 layout fragment_audiolist
@@ -3170,3 +3196,6 @@ styleable TriangleLabelView backgroundColor corner labelBottomPadding labelCente
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable chipLayout android_gravity
+styleable chipLayout_Layout android_layout_gravity
+styleable chip_layout chipColor_ chipDrawable_ chipLayoutDrawable_ chipPaddingBottom_ chipPaddingLeft_ chipPaddingRight_ chipPaddingTop_ chipPadding_ chipTextPaddingBottom_ chipTextPaddingLeft_ chipTextPaddingRight_ chipTextPaddingTop_ chipTextPadding_ deleteIcon_ hintColor_ hint_ labelPosition_ showDeleteButton_ showText_ textColor_ textSize_

@@ -396,8 +396,14 @@ public class CourseFragment extends Fragment
 
 //                Toast.makeText(getActivity(),"Hello",Toast.LENGTH_SHORT).show();
 
-              startActivity(new Intent(getActivity(),AddcourseActivity.class));
-              getActivity().finish();
+//              startActivity(new Intent(getActivity(),AddcourseActivity.class));
+//              getActivity().finish();
+
+                FragmentTransaction transection=getFragmentManager().beginTransaction();
+                AddCourseFragment mfragment=new AddCourseFragment();
+                transection.replace(R.id.content_frame, mfragment);
+                transection.addToBackStack(null).commit();
+
 
 
             }

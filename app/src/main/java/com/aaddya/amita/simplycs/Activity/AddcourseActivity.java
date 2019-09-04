@@ -83,6 +83,12 @@ public class AddcourseActivity extends AppCompatActivity  {
         tagView.setTagBackgroundColor(Color.BLUE);
 
 
+        tagView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_LONG).show();
+            }
+        });
 
         GetCourseName();
 
