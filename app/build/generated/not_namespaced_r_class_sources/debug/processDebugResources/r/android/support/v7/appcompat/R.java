@@ -711,19 +711,19 @@ public final class R {
         public static final int tag_transition_group = 0x7f0a01b6;
         public static final int tag_unhandled_key_event_manager = 0x7f0a01b7;
         public static final int tag_unhandled_key_listeners = 0x7f0a01b8;
-        public static final int text = 0x7f0a01bf;
-        public static final int text2 = 0x7f0a01c0;
-        public static final int textSpacerNoButtons = 0x7f0a01c3;
-        public static final int textSpacerNoTitle = 0x7f0a01c4;
-        public static final int time = 0x7f0a01cd;
-        public static final int title = 0x7f0a01ce;
-        public static final int titleDividerNoCustom = 0x7f0a01cf;
-        public static final int title_template = 0x7f0a01d0;
-        public static final int top = 0x7f0a01d2;
-        public static final int topPanel = 0x7f0a01d4;
-        public static final int uniform = 0x7f0a01fb;
-        public static final int up = 0x7f0a01fd;
-        public static final int wrap_content = 0x7f0a021a;
+        public static final int text = 0x7f0a01c2;
+        public static final int text2 = 0x7f0a01c3;
+        public static final int textSpacerNoButtons = 0x7f0a01c6;
+        public static final int textSpacerNoTitle = 0x7f0a01c7;
+        public static final int time = 0x7f0a01d0;
+        public static final int title = 0x7f0a01d1;
+        public static final int titleDividerNoCustom = 0x7f0a01d2;
+        public static final int title_template = 0x7f0a01d3;
+        public static final int top = 0x7f0a01d5;
+        public static final int topPanel = 0x7f0a01d7;
+        public static final int uniform = 0x7f0a01fe;
+        public static final int up = 0x7f0a0200;
+        public static final int wrap_content = 0x7f0a021d;
     }
     public static final class integer {
         private integer() {}

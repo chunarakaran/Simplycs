@@ -43,7 +43,18 @@ public class Test_List_Adapter extends RecyclerView.Adapter<Test_List_Adapter.Vi
         Test_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
-        Viewholder.TitleTextView.setText(dataAdapterOBJ.getTitle());
+        Viewholder.TestName.setText(dataAdapterOBJ.getTitle());
+        Viewholder.TestDuration.setText(dataAdapterOBJ.getDuration());
+        Viewholder.TestMarks.setText(dataAdapterOBJ.getMarks());
+
+
+        if (dataAdapterOBJ.getIsComplete().equalsIgnoreCase("1")){
+
+            Viewholder.TestStart.setText("View Result");
+        }
+        else{
+            Viewholder.TestStart.setText("Start");
+        }
 
     }
 
@@ -55,14 +66,20 @@ public class Test_List_Adapter extends RecyclerView.Adapter<Test_List_Adapter.Vi
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView TitleTextView;
+        public TextView TestName;
+        public TextView TestDuration;
+        public TextView TestMarks;
+        public TextView TestStart;
 
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
-            TitleTextView = (TextView) itemView.findViewById(R.id.test_title) ;
+            TestName = (TextView) itemView.findViewById(R.id.test_title) ;
+            TestDuration = (TextView) itemView.findViewById(R.id.test_duration) ;
+            TestMarks = (TextView) itemView.findViewById(R.id.test_marks) ;
+            TestStart = (TextView) itemView.findViewById(R.id.test_start) ;
 
         }
     }

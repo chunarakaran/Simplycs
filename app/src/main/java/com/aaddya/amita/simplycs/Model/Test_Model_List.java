@@ -7,6 +7,7 @@ public class Test_Model_List {
     public String Duration;
     public String Marks;
     public String Rules;
+    public String isComplete;
 
 
     public String getId() {
@@ -60,4 +61,13 @@ public class Test_Model_List {
         this.Rules=Testrules;
     }
 
+    public String getIsComplete(){
+
+        return isComplete;
+    }
+
+    public void setIsComplete(String isCompleted)
+    {
+        this.isComplete=isCompleted;
+    }
 }

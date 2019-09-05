@@ -50,13 +50,14 @@ public class TestListFragment extends Fragment
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules;
+    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules,is_Completed;
 
     final ArrayList<Test_Model_List> Testid = new ArrayList<>();
     final ArrayList<Test_Model_List> Testname = new ArrayList<>();
     final ArrayList<Test_Model_List> Testduration = new ArrayList<>();
     final ArrayList<Test_Model_List> Testmarks = new ArrayList<>();
     final ArrayList<Test_Model_List> Testrules = new ArrayList<>();
+    final ArrayList<Test_Model_List> IsCompleted = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
 
@@ -160,27 +161,34 @@ public class TestListFragment extends Fragment
                     test_duration=Testduration.get(RecyclerViewItemPosition).getDuration();
                     test_marks=Testmarks.get(RecyclerViewItemPosition).getMarks();
                     test_rules=Testrules.get(RecyclerViewItemPosition).getRules();
+                    is_Completed=IsCompleted.get(RecyclerViewItemPosition).getIsComplete();
 
-                    FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    StartQuizFragment mfragment=new StartQuizFragment();
+                    if (is_Completed.equalsIgnoreCase("1"))
+                    {
+                        Toast.makeText(getActivity(), "You have Completed This Test ", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
 
-                    Bundle bundle=new Bundle();
-                    bundle.putString("category_id",Category_id);
-                    bundle.putString("SubCategory_id",SubCategory_id);
-                    bundle.putString("CDate",CDate);
+                        FragmentTransaction transection = getFragmentManager().beginTransaction();
+                        StartQuizFragment mfragment = new StartQuizFragment();
 
-                    bundle.putString("test_id",test_id);
-                    bundle.putString("test_name",test_name);
-                    bundle.putString("test_duration",test_duration);
-                    bundle.putString("test_marks",test_marks);
-                    bundle.putString("test_rules",test_rules);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("category_id", Category_id);
+                        bundle.putString("SubCategory_id", SubCategory_id);
+                        bundle.putString("CDate", CDate);
 
-                    mfragment.setArguments(bundle);
+                        bundle.putString("test_id", test_id);
+                        bundle.putString("test_name", test_name);
+                        bundle.putString("test_duration", test_duration);
+                        bundle.putString("test_marks", test_marks);
+                        bundle.putString("test_rules", test_rules);
 
-                    transection.replace(R.id.content_frame, mfragment);
-                    transection.addToBackStack(null).commit();
+                        mfragment.setArguments(bundle);
 
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
 
+                    }
 
 
 //                    Toast.makeText(getActivity(), "You clicked " + test_id, Toast.LENGTH_SHORT).show();
@@ -266,6 +274,7 @@ public class TestListFragment extends Fragment
                                     GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
                                     GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
                                     GetDataAdapter2.setRules(jsonObject1.getString("rules"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("IsComplete"));
 
 
 
@@ -275,6 +284,7 @@ public class TestListFragment extends Fragment
                                     Testduration.add(GetDataAdapter2);
                                     Testmarks.add(GetDataAdapter2);
                                     Testrules.add(GetDataAdapter2);
+                                    IsCompleted.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
@@ -292,6 +302,7 @@ public class TestListFragment extends Fragment
                                     GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
                                     GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
                                     GetDataAdapter2.setRules(jsonObject1.getString("rules"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("IsComplete"));
 
 
 
@@ -301,6 +312,7 @@ public class TestListFragment extends Fragment
                                     Testduration.add(GetDataAdapter2);
                                     Testmarks.add(GetDataAdapter2);
                                     Testrules.add(GetDataAdapter2);
+                                    IsCompleted.add(GetDataAdapter2);
 
                                     ListOfdataAdapter.add(GetDataAdapter2);
 
