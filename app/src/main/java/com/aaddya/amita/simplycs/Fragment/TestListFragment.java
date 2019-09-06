@@ -165,7 +165,26 @@ public class TestListFragment extends Fragment
 
                     if (is_Completed.equalsIgnoreCase("1"))
                     {
-                        Toast.makeText(getActivity(), "You have Completed This Test ", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), "You have Completed This Test ", Toast.LENGTH_SHORT).show();
+
+                        FragmentTransaction transection = getFragmentManager().beginTransaction();
+                        StartQuizFragment mfragment = new StartQuizFragment();
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("category_id", Category_id);
+                        bundle.putString("SubCategory_id", SubCategory_id);
+                        bundle.putString("CDate", CDate);
+
+                        bundle.putString("test_id", test_id);
+                        bundle.putString("test_name", test_name);
+                        bundle.putString("test_duration", test_duration);
+                        bundle.putString("test_marks", test_marks);
+                        bundle.putString("test_rules", test_rules);
+
+                        mfragment.setArguments(bundle);
+
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
                     }
                     else {
 

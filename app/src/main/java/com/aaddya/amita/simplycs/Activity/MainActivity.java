@@ -285,9 +285,9 @@ public class MainActivity extends AppCompatActivity
                 fragment = new ProfileFragment();
                 break;
 
-            case R.id.nav_setting:
-                fragment = new SettingFragment();
-                break;
+//            case R.id.nav_setting:
+//                fragment = new SettingFragment();
+//                break;
 
             case R.id.nav_share:
 

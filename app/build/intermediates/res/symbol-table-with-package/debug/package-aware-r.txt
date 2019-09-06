@@ -1919,7 +1919,6 @@ id nav_courses
 id nav_dashboard
 id nav_logout
 id nav_profile
-id nav_setting
 id nav_share
 id nav_view
 id navigation
