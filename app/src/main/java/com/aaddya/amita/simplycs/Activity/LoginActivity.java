@@ -39,6 +39,11 @@ import com.aaddya.amita.simplycs.Adapter.SessionManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.refactor.lib.colordialog.PromptDialog;
+
 public class LoginActivity extends AppCompatActivity {
 
     ImageView picture;
@@ -49,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     RequestQueue requestQueue1;
     String Url;
     String android_id, deviceName, deviceOs;
-//    String imeiNumber1="122412412414";
+    String imeiNumber1="122412412414";
 
     private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
     private TelephonyManager mTelephonyManager;
@@ -179,20 +184,14 @@ public class LoginActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
                // Toast.makeText(getApplicationContext(), imeiNumber1, Toast.LENGTH_SHORT).show();
-
-
 
                 requestQueue1 = Volley.newRequestQueue(getApplicationContext());
 
                 Url = (String) getText(R.string.url);
                 if(!user_id.getText().toString().isEmpty() && !user_password.getText().toString().isEmpty()) {
                     if(isNetworkAvailable()) {
-                        check_login();
+                        Login();
                     }
                     else
                     {
@@ -247,77 +246,100 @@ public class LoginActivity extends AppCompatActivity {
 //        imeiNumber1 = mTelephonyManager.getDeviceId(2);
 //    }
 
-
-    private void check_login() {
+    public void Login()
+    {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
-        StringRequest jsonobject = new StringRequest(Request.Method.POST, Url + "api/Login" + "?Email=" + user_id.getText().toString() + "&Password=" + user_password.getText().toString()
-                +"&DeviceToken="+android_id + "&OSVersion=" + deviceOs +  "&DeviceName=" + deviceName, new Response.Listener<String>() {
-            @Override
+        // Creating string request with post method.
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, Url+"api/Login",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
 
-            public void onResponse(String response) {
+                        try {
+                            JSONObject jObj = new JSONObject(ServerResponse);
+                            String success = jObj.getString("success");
 
-                try {
-                    JSONObject jObj = new JSONObject(response);
-                    String success = jObj.getString("success");
+                            if (success.equalsIgnoreCase("false_email")) {
+                                user_id.setError("Email-id does not exist");
+                                user_password.setText("");
+                                hideDialog();
+                            } else if (success.equalsIgnoreCase("false_password")) {
+                                user_password.setError("Incorrect password");
+                                user_password.setText("");
+                                hideDialog();
+                            } else {
 
-                    if (success.equalsIgnoreCase("false_email")) {
-                        user_id.setError("Email-id does not exist");
-                        user_password.setText("");
-                        hideDialog();
-                    } else if (success.equalsIgnoreCase("false_password")) {
-                        user_password.setError("Incorrect password");
-                        user_password.setText("");
-                        hideDialog();
-                    } else {
+                                JSONObject user = jObj.getJSONObject("data");
+                                String Uid = user.getString("Auth");
+                                String Cid = user.getString("cource_id");
 
-                        JSONObject user = jObj.getJSONObject("data");
-                        String Uid = user.getString("Auth");
-                        String Cid = user.getString("cource_id");
+                                Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG).show();
 
-                        Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG).show();
+                                editor.putString("User", Uid);
+                                editor.putString("Courseid", Cid);
+                                editor.commit();
 
-                        editor.putString("User", Uid);
-                        editor.putString("Courseid", Cid);
-                        editor.commit();
+                                // Create login session
+                                session.setLogin(true);
 
-                        // Create login session
-                        session.setLogin(true);
+                                hideDialog();
+                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(i);
+                                finish();
+                            }
 
-                        hideDialog();
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(i);
-                        finish();
+                        } catch (JSONException e) {
+
+                            hideDialog();
+                            // JSON error
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Server Error Please Try After Sometime", Toast.LENGTH_LONG).show();
+                        }
+
+
                     }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
 
-                } catch (JSONException e) {
+                        // Hiding the progress dialog after all task complete.
+                        hideDialog();
 
-                    hideDialog();
-                    // JSON error
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Server Error Please Try After Sometime", Toast.LENGTH_LONG).show();
-                }
-
-
-
-
-            }
-        }, new Response.ErrorListener() {
-
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+                    }
+                }) {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
+            protected Map<String, String> getParams() {
 
-                hideDialog();
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+
+                //Company
+                params.put("Email",user_id.getText().toString());
+                params.put("Password",user_password.getText().toString());
+                params.put("DeviceToken",android_id);
+                params.put("OSVersion",deviceOs);
+                params.put("IMEI",imeiNumber1);
+                params.put("DeviceName",deviceName);
+
+
+                return params;
             }
-        });
 
-        jsonobject.setRetryPolicy(new DefaultRetryPolicy(100000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        };
 
-        requestQueue1.add(jsonobject);
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest1);
+
     }
 
     public boolean isNetworkAvailable() {

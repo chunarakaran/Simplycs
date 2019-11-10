@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shts:TriangleLabelView:1.1.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6669b7bd9069e8a8a4e3577ba53d181/TriangleLabelView-1.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6669b7bd9069e8a8a4e3577ba53d181/TriangleLabelView-1.1.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shts/TriangleLabelView/1.1.2/7d3fa3cc78196fe631ce5fc9c1a236c4ca10f72e/TriangleLabelView-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

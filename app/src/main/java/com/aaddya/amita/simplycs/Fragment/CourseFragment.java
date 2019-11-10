@@ -184,13 +184,13 @@ public class CourseFragment extends Fragment
                                                         JSONObject jObj = new JSONObject(ServerResponse);
                                                         String success = jObj.getString("success");
 
-                                                        if(success.equalsIgnoreCase("false"))
+                                                        if(success.equalsIgnoreCase("true"))
                                                         {
                                                             ((MainActivity)getActivity()).Logout();
                                                             hideDialog();
 
                                                         }
-                                                        else if (success.equalsIgnoreCase("true")){
+                                                        else if (success.equalsIgnoreCase("false")){
                                                             Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                                             hideDialog();
                                                         }
@@ -444,7 +444,7 @@ public class CourseFragment extends Fragment
 
                                 JSONObject user = jObj.getJSONObject("data");
                                 JSONArray jsonArray=jObj.getJSONArray("user_course");
-                                String Current_course=user.getString("cource_name");
+                                String Current_course=user.getString("current_course");
 
                                 Course_Name.setText(Current_course);
 
@@ -454,7 +454,7 @@ public class CourseFragment extends Fragment
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    userCourse_model_list.setId(jsonObject1.getString("id"));
+                                    userCourse_model_list.setId(jsonObject1.getString("course_id"));
                                     userCourse_model_list.setUser_courseName(jsonObject1.getString("course_name"));
 
 

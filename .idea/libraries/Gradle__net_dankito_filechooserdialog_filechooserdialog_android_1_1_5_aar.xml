@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: net.dankito.filechooserdialog:filechooserdialog-android:1.1.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e4cd61a6e5cee774646f2df86078d1b5/filechooserdialog-android-1.1.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e4cd61a6e5cee774646f2df86078d1b5/filechooserdialog-android-1.1.5/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.filechooserdialog/filechooserdialog-android/1.1.5/5def6b22f94a0b18d5f12a03655284ab9481fa84/filechooserdialog-android-1.1.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.filechooserdialog/filechooserdialog-android/1.1.5/9b8ed6579436e067c5f9d6870ac8ac2e8d99034e/filechooserdialog-android-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

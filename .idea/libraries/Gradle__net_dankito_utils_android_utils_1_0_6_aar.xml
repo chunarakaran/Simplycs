@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: net.dankito.utils:android-utils:1.0.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f54f69de153fa8705e4da691244bea4/android-utils-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f54f69de153fa8705e4da691244bea4/android-utils-1.0.6/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/android-utils/1.0.6/aac97319f69974e60bf3388aa100c9fd1f5055b6/android-utils-1.0.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/android-utils/1.0.6/616925b5b34da3b4f9c6c11c14454eb997f39336/android-utils-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

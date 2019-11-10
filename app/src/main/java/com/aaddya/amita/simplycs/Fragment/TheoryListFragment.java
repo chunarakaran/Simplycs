@@ -259,7 +259,7 @@ public class TheoryListFragment extends Fragment
 
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
-                            PremiumUser=jObj.getString("premium_user");
+                            PremiumUser=jObj.getString("is_premium_user");
 
                             if(success.equalsIgnoreCase("true"))
                             {

@@ -293,7 +293,7 @@ public class TestListFragment extends Fragment
                                     GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
                                     GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
                                     GetDataAdapter2.setRules(jsonObject1.getString("rules"));
-                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("IsComplete"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("is_complete"));
 
 
 
@@ -309,7 +309,7 @@ public class TestListFragment extends Fragment
 
                                 }
 
-                                JSONArray jsonArray1=jObj.getJSONArray("exist_test_list");
+                                JSONArray jsonArray1=jObj.getJSONArray("exist_test");
                                 for(int i=0;i<jsonArray1.length();i++)
                                 {
                                     Test_Model_List GetDataAdapter2=new Test_Model_List();
@@ -321,7 +321,7 @@ public class TestListFragment extends Fragment
                                     GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
                                     GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
                                     GetDataAdapter2.setRules(jsonObject1.getString("rules"));
-                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("IsComplete"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("is_complete"));
 
 
 

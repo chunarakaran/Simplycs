@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:cashfree:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/cashfree/build/.transforms/34df0f5400a20cf2d02d6bd8e87f2633/cashfreeSDK/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/cashfree/build/.transforms/34df0f5400a20cf2d02d6bd8e87f2633/cashfreeSDK/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

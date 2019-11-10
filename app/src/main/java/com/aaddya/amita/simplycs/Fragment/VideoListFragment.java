@@ -199,7 +199,7 @@ public class VideoListFragment extends Fragment
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
-                            if(success.equalsIgnoreCase("false"))
+                            if(success.equalsIgnoreCase("true"))
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
@@ -251,7 +251,7 @@ public class VideoListFragment extends Fragment
                                 hideDialog();
 
                             }
-                            else if (success.equalsIgnoreCase("true")){
+                            else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }

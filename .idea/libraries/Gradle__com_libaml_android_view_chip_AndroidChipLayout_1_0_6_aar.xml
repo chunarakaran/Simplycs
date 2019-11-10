@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.libaml.android.view.chip:AndroidChipLayout:1.0.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1483f2f59c0724360505c17557879771/AndroidChipLayout-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1483f2f59c0724360505c17557879771/AndroidChipLayout-1.0.6/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.libaml.android.view.chip/AndroidChipLayout/1.0.6/d7e0c0bc608709f576aa1d839cf7f6c57f2719e2/AndroidChipLayout-1.0.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.libaml.android.view.chip/AndroidChipLayout/1.0.6/83f247ea50e655b09cf19befb3d9e6ab5edfba11/AndroidChipLayout-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
