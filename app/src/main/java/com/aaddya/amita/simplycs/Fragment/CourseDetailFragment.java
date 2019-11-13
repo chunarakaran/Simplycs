@@ -177,13 +177,14 @@ public class CourseDetailFragment extends Fragment
 
                                     JSONObject jObj = new JSONObject(ServerResponse);
                                     String success = jObj.getString("success");
-                                    Order_id=jObj.getString("OrderId");
+
 
                                     if(success.equalsIgnoreCase("true"))
                                     {
 
                                         JSONObject data = jObj.getJSONObject("data");
                                         cftoken=data.getString("cftoken");
+                                        Order_id=data.getString("OrderId");
 
                                         startActivity(new Intent(getActivity(), CheckoutActivity.class)
                                                 .putExtra("User_id", User_id)
@@ -351,7 +352,7 @@ public class CourseDetailFragment extends Fragment
                                 Package_id=courseId;
                                 Order_Amount=CoursePrice;
 
-                                JSONArray jsonArray=user.getJSONArray("multiple_content");
+                                JSONArray jsonArray=jObj.getJSONArray("multiple_package_content");
 
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
@@ -360,16 +361,16 @@ public class CourseDetailFragment extends Fragment
 
 
                                     chepter_model_list.setId(jsonObject1.getString("id"));
-                                    chepter_model_list.setCh_Course_id(jsonObject1.getString("course_id"));
-                                    chepter_model_list.setCh_Category_id(jsonObject1.getString("topic_id"));
-                                    chepter_model_list.setCh_Subcategory_id(jsonObject1.getString("sub_topic_id"));
+//                                    chepter_model_list.setCh_Course_id(jsonObject1.getString("course_id"));
+//                                    chepter_model_list.setCh_Category_id(jsonObject1.getString("topic_id"));
+//                                    chepter_model_list.setCh_Subcategory_id(jsonObject1.getString("sub_topic_id"));
                                     chepter_model_list.setChapterName(jsonObject1.getString("subtopic_name"));
 
 
                                     Chapter_id.add(chepter_model_list);
-                                    Ch_Course_id.add(chepter_model_list);
-                                    Ch_Category_id.add(chepter_model_list);
-                                    Subcategory_id.add(chepter_model_list);
+//                                    Ch_Course_id.add(chepter_model_list);
+//                                    Ch_Category_id.add(chepter_model_list);
+//                                    Subcategory_id.add(chepter_model_list);
                                     Chapter_name.add(chepter_model_list);
 
                                     ListOfdataAdapter.add(chepter_model_list);

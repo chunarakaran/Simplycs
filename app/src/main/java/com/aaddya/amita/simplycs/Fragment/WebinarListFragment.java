@@ -180,11 +180,11 @@ public class WebinarListFragment extends Fragment
                             JSONObject jObj = new JSONObject(ServerResponse);
                             String success = jObj.getString("success");
 
-                            if(success.equalsIgnoreCase("false"))
+                            if(success.equalsIgnoreCase("true"))
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("webinar_list");
+                                JSONArray jsonArray=jObj.getJSONArray("data");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     Webinar_Model_List GetDataAdapter2=new Webinar_Model_List();
@@ -226,7 +226,7 @@ public class WebinarListFragment extends Fragment
                                 hideDialog();
 
                             }
-                            else if (success.equalsIgnoreCase("true")){
+                            else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }

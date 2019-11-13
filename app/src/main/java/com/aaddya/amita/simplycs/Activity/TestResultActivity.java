@@ -202,7 +202,7 @@ public class TestResultActivity extends AppCompatActivity {
                             if (success.equalsIgnoreCase("true")) {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray = jObj.getJSONArray("result");
+                                JSONArray jsonArray = jObj.getJSONArray("data");
                                 for (int i = 0; i < jsonArray.length(); i++) {
 
                                     Performance_index p = new Performance_index();

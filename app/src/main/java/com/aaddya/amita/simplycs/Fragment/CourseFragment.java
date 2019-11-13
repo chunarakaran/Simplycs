@@ -655,7 +655,7 @@ public class CourseFragment extends Fragment
 
                             if(success.equalsIgnoreCase("true"))
                             {
-                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                JSONArray jsonArray=jObj.getJSONArray("package");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     BroughtCourse_Model_List broughtCourse_model_list=new BroughtCourse_Model_List();

@@ -54,7 +54,7 @@ public class QuestionFragment extends Fragment {
     private Quetion_List_Adapter mAdapter;
     public static List<Quetion_Model_List> rowListItem;
     private JSONArray result;
-    public static final String JSON_ARRAY = "test_questions";
+    public static final String JSON_ARRAY = "data";
 
     final ArrayList<Quetion_Model_List> Scale_list = new ArrayList<>();
 

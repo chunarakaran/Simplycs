@@ -7,8 +7,8 @@ android {
         applicationId "com.aaddya.amita.simplycs"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 17
-        versionName "1.2.5"
+        versionCode 19
+        versionName "1.2.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -17,6 +17,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 
     // Temporary fix until alpha10
