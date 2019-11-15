@@ -61,5 +61,7 @@
     <color name="grey_80">#37474F</color>
     <color name="gray_chart">#F5F5F5</color>
 
+    <color name="background_color">#f5f5f5</color>
+
 
 </resources>

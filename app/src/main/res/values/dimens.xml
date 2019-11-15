@@ -80,4 +80,19 @@
     <dimen name="spacing_xxxlarge">55dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
 
+
+    <!-- For Register-->
+    <dimen name="_10sdp">36.00dp</dimen>
+    <dimen name="_14sdp">50.40dp</dimen>
+    <dimen name="_20sdp">72.00dp</dimen>
+    <dimen name="_6sdp">21.60dp</dimen>
+    <dimen name="_15sdp">54.00dp</dimen>
+    <dimen name="_8sdp">28.80dp</dimen>
+    <dimen name="_120sdp">200.00dp</dimen>
+    <dimen name="_42sdp">151.20dp</dimen>
+    <dimen name="_30sdp">108.00dp</dimen>
+    <dimen name="_5sdp">16.00dp</dimen>
+
+
+
 </resources>

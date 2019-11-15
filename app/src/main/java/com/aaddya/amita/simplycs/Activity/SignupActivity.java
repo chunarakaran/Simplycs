@@ -3,8 +3,6 @@ package com.aaddya.amita.simplycs.Activity;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -91,34 +89,34 @@ public class SignupActivity extends AppCompatActivity {
 
         Initialize();
 
-        Emobile.setText("+91");
-        Selection.setSelection(Emobile.getText(), Emobile.getText().length());
+//        Emobile.setText("+91");
+//        Selection.setSelection(Emobile.getText(), Emobile.getText().length());
 
-        Emobile.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(!s.toString().startsWith("+91")){
-                    Emobile.setText("+91");
-                    Selection.setSelection(Emobile.getText(), Emobile.getText().length());
-
-                }
-
-            }
-        });
+//        Emobile.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count,
+//                                          int after) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                if(!s.toString().startsWith("+91")){
+//                    Emobile.setText("+91");
+//                    Selection.setSelection(Emobile.getText(), Emobile.getText().length());
+//
+//                }
+//
+//            }
+//        });
 
 
         GetCourseName();
@@ -163,14 +161,14 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-        backLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        backLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
 
 
@@ -180,7 +178,7 @@ public class SignupActivity extends AppCompatActivity {
     public void Initialize()
     {
         Sign_up=(TextView)findViewById(R.id.sign_up);
-        backLogin=(TextView)findViewById(R.id.backLogin);
+//        backLogin=(TextView)findViewById(R.id.backLogin);
 
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);

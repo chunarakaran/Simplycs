@@ -222,16 +222,16 @@ public class CheckoutActivity extends AppCompatActivity implements CFClientInter
                             if(success.equalsIgnoreCase("true"))
                             {
 
-                                String test;
-                                JSONObject data = jObj.getJSONObject("data");
-
-                                test=data.getString("OrderId");
+//                                String test;
+//                                JSONObject data = jObj.getJSONObject("data");
+//
+//                                test=data.getString("OrderId");
 
                                 promptDialog.setCancelable(false);
                                 promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS);
                                 promptDialog.setAnimationEnable(true);
                                 promptDialog.setTitleText("Payment Success");
-                                promptDialog.setContentText(test);
+//                                promptDialog.setContentText(test);
                                 promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
                                     @Override
                                     public void onClick(PromptDialog dialog) {
