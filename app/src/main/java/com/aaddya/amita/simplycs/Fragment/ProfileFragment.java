@@ -324,7 +324,7 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
                     .addHeader("Auth", User_id) //Adding text parameter to the request
                     .setMaxRetries(2)
                     .startUpload(); //Starting the upload
-//            Toast.makeText(getActivity(),"Successfully Uploaded",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),"Successfully Uploaded",Toast.LENGTH_SHORT).show();
 
         } catch (Exception exc) {
             Toast.makeText(getActivity(), exc.getMessage(), Toast.LENGTH_SHORT).show();

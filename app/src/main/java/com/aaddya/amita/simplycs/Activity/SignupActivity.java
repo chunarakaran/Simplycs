@@ -6,15 +6,18 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.QuickContactBadge;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +43,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 
 public class SignupActivity extends AppCompatActivity {
 
-    ImageView picture;
+    ImageView picture,passwordEyeImg;
 
     TextView Sign_up,backLogin;
 
@@ -79,12 +82,7 @@ public class SignupActivity extends AppCompatActivity {
 
         URL = getString(R.string.url);
 
-//        picture=(ImageView)findViewById(R.id.logo);
-//        int imageid = R.drawable.login_logo;
-//        BitmapFactory.Options opts = new BitmapFactory.Options();
-//        opts.inSampleSize = 4;
-//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageid, opts);
-//        picture.setImageBitmap(bitmap);
+
 
 
         Initialize();
@@ -138,8 +136,6 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-//        Intent intent = getIntent();
-//        Imobile = intent.getStringExtra("mobile");
 
 
         BluetoothAdapter myDevice = BluetoothAdapter.getDefaultAdapter();
@@ -153,11 +149,23 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // Toast.makeText(getApplicationContext(),Imobile,Toast.LENGTH_SHORT).show();
-
                 Validation();
+            }
+        });
 
-//                Register();
 
+        passwordEyeImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                if (passwordEyeImg.getTag().equals(1)) {
+//                    EPassword.setTransformationMethod(null);
+//                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_close));
+//                    passwordEyeImg.setTag(0);
+//                } else {
+//                    passwordEyeImg.setTag(1);
+//                    EPassword.setTransformationMethod(new PasswordTransformationMethod());
+//                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_open));
+//                }
             }
         });
 
@@ -180,6 +188,7 @@ public class SignupActivity extends AppCompatActivity {
         Sign_up=(TextView)findViewById(R.id.sign_up);
 //        backLogin=(TextView)findViewById(R.id.backLogin);
 
+        passwordEyeImg=(ImageView)findViewById(R.id.password_eye_img);
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);
         EName=(EditText)findViewById(R.id.input_name);
