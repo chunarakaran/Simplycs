@@ -30,7 +30,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
+import com.aaddya.amita.simplycs.Model.Package_Model_List;
 import com.aaddya.amita.simplycs.Adapter.Course_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -45,17 +45,17 @@ import java.util.Map;
 
 import cn.refactor.lib.colordialog.PromptDialog;
 
-public class CourseListFragment extends Fragment
+public class PackageListFragment extends Fragment
 {
-    List<Course_Model_List> ListOfdataAdapter;
+    List<Package_Model_List> ListOfdataAdapter;
 
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
 
     String course_id,course_name;
-    final ArrayList<Course_Model_List> Course_id = new ArrayList<>();
-    final ArrayList<Course_Model_List> Course_name = new ArrayList<>();
+    final ArrayList<Package_Model_List> Course_id = new ArrayList<>();
+    final ArrayList<Package_Model_List> Course_name = new ArrayList<>();
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -149,7 +149,7 @@ public class CourseListFragment extends Fragment
                     course_name=Course_name.get(RecyclerViewItemPosition).getCourseTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    CourseDetailFragment mfragment=new CourseDetailFragment();
+                    PackageDetailFragment mfragment=new PackageDetailFragment();
 
                     Bundle bundle=new Bundle();
                     bundle.putString("course_id",course_id);
@@ -235,25 +235,27 @@ public class CourseListFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("package");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    Course_Model_List course_model_list=new Course_Model_List();
+                                    Package_Model_List package_model_list=new Package_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    course_model_list.setId(jsonObject1.getString("id"));
-                                    course_model_list.setImageUrl(jsonObject1.getString("file_path"));
-                                    course_model_list.setCourseTitle(jsonObject1.getString("package_name"));
-                                    course_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
-                                    course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
-                                    course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
-                                    course_model_list.setCourseStartDate(jsonObject1.getString("date"));
-                                    course_model_list.setDaysLeft(jsonObject1.getString("left_days"));
+                                    package_model_list.setId(jsonObject1.getString("id"));
+                                    package_model_list.setImageUrl(jsonObject1.getString("file_path"));
+                                    package_model_list.setCourseTitle(jsonObject1.getString("package_name"));
+                                    package_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
+                                    package_model_list.setCoursePrice(jsonObject1.getString("package_price"));
+                                    package_model_list.setCourseFinalPrice(jsonObject1.getString("final_price"));
+                                    package_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
+                                    package_model_list.setCourseStartDate(jsonObject1.getString("date"));
+                                    package_model_list.setDaysLeft(jsonObject1.getString("left_days"));
+                                    package_model_list.setIsBUy(jsonObject1.getString("is_buy"));
 
 
 
-                                    Course_id.add(course_model_list);
-                                    Course_name.add(course_model_list);
+                                    Course_id.add(package_model_list);
+                                    Course_name.add(package_model_list);
 
-                                    ListOfdataAdapter.add(course_model_list);
+                                    ListOfdataAdapter.add(package_model_list);
 
                                 }
 

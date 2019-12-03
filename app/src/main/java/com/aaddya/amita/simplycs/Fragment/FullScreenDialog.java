@@ -233,6 +233,26 @@ public class FullScreenDialog extends DialogFragment  {
 
                                 }
 
+                                JSONArray jsonArray3=jObj.getJSONArray("exist_test");
+                                for(int i=0;i<jsonArray3.length();i++)
+                                {
+                                    Notification_Model_List GetDataAdapter2=new Notification_Model_List();
+                                    JSONObject jsonObject1=jsonArray3.getJSONObject(i);
+
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
+
+
+
+
+
+                                    Contentid.add(GetDataAdapter2);
+
+                                    ListOfdataAdapter.add(GetDataAdapter2);
+
+                                }
+
 
 
                                 adapter = new Notification_List_Adapter(ListOfdataAdapter,getActivity());

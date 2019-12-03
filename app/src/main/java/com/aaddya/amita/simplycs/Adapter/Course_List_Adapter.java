@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
+import com.aaddya.amita.simplycs.Model.Package_Model_List;
 import com.aaddya.amita.simplycs.R;
 import com.squareup.picasso.Picasso;
 
@@ -21,9 +19,9 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
 
     Context context;
 
-    List<Course_Model_List> dataAdapters;
+    List<Package_Model_List> dataAdapters;
 
-    public Course_List_Adapter(List<Course_Model_List> getDataAdapter, Context context){
+    public Course_List_Adapter(List<Package_Model_List> getDataAdapter, Context context){
 
         super();
         this.dataAdapters = getDataAdapter;
@@ -43,7 +41,7 @@ public class Course_List_Adapter extends RecyclerView.Adapter<Course_List_Adapte
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        Course_Model_List dataAdapterOBJ =  dataAdapters.get(position);
+        Package_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
 

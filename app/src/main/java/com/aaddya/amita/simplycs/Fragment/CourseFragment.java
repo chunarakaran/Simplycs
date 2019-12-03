@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -25,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aaddya.amita.simplycs.Activity.AddcourseActivity;
 import com.aaddya.amita.simplycs.Activity.MainActivity;
 import com.aaddya.amita.simplycs.Adapter.BroughtCourse_List_Adapter;
 import com.aaddya.amita.simplycs.Adapter.User_Course_List_Adapter;
@@ -38,7 +36,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
+import com.aaddya.amita.simplycs.Model.Package_Model_List;
 import com.aaddya.amita.simplycs.Adapter.Course_List_Adapter;
 import com.aaddya.amita.simplycs.R;
 
@@ -60,7 +58,7 @@ public class CourseFragment extends Fragment
     TextView Course_Name;
 
     List<UserCourse_Model_List> ListOfdataAdapter;
-    List<Course_Model_List> ListOfdataAdapter1;
+    List<Package_Model_List> ListOfdataAdapter1;
     List<BroughtCourse_Model_List> ListOfdataAdapter2;
 
     RecyclerView recyclerView,recyclerView1,recyclerView2;
@@ -72,8 +70,8 @@ public class CourseFragment extends Fragment
 
 
     String course_id,course_name;
-    final ArrayList<Course_Model_List> Course_id = new ArrayList<>();
-    final ArrayList<Course_Model_List> Course_name = new ArrayList<>();
+    final ArrayList<Package_Model_List> Course_id = new ArrayList<>();
+    final ArrayList<Package_Model_List> Course_name = new ArrayList<>();
     int RecyclerViewItemPosition1 ;
 
     LinearLayoutManager layoutManagerOfrecyclerView,layoutManagerOfrecyclerView1,layoutManagerOfrecyclerView2;
@@ -300,7 +298,7 @@ public class CourseFragment extends Fragment
 
         recyclerView1.setLayoutManager(layoutManagerOfrecyclerView1);
 
-        GetCourseList();
+        GetPackageList();
 
 
         recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
@@ -332,7 +330,7 @@ public class CourseFragment extends Fragment
                     course_name=Course_name.get(RecyclerViewItemPosition1).getCourseTitle();
 
                     FragmentTransaction transection=getFragmentManager().beginTransaction();
-                    CourseDetailFragment mfragment=new CourseDetailFragment();
+                    PackageDetailFragment mfragment=new PackageDetailFragment();
 
                     Bundle bundle=new Bundle();
                     bundle.putString("course_id",course_id);
@@ -373,7 +371,7 @@ public class CourseFragment extends Fragment
         layoutManagerOfrecyclerView2.setStackFromEnd(true);
         recyclerView2.setLayoutManager(layoutManagerOfrecyclerView2);
 
-        GetBroughtCourseList();
+        GetBroughtPackageList();
 
 
         View_courselist=(TextView)rootview.findViewById(R.id.view_courselist);
@@ -382,7 +380,7 @@ public class CourseFragment extends Fragment
             @Override
             public void onClick(View v) {
                 FragmentTransaction transection=getFragmentManager().beginTransaction();
-                CourseListFragment mfragment=new CourseListFragment();
+                PackageListFragment mfragment=new PackageListFragment();
                 transection.replace(R.id.content_frame, mfragment);
                 transection.addToBackStack(null).commit();
             }
@@ -530,7 +528,7 @@ public class CourseFragment extends Fragment
         requestQueue.add(stringRequest1);
     }
 
-    public void GetCourseList()
+    public void GetPackageList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();
@@ -552,25 +550,27 @@ public class CourseFragment extends Fragment
                                 JSONArray jsonArray=jObj.getJSONArray("package");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    Course_Model_List course_model_list=new Course_Model_List();
+                                    Package_Model_List package_model_list=new Package_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    course_model_list.setId(jsonObject1.getString("id"));
-                                    course_model_list.setImageUrl(jsonObject1.getString("file_path"));
-                                    course_model_list.setCourseTitle(jsonObject1.getString("package_name"));
-                                    course_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
-                                    course_model_list.setCoursePrice(jsonObject1.getString("package_price"));
-                                    course_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
-                                    course_model_list.setCourseStartDate(jsonObject1.getString("date"));
-                                    course_model_list.setDaysLeft(jsonObject1.getString("left_days"));
+                                    package_model_list.setId(jsonObject1.getString("id"));
+                                    package_model_list.setImageUrl(jsonObject1.getString("file_path"));
+                                    package_model_list.setCourseTitle(jsonObject1.getString("package_name"));
+                                    package_model_list.setCourseDesc(String.valueOf(Html.fromHtml(jsonObject1.getString("pakage_details"))));
+                                    package_model_list.setCoursePrice(jsonObject1.getString("package_price"));
+                                    package_model_list.setCourseFinalPrice(jsonObject1.getString("final_price"));
+                                    package_model_list.setCourseDiscount(jsonObject1.getString("discount_percentage"));
+                                    package_model_list.setCourseStartDate(jsonObject1.getString("date"));
+                                    package_model_list.setDaysLeft(jsonObject1.getString("left_days"));
+                                    package_model_list.setIsBUy(jsonObject1.getString("is_buy"));
 
 
 
-                                    Course_id.add(course_model_list);
-                                    Course_name.add(course_model_list);
+                                    Course_id.add(package_model_list);
+                                    Course_name.add(package_model_list);
 
-                                    ListOfdataAdapter1.add(course_model_list);
+                                    ListOfdataAdapter1.add(package_model_list);
 
                                 }
 
@@ -638,7 +638,7 @@ public class CourseFragment extends Fragment
         requestQueue.add(stringRequest1);
     }
 
-    public void GetBroughtCourseList()
+    public void GetBroughtPackageList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();

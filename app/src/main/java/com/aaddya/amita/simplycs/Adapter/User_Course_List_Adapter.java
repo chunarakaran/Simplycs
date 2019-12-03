@@ -7,11 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
 import com.aaddya.amita.simplycs.Model.UserCourse_Model_List;
 import com.aaddya.amita.simplycs.R;
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 
 import java.util.List;
 

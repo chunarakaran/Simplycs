@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 import com.aaddya.amita.simplycs.Activity.CheckoutActivity;
 import com.aaddya.amita.simplycs.Adapter.Chepter_List_Adapter;
 import com.aaddya.amita.simplycs.Model.Chepter_Model_List;
-import com.aaddya.amita.simplycs.Model.Course_Model_List;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,7 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CourseDetailFragment extends Fragment
+public class PackageDetailFragment extends Fragment
 {
 
     List<Chepter_Model_List> ListOfdataAdapter;

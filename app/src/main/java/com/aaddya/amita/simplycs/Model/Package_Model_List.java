@@ -1,15 +1,17 @@
 package com.aaddya.amita.simplycs.Model;
 
-public class Course_Model_List {
+public class Package_Model_List {
 
     public String id;
     public String ImageURL;
     public String CourseTitle;
     public String CourseDesc;
     public String CoursePrice;
+    public String CourseFinalPrice;
     public String CourseDiscount;
     public String CourseStartDate;
     public String DaysLeft;
+    public String IsBUy;
 
 
     public String getId() {
@@ -63,6 +65,16 @@ public class Course_Model_List {
         this.CoursePrice = coursePrice;
     }
 
+    public String getCourseFinalPrice()
+    {
+        return CourseFinalPrice;
+    }
+
+    public void setCourseFinalPrice(String courseFinalPrice){
+
+        this.CourseFinalPrice = courseFinalPrice;
+    }
+
     public String getCourseDiscount() {
 
         return CourseDiscount;
@@ -91,6 +103,16 @@ public class Course_Model_List {
     public void setDaysLeft(String daysLeft) {
 
         this.DaysLeft = daysLeft;
+    }
+
+    public String getIsBUy()
+    {
+        return IsBUy;
+    }
+
+    public void setIsBUy(String isBUy){
+
+        this.IsBUy = isBUy;
     }
 
 }
