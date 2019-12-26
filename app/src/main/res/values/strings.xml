@@ -8,8 +8,9 @@
     <string name="action_settings">Settings</string>
 
     // API URL
-    <string name="url">http://dev.simply-cs.simply-cs.com/public/</string>
-    <string name="login_url">http://biotechautomfg.com/</string>
+    <string name="url">http://dev.simply-cs.com/public/</string>
+
+
 
 
     <string name="title_shop">Today</string>

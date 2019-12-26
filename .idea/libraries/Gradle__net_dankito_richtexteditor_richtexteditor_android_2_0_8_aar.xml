@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: net.dankito.richtexteditor:richtexteditor-android:2.0.8@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d58e5c6b504c3ff9c9e9af286f65e113/richtexteditor-android-2.0.8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d58e5c6b504c3ff9c9e9af286f65e113/richtexteditor-android-2.0.8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a78586621eab5b6598c32407eb876381/richtexteditor-android-2.0.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a78586621eab5b6598c32407eb876381/richtexteditor-android-2.0.8/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.richtexteditor/richtexteditor-android/2.0.8/f30a5f8c2d020b0bb72f4773b4d1d80adc6d97f2/richtexteditor-android-2.0.8-javadoc.jar!/" />

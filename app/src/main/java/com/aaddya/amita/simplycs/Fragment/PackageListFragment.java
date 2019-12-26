@@ -118,7 +118,7 @@ public class PackageListFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-        GetCourseList();
+        GetPackageList();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -213,7 +213,7 @@ public class PackageListFragment extends Fragment
     }
 
 
-    public void GetCourseList()
+    public void GetPackageList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();

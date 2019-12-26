@@ -48,9 +48,6 @@ public class PreviousFragment extends Fragment
 
     String prevDate;
 
-
-
-
     List<Category_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
