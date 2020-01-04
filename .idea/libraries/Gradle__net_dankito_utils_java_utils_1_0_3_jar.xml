@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/java-utils/1.0.3/e0f910aad3249c0c63838f30a243a232fae96812/java-utils-1.0.3.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/java-utils/1.0.3/7e95f69dd4496017b1f58d3a2c9a3e8421ac27f9/java-utils-1.0.3-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/java-utils/1.0.3/f33d6078cc7aa5997f702359a9185e3c1f4b028c/java-utils-1.0.3-sources.jar!/" />
     </SOURCES>

@@ -5,14 +5,13 @@ INJECTED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 INJECTED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 INJECTED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml:2:1-96:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8bfc4e2546f2ed153483e30da1943b39\multidex-1.0.2\AndroidManifest.xml:17:1-22:12
-MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:2:1-14:12
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\104ee8e9c4d54ad9de235400c1aa4009\TagView-1.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6a4bca3d6a126ed1ac469d49fe2fc42b\design-28.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9b964e4c1b478e320e11a20b8df747ae\FancyGifDialog-Android-1.1\AndroidManifest.xml:2:1-11:12
-MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:2:1-23:12
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\c2f97c3ea1ee2795f8f4c15940a80f7e\TriangleLabelView-1.1.2\AndroidManifest.xml:2:1-16:12
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:2:1-23:12
 MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0cd8f6dfff80c51206af2625ad3e3b04\customactivityoncrash-2.2.0\AndroidManifest.xml:2:1-23:12
-MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9f98641359bc01268d5606b681dbb67f\proswipebutton-1.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.jaredrummler:colorpicker:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\48dc1da40e88dafe73af81f282b52f17\colorpicker-1.0.1\AndroidManifest.xml:2:1-10:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\3a74bfefd40e84ad50ec0992ad99e2b3\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6ef2792c38bcd6fb59aa7bd551a0ea54\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -40,17 +39,18 @@ MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\amit
 MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\d38aa9217f0ad8bfe8cf889de83c129f\android-pdf-viewer-2.8.2\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0087c53525c06bfe5de096e4ab5e1a6f\pdfium-android-1.7.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4f4a0d0e0f087d88a7c6dc0490862d0e\support-v4-28.0.0-rc01\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\bef489e3f514f9a2bd6bd94bde87834f\volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0576be5883d77ca46bc2a631d340241f\recyclerview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\f7e01ffc580fe0b2de3bc8b9c73e412a\cardview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:2:1-16:12
 MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a6108e3b677d6fa7a6bac0e2d2e43216\ColorDialog-1.0.0\AndroidManifest.xml:2:1-12:12
-MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:2:1-14:12
-MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:8:1-24:12
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:17:1-27:12
-MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:2:1-28:12
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:2:1-16:12
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4ecb69fd5698dc96e7252139bfa3ebb6\roundedimageview-2.3.0\AndroidManifest.xml:2:1-9:12
-MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:8:1-24:12
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:2:1-17:12
+MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:2:1-28:12
+MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8e3aaff3e0a6b7267230299186efa0df\AndroidChipLayout-1.0.6\AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\d006994ebd07844a218a7c34226797e5\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\3fad535d13792181310cab3ddf44ffbb\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
@@ -156,14 +156,12 @@ application
 ADDED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml:12:5-94:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6a4bca3d6a126ed1ac469d49fe2fc42b\design-28.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6a4bca3d6a126ed1ac469d49fe2fc42b\design-28.0.0\AndroidManifest.xml:22:5-20
-MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:15:5-21:19
-MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:15:5-21:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\c2f97c3ea1ee2795f8f4c15940a80f7e\TriangleLabelView-1.1.2\AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\c2f97c3ea1ee2795f8f4c15940a80f7e\TriangleLabelView-1.1.2\AndroidManifest.xml:11:5-14:19
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:15:5-21:19
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:15:5-21:19
 MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0cd8f6dfff80c51206af2625ad3e3b04\customactivityoncrash-2.2.0\AndroidManifest.xml:11:5-21:19
 MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0cd8f6dfff80c51206af2625ad3e3b04\customactivityoncrash-2.2.0\AndroidManifest.xml:11:5-21:19
-MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9f98641359bc01268d5606b681dbb67f\proswipebutton-1.1\AndroidManifest.xml:11:5-15:19
-MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9f98641359bc01268d5606b681dbb67f\proswipebutton-1.1\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6ef2792c38bcd6fb59aa7bd551a0ea54\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6ef2792c38bcd6fb59aa7bd551a0ea54\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\16870ea7b3486c0db217bc0208eab26e\firebase-auth-16.1.0\AndroidManifest.xml:23:5-40:19
@@ -204,16 +202,19 @@ MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\b574c0c806aec6feb69749a544d25a63\firebase-measurement-connector-17.0.1\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\435879f7910f64885c2db10413dc3bcb\play-services-basement-16.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\435879f7910f64885c2db10413dc3bcb\play-services-basement-16.1.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\bef489e3f514f9a2bd6bd94bde87834f\volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\bef489e3f514f9a2bd6bd94bde87834f\volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:11:5-14:19
 MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:11:5-14:19
 MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:12:5-20
 MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:12:5-20
 MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:17:5-22:19
 MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:17:5-22:19
+MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:11:5-15:19
+MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:11:5-15:19
 MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:15:5-26:19
 MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:15:5-26:19
 REJECTED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:7:5-20
-REJECTED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:11:5-15:19
 REJECTED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8e3aaff3e0a6b7267230299186efa0df\AndroidChipLayout-1.0.6\AndroidManifest.xml:11:5-15:19
 REJECTED from [com.android.support:customtabs:26.1.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\3615a94074407c17e2cd844418ff47f1\customtabs-26.1.0\AndroidManifest.xml:22:5-26:19
 REJECTED from [com.android.support:support-compat:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\13f428e7a1c084efc0d0bd9a63c52fba\support-compat-28.0.0\AndroidManifest.xml:22:5-94
@@ -393,22 +394,20 @@ INJECTED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml
 INJECTED from D:\Android App\Simplycs\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8bfc4e2546f2ed153483e30da1943b39\multidex-1.0.2\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8bfc4e2546f2ed153483e30da1943b39\multidex-1.0.2\AndroidManifest.xml:20:5-43
-MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:7:5-9:41
-MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\104ee8e9c4d54ad9de235400c1aa4009\TagView-1.0.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.mahimrocky:TagView:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\104ee8e9c4d54ad9de235400c1aa4009\TagView-1.0.1\AndroidManifest.xml:7:5-9:41
+MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:7:5-9:41
+MERGED from [net.dankito.richtexteditor:richtexteditor-android:2.0.8] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a78586621eab5b6598c32407eb876381\richtexteditor-android-2.0.8\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6a4bca3d6a126ed1ac469d49fe2fc42b\design-28.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6a4bca3d6a126ed1ac469d49fe2fc42b\design-28.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9b964e4c1b478e320e11a20b8df747ae\FancyGifDialog-Android-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.Shashank02051997:FancyGifDialog-Android:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9b964e4c1b478e320e11a20b8df747ae\FancyGifDialog-Android-1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:7:5-9:41
-MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\c2f97c3ea1ee2795f8f4c15940a80f7e\TriangleLabelView-1.1.2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.shts:TriangleLabelView:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\c2f97c3ea1ee2795f8f4c15940a80f7e\TriangleLabelView-1.1.2\AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\45102219300f270ba6ca0d74ec54296d\uploadservice-2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0cd8f6dfff80c51206af2625ad3e3b04\customactivityoncrash-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [cat.ereza:customactivityoncrash:2.2.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0cd8f6dfff80c51206af2625ad3e3b04\customactivityoncrash-2.2.0\AndroidManifest.xml:7:5-9:41
-MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9f98641359bc01268d5606b681dbb67f\proswipebutton-1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [in.shadowfax:proswipebutton:1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\9f98641359bc01268d5606b681dbb67f\proswipebutton-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jaredrummler:colorpicker:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\48dc1da40e88dafe73af81f282b52f17\colorpicker-1.0.1\AndroidManifest.xml:6:5-8:41
 MERGED from [com.jaredrummler:colorpicker:1.0.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\48dc1da40e88dafe73af81f282b52f17\colorpicker-1.0.1\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\3a74bfefd40e84ad50ec0992ad99e2b3\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
@@ -463,28 +462,30 @@ MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\ca
 MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0087c53525c06bfe5de096e4ab5e1a6f\pdfium-android-1.7.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4f4a0d0e0f087d88a7c6dc0490862d0e\support-v4-28.0.0-rc01\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0-rc01] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4f4a0d0e0f087d88a7c6dc0490862d0e\support-v4-28.0.0-rc01\AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\bef489e3f514f9a2bd6bd94bde87834f\volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\bef489e3f514f9a2bd6bd94bde87834f\volley-1.1.1\AndroidManifest.xml:7:5-43
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0576be5883d77ca46bc2a631d340241f\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\0576be5883d77ca46bc2a631d340241f\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\f7e01ffc580fe0b2de3bc8b9c73e412a\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\f7e01ffc580fe0b2de3bc8b9c73e412a\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:7:5-9:41
-MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a6108e3b677d6fa7a6bac0e2d2e43216\ColorDialog-1.0.0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.andyxialm:ColorDialog:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\a6108e3b677d6fa7a6bac0e2d2e43216\ColorDialog-1.0.0\AndroidManifest.xml:8:5-10:41
-MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:8:5-10:41
-MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:8:5-10:41
-MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:13:5-15:41
-MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:13:5-15:41
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:23:5-25:41
-MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:23:5-25:41
-MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:8:5-10:41
-MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:8:5-10:41
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.alexzh:circleimageview:1.1.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8fa0043e09584a50508f97b087b0a092\circleimageview-1.1.2\AndroidManifest.xml:7:5-9:41
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4ecb69fd5698dc96e7252139bfa3ebb6\roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\4ecb69fd5698dc96e7252139bfa3ebb6\roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
-MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:5:5-44
-MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.balysv:material-ripple:1.0.2] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\5fcbf6068cd73d2e18f480743291a55f\material-ripple-1.0.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.android:flexbox:1.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\06cfbb2939a4c8c7cc05e0b6e10b34d0\flexbox-1.0.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:13:5-15:41
+MERGED from [com.4ert:audioview:0.4] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\73feafc0c6ff027c403a1fbeb353055e\audioview-0.4\AndroidManifest.xml:13:5-15:41
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:7:5-9:41
 MERGED from [me.ithebk:barchart:0.9] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\6b794ce1ae58a62805c4b4fa5ed113c9\barchart-0.9\AndroidManifest.xml:7:5-9:41
+MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:8:5-10:41
+MERGED from [:cashfree] D:\Android App\Simplycs\cashfree\build\.transforms\76099b6898e9588f5aff4c9c2d167d83\cashfreeSDK\AndroidManifest.xml:8:5-10:41
+MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [:google-pay-client-api-1.0.0] D:\Android App\Simplycs\google-pay-client-api-1.0.0\build\.transforms\4c48184ab90033753d2719121a355342\google-pay-client-api-1.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8e3aaff3e0a6b7267230299186efa0df\AndroidChipLayout-1.0.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.libaml.android.view.chip:AndroidChipLayout:1.0.6] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\8e3aaff3e0a6b7267230299186efa0df\AndroidChipLayout-1.0.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\amita\.gradle\caches\transforms-2\files-2.1\d006994ebd07844a218a7c34226797e5\support-fragment-28.0.0\AndroidManifest.xml:20:5-44

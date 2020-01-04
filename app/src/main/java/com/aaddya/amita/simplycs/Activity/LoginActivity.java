@@ -337,6 +337,12 @@ public class LoginActivity extends AppCompatActivity {
         // Creating RequestQueue.
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
+        //10000 is the time in milliseconds adn is equal to 10 sec
+        stringRequest1.setRetryPolicy(new DefaultRetryPolicy(
+                60000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
 
