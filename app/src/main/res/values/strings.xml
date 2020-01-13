@@ -8,7 +8,7 @@
     <string name="action_settings">Settings</string>
 
     // API URL
-    <string name="url">http://dev.simply-cs.com/public/</string>
+    <string name="url">http://api.simply-cs.com/public/</string>
 
 
 
