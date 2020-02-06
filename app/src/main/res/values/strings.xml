@@ -8,9 +8,7 @@
     <string name="action_settings">Settings</string>
 
     // API URL
-    <string name="url">http://api.simply-cs.com/public/</string>
-
-
+    <string name="url">https://api.simply-cs.com/public/</string>
 
 
     <string name="title_shop">Today</string>
@@ -39,8 +37,6 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -75,7 +71,7 @@
         <item>Android Drag and Drop Demo</item>
         <item>Android Fingerprint Authentication Demo</item>
     </string-array>
-
+    jo
     <string-array name="video_duration_array">
         <item>02:48</item>
         <item>00:44</item>
@@ -90,11 +86,10 @@
     </string-array>
 
 
-
     <!-- AdMob ad unit IDs -->
-    <string name="admob_app_id">ca-app-pub-9093438437948252~7589300543</string>
-    <string name="banner_home_footer">ca-app-pub-9093438437948252/9422284630</string>
-    <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_app_id">ca-app-pub-6021396257957099~4319260408</string>
+    <string name="banner_home_footer">ca-app-pub-6021396257957099/4127688710</string>
+    <string name="interstitial_full_screen">ca-app-pub-6021396257957099/4579038878</string>
 
     <!-- For Register-->
     <string name="login">Login</string>

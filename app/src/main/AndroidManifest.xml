@@ -10,18 +10,19 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Activity.ProfileActivity"></activity>
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.WelcomeActivity"
+            android:name=".Activity.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -31,66 +32,62 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.MainActivity"
+            android:name=".Activity.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.SignupActivity"
+            android:name=".Activity.SignupActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.ForgotpwdActivity"
+            android:name=".Activity.ForgotpwdActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.VerifyPhoneActivity"
+            android:name=".Activity.VerifyPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="replace" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.EnterPhoneActivity"
+            android:name=".Activity.EnterPhoneActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="replace" />
-        <activity android:name="com.aaddya.amita.simplycs.Activity.VideoPlayerActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.Activity.TheoryViewActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.Activity.PDFViewActivity" />
-        <activity android:name="com.aaddya.amita.simplycs.Activity.AudioPlayerActivity"/>
-        <activity android:name="com.aaddya.amita.simplycs.Activity.WebinarPlayerActivity"/>
-        <activity android:name="com.aaddya.amita.simplycs.Activity.CheckoutActivity"/>
-        <activity android:name="com.aaddya.amita.simplycs.Activity.AddcourseActivity"/>
-
+        <activity android:name=".Activity.VideoPlayerActivity" />
+        <activity android:name=".Activity.TheoryViewActivity" />
+        <activity android:name=".Activity.PDFViewActivity" />
+        <activity android:name=".Activity.AudioPlayerActivity" />
+        <activity android:name=".Activity.WebinarPlayerActivity" />
+        <activity android:name=".Activity.CheckoutActivity" />
+        <activity android:name=".Activity.AddcourseActivity" />
         <activity
-            android:name="com.aaddya.amita.simplycs.Activity.TestResultActivity"
-            android:label="Test Result"></activity>
-
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+            android:name=".Activity.TestResultActivity"
+            android:label="Test Result" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9093438437948252~7589300543"/>
-
+            android:value="ca-app-pub-6021396257957099~4319260408" />
     </application>
 
 </manifest>
