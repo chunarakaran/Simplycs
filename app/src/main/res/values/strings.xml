@@ -8,7 +8,7 @@
     <string name="action_settings">Settings</string>
 
     // API URL
-    <string name="url">https://api.simply-cs.com/public/</string>
+    <string name="url">https://simply-cs.com/</string>
 
 
     <string name="title_shop">Today</string>
