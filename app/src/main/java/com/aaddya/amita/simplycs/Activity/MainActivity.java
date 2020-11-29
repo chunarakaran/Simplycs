@@ -281,6 +281,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new CourseFragment();
                 break;
 
+
             case R.id.nav_profile:
                 fragment = new ProfileFragment();
 //                startActivity(new Intent(this,ProfileActivity.class));
