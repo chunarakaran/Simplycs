@@ -43,7 +43,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 
 public class SignupActivity extends AppCompatActivity {
 
-    ImageView picture,passwordEyeImg;
+    ImageView picture,passwordEyeImg,confirm_password_eye_img;
 
     TextView Sign_up,backLogin;
 
@@ -82,10 +82,10 @@ public class SignupActivity extends AppCompatActivity {
 
         URL = getString(R.string.url);
 
-
-
-
         Initialize();
+
+        passwordEyeImg.setTag(1);
+        confirm_password_eye_img.setTag(1);
 
 //        Emobile.setText("+91");
 //        Selection.setSelection(Emobile.getText(), Emobile.getText().length());
@@ -157,26 +157,41 @@ public class SignupActivity extends AppCompatActivity {
         passwordEyeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (passwordEyeImg.getTag().equals(1)) {
-//                    EPassword.setTransformationMethod(null);
-//                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_close));
-//                    passwordEyeImg.setTag(0);
-//                } else {
-//                    passwordEyeImg.setTag(1);
-//                    EPassword.setTransformationMethod(new PasswordTransformationMethod());
-//                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_open));
-//                }
+                if (passwordEyeImg.getTag().equals(1)) {
+                    EPassword.setTransformationMethod(null);
+                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_close));
+                    passwordEyeImg.setTag(0);
+                } else {
+                    passwordEyeImg.setTag(1);
+                    EPassword.setTransformationMethod(new PasswordTransformationMethod());
+                    passwordEyeImg.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_open));
+                }
             }
         });
 
-//        backLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        confirm_password_eye_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (confirm_password_eye_img.getTag().equals(1)) {
+                    EConfPass.setTransformationMethod(null);
+                    confirm_password_eye_img.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_close));
+                    confirm_password_eye_img.setTag(0);
+                } else {
+                    confirm_password_eye_img.setTag(1);
+                    EConfPass.setTransformationMethod(new PasswordTransformationMethod());
+                    confirm_password_eye_img.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_eye_open));
+                }
+            }
+        });
+
+        backLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 
@@ -186,9 +201,10 @@ public class SignupActivity extends AppCompatActivity {
     public void Initialize()
     {
         Sign_up=(TextView)findViewById(R.id.sign_up);
-//        backLogin=(TextView)findViewById(R.id.backLogin);
+        backLogin=(TextView)findViewById(R.id.backLogin);
 
         passwordEyeImg=(ImageView)findViewById(R.id.password_eye_img);
+        confirm_password_eye_img=(ImageView)findViewById(R.id.confirm_password_eye_img);
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);
         EName=(EditText)findViewById(R.id.input_name);

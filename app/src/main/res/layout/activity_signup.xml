@@ -218,7 +218,50 @@
                 android:text="@string/register"
                 android:textColor="@android:color/white" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/maven_pro_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account yet?"
+                    android:textColor="#4a4a4a"
+                    android:textSize="15.4sp" />
+
+                <TextView
+                    android:id="@+id/backLogin"
+                    android:fontFamily="@font/maven_pro_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="25dp"
+                    android:text="Login "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15.4sp" />
+
+                <TextView
+                    android:fontFamily="@font/maven_pro_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="25dp"
+                    android:text="here"
+                    android:textColor="#4a4a4a"
+                    android:textSize="15.4sp" />
+            </LinearLayout>
+
+
+
         </LinearLayout>
+
+
 
     </RelativeLayout>
 </ScrollView>

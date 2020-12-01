@@ -30,8 +30,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="55dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginTop="55dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -303,11 +302,10 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:background="#00000000"
+                        android:hint="Enter Education"
                         android:inputType="text"
-                        android:maxLength="16"
                         android:textColor="@color/black"
                         android:textColorHint="@color/textColrHint"
-                        android:hint="Enter Education"
                         android:textSize="15.4sp" />
                 </LinearLayout>
 
@@ -338,7 +336,6 @@
                         android:layout_marginLeft="10dp"
                         android:background="#00000000"
                         android:inputType="text"
-                        android:maxLength="16"
                         android:textColor="@color/black"
                         android:textColorHint="@color/textColrHint"
                         android:hint="Enter City"
