@@ -30,7 +30,8 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="55dp">
+    android:layout_marginTop="55dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,112 +89,62 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Name"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_name"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:hint="@string/name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:singleLine="true"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:inputType="text"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:hint="Enter Name"
-                        android:textSize="15.4sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Email"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_email"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_email_black_24dp"
+                    android:hint="@string/email_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:hint="Enter Email"
-                        android:textSize="15.4sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Mobile"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_mobile"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_phone_android_black_24dp"
+                    android:hint="@string/email_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_mobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:inputType="phone"
-                        android:maxLength="13"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:hint="Enter Mobile"
-                        android:textSize="15.4sp" />
-                </LinearLayout>
 
 
                 <TextView
                     android:fontFamily="@font/maven_pro_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:text="Gender"
                     android:textColor="@color/black"
@@ -202,10 +153,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
+                    android:layout_marginLeft="5dp"
                     android:orientation="vertical"
                     android:padding="0dp">
 
@@ -238,109 +187,54 @@
 
                 </LinearLayout>
 
-
-
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="DOB"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_dob"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_date_range_black_24dp"
+                    android:hint="Enter Date of Birth"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_dob"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:inputType="text"
-                        android:maxLength="16"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:hint="Enter Date of Birth"
-                        android:textSize="15.4sp"
-                        android:clickable="true"
-                        android:focusable="false"/>
-                </LinearLayout>
-
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Education"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_education"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_school_black_24dp"
+                    android:hint="Education"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_education"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:hint="Enter Education"
-                        android:inputType="text"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:textSize="15.4sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:text="City"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/input_city"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shadow_view"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_place_black_24dp"
+                    android:hint="City"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    app:theme="@style/MyEditTextTheme" />
 
-                    <EditText
-                        android:id="@+id/input_city"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#00000000"
-                        android:inputType="text"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/textColrHint"
-                        android:hint="Enter City"
-                        android:textSize="15.4sp" />
-                </LinearLayout>
 
 
                 <TextView
