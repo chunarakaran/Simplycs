@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: net.dankito.utils:mime-utils:1.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/mime-utils/1.0.2/28d96c02b24a4c0769fd68c4e508efb0b070cef/mime-utils-1.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/mime-utils/1.0.2/be202729f5ffdc5289cfe698c2baeb80307ac922/mime-utils-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/mime-utils/1.0.2/5aae0a8c143f4db6a9c689ed04b99842fcc77eb5/mime-utils-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

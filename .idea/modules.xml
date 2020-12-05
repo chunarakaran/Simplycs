@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Simplycs.iml" filepath="$PROJECT_DIR$/Simplycs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cashfree/cashfree.iml" filepath="$PROJECT_DIR$/cashfree/cashfree.iml" />
-      <module fileurl="file://$PROJECT_DIR$/google-pay-client-api-1.0.0/google-pay-client-api-1.0.0.iml" filepath="$PROJECT_DIR$/google-pay-client-api-1.0.0/google-pay-client-api-1.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Simplycs.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Simplycs.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cashfree/Simplycs.cashfree.iml" filepath="$PROJECT_DIR$/.idea/modules/cashfree/Simplycs.cashfree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/google-pay-client-api-1.0.0/Simplycs.google-pay-client-api-1.0.0.iml" filepath="$PROJECT_DIR$/.idea/modules/google-pay-client-api-1.0.0/Simplycs.google-pay-client-api-1.0.0.iml" />
     </modules>
   </component>
 </project>
