@@ -263,13 +263,18 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (success.equalsIgnoreCase("false_email")) {
                                 user_id.setError("Email-id does not exist");
-                                user_password.setText("");
+//                                user_password.setText("");
                                 hideDialog();
                             } else if (success.equalsIgnoreCase("false_password")) {
                                 user_password.setError("Incorrect password");
                                 user_password.setText("");
                                 hideDialog();
-                            } else {
+                            } else if (success.equalsIgnoreCase("false"))
+                            {
+                                Toast.makeText(getApplicationContext(), "Your account is not verified. Please verify your email.", Toast.LENGTH_LONG).show();
+                                hideDialog();
+                            }
+                            else {
 
                                 JSONObject user = jObj.getJSONObject("data");
                                 String Uid = user.getString("Auth");
