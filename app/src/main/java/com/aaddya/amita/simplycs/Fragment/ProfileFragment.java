@@ -1,24 +1,20 @@
 package com.aaddya.amita.simplycs.Fragment;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,36 +30,35 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Adapter.SingleUploadBroadcastReceiver;
 import com.aaddya.amita.simplycs.R;
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.StringRequestListener;
+import com.androidnetworking.interfaces.UploadProgressListener;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.squareup.picasso.Picasso;
-
-import net.gotev.uploadservice.MultipartUploadRequest;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 
-public class ProfileFragment extends Fragment implements SingleUploadBroadcastReceiver.Delegate
+public class ProfileFragment extends Fragment
 {
-
-    private int PICK_IMAGE_REQUEST = 100;
-
     //storage permission code
     private static final int STORAGE_PERMISSION_CODE = 123;
-
-    //Bitmap to get image from gallery
-    private Bitmap bitmap;
-
-    //Uri to store the image uri
-    private Uri filePath;
 
     FloatingActionButton EditButton;
 
@@ -79,31 +74,6 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
     RequestQueue requestQueue;
     String URL;
     private ProgressDialog pDialog;
-
-
-    private static final String TAG = "AndroidUploadService";
-    private final SingleUploadBroadcastReceiver uploadReceiver =
-            new SingleUploadBroadcastReceiver();
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        uploadReceiver.register(getActivity());
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        uploadReceiver.unregister(getActivity());
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
 
 
     View rootview;
@@ -133,27 +103,21 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         URL = getString(R.string.url);
 
         // Progress dialog
-        pDialog = new ProgressDialog(getActivity());
+        pDialog=new ProgressDialog(getActivity());
+        pDialog.setMessage("Uploading Image. Please Wait");
         pDialog.setCancelable(false);
-
-
-
+        pDialog.setMax(100);
+        pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
         Initialize();
 
         GetProfile();
 
-
-
         Profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //Requesting storage permission
                 requestStoragePermission();
-
-                showFileChooser();
-//                performCrop();
             }
         });
 
@@ -202,147 +166,106 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
         return rootview;
     }
 
-
-
-
-
-
-    //method to show file chooser
-    private void showFileChooser() {
-        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//        i.setType("image/*");
-//        i.putExtra("crop", "true");
-//        i.putExtra("outputX", 200);
-//        i.putExtra("outputY", 200);
-//        i.putExtra("aspectX", 1);
-//        i.putExtra("aspectY", 1);
-//        i.putExtra("scale", true);
-//        i.putExtra(MediaStore.EXTRA_OUTPUT, filePath);
-//        i.putExtra("outputFormat",Bitmap.CompressFormat.JPEG.toString());
-        startActivityForResult(i, PICK_IMAGE_REQUEST);
-    }
-
-    private void performCrop() {
-        try {
-            Intent cropIntent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-
-            // indicate image type and Uri
-            cropIntent.setType("image/*");
-            // set crop properties here
-            cropIntent.putExtra("crop", true);
-            // indicate aspect of desired crop
-            cropIntent.putExtra("aspectX", 1);
-            cropIntent.putExtra("aspectY", 1);
-            // indicate output X and Y
-            cropIntent.putExtra("outputX", 200);
-            cropIntent.putExtra("outputY", 200);
-            // retrieve data on return
-            cropIntent.putExtra("return-data", true);
-            // start the activity - we handle returning in onActivityResult
-            startActivityForResult(cropIntent, PICK_IMAGE_REQUEST);
-        }
-        // respond to users whose devices do not support the crop action
-        catch (ActivityNotFoundException anfe) {
-            // display an error message
-            String errorMessage = "Whoops - your device doesn't support the crop action!";
-            Toast toast = Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_SHORT);
-            toast.show();
-        }
-    }
-
-    //handling the image chooser activity result
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            filePath = data.getData();
-
-//            performCrop(filePath);
-
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-
-                Profile_pic.setImageBitmap(bitmap);
-                uploadMultipart();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    //method to get the file path from uri
-    public String getPath(Uri uri) {
-        Cursor cursor = getActivity().getContentResolver().query(uri, null, null, null, null);
-        cursor.moveToFirst();
-        String document_id = cursor.getString(0);
-        document_id = document_id.substring(document_id.lastIndexOf(":") + 1);
-        cursor.close();
-
-        cursor = getActivity().getContentResolver().query(
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                null, MediaStore.Images.Media._ID + " = ? ", new String[]{document_id}, null);
-        cursor.moveToFirst();
-        String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
-
-        cursor.close();
-
-        return path;
-    }
-
-
-    public String getStringImage(Bitmap bmp){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.PNG, 50, baos);
-        byte[] imageBytes = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        return encodedImage;
-    }
-
-    public void uploadMultipart() {
-
-
-        //getting the actual path of the image
-        String path = getPath(filePath);
-
-
-//        Bitmap bitmap = params[0];
-//        String uploadImage = getStringImage(bitmap);
-
-
-        //Uploading code
-        try {
-            String uploadId = UUID.randomUUID().toString();
-            uploadReceiver.setDelegate(this);
-            uploadReceiver.setUploadID(uploadId);
-
-            //Creating a multi part request
-            new MultipartUploadRequest(getActivity(), uploadId, URL+"api/UpdateProfilePicture")
-                    .addFileToUpload(path, "Image") //Adding file
-                    .addHeader("Auth", User_id) //Adding text parameter to the request
-                    .setMaxRetries(2)
-                    .startUpload(); //Starting the upload
-            Toast.makeText(getActivity(),"Successfully Uploaded",Toast.LENGTH_SHORT).show();
-
-        } catch (Exception exc) {
-            Toast.makeText(getActivity(), exc.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
     //Requesting permission
     private void requestStoragePermission() {
-        if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
-            return;
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            //If the user has denied the permission previously your code will come to this block
-            //Here you can explain why you need this permission
-            //Explain here why you need this permission
+        Dexter.withActivity(getActivity())
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        CropImage.activity()
+                                .setGuidelines(CropImageView.Guidelines.ON)
+                                .start(getContext(), ProfileFragment.this);
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        if (response.isPermanentlyDenied()){
+                            AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                            builder.setTitle("Permission Required")
+                                    .setMessage("Permission to Access your device storage is required to pick Profile Image. Please go to setting to enable permission to access storage ")
+                                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            Intent intent = new Intent();
+                                            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                            intent.setData(Uri.fromParts("package", getActivity().getPackageName(),null));
+                                            startActivityForResult(intent,51);
+                                        }
+                                    })
+                                    .setNegativeButton("Cancel",null)
+                                    .show();
+                        }
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                })
+                .check();
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri();
+                Profile_pic.setImageURI(resultUri);
+
+                File imageFile = new File(resultUri.getPath());
+                pDialog.show();
+                AndroidNetworking.upload(URL+"api/UpdateProfilePicture")
+                        .addMultipartFile("Image",imageFile)
+                        .addHeaders("Auth",User_id)
+                        .setPriority(Priority.HIGH)
+                        .build()
+                        .setUploadProgressListener(new UploadProgressListener() {
+                            @Override
+                            public void onProgress(long bytesUploaded, long totalBytes) {
+
+                                float progress = (float) bytesUploaded / totalBytes * 100;
+                                pDialog.setProgress((int)progress);
+                            }
+                        })
+                        .getAsString(new StringRequestListener() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    pDialog.dismiss();
+                                    JSONObject jsonObject = new JSONObject (response);
+                                    String status =jsonObject.getString("success");
+                                    String message =jsonObject.getString("message");
+                                    if (status.equals("false"))
+                                    {
+                                        Toast.makeText(getActivity(), message,Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(getActivity(), message,Toast.LENGTH_SHORT).show();
+                                    }
+                                }catch (JSONException e)
+                                {
+                                    pDialog.dismiss();
+                                    e.printStackTrace();
+                                    Toast.makeText(getActivity(),"Parsing Error",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onError(ANError anError) {
+                                pDialog.dismiss();
+                                anError.printStackTrace();
+                                Toast.makeText(getActivity(),"Error Uploading Image",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
         }
-        //And finally ask for the permission
-        ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
 
@@ -471,34 +394,15 @@ public class ProfileFragment extends Fragment implements SingleUploadBroadcastRe
             pDialog.dismiss();
     }
 
-
     @Override
-    public void onProgress(int progress) {
-        //your implementation
-
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 
-    @Override
-    public void onProgress(long uploadedBytes, long totalBytes) {
-        //your implementation
-        pDialog.setMessage("Please Wait...");
-        showDialog();
-    }
-
-    @Override
-    public void onError(Exception exception) {
-        //your implementation
-    }
-
-    @Override
-    public void onCompleted(int serverResponseCode, byte[] serverResponseBody) {
-        //your implementation
-        hideDialog();
-
-    }
-
-    @Override
-    public void onCancelled() {
-        //your implementation
-    }
 }

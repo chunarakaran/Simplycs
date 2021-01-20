@@ -97,4 +97,13 @@ dependencies {
     implementation 'com.libaml.android.view.chip:AndroidChipLayout:1.0.6'
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    // Crop Image Library
+    api 'com.theartofdev.edmodo:android-image-cropper:2.6.0'
+
+    // Image Upload Library
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+
+    // Runtime Permission Library
+    implementation 'com.karumi:dexter:5.0.0'
 }

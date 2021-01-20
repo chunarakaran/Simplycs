@@ -2,8 +2,8 @@
   <library name="Gradle: artifacts:cashfree:unspecified">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/cashfree/build/.transforms/feeee3ca0c48497f5e4570c24b120373/cashfreeSDK/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/cashfree/build/.transforms/feeee3ca0c48497f5e4570c24b120373/cashfreeSDK/res" />
       <root url="file://$PROJECT_DIR$/cashfree/build/.transforms/feeee3ca0c48497f5e4570c24b120373/cashfreeSDK/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/cashfree/build/.transforms/feeee3ca0c48497f5e4570c24b120373/cashfreeSDK/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -4,9 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e47e6445bc1133870ea1a2a23c9ed58/colorpicker-1.0.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaredrummler/colorpicker/1.0.1/cffb5d68c07c7e5572f3a7d3d8b32b0aa88b0015/colorpicker-1.0.1-javadoc.jar!/" />
