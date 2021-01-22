@@ -1,21 +1,13 @@
 package com.aaddya.amita.simplycs.Fragment;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -25,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.aaddya.amita.simplycs.Adapter.Test_List_Adapter;
+import com.aaddya.amita.simplycs.Model.Test_Model_List;
+import com.aaddya.amita.simplycs.R;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,9 +27,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
-import com.aaddya.amita.simplycs.Adapter.SubCategory_List_Adapter;
-import com.aaddya.amita.simplycs.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,23 +39,24 @@ import java.util.Map;
 
 import cn.refactor.lib.colordialog.PromptDialog;
 
-public class SubCategoryListFragment extends Fragment
+public class QuizListFragment extends Fragment
 {
 
-
-
-    List<SubCategory_Model_List> ListOfdataAdapter;
+    List<Test_Model_List> ListOfdataAdapter;
 
     LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    String Category_id,Category_name;
-    String SubCategory_id,SubCategory_name,is_Paid;
-    String CDate;
-    final ArrayList<SubCategory_Model_List> SubCategoryid = new ArrayList<>();
-    final ArrayList<SubCategory_Model_List> SubCategoryName = new ArrayList<>();
-    final ArrayList<SubCategory_Model_List> Paid = new ArrayList<>();
+    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules,is_Completed;
+
+    final ArrayList<Test_Model_List> Testid = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testname = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testduration = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testmarks = new ArrayList<>();
+    final ArrayList<Test_Model_List> Testrules = new ArrayList<>();
+    final ArrayList<Test_Model_List> IsCompleted = new ArrayList<>();
+
     int RecyclerViewItemPosition ;
 
     LinearLayoutManager layoutManagerOfrecyclerView;
@@ -78,25 +71,12 @@ public class SubCategoryListFragment extends Fragment
 
     PromptDialog promptDialog;
 
-
     View rootview;
-    @SuppressLint("LongLogTag")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        rootview = inflater.inflate(R.layout.fragment_subcategorylist, container, false);
-
-        Toolbar toolbar = rootview.findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getFragmentManager().popBackStack();
-            }
-        });
+        rootview = inflater.inflate(R.layout.fragment_quiz_list, container, false);
 
         SharedPreferences sp = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
         SharedPreferences.Editor e = sp.edit();
@@ -104,13 +84,9 @@ public class SubCategoryListFragment extends Fragment
         Course_id = sp.getString("Courseid", "");
 
         Bundle bundle=getArguments();
-        Category_id=String.valueOf(bundle.getString("category_id"));
-        CDate=String.valueOf(bundle.getString("Date"));
-        Category_name=String.valueOf(bundle.getString("Category_name"));
-
-        toolbar.setTitle(Category_name);
-
-
+        Category_id=String.valueOf(bundle.getString("Category_id"));
+        SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
+        CDate=String.valueOf(bundle.getString("CDate"));
 
         requestQueue = Volley.newRequestQueue(getActivity());
         URL = getString(R.string.url);
@@ -121,11 +97,10 @@ public class SubCategoryListFragment extends Fragment
 
         promptDialog = new PromptDialog(getActivity());
 
-        ListOfdataAdapter = new ArrayList<>();
+        ListOfdataAdapter = new ArrayList<Test_Model_List>();
 
         recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerview1);
         emptyView=(LinearLayout)rootview.findViewById(R.id.empty_view);
-
         recyclerView.setHasFixedSize(true);
 
         layoutManagerOfrecyclerView=new LinearLayoutManager(getActivity());
@@ -134,29 +109,7 @@ public class SubCategoryListFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-
-
-        if(isNetworkAvailable()){
-            GetSubCategoryList();
-        }
-        else {
-            promptDialog.setCancelable(false);
-            promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_WARNING);
-            promptDialog.setAnimationEnable(true);
-            promptDialog.setTitleText("Connection Failed");
-            promptDialog.setContentText("Please Check Your Internet Connection");
-            promptDialog.setPositiveListener("Setting", new PromptDialog.OnPositiveListener() {
-                @Override
-                public void onClick(PromptDialog dialog) {
-                    Intent intent=new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS );
-                    startActivity(intent);
-                    getActivity().finish();
-                }
-            }).show();
-
-        }
-
-
+        GetTestList();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -183,21 +136,37 @@ public class SubCategoryListFragment extends Fragment
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(rootview);
 
-                    SubCategory_id=SubCategoryid.get(RecyclerViewItemPosition).getId();
-                    SubCategory_name=SubCategoryName.get(RecyclerViewItemPosition).getImageTitle();
-                    is_Paid=Paid.get(RecyclerViewItemPosition).getPaidStatus();
+                    test_id=Testid.get(RecyclerViewItemPosition).getId();
+                    test_name=Testname.get(RecyclerViewItemPosition).getTitle();
+                    test_duration=Testduration.get(RecyclerViewItemPosition).getDuration();
+                    test_marks=Testmarks.get(RecyclerViewItemPosition).getMarks();
+                    test_rules=Testrules.get(RecyclerViewItemPosition).getRules();
+                    is_Completed=IsCompleted.get(RecyclerViewItemPosition).getIsComplete();
 
-                    if(Category_name.equals("Practice")||Category_name.equals("practice"))
+                    if (is_Completed.equalsIgnoreCase("1"))
                     {
-                        FragmentTransaction transection=getFragmentManager().beginTransaction();
-                        TestListFragment mfragment=new TestListFragment();
+                        Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
 
-                        Bundle bundle=new Bundle();
-                        bundle.putString("category_id",Category_id);
-                        bundle.putString("Category_name",Category_name);
-                        bundle.putString("SubCategory_id",SubCategory_id);
-                        bundle.putString("CDate",CDate);
-                        bundle.putString("SubCategory_name",SubCategory_name);
+//                        Intent i = new Intent(getActivity(), TestResultActivity.class);
+//                        startActivity(i);
+
+                    }
+                    else {
+
+                        FragmentTransaction transection = getFragmentManager().beginTransaction();
+                        StartQuizFragment mfragment = new StartQuizFragment();
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("category_id", Category_id);
+                        bundle.putString("SubCategory_id", SubCategory_id);
+                        bundle.putString("CDate", CDate);
+
+                        bundle.putString("test_id", test_id);
+                        bundle.putString("test_name", test_name);
+                        bundle.putString("test_duration", test_duration);
+                        bundle.putString("test_marks", test_marks);
+                        bundle.putString("test_rules", test_rules);
+
                         mfragment.setArguments(bundle);
 
                         transection.replace(R.id.content_frame, mfragment);
@@ -205,28 +174,8 @@ public class SubCategoryListFragment extends Fragment
 
                     }
 
-                    else if (is_Paid.equalsIgnoreCase("yes")){
-                        Toast.makeText(getActivity(), "This is Premium Category", Toast.LENGTH_SHORT).show();
-                    }
 
-                    else
-                    {
-                        FragmentTransaction transection=getFragmentManager().beginTransaction();
-                        TheoryListFragment mfragment=new TheoryListFragment();
-
-                        Bundle bundle=new Bundle();
-                        bundle.putString("category_id",Category_id);
-                        bundle.putString("SubCategory_id",SubCategory_id);
-                        bundle.putString("CDate",CDate);
-                        bundle.putString("SubCategory_name",SubCategory_name);
-                        mfragment.setArguments(bundle);
-
-                        transection.replace(R.id.content_frame, mfragment);
-                        transection.addToBackStack(null).commit();
-
-                    }
-
-//                    Toast.makeText(getActivity(), "You clicked " + Category_name, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You clicked " + test_id, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -248,9 +197,6 @@ public class SubCategoryListFragment extends Fragment
         });
 
 
-
-
-
         rootview.setFocusableInTouchMode(true);
         rootview.requestFocus();
         rootview.setOnKeyListener(new View.OnKeyListener() {
@@ -267,26 +213,19 @@ public class SubCategoryListFragment extends Fragment
             }
         });
 
+
+
+
         return rootview;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
 
-    public void GetSubCategoryList()
+    public void GetTestList()
     {
         pDialog.setMessage("Please Wait...");
         showDialog();
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetSubCategory",
+        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetTestList",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
@@ -300,38 +239,66 @@ public class SubCategoryListFragment extends Fragment
                             {
 //                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
 
-                                JSONArray jsonArray=jObj.getJSONArray("data");
+                                JSONArray jsonArray=jObj.getJSONArray("test_list");
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
-                                    SubCategory_Model_List subCategory_model_list=new SubCategory_Model_List();
+                                    Test_Model_List GetDataAdapter2=new Test_Model_List();
                                     JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
 
-                                    subCategory_model_list.setId(jsonObject1.getString("id"));
-                                    subCategory_model_list.setImageTitle(jsonObject1.getString("subtopic_name"));
-                                    subCategory_model_list.setImageUrl(jsonObject1.getString("image"));
-                                    subCategory_model_list.setPaidStatus(jsonObject1.getString("is_paid"));
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
+                                    GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
+                                    GetDataAdapter2.setRules(jsonObject1.getString("rules"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("is_complete"));
 
 
 
 
-                                    SubCategoryid.add(subCategory_model_list);
+                                    Testid.add(GetDataAdapter2);
+                                    Testname.add(GetDataAdapter2);
+                                    Testduration.add(GetDataAdapter2);
+                                    Testmarks.add(GetDataAdapter2);
+                                    Testrules.add(GetDataAdapter2);
+                                    IsCompleted.add(GetDataAdapter2);
 
-                                    SubCategoryName.add(subCategory_model_list);
-
-                                    Paid.add(subCategory_model_list);
-
-                                    ListOfdataAdapter.add(subCategory_model_list);
+                                    ListOfdataAdapter.add(GetDataAdapter2);
 
                                 }
 
-//                                Collections.reverse(ListOfdataAdapter);
-//                                Collections.reverse(Topicid);
+                                JSONArray jsonArray1=jObj.getJSONArray("exist_test");
+                                for(int i=0;i<jsonArray1.length();i++)
+                                {
+                                    Test_Model_List GetDataAdapter2=new Test_Model_List();
+                                    JSONObject jsonObject1=jsonArray1.getJSONObject(i);
 
-                                adapter = new SubCategory_List_Adapter(ListOfdataAdapter,getActivity());
+
+                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
+                                    GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
+                                    GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
+                                    GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
+                                    GetDataAdapter2.setRules(jsonObject1.getString("rules"));
+                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("is_complete"));
+
+
+
+
+                                    Testid.add(GetDataAdapter2);
+                                    Testname.add(GetDataAdapter2);
+                                    Testduration.add(GetDataAdapter2);
+                                    Testmarks.add(GetDataAdapter2);
+                                    Testrules.add(GetDataAdapter2);
+                                    IsCompleted.add(GetDataAdapter2);
+
+                                    ListOfdataAdapter.add(GetDataAdapter2);
+
+                                }
+
+
+
+                                adapter = new Test_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
-
-
 
                                 if(adapter.getItemCount()==0)
                                 {
@@ -343,13 +310,11 @@ public class SubCategoryListFragment extends Fragment
                                     emptyView.setVisibility(View.GONE);
                                 }
 
-
                                 hideDialog();
 
                             }
                             else if (success.equalsIgnoreCase("false")){
                                 Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
-
                                 hideDialog();
                             }
                             else
@@ -402,6 +367,9 @@ public class SubCategoryListFragment extends Fragment
                 // Adding All values to Params.
                 params.put("CourseId", Course_id);
                 params.put("CategoryId", Category_id);
+                params.put("SubCategoryId", SubCategory_id);
+                params.put("Date", CDate);
+
                 return params;
             }
 
@@ -417,16 +385,6 @@ public class SubCategoryListFragment extends Fragment
 
 
 
-    public boolean isNetworkAvailable() {
-
-        ConnectivityManager cm = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-
-        boolean isConnected = netInfo != null && netInfo.isConnectedOrConnecting();
-
-        return isConnected;
-    }
-
     private void showDialog() {
         if (!pDialog.isShowing())
             pDialog.show();
@@ -436,6 +394,5 @@ public class SubCategoryListFragment extends Fragment
         if (pDialog.isShowing())
             pDialog.dismiss();
     }
-
 
 }

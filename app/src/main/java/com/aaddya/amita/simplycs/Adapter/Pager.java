@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.aaddya.amita.simplycs.Fragment.AudioListFragment;
 import com.aaddya.amita.simplycs.Fragment.PDFListFragment;
+import com.aaddya.amita.simplycs.Fragment.QuizListFragment;
+import com.aaddya.amita.simplycs.Fragment.TestListFragment;
 import com.aaddya.amita.simplycs.Fragment.TheoryViewFragment;
 import com.aaddya.amita.simplycs.Fragment.VideoListFragment;
 
@@ -50,6 +52,10 @@ public class Pager extends FragmentStatePagerAdapter {
                 PDFListFragment tab4 = new PDFListFragment();
                 tab4.setArguments(bundle);
                 return tab4;
+            case 4:
+                QuizListFragment tab5 = new QuizListFragment();
+                tab5.setArguments(bundle);
+                return tab5;
             default:
                 return null;
         }

@@ -50,10 +50,8 @@ public class Test_List_Adapter extends RecyclerView.Adapter<Test_List_Adapter.Vi
 
         if (dataAdapterOBJ.getIsComplete().equalsIgnoreCase("1")){
 
-            //Coming soon
-//            Viewholder.TestStart.setText("View Result");
+            Viewholder.TestStart.setText("View Result");
 
-            Viewholder.TestStart.setText("Start");
         }
         else{
             Viewholder.TestStart.setText("Start");
