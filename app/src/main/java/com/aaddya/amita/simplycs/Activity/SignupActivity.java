@@ -82,6 +82,9 @@ public class SignupActivity extends AppCompatActivity {
 
         URL = getString(R.string.url);
 
+        Intent intent = getIntent();
+        Imobile = intent.getStringExtra("mobile");
+
         Initialize();
 
         passwordEyeImg.setTag(1);
@@ -208,7 +211,7 @@ public class SignupActivity extends AppCompatActivity {
 
         CourseSpinner=(Spinner)findViewById(R.id.course_spinner);
         EName=(EditText)findViewById(R.id.input_name);
-        Emobile=(EditText)findViewById(R.id.input_mobile);
+//        Emobile=(EditText)findViewById(R.id.input_mobile);
         Email=(EditText)findViewById(R.id.input_email);
         EPassword=(EditText)findViewById(R.id.input_password);
         EConfPass=(EditText)findViewById(R.id.input_ConfPass);
@@ -223,7 +226,7 @@ public class SignupActivity extends AppCompatActivity {
         SName=EName.getText().toString();
         SEmail=Email.getText().toString();
         SPassword=EPassword.getText().toString();
-        SMobile=Emobile.getText().toString();
+        SMobile=Imobile;
 
         SdeviceName=deviceName;
         SdeviceOs=deviceOs;
@@ -238,7 +241,7 @@ public class SignupActivity extends AppCompatActivity {
         final String Vname,Vemail,Vpassword,VConfPass,Vmobile;
 
         Vname=EName.getText().toString();
-        Vmobile=Emobile.getText().toString();
+//        Vmobile=Emobile.getText().toString();
         Vemail=Email.getText().toString();
         Vpassword=EPassword.getText().toString();
         VConfPass=EConfPass.getText().toString();
@@ -254,10 +257,10 @@ public class SignupActivity extends AppCompatActivity {
             EName.setError("Enter Valid Name");
         }
 
-        else if (Vmobile.isEmpty() || Vmobile.length() < 10){
-            Emobile.setError("Enter a valid mobile");
-            Emobile.requestFocus();
-        }
+//        else if (Vmobile.isEmpty() || Vmobile.length() < 10){
+//            Emobile.setError("Enter a valid mobile");
+//            Emobile.requestFocus();
+//        }
 
         else if (Vemail.length()==0){
             Email.requestFocus();
