@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.Activity.TestResultActivity;
+import com.aaddya.amita.simplycs.Activity.TestResultActivity2;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -169,7 +170,8 @@ public class TestListFragment extends Fragment
                     {
                         Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
 
-//                        Intent i = new Intent(getActivity(), TestResultActivity.class);
+//                        Intent i = new Intent(getActivity(), TestResultActivity2.class);
+//                        i.putExtra("test_id", test_id + "");
 //                        startActivity(i);
 
                     }

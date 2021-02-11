@@ -230,6 +230,9 @@ public class MainActivity extends AppCompatActivity
                 fragment= new AskusFragment();
                 transection.replace(R.id.content_frame, fragment);
                 transection.addToBackStack(null).commit();
+
+//                startActivity(new Intent(this,AskusActivity.class));
+
                 break;
 //            case R.id.action_menu2:
 //

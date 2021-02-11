@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: net.dankito.utils:android-utils:1.0.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e86481cab74fd7831e9d13f38c77b459/android-utils-1.0.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e86481cab74fd7831e9d13f38c77b459/android-utils-1.0.6/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e86481cab74fd7831e9d13f38c77b459/android-utils-1.0.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2315865ab8ff125ee7e5f6da4c1020d5/android-utils-1.0.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2315865ab8ff125ee7e5f6da4c1020d5/android-utils-1.0.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2315865ab8ff125ee7e5f6da4c1020d5/android-utils-1.0.6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dankito.utils/android-utils/1.0.6/aac97319f69974e60bf3388aa100c9fd1f5055b6/android-utils-1.0.6-javadoc.jar!/" />
