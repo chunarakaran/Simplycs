@@ -187,7 +187,7 @@ public class SubCategoryListFragment extends Fragment
                     SubCategory_name=SubCategoryName.get(RecyclerViewItemPosition).getImageTitle();
                     is_Paid=Paid.get(RecyclerViewItemPosition).getPaidStatus();
 
-                    if(Category_name.equals("Practice")||Category_name.equals("practice"))
+                    if(Category_name.equals("Test Series")||Category_name.equals("test series")||Category_name.equals("Test series"))
                     {
                         FragmentTransaction transection=getFragmentManager().beginTransaction();
                         TestListFragment mfragment=new TestListFragment();
