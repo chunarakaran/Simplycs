@@ -7,8 +7,8 @@ android {
         applicationId "com.aaddya.amita.simplycs"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 26
-        versionName "1.3.4"
+        versionCode 27
+        versionName "1.3.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -75,6 +75,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.1.0'
     implementation 'com.google.android.gms:play-services-ads:16.0.0'
     implementation 'com.google.android.gms:play-services-ads:17.1.2'
+    implementation 'com.google.android.play:core:1.6.1'//for new version updater
 
     // File Upload Read view RichText Editor Library
     implementation 'net.gotev:uploadservice:2.1'

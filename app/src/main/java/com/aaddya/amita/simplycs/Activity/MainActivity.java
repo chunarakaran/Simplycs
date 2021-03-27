@@ -41,6 +41,8 @@ import com.aaddya.amita.simplycs.Fragment.ExamListFragment;
 import com.aaddya.amita.simplycs.Fragment.FullScreenDialog;
 import com.aaddya.amita.simplycs.Fragment.ProfileFragment;
 import com.aaddya.amita.simplycs.Fragment.WebinarListFragment;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.install.InstallStateUpdatedListener;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -74,6 +76,11 @@ public class MainActivity extends AppCompatActivity
     public static final String PREFS_NAME = "login";
 
     private Activity mContext;
+
+    // for App update
+    private static final int REQ_CODE_VERSION_UPDATE = 530;
+    private AppUpdateManager appUpdateManager;
+    private InstallStateUpdatedListener installStateUpdatedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,7 +195,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
     private int checkNavigationMenuItem() {
         Menu menu = navigationView.getMenu();
         for (int i = 0; i < menu.size(); i++) {
@@ -198,7 +204,6 @@ public class MainActivity extends AppCompatActivity
         return -1;
     }
 
-
     public void logoutUser() {
         session.setLogin(false);
         // Launching the login activity
@@ -206,7 +211,6 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

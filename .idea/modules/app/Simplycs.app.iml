@@ -164,6 +164,7 @@
     <orderEntry type="library" name="Gradle: com.github.mahimrocky:TagView:1.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android:flexbox:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-base:17.1.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.play:core:1.6.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.4ert:audioview:0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: me.ithebk:barchart:0.9@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.libaml.android.view.chip:AndroidChipLayout:1.0.6@aar" level="project" />
