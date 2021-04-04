@@ -101,46 +101,46 @@
                 android:paddingStart="@dimen/_10sdp"
                 app:theme="@style/MyEditTextTheme" />
 
-<!--            <RelativeLayout-->
-<!--                android:id="@+id/mobile_number_layout"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="@dimen/_14sdp"-->
-<!--                android:layout_marginTop="@dimen/activity_vertical_margin"-->
-<!--                android:background="@drawable/shadow_view">-->
+            <RelativeLayout
+                android:id="@+id/mobile_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/shadow_view">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/countryImage"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_centerVertical="true"-->
-<!--                    android:layout_marginStart="5dp"-->
-<!--                    android:src="@drawable/flag_in" />-->
+                <ImageView
+                    android:id="@+id/countryImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/flag_in" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/countryNumber"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentBottom="true"-->
-<!--                    android:layout_marginStart="5dp"-->
-<!--                    android:layout_toEndOf="@+id/countryImage"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="+91"-->
-<!--                    android:textSize="@dimen/_6sdp" />-->
+                <TextView
+                    android:id="@+id/countryNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/countryImage"
+                    android:gravity="center"
+                    android:text="+91"
+                    android:textSize="@dimen/_6sdp" />
 
-<!--                <EditText-->
-<!--                    android:id="@+id/input_mobile"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentBottom="true"-->
-<!--                    android:layout_toEndOf="@+id/countryNumber"-->
-<!--                    android:background="@null"-->
-<!--                    android:hint="@string/mobile_number"-->
-<!--                    android:imeOptions="actionDone"-->
-<!--                    android:inputType="number"-->
-<!--                    android:maxLines="1"-->
-<!--                    android:paddingEnd="@dimen/_10sdp"-->
-<!--                    android:paddingStart="@dimen/_5sdp"/>-->
-<!--            </RelativeLayout>-->
+                <EditText
+                    android:id="@+id/input_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/countryNumber"
+                    android:background="@null"
+                    android:hint="@string/mobile_number"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_5sdp"/>
+            </RelativeLayout>
 
 
             <RelativeLayout
