@@ -36,7 +36,7 @@ public class ShowSubResultActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showsubresult);
-
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         result_question = getIntent().getStringExtra("result_question");
         result_audio = getIntent().getStringExtra("result_audio");

@@ -49,6 +49,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.refactor.lib.colordialog.PromptDialog;
+
 
 public class ShowSubResultFragment extends Fragment
 {
@@ -79,6 +81,8 @@ public class ShowSubResultFragment extends Fragment
     RequestQueue requestQueue;
     String URL;
     private ProgressDialog pDialog;
+
+    PromptDialog promptDialog;
 
     View rootview;
     @Override
@@ -114,6 +118,8 @@ public class ShowSubResultFragment extends Fragment
         // Progress dialog
         pDialog = new ProgressDialog(getActivity());
         pDialog.setCancelable(false);
+
+        promptDialog = new PromptDialog(getActivity());
 
         ListOfdataAdapter = new ArrayList<>();
 
@@ -171,13 +177,19 @@ public class ShowSubResultFragment extends Fragment
 
                     } else {
 
-                        Toast.makeText(getActivity(), "Result Pending", Toast.LENGTH_SHORT).show();
+                        promptDialog.setCancelable(false);
+                        promptDialog.setDialogType(PromptDialog.DIALOG_TYPE_INFO);
+                        promptDialog.setAnimationEnable(true);
+                        promptDialog.setTitleText("Information");
+                        promptDialog.setContentText("Result Pending");
+                        promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+                            @Override
+                            public void onClick(PromptDialog dialog) {
+                                dialog.dismiss();
+                            }
+                        }).show();
 
                     }
-
-
-//                    Toast.makeText(getActivity(), "You clicked " + result_question, Toast.LENGTH_SHORT).show();
-
 
                 }
 
