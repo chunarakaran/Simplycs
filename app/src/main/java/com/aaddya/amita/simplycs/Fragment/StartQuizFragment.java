@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
 
@@ -21,7 +22,7 @@ public class StartQuizFragment extends Fragment
 
     Button StartTest;
 
-    String CDate,Category_id,SubCategory_id,test_id,test_name,test_duration,test_marks,test_rules;
+    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules;
 
     TextView testDuration,testMarks;
 
@@ -48,6 +49,7 @@ public class StartQuizFragment extends Fragment
         Bundle bundle=getArguments();
         Category_id=String.valueOf(bundle.getString("category_id"));
         SubCategory_id=String.valueOf(bundle.getString("SubCategory_id"));
+        SubCategory_name=String.valueOf(bundle.getString("SubCategory_name"));
         CDate=String.valueOf(bundle.getString("CDate"));
         test_id=String.valueOf(bundle.getString("test_id"));
         test_name=String.valueOf(bundle.getString("test_name"));
@@ -86,28 +88,56 @@ public class StartQuizFragment extends Fragment
         webView.setLongClickable(false);
 
         StartTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction transection=getFragmentManager().beginTransaction();
-                QuestionFragment mfragment=new QuestionFragment();
+                @Override
+                public void onClick(View v) {
+
+                    if (SubCategory_name.equals("Subjective")||SubCategory_name.equals("subjective"))
+                    {
+//                        Toast.makeText(getActivity(), "Subjective Question list", Toast.LENGTH_SHORT).show();
+
+                        FragmentTransaction transection = getFragmentManager().beginTransaction();
+                        SubjectiveQuestionFragment mfragment = new SubjectiveQuestionFragment();
 
 
-                Bundle bundle=new Bundle();
-                bundle.putString("category_id",Category_id);
-                bundle.putString("SubCategory_id",SubCategory_id);
-                bundle.putString("CDate",CDate);
-                bundle.putString("test_id",test_id);
-                bundle.putString("test_name",test_name);
-                bundle.putString("test_duration",test_duration);
-                bundle.putString("test_marks",test_marks);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("category_id", Category_id);
+                        bundle.putString("SubCategory_id", SubCategory_id);
+                        bundle.putString("CDate", CDate);
+                        bundle.putString("test_id", test_id);
+                        bundle.putString("test_name", test_name);
+                        bundle.putString("test_duration", test_duration);
+                        bundle.putString("test_marks", test_marks);
 
 
-                mfragment.setArguments(bundle);
+                        mfragment.setArguments(bundle);
 
-                transection.replace(R.id.content_frame, mfragment);
-                transection.addToBackStack(null).commit();
-            }
-        });
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
+
+                    }
+                    else {
+
+                        FragmentTransaction transection = getFragmentManager().beginTransaction();
+                        QuestionFragment mfragment = new QuestionFragment();
+
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("category_id", Category_id);
+                        bundle.putString("SubCategory_id", SubCategory_id);
+                        bundle.putString("CDate", CDate);
+                        bundle.putString("test_id", test_id);
+                        bundle.putString("test_name", test_name);
+                        bundle.putString("test_duration", test_duration);
+                        bundle.putString("test_marks", test_marks);
+
+
+                        mfragment.setArguments(bundle);
+
+                        transection.replace(R.id.content_frame, mfragment);
+                        transection.addToBackStack(null).commit();
+                    }
+                }
+            });
 
 
 

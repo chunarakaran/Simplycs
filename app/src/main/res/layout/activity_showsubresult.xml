@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_merchant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    tools:context=".Activity.CheckoutActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/username1"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Commet:"
+                android:textColor="@color/black"
+                android:maxLength="12"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/result_comment"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Commet Here..."
+                android:textColorHint="#181737"
+                android:textColor="#181737"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/email"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marks:"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/result_mark"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marks Here..."
+                android:textColor="#181737"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/audiofile"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Audio:"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+
+            <com.keenfin.audioview.AudioView
+                android:id="@+id/audioview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:minified="true"
+                app:primaryColor="@color/colorPrimary"
+                app:selectControls="false"
+                app:showTitle="false"/>
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/AudioSuggestion"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Audio Suggestion"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
