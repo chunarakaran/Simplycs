@@ -30,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.Activity.LoginActivity;
+import com.aaddya.amita.simplycs.Activity.MainActivity;
 import com.aaddya.amita.simplycs.Activity.PDFViewActivity;
 import com.aaddya.amita.simplycs.Activity.QuestionUploaderActivity;
 import com.aaddya.amita.simplycs.Activity.SignupActivity;
@@ -212,19 +213,13 @@ public class SubjectiveQuestionFragment extends Fragment
             public void onClick(View view) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage("Are you sure you want to Submit?")
+                builder.setMessage("Are you sure you want to Submit Test Because The Test is Only One Attempt ?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 SubmitSubjectiveTest();
-
-                              /*  Intent intent = new Intent(getActivity(), MainActivity.class);
-                                startActivity(intent);
-                                getActivity().finish();*/
-//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
-//                                Submit();
-                                //Log.i("Questions", "Questions Selected Answer Correct is : " + correctAns + " & Wrong Answer : " + wrongAns + " & Skipp Answer : " + skippAns);
+//
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -426,9 +421,10 @@ public class SubjectiveQuestionFragment extends Fragment
                                 promptDialog.setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
                                     @Override
                                     public void onClick(PromptDialog dialog) {
-//                                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-//                                        startActivity(intent);
-//                                        finish();
+
+                                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                                        startActivity(intent);
+                                        getActivity().finish();
                                         dialog.dismiss();
                                     }
                                 }).show();

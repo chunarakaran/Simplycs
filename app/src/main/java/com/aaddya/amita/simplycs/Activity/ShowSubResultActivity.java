@@ -17,6 +17,8 @@ import java.io.IOException;
 
 public class ShowSubResultActivity extends AppCompatActivity  {
 
+    TextView Done_Button;
+
     String result_question,result_audio,result_comment,result_mark;
 
     AudioView audioView;
@@ -84,6 +86,14 @@ public class ShowSubResultActivity extends AppCompatActivity  {
                 }
             });
         }
+
+        Done_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
     }
 
     public void Initialize()
@@ -92,6 +102,7 @@ public class ShowSubResultActivity extends AppCompatActivity  {
         Result_comment=(TextView)findViewById(R.id.result_comment);
         Result_mark=(TextView)findViewById(R.id.result_mark);
         AudioSuggestion=(TextView)findViewById(R.id.AudioSuggestion);
+        Done_Button=(TextView)findViewById(R.id.done_button);
 
     }
 
@@ -121,6 +132,12 @@ public class ShowSubResultActivity extends AppCompatActivity  {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        finish();
     }
 }
 
