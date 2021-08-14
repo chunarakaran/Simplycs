@@ -64,13 +64,14 @@ public class ShowSubResultFragment extends Fragment
     String User_id;
     public static final String PREFS_NAME = "login";
 
-    String test_id,test_name,question_id,result_question,result_audio,result_comment,result_mark,is_check;
+    String test_id,test_name,question_id,result_question,result_audio,result_comment,result_mark,is_check,result_question_id;
 
     final ArrayList<SubjectiveResult_Model_List> Question_id = new ArrayList<>();
     final ArrayList<SubjectiveResult_Model_List> Result_question = new ArrayList<>();
     final ArrayList<SubjectiveResult_Model_List> Result_audio = new ArrayList<>();
     final ArrayList<SubjectiveResult_Model_List> Result_comment = new ArrayList<>();
     final ArrayList<SubjectiveResult_Model_List> Result_mark = new ArrayList<>();
+    final ArrayList<SubjectiveResult_Model_List> Result_question_id = new ArrayList<>();
     final ArrayList<SubjectiveResult_Model_List> Is_check = new ArrayList<>();
 
     int RecyclerViewItemPosition ;
@@ -165,6 +166,7 @@ public class ShowSubResultFragment extends Fragment
                     result_audio=Result_audio.get(RecyclerViewItemPosition).getResult_audio();
                     result_comment=Result_comment.get(RecyclerViewItemPosition).getResult_comment();
                     result_mark=Result_mark.get(RecyclerViewItemPosition).getResult_mark();
+                    result_question_id=Result_question_id.get(RecyclerViewItemPosition).getResult_question_id();
                     is_check=Is_check.get(RecyclerViewItemPosition).getIs_check();
 
                     if (is_check.equalsIgnoreCase("1")) {
@@ -173,7 +175,8 @@ public class ShowSubResultFragment extends Fragment
                                 .putExtra("result_question", result_question)
                                 .putExtra("result_audio", result_audio)
                                 .putExtra("result_comment", result_comment)
-                                .putExtra("result_mark", result_mark));
+                                .putExtra("result_mark", result_mark)
+                                .putExtra("result_question_id", result_question_id));
 
                     } else {
 
@@ -273,6 +276,7 @@ public class ShowSubResultFragment extends Fragment
                                     subjectiveResult_model_list.setResult_audio(jsonObject1.getString("result_audio"));
                                     subjectiveResult_model_list.setResult_comment(jsonObject1.getString("result_comment"));
                                     subjectiveResult_model_list.setResult_mark(jsonObject1.getString("result_mark"));
+                                    subjectiveResult_model_list.setResult_question_id(jsonObject1.getString("result_question_id"));
                                     subjectiveResult_model_list.setIs_check(jsonObject1.getString("is_check"));
 
 
@@ -283,6 +287,7 @@ public class ShowSubResultFragment extends Fragment
                                     Result_audio.add(subjectiveResult_model_list);
                                     Result_comment.add(subjectiveResult_model_list);
                                     Result_mark.add(subjectiveResult_model_list);
+                                    Result_question_id.add(subjectiveResult_model_list);
                                     Is_check.add(subjectiveResult_model_list);
 
                                     ListOfdataAdapter.add(subjectiveResult_model_list);

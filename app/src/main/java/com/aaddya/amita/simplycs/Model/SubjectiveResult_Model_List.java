@@ -7,6 +7,7 @@ public class SubjectiveResult_Model_List {
     public String result_audio;
     public String result_comment;
     public String result_mark;
+    public String result_question_id;
     public String is_check;
 
 
@@ -69,6 +70,16 @@ public class SubjectiveResult_Model_List {
     public void setIs_check(String Is_check) {
 
         this.is_check = Is_check;
+    }
+
+    public String getResult_question_id() {
+
+        return result_question_id;
+    }
+
+    public void setResult_question_id(String Result_question_id) {
+
+        this.result_question_id = Result_question_id;
     }
 
 }

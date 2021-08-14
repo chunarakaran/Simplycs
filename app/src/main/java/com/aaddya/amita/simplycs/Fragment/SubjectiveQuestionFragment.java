@@ -24,8 +24,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +40,8 @@ import com.aaddya.amita.simplycs.Activity.SignupActivity;
 import com.aaddya.amita.simplycs.Adapter.PDF_List_Adapter;
 import com.aaddya.amita.simplycs.Adapter.SubCategory_List_Adapter;
 import com.aaddya.amita.simplycs.Adapter.SubjectiveQuestion_List_Adapter;
+import com.aaddya.amita.simplycs.Model.GetCourse_Model_List;
+import com.aaddya.amita.simplycs.Model.GetLanguage_Model_List;
 import com.aaddya.amita.simplycs.Model.PDF_Model_List;
 import com.aaddya.amita.simplycs.Model.SubCategory_Model_List;
 import com.aaddya.amita.simplycs.Model.SubjectiveQues_Model_List;
@@ -66,7 +71,7 @@ import cn.refactor.lib.colordialog.PromptDialog;
 public class SubjectiveQuestionFragment extends Fragment
 {
 
-    Button Submit;
+    TextView Submit;
     List<SubjectiveQues_Model_List> ListOfdataAdapter;
     LinearLayout emptyView;
     RecyclerView recyclerView;
@@ -74,6 +79,10 @@ public class SubjectiveQuestionFragment extends Fragment
     String CDate,Category_id,SubCategory_id,Test_id, test_name, test_duration, test_marks,Sub_Question_url;
     String User_id;
     public static final String PREFS_NAME = "login";
+
+    Spinner LanguageSpinner;
+    final ArrayList<GetLanguage_Model_List> Languagedatalist = new ArrayList<>();
+    String Languageid;
 
     final ArrayList<SubjectiveQues_Model_List> Sub_Question_id = new ArrayList<>();
     final ArrayList<SubjectiveQues_Model_List> Sub_Question = new ArrayList<>();
@@ -127,6 +136,7 @@ public class SubjectiveQuestionFragment extends Fragment
 
         promptDialog = new PromptDialog(getActivity());
 
+        LanguageSpinner=rootview.findViewById(R.id.course_spinner);
         Submit=rootview.findViewById(R.id.btn_submit);
 
         Bundle bundle = getArguments();
@@ -207,6 +217,21 @@ public class SubjectiveQuestionFragment extends Fragment
             }
         });
 
+        LanguageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View view, int position, long row_id)
+            {
+//                com_name=   statespinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+                Languageid = Languagedatalist.get(position).getId();
+//                Toast.makeText(getActivity(),"Id   " +Languageid , Toast.LENGTH_LONG).show();
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                // DO Nothing here
+            }
+        });
+
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -265,6 +290,10 @@ public class SubjectiveQuestionFragment extends Fragment
                     @Override
                     public void onResponse(String ServerResponse) {
 
+                        final ArrayList<String> list = new ArrayList<>();
+
+                        list.clear();
+
                         try {
 
                             JSONObject jObj = new JSONObject(ServerResponse);
@@ -287,10 +316,6 @@ public class SubjectiveQuestionFragment extends Fragment
                                     subjectiveQues_model_list.setExplanation(jsonObject1.getString("explanation"));
                                     subjectiveQues_model_list.setDropzone(jsonObject1.getString("dropzone"));
 
-
-
-
-
                                     Sub_Question_id.add(subjectiveQues_model_list);
                                     Sub_Question.add(subjectiveQues_model_list);
                                     Sub_Question_scale.add(subjectiveQues_model_list);
@@ -298,8 +323,28 @@ public class SubjectiveQuestionFragment extends Fragment
                                     Sub_Question_dropzone.add(subjectiveQues_model_list);
 
                                     ListOfdataAdapter.add(subjectiveQues_model_list);
+                                }
+
+                                JSONArray jsonArray1=jObj.getJSONArray("languages");
+                                for(int i=0;i<jsonArray1.length();i++)
+                                {
+                                    GetLanguage_Model_List getLanguage_model_list=new GetLanguage_Model_List();
+                                    JSONObject jsonObject2=jsonArray1.getJSONObject(i);
+
+
+                                    getLanguage_model_list.setId(jsonObject2.getString("id"));
+                                    getLanguage_model_list.setLanguageName(jsonObject2.getString("language"));
+
+
+
+                                    Languagedatalist.add(getLanguage_model_list);
+
+                                    list.add(jsonObject2.getString("language"));
 
                                 }
+
+
+                                LanguageSpinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, list));
 
                                 Collections.reverse(ListOfdataAdapter);
                                 Collections.reverse(Sub_Question_id);
@@ -482,6 +527,7 @@ public class SubjectiveQuestionFragment extends Fragment
 
                 //Company
                 params.put("TestId", Test_id);
+                params.put("LanguageId", Languageid);
 
 
                 return params;

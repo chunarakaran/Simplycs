@@ -70,7 +70,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             >
 
 
@@ -79,7 +79,7 @@
                 android:layout_weight="1"
                 android:id="@+id/email"
                 android:textSize="15dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marks:"
                 android:textColor="@color/black"
@@ -92,7 +92,7 @@
                 android:layout_weight="1"
                 android:id="@+id/result_mark"
                 android:textSize="15dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marks Here..."
                 android:textColor="#181737"
@@ -101,6 +101,39 @@
                 android:gravity="left"
                 />
         </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <customfonts.MyTextView_Roboto_Black
+                android:layout_weight="1"
+                android:id="@+id/markdetail"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marks In Detail"
+                android:textColor="@color/black"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:orientation="vertical"
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
 
 
         <View
@@ -155,6 +188,27 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_margin="12sp"
+
+            android:orientation="vertical">
+
+            <customfonts.Button_SF_Pro_Display_Semibold
+                android:id="@+id/done_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:padding="12dp"
+                android:background="@drawable/blue_rect"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
 
 
 
@@ -162,26 +216,6 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="12sp"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-        <customfonts.Button_SF_Pro_Display_Semibold
-            android:id="@+id/done_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Done"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:padding="12dp"
-            android:background="@drawable/blue_rect"
-            android:textAllCaps="false"/>
-
-    </LinearLayout>
 
 
 

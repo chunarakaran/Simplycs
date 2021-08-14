@@ -17,33 +17,59 @@
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:contentInsetStartWithNavigation="0dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        </android.support.v7.widget.Toolbar>
+
+
 
     </android.support.design.widget.AppBarLayout>
 
+    <customfonts.Button_SF_Pro_Display_Semibold
+        android:id="@+id/btn_submit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:text="SUBMIT"
+        android:textColor="@color/white"
+        android:layout_gravity="right"
+        android:textSize="12sp"
+        android:padding="12dp"
+        android:background="@drawable/blue_rect"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/maven_pro_medium"
+        android:text="Select Language"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_large"
-        android:gravity="end"
-        android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_submit"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="right"
-                android:background="@color/colorPrimary"
-                android:clickable="true"
-                android:padding="@dimen/spacing_medium"
-                android:text="SUBMIT"
-                android:textColor="@color/white" />
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rect_grayoutline1"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <Spinner
+            android:id="@+id/course_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
 
     </LinearLayout>
+
     <RelativeLayout
                 android:id="@+id/swipe_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview1"
@@ -79,9 +105,9 @@
                 </LinearLayout>
 
 
-            </RelativeLayout>
 
 
+    </RelativeLayout>
 
 
 </LinearLayout>

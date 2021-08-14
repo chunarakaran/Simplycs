@@ -329,7 +329,7 @@ public class QuestionUploaderActivity extends AppCompatActivity {
                     if (null == mUMA) {
                         return;
                     }
-                    if (intent == null) {
+                    if (intent == null|| intent.getData() == null) {
                         //Capture Photo if no image available
                         if (mCM != null) {
                             results = new Uri[]{Uri.parse(mCM)};
