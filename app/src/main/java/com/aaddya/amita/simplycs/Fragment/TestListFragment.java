@@ -131,15 +131,7 @@ public class TestListFragment extends Fragment
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
 
-
-        if (SubCategory_name.equals("Subjective")||SubCategory_name.equals("subjective"))
-        {
-            GetSubjectiveTestList();
-
-        }
-        else {
-            GetTestList();
-        }
+        GetTestList();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
@@ -174,56 +166,15 @@ public class TestListFragment extends Fragment
                     is_Completed=IsCompleted.get(RecyclerViewItemPosition).getIsComplete();
 
 
-                    if (SubCategory_name.equals("Subjective")||SubCategory_name.equals("subjective"))
+                    if (is_Completed.equalsIgnoreCase("1"))
                     {
-                        if (is_Completed.equalsIgnoreCase("1")) {
-                            FragmentTransaction transection = getFragmentManager().beginTransaction();
-                            ShowSubResultFragment mfragment = new ShowSubResultFragment();
-
-                            Bundle bundle = new Bundle();
-
-                            bundle.putString("test_id", test_id);
-                            bundle.putString("test_name", test_name);
-
-
-                            mfragment.setArguments(bundle);
-
-                            transection.replace(R.id.content_frame, mfragment);
-                            transection.addToBackStack(null).commit();
-
-                        } else {
-
-                            FragmentTransaction transection = getFragmentManager().beginTransaction();
-                            StartQuizFragment mfragment = new StartQuizFragment();
-
-                            Bundle bundle = new Bundle();
-                            bundle.putString("category_id", Category_id);
-                            bundle.putString("SubCategory_id", SubCategory_id);
-                            bundle.putString("SubCategory_name", SubCategory_name);
-                            bundle.putString("CDate", CDate);
-
-                            bundle.putString("test_id", test_id);
-                            bundle.putString("test_name", test_name);
-                            bundle.putString("test_duration", test_duration);
-                            bundle.putString("test_marks", test_marks);
-                            bundle.putString("test_rules", test_rules);
-
-                            mfragment.setArguments(bundle);
-
-                            transection.replace(R.id.content_frame, mfragment);
-                            transection.addToBackStack(null).commit();
-
-                        }
-                    }
-                    else {
-                        if (is_Completed.equalsIgnoreCase("1")) {
                             Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
 
 //                        Intent i = new Intent(getActivity(), TestResultActivity2.class);
 //                        i.putExtra("test_id", test_id + "");
 //                        startActivity(i);
 
-                        } else {
+                    } else {
 
                             FragmentTransaction transection = getFragmentManager().beginTransaction();
                             StartQuizFragment mfragment = new StartQuizFragment();
@@ -245,15 +196,8 @@ public class TestListFragment extends Fragment
                             transection.replace(R.id.content_frame, mfragment);
                             transection.addToBackStack(null).commit();
 
-                        }
                     }
-
-//                    Toast.makeText(getActivity(), "You clicked " + test_id, Toast.LENGTH_SHORT).show();
-
-
                 }
-
-
 
                 return false;
             }
@@ -462,142 +406,6 @@ public class TestListFragment extends Fragment
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest1);
     }
-
-
-    public void GetSubjectiveTestList()
-    {
-        pDialog.setMessage("Please Wait...");
-        showDialog();
-
-        StringRequest stringRequest1 = new StringRequest(Request.Method.POST, URL+"api/GetSubjectiveTestList",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String ServerResponse) {
-
-                        try {
-
-                            JSONObject jObj = new JSONObject(ServerResponse);
-                            String success = jObj.getString("success");
-
-                            if(success.equalsIgnoreCase("true"))
-                            {
-//                                Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
-
-                                JSONArray jsonArray=jObj.getJSONArray("test_list");
-                                for(int i=0;i<jsonArray.length();i++)
-                                {
-                                    Test_Model_List GetDataAdapter2=new Test_Model_List();
-                                    JSONObject jsonObject1=jsonArray.getJSONObject(i);
-
-
-                                    GetDataAdapter2.setId(jsonObject1.getString("id"));
-                                    GetDataAdapter2.setTitle(jsonObject1.getString("test_name"));
-                                    GetDataAdapter2.setDuration(jsonObject1.getString("duration"));
-                                    GetDataAdapter2.setMarks(jsonObject1.getString("max_marks"));
-                                    GetDataAdapter2.setRules(jsonObject1.getString("rules"));
-                                    GetDataAdapter2.setIsComplete(jsonObject1.getString("is_complete"));
-
-
-
-
-                                    Testid.add(GetDataAdapter2);
-                                    Testname.add(GetDataAdapter2);
-                                    Testduration.add(GetDataAdapter2);
-                                    Testmarks.add(GetDataAdapter2);
-                                    Testrules.add(GetDataAdapter2);
-                                    IsCompleted.add(GetDataAdapter2);
-
-                                    ListOfdataAdapter.add(GetDataAdapter2);
-
-                                }
-
-
-                                adapter = new Test_List_Adapter(ListOfdataAdapter,getActivity());
-                                recyclerView.setAdapter(adapter);
-
-                                if(adapter.getItemCount()==0)
-                                {
-                                    recyclerView.setVisibility(View.GONE);
-                                    emptyView.setVisibility(View.VISIBLE);
-                                }
-                                else{
-                                    recyclerView.setVisibility(View.VISIBLE);
-                                    emptyView.setVisibility(View.GONE);
-                                }
-
-                                hideDialog();
-
-                            }
-                            else if (success.equalsIgnoreCase("false")){
-                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
-                                hideDialog();
-                            }
-                            else
-                            {
-                                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_LONG).show();
-                                hideDialog();
-                            }
-
-
-                        }
-                        catch (JSONException e)
-                        {
-
-                            // JSON error
-                            e.printStackTrace();
-                            Toast.makeText(getActivity(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                            hideDialog();
-                        }
-
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                        // Hiding the progress dialog after all task complete.
-
-
-                        // Showing error message if something goes wrong.
-                        Toast.makeText(getActivity(), volleyError.toString(), Toast.LENGTH_LONG).show();
-                        hideDialog();
-                    }
-                }) {
-
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("Auth", User_id);
-                return params;
-            }
-
-            @Override
-            protected Map<String, String> getParams() {
-
-                // Creating Map String Params.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // Adding All values to Params.
-                params.put("CourseId", Course_id);
-                params.put("CategoryId", Category_id);
-                params.put("SubCategoryId", SubCategory_id);
-                params.put("Date", CDate);
-
-                return params;
-            }
-
-
-        };
-
-        // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-
-        // Adding the StringRequest object into requestQueue.
-        requestQueue.add(stringRequest1);
-    }
-
 
 
     public void GetTestResult()

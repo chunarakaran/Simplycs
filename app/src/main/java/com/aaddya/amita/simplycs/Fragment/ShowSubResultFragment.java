@@ -275,7 +275,7 @@ public class ShowSubResultFragment extends Fragment
                                     subjectiveResult_model_list.setQuestion("Q-" + srno + " "+ jsonObject1.getString("result_question"));
                                     subjectiveResult_model_list.setResult_audio(jsonObject1.getString("result_audio"));
                                     subjectiveResult_model_list.setResult_comment(jsonObject1.getString("result_comment"));
-                                    subjectiveResult_model_list.setResult_mark(jsonObject1.getString("result_mark"));
+                                    subjectiveResult_model_list.setResult_mark(jsonObject1.getString("proportional_mark_value"));
                                     subjectiveResult_model_list.setResult_question_id(jsonObject1.getString("result_question_id"));
                                     subjectiveResult_model_list.setIs_check(jsonObject1.getString("is_check"));
 

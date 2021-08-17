@@ -13,18 +13,16 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
 
-public class StartQuizFragment extends Fragment
+public class StartSubjectiveTestFragment extends Fragment
 {
 
     Button StartTest;
 
-    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_duration,test_marks,test_rules;
+    String CDate,Category_id,SubCategory_id,SubCategory_name,test_id,test_name,test_rules;
 
-    TextView testDuration,testMarks;
 
     WebView webView;
 
@@ -33,7 +31,7 @@ public class StartQuizFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        rootview = inflater.inflate(R.layout.fragment_startquiz, container, false);
+        rootview = inflater.inflate(R.layout.fragment_startsubjectivetest, container, false);
 
         Toolbar toolbar = rootview.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -53,26 +51,15 @@ public class StartQuizFragment extends Fragment
         CDate=String.valueOf(bundle.getString("CDate"));
         test_id=String.valueOf(bundle.getString("test_id"));
         test_name=String.valueOf(bundle.getString("test_name"));
-        test_duration=String.valueOf(bundle.getString("test_duration"));
-        test_marks=String.valueOf(bundle.getString("test_marks"));
         test_rules=String.valueOf(bundle.getString("test_rules"));
 
         toolbar.setTitle(test_name);
 
 
-        testDuration=(TextView)rootview.findViewById(R.id.testDuration);
-        testMarks=(TextView)rootview.findViewById(R.id.testMarks);
-
         webView = (WebView)rootview.findViewById(R.id.webView);
         webView.loadData(test_rules, "text/html", null);
 
         StartTest=(Button)rootview.findViewById(R.id.start_test);
-
-
-
-
-        testDuration.setText(test_duration);
-        testMarks.setText(test_marks);
 
 
         webView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -89,7 +76,7 @@ public class StartQuizFragment extends Fragment
 
 
                         FragmentTransaction transection = getFragmentManager().beginTransaction();
-                        QuestionFragment mfragment = new QuestionFragment();
+                        SubjectiveQuestionFragment mfragment = new SubjectiveQuestionFragment();
 
 
                         Bundle bundle = new Bundle();
@@ -98,16 +85,14 @@ public class StartQuizFragment extends Fragment
                         bundle.putString("CDate", CDate);
                         bundle.putString("test_id", test_id);
                         bundle.putString("test_name", test_name);
-                        bundle.putString("test_duration", test_duration);
-                        bundle.putString("test_marks", test_marks);
-
 
                         mfragment.setArguments(bundle);
 
                         transection.replace(R.id.content_frame, mfragment);
                         transection.addToBackStack(null).commit();
-                }
 
+
+                }
             });
 
 

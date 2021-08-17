@@ -76,7 +76,7 @@ public class SubjectiveQuestionFragment extends Fragment
     LinearLayout emptyView;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
-    String CDate,Category_id,SubCategory_id,Test_id, test_name, test_duration, test_marks,Sub_Question_url;
+    String CDate,Category_id,SubCategory_id,Test_id, test_name,Sub_Question_url;
     String User_id;
     public static final String PREFS_NAME = "login";
 
@@ -145,11 +145,7 @@ public class SubjectiveQuestionFragment extends Fragment
         CDate=String.valueOf(bundle.getString("CDate"));
         Test_id = String.valueOf(bundle.getString("test_id"));
         test_name = String.valueOf(bundle.getString("test_name"));
-        test_duration = String.valueOf(bundle.getString("test_duration"));
-        test_marks = String.valueOf(bundle.getString("test_marks"));
-        txt_timer = (TextView) rootview.findViewById(R.id.txt_timer);
-        //txt_timer.setText(exam_duration +"Minutes");
-        minutes = Integer.parseInt(test_duration);
+
 
         toolbar.setTitle(test_name);
 
