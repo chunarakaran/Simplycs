@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aaddya.amita.simplycs.R;
 
@@ -57,7 +59,8 @@ public class StartSubjectiveTestFragment extends Fragment
 
 
         webView = (WebView)rootview.findViewById(R.id.webView);
-        webView.loadData(test_rules, "text/html", null);
+        String encodedHtml = Base64.encodeToString(test_rules.getBytes(), Base64.NO_PADDING);
+        webView.loadData(encodedHtml, "text/html", "base64");
 
         StartTest=(Button)rootview.findViewById(R.id.start_test);
 
@@ -74,6 +77,7 @@ public class StartSubjectiveTestFragment extends Fragment
                 @Override
                 public void onClick(View v) {
 
+//                    Toast.makeText(getActivity(), test_rules, Toast.LENGTH_LONG).show();
 
                         FragmentTransaction transection = getFragmentManager().beginTransaction();
                         SubjectiveQuestionFragment mfragment = new SubjectiveQuestionFragment();

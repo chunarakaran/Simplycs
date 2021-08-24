@@ -3,6 +3,7 @@ package com.aaddya.amita.simplycs.Adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class ShowResult_List_Adapter extends RecyclerView.Adapter<ShowResult_Lis
         SubjectiveResult_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
 
-        Viewholder.Question_title.setText(dataAdapterOBJ.getQuestion());
+        Viewholder.Question_title.setText(Html.fromHtml(dataAdapterOBJ.getQuestion()));
 
 
 

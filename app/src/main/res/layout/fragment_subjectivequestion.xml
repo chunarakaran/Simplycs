@@ -44,7 +44,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/maven_pro_medium"
-        android:text="Select Language"
+        android:text="Questions Language"
         android:textColor="#000000"
         android:textSize="15sp" />
 

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +65,8 @@ public class StartQuizFragment extends Fragment
         testMarks=(TextView)rootview.findViewById(R.id.testMarks);
 
         webView = (WebView)rootview.findViewById(R.id.webView);
-        webView.loadData(test_rules, "text/html", null);
+        String encodedHtml = Base64.encodeToString(test_rules.getBytes(), Base64.NO_PADDING);
+        webView.loadData(encodedHtml, "text/html", "base64");
 
         StartTest=(Button)rootview.findViewById(R.id.start_test);
 

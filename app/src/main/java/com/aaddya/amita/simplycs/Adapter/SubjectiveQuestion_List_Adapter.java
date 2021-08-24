@@ -2,6 +2,7 @@ package com.aaddya.amita.simplycs.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,7 @@ public class SubjectiveQuestion_List_Adapter extends RecyclerView.Adapter<Subjec
 
         SubjectiveQues_Model_List dataAdapterOBJ =  dataAdapters.get(position);
 
-        Viewholder.QuestionTitle.setText(dataAdapterOBJ.getQuestion());
+        Viewholder.QuestionTitle.setText(Html.fromHtml(dataAdapterOBJ.getQuestion()));
 
     }
 
