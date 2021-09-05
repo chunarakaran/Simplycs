@@ -302,6 +302,14 @@ public class SubjectiveTestListFragment extends Fragment
                                 adapter = new SubjectiveTest_List_Adapter(ListOfdataAdapter,getActivity());
                                 recyclerView.setAdapter(adapter);
 
+
+
+                                hideDialog();
+
+                            }
+                            else if (success.equalsIgnoreCase("false")){
+//                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
+                                adapter = new SubjectiveTest_List_Adapter(ListOfdataAdapter,getActivity());
                                 if(adapter.getItemCount()==0)
                                 {
                                     recyclerView.setVisibility(View.GONE);
@@ -312,11 +320,6 @@ public class SubjectiveTestListFragment extends Fragment
                                     emptyView.setVisibility(View.GONE);
                                 }
 
-                                hideDialog();
-
-                            }
-                            else if (success.equalsIgnoreCase("false")){
-                                Toast.makeText(getActivity(), jObj.getString("message"), Toast.LENGTH_LONG).show();
                                 hideDialog();
                             }
                             else

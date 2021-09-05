@@ -207,6 +207,7 @@ public class ShowSubResultActivity extends AppCompatActivity  {
     @Override
     public void onBackPressed()
     {
+        onStop();
         finish();
     }
 
